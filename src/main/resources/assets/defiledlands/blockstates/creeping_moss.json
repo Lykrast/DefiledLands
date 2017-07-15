@@ -1,0 +1,10 @@
+{
+    "variants": {
+		"normal": [
+            { "model": "defiledlands:creeping_moss" },
+            { "model": "defiledlands:creeping_moss", "y": 90 },
+            { "model": "defiledlands:creeping_moss", "y": 180 },
+            { "model": "defiledlands:creeping_moss", "y": 270 }
+        ]
+    }
+}

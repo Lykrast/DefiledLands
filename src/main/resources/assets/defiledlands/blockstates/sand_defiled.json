@@ -1,0 +1,10 @@
+{
+    "variants": {
+		"normal": [
+            { "model": "defiledlands:sand_defiled" },
+            { "model": "defiledlands:sand_defiled", "y": 90 },
+            { "model": "defiledlands:sand_defiled", "y": 180 },
+            { "model": "defiledlands:sand_defiled", "y": 270 }
+        ]
+    }
+}

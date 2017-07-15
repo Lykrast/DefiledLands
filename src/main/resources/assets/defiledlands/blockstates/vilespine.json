@@ -1,0 +1,10 @@
+{
+	"multipart": [
+        {   "when": { "topmost": false },
+            "apply": { "model": "defiledlands:vilespine_part" }
+        },
+        {   "when": { "topmost": true },
+            "apply": { "model": "defiledlands:vilespine_top" }
+        }
+    ]
+}

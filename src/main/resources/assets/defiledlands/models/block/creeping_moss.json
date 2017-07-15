@@ -1,0 +1,7 @@
+{
+    "parent": "block/carpet",
+    "textures": {
+        "particle": "defiledlands:blocks/creeping_moss",
+        "wool": "defiledlands:blocks/creeping_moss"
+    }
+}

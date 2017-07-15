@@ -1,5 +1,10 @@
 {
     "variants": {
-        "normal": { "model": "defiledlands:stone_defiled" }
+		"normal": [
+            { "model": "defiledlands:stone_defiled" },
+            { "model": "defiledlands:stone_defiled", "y": 90 },
+            { "model": "defiledlands:stone_defiled", "y": 180 },
+            { "model": "defiledlands:stone_defiled", "y": 270 }
+        ]
     }
 }

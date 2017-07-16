@@ -21,14 +21,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, 
+		tenebraLog, tenebraLeaves, tenebraPlanks, 
 		vilespine, creepingMoss, blastem;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
 	public static void init() {
+		//Blocks
 		stoneDefiled = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "stone_defiled");
 		sandDefiled = registerBlock(new BlockFallingCorrupted(Material.SAND, SoundType.SAND, 0.5F, 2.5F, "shovel", 0), "sand_defiled");
 		sandstoneDefiled = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 0.8F, 4.0F, "pickaxe", 0), "sandstone_defiled");
 		dirtDefiled = registerBlock(new BlockCorrupted(Material.GROUND, SoundType.GROUND, 0.5F, 2.5F, "shovel", 0), "dirt_defiled");
+		tenebraLog = registerBlock(new BlockLogTenebra(3.0F, 15.0F), "tenebra_log");
+		//tenebraLeaves = registerBlock(new BlockLeafTenebra(), "tenebra_leaves");
+		tenebraPlanks = registerBlock(new BlockCorrupted(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_planks");
+		
+		//Plants
 		grassDefiled = registerBlock(new BlockGrassCorrupted(0.6F, 2.5F), "grass_defiled");
 		vilespine = registerBlock(new BlockVilespine(), "vilespine");
 		creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");

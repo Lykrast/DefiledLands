@@ -5,6 +5,10 @@ tile.defiledlands.sandstone_defiled.name=Defiled Sandstone
 tile.defiledlands.sand_defiled.name=Defiled Sand
 tile.defiledlands.dirt_defiled.name=Defiled Dirt
 tile.defiledlands.grass_defiled.name=Defiled Grass
+
+tile.defiledlands.tenebra_log.name=Tenebra Wood
+tile.defiledlands.tenebra_leaves.name=Tenebra Leaves
+tile.defiledlands.tenebra_planks.name=Tenebra Wood Planks
 tile.defiledlands.vilespine.name=Vilespine
 tile.defiledlands.creeping_moss.name=Creeping Moss
 tile.defiledlands.blastem.name=Blastem 

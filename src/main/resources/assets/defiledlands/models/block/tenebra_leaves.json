@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "defiledlands:blocks/leaves_tenebra"
+    }
+}

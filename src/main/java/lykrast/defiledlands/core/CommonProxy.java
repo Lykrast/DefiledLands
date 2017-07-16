@@ -1,5 +1,6 @@
 package lykrast.defiledlands.core;
 
+import lykrast.defiledlands.common.init.ModBiomes;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.init.ModRecipes;
@@ -15,6 +16,7 @@ public class CommonProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModRecipes.init();
+		ModBiomes.registerBiomes();
 	}
 
 	@EventHandler

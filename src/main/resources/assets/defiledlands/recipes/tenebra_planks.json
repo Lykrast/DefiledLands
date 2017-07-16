@@ -1,0 +1,7 @@
+{
+	"type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "item": "defiledlands:tenebra_log" }
+    ],
+    "result": { "item": "defiledlands:tenebra_planks", "count": 4 }
+}

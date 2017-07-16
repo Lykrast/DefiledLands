@@ -110,7 +110,7 @@ public class BlockVilespine extends BlockGeneric implements net.minecraftforge.c
         {
             return true;
         }
-        else if (block != ModBlocks.dirtDefiled && block != ModBlocks.grassDefiled)
+        else if (block != ModBlocks.dirtDefiled && block != ModBlocks.grassDefiled && block != ModBlocks.sandDefiled)
         {
             return false;
         }

@@ -40,7 +40,7 @@ public class CorruptionHelper {
 	{
 		Biome biome = worldIn.getBiome(pos);
 		
-		if (biome instanceof BiomeDefiled)
+		if (biome instanceof BiomeDefiled || !Config.confinedSpread)
 		{
 			return true;
 		}

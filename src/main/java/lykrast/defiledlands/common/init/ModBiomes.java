@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.common.world.biome.*;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.util.ResourceLocation;
@@ -28,12 +29,12 @@ public class ModBiomes {
 	
     public static void registerBiomes()
     {
-    	register(desertDefiled, BiomeManager.BiomeType.DESERT, "desert_defiled", 6, SPOOKY, HOT, DRY, SANDY);
-    	register(plainsDefiled, BiomeManager.BiomeType.WARM, "plains_defiled", 6, SPOOKY, PLAINS);
-    	register(forestTenebra, BiomeManager.BiomeType.WARM, "forest_tenebra", 6, SPOOKY, FOREST);
-    	register(forestVilespine, BiomeManager.BiomeType.WARM, "forest_vilespine", 10, SPOOKY, FOREST);
-    	register(hillsDefiled, BiomeManager.BiomeType.COOL, "hills_defiled", 6, SPOOKY, MOUNTAIN, HILLS);
-    	register(swampDefiled, BiomeManager.BiomeType.WARM, "swamp_defiled", 6, SPOOKY, WET, SWAMP);
+    	register(desertDefiled, BiomeManager.BiomeType.DESERT, "desert_defiled", Config.weightDesertDefiled, SPOOKY, HOT, DRY, SANDY);
+    	register(plainsDefiled, BiomeManager.BiomeType.WARM, "plains_defiled", Config.weightPlainsDefiled, SPOOKY, PLAINS);
+    	register(forestTenebra, BiomeManager.BiomeType.WARM, "forest_tenebra", Config.weightForestTenebra, SPOOKY, FOREST);
+    	register(forestVilespine, BiomeManager.BiomeType.WARM, "forest_vilespine", Config.weightForestVilespine, SPOOKY, FOREST);
+    	register(hillsDefiled, BiomeManager.BiomeType.COOL, "hills_defiled", Config.weightHillsDefiled, SPOOKY, MOUNTAIN, HILLS);
+    	register(swampDefiled, BiomeManager.BiomeType.WARM, "swamp_defiled", Config.weightSwampDefiled, SPOOKY, WET, SWAMP);
     }
 	
     public static void register(Biome biome, BiomeManager.BiomeType type, String name, int weight, BiomeDictionary.Type... biomeDictTypes)

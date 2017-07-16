@@ -16,11 +16,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item vilespine;
+	public static Item vilespine, blastemFruit;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static void init() {
 		vilespine = ItemBlock.getItemFromBlock(ModBlocks.vilespine);
+		blastemFruit = registerItem(new Item(), "blastem_fruit");
 	}
 	
 	@SideOnly(Side.CLIENT)

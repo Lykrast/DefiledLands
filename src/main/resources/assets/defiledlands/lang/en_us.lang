@@ -7,3 +7,6 @@ tile.defiledlands.dirt_defiled.name=Defiled Dirt
 tile.defiledlands.grass_defiled.name=Defiled Grass
 tile.defiledlands.vilespine.name=Vilespine
 tile.defiledlands.creeping_moss.name=Creeping Moss
+tile.defiledlands.blastem.name=Blastem 
+
+item.defiledlands.blastem_fruit.name=Blastem Fruit

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -47,6 +48,11 @@ public class BlockVilespine extends BlockGeneric implements net.minecraftforge.c
      */
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
+    	if (entityIn instanceof IEntityDefiled)
+    	{
+    		if (!((IEntityDefiled) entityIn).affectedByVilespine()) return;
+    	}
+    	
         entityIn.attackEntityFrom(DamageSource.CACTUS, 3.0F);
     }
 	

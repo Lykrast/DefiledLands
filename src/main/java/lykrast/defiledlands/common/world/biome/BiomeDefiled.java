@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.world.biome;
 import java.util.Random;
 
 import lykrast.defiledlands.common.entity.EntityShambler;
+import lykrast.defiledlands.common.entity.EntityScuttler;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.world.feature.*;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,8 @@ public abstract class BiomeDefiled extends Biome {
 		
 		this.spawnableCreatureList.clear();
 		this.spawnableMonsterList.clear();
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 100, 1, 1));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 1));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 2, 4));
 	}
 
     public WorldGenAbstractTree getRandomTreeFeature(Random rand)

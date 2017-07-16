@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.block;
 
 import java.util.Random;
 
+import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.block.Block;
@@ -49,6 +50,11 @@ public class BlockBlastem extends BlockBush {
      */
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
+    	if (entityIn instanceof IEntityDefiled)
+    	{
+    		if (!((IEntityDefiled) entityIn).affectedByBlastem()) return;
+    	}
+    	
     	int age = ((Integer)state.getValue(AGE)).intValue();
     	
     	if (age == 15)

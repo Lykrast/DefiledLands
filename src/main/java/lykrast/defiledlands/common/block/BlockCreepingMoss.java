@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.block;
 
 import javax.annotation.Nullable;
 
+import lykrast.defiledlands.common.entity.IEntityDefiled;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -32,6 +33,11 @@ public class BlockCreepingMoss extends BlockGeneric {
      */
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
+    	if (entityIn instanceof IEntityDefiled)
+    	{
+    		if (!((IEntityDefiled) entityIn).affectedByCreepingMoss()) return;
+    	}
+    	
         entityIn.motionX *= 0.4D;
         entityIn.motionZ *= 0.4D;
     }

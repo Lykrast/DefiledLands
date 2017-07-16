@@ -1,7 +1,7 @@
 package lykrast.defiledlands.common.init;
 
 import lykrast.defiledlands.client.render.entity.*;
-import lykrast.defiledlands.common.entity.EntityShambler;
+import lykrast.defiledlands.common.entity.*;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -19,6 +19,9 @@ public class ModEntities {
 	{
 		registerEntity(EntityShambler.class, "shambler", 0x171717, 0xebebeb);
         LootTableList.register(EntityShambler.LOOT);
+        
+		registerEntity(EntityScuttler.class, "scuttler", 0x211823, 0xce0bff);
+        LootTableList.register(EntityScuttler.LOOT);
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name, int colorBack, int colorFront)
@@ -29,6 +32,7 @@ public class ModEntities {
 	@SideOnly(Side.CLIENT)
     public static void initModels() {
         RenderingRegistry.registerEntityRenderingHandler(EntityShambler.class, RenderShambler.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler.FACTORY);
     }
 
 }

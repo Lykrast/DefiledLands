@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.world.biome;
 
 import java.util.Random;
 
+import lykrast.defiledlands.common.entity.EntityShambler;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.world.feature.*;
 import net.minecraft.util.math.BlockPos;
@@ -24,8 +25,11 @@ public abstract class BiomeDefiled extends Biome {
 		super(properties);
         this.topBlock = ModBlocks.grassDefiled.getDefaultState();
         this.fillerBlock = ModBlocks.dirtDefiled.getDefaultState();
-		this.spawnableCreatureList.clear();
 		this.vilespinePerChunk = 50;
+		
+		this.spawnableCreatureList.clear();
+		this.spawnableMonsterList.clear();
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 100, 1, 1));
 	}
 
     public WorldGenAbstractTree getRandomTreeFeature(Random rand)

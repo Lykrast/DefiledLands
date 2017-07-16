@@ -4,6 +4,7 @@ import java.io.File;
 
 import lykrast.defiledlands.common.init.ModBiomes;
 import lykrast.defiledlands.common.init.ModBlocks;
+import lykrast.defiledlands.common.init.ModEntities;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.init.ModRecipes;
 import lykrast.defiledlands.common.util.Config;
@@ -25,6 +26,7 @@ public class CommonProxy {
 		ModBlocks.init();
 		ModItems.init();
 		ModRecipes.init();
+		ModEntities.init();
 		
 		ModBiomes.registerBiomes();
 	}

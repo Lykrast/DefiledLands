@@ -1,0 +1,75 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:tenebra_pickaxe"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.tenebra_tool.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.tenebra_tool.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "axe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:tenebra_axe"
+                    }
+                ]
+            }
+        },
+        "hoe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:tenebra_hoe"
+                    }
+                ]
+            }
+        },
+        "pickaxe": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:tenebra_pickaxe"
+                    }
+                ]
+            }
+        },
+        "shovel": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:tenebra_shovel"
+                    }
+                ]
+            }
+        },
+        "sword": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:tenebra_sword"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+		[
+			"axe",
+			"hoe",
+			"pickaxe",
+			"shovel",
+			"sword"
+		]
+	]
+}

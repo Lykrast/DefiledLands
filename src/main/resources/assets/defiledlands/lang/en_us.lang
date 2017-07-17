@@ -17,15 +17,22 @@ tile.defiledlands.scuronotte.name=Scuronotte
 tile.defiledlands.hephaestite_ore.name=Hephaestite Ore
 tile.defiledlands.hephaestite_block.name=Block of Hephaestite
 
+item.defiledlands.hephaestite.name=Hephaestite Shard
+
 item.defiledlands.blastem_fruit.name=Blastem Fruit
 item.defiledlands.defilement_powder.name=Defilement Powder
-item.defiledlands.hephaestite.name=Hephaestite Shard
 item.defiledlands.scuttler_eye.name=Scuttler Eye
+
+item.defiledlands.tenebra_axe.name=Tenebra Axe
+item.defiledlands.tenebra_hoe.name=Tenebra Hoe
+item.defiledlands.tenebra_pickaxe.name=Tenebra Pickaxe
+item.defiledlands.tenebra_shovel.name=Tenebra Shovel
+item.defiledlands.tenebra_sword.name=Tenebra Sword
 
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.scuttler.name=Scuttler
 
-advancements.defiledlands.root.title=Bad Omen
+advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
 advancements.defiledlands.defilement_powder.title=Spreading the Word
 advancements.defiledlands.defilement_powder.description=Make Defilement Powder from a Scuronotte
@@ -33,5 +40,8 @@ advancements.defiledlands.blastem_fruit.title=Careful Harvest
 advancements.defiledlands.blastem_fruit.description=Harvest a Blastem Fruit
 advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods
 advancements.defiledlands.hephaestite.description=Mine some Hephaestite
+advancements.defiledlands.tenebra_tool.title=Ready for Action
+advancements.defiledlands.tenebra_tool.description=Make a tool out of Tenebra wood
+
 advancements.defiledlands.discover_all_biomes.title=Unholy Pilgrimage
 advancements.defiledlands.discover_all_biomes.description=Discover every natural defiled biome

@@ -28,11 +28,6 @@ public class CorruptionRecipes {
 	{
 		return reverseMap.get(input);
 	}
-	
-	public static boolean isCorruptable(Block input)
-	{
-		return getCorrupted(input) != null;
-	}
 
 	public static void register(Block input, Block output)
 	{		

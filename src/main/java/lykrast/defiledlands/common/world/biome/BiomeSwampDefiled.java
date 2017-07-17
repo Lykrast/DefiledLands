@@ -28,6 +28,7 @@ public class BiomeSwampDefiled extends BiomeDefiled {
         this.decorator.waterlilyPerChunk = 4;
         this.decorator.sandPatchesPerChunk = 0;
         this.decorator.gravelPatchesPerChunk = 0;
+		this.scuronottePerChunk = 8;
 	}
 
 }

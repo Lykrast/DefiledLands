@@ -22,7 +22,7 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, 
 		tenebraLog, tenebraLeaves, tenebraPlanks, 
-		vilespine, creepingMoss, blastem;
+		vilespine, creepingMoss, blastem, scuronotte;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
 	public static void init() {
@@ -40,6 +40,7 @@ public class ModBlocks {
 		vilespine = registerBlock(new BlockVilespine(), "vilespine");
 		creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
 		blastem = registerBlock(new BlockBlastem(), "blastem");
+		scuronotte = registerBlock(new BlockScuronotte(), "scuronotte");
 	}
 	
 	@SideOnly(Side.CLIENT)

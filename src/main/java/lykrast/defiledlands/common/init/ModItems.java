@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,12 +17,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item vilespine, blastemFruit;
+	public static Item blastemFruit, defilementPowder;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static void init() {
-		vilespine = ItemBlock.getItemFromBlock(ModBlocks.vilespine);
 		blastemFruit = registerItem(new Item(), "blastem_fruit");
+		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");
 	}
 	
 	@SideOnly(Side.CLIENT)

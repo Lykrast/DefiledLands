@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.util;
 import java.util.Random;
 
 import lykrast.defiledlands.common.world.biome.BiomeDefiled;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -26,11 +27,7 @@ public class CorruptionHelper {
 					}
 
 					IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
-
-					if (CorruptionRecipes.isCorruptable(iblockstate1.getBlock()))
-					{
-						worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(iblockstate1.getBlock()).getDefaultState());
-					}
+					corrupt(worldIn, blockpos, iblockstate1);
 				}
 			}
 		}
@@ -46,6 +43,21 @@ public class CorruptionHelper {
 		}
 		
 		return false;
+	}
+	
+	public static boolean isCorruptable(Block input)
+	{
+		return CorruptionRecipes.getCorrupted(input) != null;
+	}
+	
+	public static boolean corrupt(World worldIn, BlockPos blockpos, IBlockState state)
+	{
+		if (isCorruptable(state.getBlock()))
+		{
+			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state.getBlock()).getDefaultState());
+			return true;
+		}
+		else return false;
 	}
 
 }

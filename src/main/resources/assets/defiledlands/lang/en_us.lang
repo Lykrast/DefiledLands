@@ -12,8 +12,10 @@ tile.defiledlands.tenebra_planks.name=Tenebra Wood Planks
 tile.defiledlands.vilespine.name=Vilespine
 tile.defiledlands.creeping_moss.name=Creeping Moss
 tile.defiledlands.blastem.name=Blastem 
+tile.defiledlands.scuronotte.name=Scuronotte 
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit
+item.defiledlands.defilement_powder.name=Defilement Powder
 
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.scuttler.name=Scuttler

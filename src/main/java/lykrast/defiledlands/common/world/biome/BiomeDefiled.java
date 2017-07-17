@@ -6,10 +6,12 @@ import lykrast.defiledlands.common.entity.EntityShambler;
 import lykrast.defiledlands.common.entity.EntityScuttler;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.world.feature.*;
+import net.minecraft.block.BlockBush;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -18,8 +20,9 @@ public abstract class BiomeDefiled extends Biome {
 
     public static WorldGenerator vilespineGen = new WorldGenVilespine(), 
     		blastemGen = new WorldGenBlastem(),
-    		tenebraGen = new WorldGenTenebra(false);
-	protected int vilespinePerChunk;
+    		tenebraGen = new WorldGenTenebra(false),
+    		scuronotteGen = new WorldGenScuronotte();
+	protected int vilespinePerChunk, scuronottePerChunk;
 
 	public BiomeDefiled(BiomeProperties properties)
 	{
@@ -27,6 +30,7 @@ public abstract class BiomeDefiled extends Biome {
         this.topBlock = ModBlocks.grassDefiled.getDefaultState();
         this.fillerBlock = ModBlocks.dirtDefiled.getDefaultState();
 		this.vilespinePerChunk = 50;
+		this.scuronottePerChunk = 2;
 		
 		this.spawnableCreatureList.clear();
 		this.spawnableMonsterList.clear();
@@ -42,6 +46,8 @@ public abstract class BiomeDefiled extends Biome {
 	@Override
 	public void decorate(World worldIn, Random rand, BlockPos pos)
 	{
+		super.decorate(worldIn, rand, pos);
+		
 		if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CACTUS))
 			for (int j5 = 0; j5 < this.vilespinePerChunk; ++j5)
 			{
@@ -67,7 +73,16 @@ public abstract class BiomeDefiled extends Biome {
 	        blastemGen.generate(worldIn, rand, pos.add(i, k, j));
 		}
 		
-		super.decorate(worldIn, rand, pos);
+		if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM))
+		{
+			for (int l3 = 0; l3 < this.scuronottePerChunk; ++l3)
+			{
+				int i8 = rand.nextInt(16) + 8;
+                int l11 = rand.nextInt(16) + 8;
+                BlockPos blockpos2 = worldIn.getHeight(pos.add(i8, 0, l11));
+                this.scuronotteGen.generate(worldIn, rand, blockpos2);
+			}
+		}
 	}
 	
 	@SideOnly(Side.CLIENT)

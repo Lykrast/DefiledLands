@@ -25,6 +25,8 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -114,6 +116,25 @@ public class EntityShambler extends EntityMob implements IEntityDefiled {
         else
         {
             return false;
+        }
+    }
+
+    /**
+     * Called when the entity is attacked.
+     */
+    public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+        if (this.isEntityInvulnerable(source))
+        {
+            return false;
+        }
+        else if (source instanceof EntityDamageSourceIndirect)
+        {
+            return false;
+        }
+        else
+        {
+            return super.attackEntityFrom(source, amount);
         }
     }
 

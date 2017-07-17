@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:hephaestite"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.hephaestite.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.hephaestite.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "hephaestite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:hephaestite"
+                    }
+                ]
+            }
+        }
+    }
+}

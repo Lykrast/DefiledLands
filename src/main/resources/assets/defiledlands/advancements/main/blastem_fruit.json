@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:blastem_fruit"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.blastem_fruit.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.blastem_fruit.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "blastem_fruit": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:blastem_fruit"
+                    }
+                ]
+            }
+        }
+    }
+}

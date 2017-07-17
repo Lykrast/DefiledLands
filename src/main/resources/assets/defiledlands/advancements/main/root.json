@@ -1,0 +1,69 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:grass_defiled"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.root.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.root.description"
+        },
+        "background": "defiledlands:textures/blocks/grass_defiled_top.png"
+    },
+    "criteria": {
+        "desert_defiled": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:desert_defiled"
+            }
+        },
+        "plains_defiled": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:plains_defiled"
+            }
+        },
+        "forest_tenebra": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:forest_tenebra"
+            }
+        },
+        "forest_vilespine": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:forest_vilespine"
+            }
+        },
+        "hills_defiled": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:hills_defiled"
+            }
+        },
+        "swamp_defiled": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:swamp_defiled"
+            }
+        },
+        "ice_plains_defiled": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "defiledlands:ice_plains_defiled"
+            }
+        }
+    },
+    "requirements": [
+		[
+			"desert_defiled",
+			"plains_defiled",
+			"forest_tenebra",
+			"forest_vilespine",
+			"hills_defiled",
+			"swamp_defiled",
+			"ice_plains_defiled"
+		]
+	]
+}

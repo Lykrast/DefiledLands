@@ -24,3 +24,14 @@ item.defiledlands.scuttler_eye.name=Scuttler Eye
 
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.scuttler.name=Scuttler
+
+advancements.defiledlands.root.title=Bad Omen
+advancements.defiledlands.root.description=A horrible chill runs down your spine...
+advancements.defiledlands.defilement_powder.title=Spreading the Word
+advancements.defiledlands.defilement_powder.description=Make Defilement Powder from a Scuronotte
+advancements.defiledlands.blastem_fruit.title=Careful Harvest
+advancements.defiledlands.blastem_fruit.description=Harvest a Blastem Fruit
+advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods
+advancements.defiledlands.hephaestite.description=Mine some Hephaestite
+advancements.defiledlands.discover_all_biomes.title=Unholy Pilgrimage
+advancements.defiledlands.discover_all_biomes.description=Discover every natural defiled biome

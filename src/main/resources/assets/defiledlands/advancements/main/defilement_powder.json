@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:defilement_powder"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.defilement_powder.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.defilement_powder.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "defilement_powder": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:defilement_powder"
+                    }
+                ]
+            }
+        }
+    }
+}

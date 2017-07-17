@@ -1,0 +1,11 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{ "type": "forge:ore_dict", "ore": "gemHephaestite" },
+		{ "item": "defiledlands:blastem_fruit" },
+		{ "item": "defiledlands:blastem_fruit" },
+		{ "item": "defiledlands:blastem_fruit" },
+		{ "item": "defiledlands:blastem_fruit" }
+	],
+	"result": { "item": "defiledlands:blastem_fruit_blazing", "count": 4 }
+}

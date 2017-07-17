@@ -1,6 +1,6 @@
 package lykrast.defiledlands.common.item;
 
-import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
+import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -12,8 +12,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemBlastemFruit extends Item {
-	public ItemBlastemFruit()
+public class ItemBlastemFruitBlazing extends Item {
+	public ItemBlastemFruitBlazing()
 	{
         this.maxStackSize = 16;
 	}
@@ -34,8 +34,9 @@ public class ItemBlastemFruit extends Item {
 
         if (!worldIn.isRemote)
         {
-            EntityBlastemFruit projectile = new EntityBlastemFruit(worldIn, playerIn);
+            EntityBlastemFruitBlazing projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
             projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            projectile.setFire(60);
             worldIn.spawnEntity(projectile);
         }
 

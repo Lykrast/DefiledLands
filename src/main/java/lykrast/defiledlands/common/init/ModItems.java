@@ -21,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModItems {
 	
 	public static Item hephaestite,
-		blastemFruit, defilementPowder,
+		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra;
 	private static final List<Item> itemList = new ArrayList<Item>();
@@ -34,6 +34,7 @@ public class ModItems {
 		
 		//Plants
 		blastemFruit = registerItem(new ItemBlastemFruit(), "blastem_fruit");
+		blastemFruitBlazing = registerItem(new ItemBlastemFruitBlazing(), "blastem_fruit_blazing");
 		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");
 		
 		//Drops

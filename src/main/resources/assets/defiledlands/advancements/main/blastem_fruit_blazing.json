@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:blastem_fruit_blazing"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.blastem_fruit_blazing.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.blastem_fruit_blazing.description"
+        }
+    },
+    "parent": "defiledlands:main/hephaestite",
+    "criteria": {
+        "blastem_fruit_blazing": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:blastem_fruit_blazing"
+                    }
+                ]
+            }
+        }
+    }
+}

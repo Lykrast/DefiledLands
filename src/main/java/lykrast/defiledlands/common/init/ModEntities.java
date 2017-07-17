@@ -27,6 +27,7 @@ public class ModEntities {
         
         //Projectiles
         registerProjectile(EntityBlastemFruit.class, "blastem_fruit");
+        registerProjectile(EntityBlastemFruitBlazing.class, "blastem_fruit_blazing");
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name, int colorBack, int colorFront)
@@ -44,6 +45,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityShambler.class, RenderShambler.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);
     }
 
 }

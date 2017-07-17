@@ -20,6 +20,7 @@ tile.defiledlands.hephaestite_block.name=Block of Hephaestite
 item.defiledlands.hephaestite.name=Hephaestite Shard
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit
+item.defiledlands.blastem_fruit_blazing.name=Blazing Blastem Fruit
 item.defiledlands.defilement_powder.name=Defilement Powder
 item.defiledlands.scuttler_eye.name=Scuttler Eye
 
@@ -36,10 +37,10 @@ advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
 advancements.defiledlands.defilement_powder.title=Spreading the Word
 advancements.defiledlands.defilement_powder.description=Make Defilement Powder from a Scuronotte
-advancements.defiledlands.blastem_fruit.title=Careful Harvest
-advancements.defiledlands.blastem_fruit.description=Harvest a Blastem Fruit
 advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods
 advancements.defiledlands.hephaestite.description=Mine some Hephaestite
+advancements.defiledlands.blastem_fruit_blazing.title=By Fire Be Purged
+advancements.defiledlands.blastem_fruit_blazing.description=Craft some Blazing Blastem Fruits
 advancements.defiledlands.tenebra_tool.title=Ready for Action
 advancements.defiledlands.tenebra_tool.description=Make a tool out of Tenebra wood
 

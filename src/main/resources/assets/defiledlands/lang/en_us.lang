@@ -20,6 +20,7 @@ tile.defiledlands.hephaestite_block.name=Block of Hephaestite
 item.defiledlands.blastem_fruit.name=Blastem Fruit
 item.defiledlands.defilement_powder.name=Defilement Powder
 item.defiledlands.hephaestite.name=Hephaestite Shard
+item.defiledlands.scuttler_eye.name=Scuttler Eye
 
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.scuttler.name=Scuttler

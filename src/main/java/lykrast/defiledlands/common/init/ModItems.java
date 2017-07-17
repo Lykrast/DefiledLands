@@ -17,7 +17,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item blastemFruit, defilementPowder, hephaestite;
+	public static Item blastemFruit, defilementPowder, 
+		hephaestite,
+		scuttlerEye;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static void init() {
@@ -27,6 +29,9 @@ public class ModItems {
 		//Plants
 		blastemFruit = registerItem(new Item(), "blastem_fruit");
 		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");
+		
+		//Drops
+		scuttlerEye = registerItem(new ItemScuttlerEye(), "scuttler_eye");
 	}
 	
 	@SideOnly(Side.CLIENT)

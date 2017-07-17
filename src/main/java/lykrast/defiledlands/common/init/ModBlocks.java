@@ -22,6 +22,7 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, 
 		tenebraLog, tenebraLeaves, tenebraPlanks, 
+		hephaestiteOre, hephaestiteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
@@ -31,12 +32,16 @@ public class ModBlocks {
 		sandDefiled = registerBlock(new BlockFallingCorrupted(Material.SAND, SoundType.SAND, 0.5F, 2.5F, "shovel", 0), "sand_defiled");
 		sandstoneDefiled = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 0.8F, 4.0F, "pickaxe", 0), "sandstone_defiled");
 		dirtDefiled = registerBlock(new BlockCorrupted(Material.GROUND, SoundType.GROUND, 0.5F, 2.5F, "shovel", 0), "dirt_defiled");
+		grassDefiled = registerBlock(new BlockGrassCorrupted(0.6F, 2.5F), "grass_defiled");
 		tenebraLog = registerBlock(new BlockLogTenebra(3.0F, 15.0F), "tenebra_log");
 		//tenebraLeaves = registerBlock(new BlockLeafTenebra(), "tenebra_leaves");
 		tenebraPlanks = registerBlock(new BlockCorrupted(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_planks");
 		
+		//Ores
+		hephaestiteOre = registerBlock(new BlockOreHephaestite(3.0F, 15.0F), "hephaestite_ore");
+		hephaestiteBlock = registerBlock(new BlockHephaestite(5.0F, 30.0F), "hephaestite_block");
+		
 		//Plants
-		grassDefiled = registerBlock(new BlockGrassCorrupted(0.6F, 2.5F), "grass_defiled");
 		vilespine = registerBlock(new BlockVilespine(), "vilespine");
 		creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
 		blastem = registerBlock(new BlockBlastem(), "blastem");
@@ -66,7 +71,16 @@ public class ModBlocks {
 
 		ForgeRegistries.BLOCKS.register(block);
 		
-		ItemBlock item = new ItemBlock(block);
+		
+		ItemBlock item;
+		if (block instanceof ICustomItemBlock)
+		{
+			item = ((ICustomItemBlock) block).getItemBlock();
+		}
+		else
+		{
+			item = new ItemBlock(block);
+		}
 		item.setRegistryName(block.getRegistryName());
 		ForgeRegistries.ITEMS.register(item);
 

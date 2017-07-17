@@ -14,9 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemDefilementPowder extends Item {
-
-	public ItemDefilementPowder() {
-	}
 	
 	/**
      * Called when a Block is right-clicked with this Item

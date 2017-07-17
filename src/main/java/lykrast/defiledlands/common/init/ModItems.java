@@ -17,10 +17,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item blastemFruit, defilementPowder;
+	public static Item blastemFruit, defilementPowder, hephaestite;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static void init() {
+		//Ores
+		hephaestite = registerItem(new ItemHephaestite(), "hephaestite");
+		
+		//Plants
 		blastemFruit = registerItem(new Item(), "blastem_fruit");
 		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");
 	}

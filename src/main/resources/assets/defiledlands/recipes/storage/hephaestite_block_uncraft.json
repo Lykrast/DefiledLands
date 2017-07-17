@@ -1,0 +1,7 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{ "type": "forge:ore_dict", "ore": "blockHephaestite" }
+	],
+	"result": { "item": "defiledlands:hephaestite", "count": 9 }
+}

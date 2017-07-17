@@ -1,0 +1,12 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"H",
+		"S"
+	],
+	"key": {
+		"H": { "type": "forge:ore_dict", "ore": "gemHephaestite" },
+		"S": { "type": "forge:ore_dict", "ore": "stickWood" }
+	},
+	"result": { "item": "minecraft:torch", "count": 4 }
+}

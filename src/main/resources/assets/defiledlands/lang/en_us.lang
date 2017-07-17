@@ -11,11 +11,15 @@ tile.defiledlands.tenebra_leaves.name=Tenebra Leaves
 tile.defiledlands.tenebra_planks.name=Tenebra Wood Planks
 tile.defiledlands.vilespine.name=Vilespine
 tile.defiledlands.creeping_moss.name=Creeping Moss
-tile.defiledlands.blastem.name=Blastem 
-tile.defiledlands.scuronotte.name=Scuronotte 
+tile.defiledlands.blastem.name=Blastem
+tile.defiledlands.scuronotte.name=Scuronotte
+
+tile.defiledlands.hephaestite_ore.name=Hephaestite Ore
+tile.defiledlands.hephaestite_block.name=Block of Hephaestite
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit
 item.defiledlands.defilement_powder.name=Defilement Powder
+item.defiledlands.hephaestite.name=Hephaestite Shard
 
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.scuttler.name=Scuttler

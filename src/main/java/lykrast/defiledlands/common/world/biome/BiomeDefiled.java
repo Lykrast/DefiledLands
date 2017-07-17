@@ -101,6 +101,13 @@ public abstract class BiomeDefiled extends Biome {
     public int getSkyColorByTemp(float temp) {
         return RGBToInt(34, 0, 51);
     }
+
+    @Override
+    public int getWaterColorMultiplier()
+    {
+        return RGBToInt(107, 91, 104);
+    }
+
     
     /**
      * Convert r, g and b colors to an integer representation.

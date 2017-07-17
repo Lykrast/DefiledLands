@@ -1,7 +1,7 @@
 package lykrast.defiledlands.client.render.entity.layers;
 
 import lykrast.defiledlands.client.render.entity.RenderScuttler;
-import lykrast.defiledlands.common.entity.EntityScuttler;
+import lykrast.defiledlands.common.entity.monster.EntityScuttler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;

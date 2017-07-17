@@ -1,7 +1,8 @@
-package lykrast.defiledlands.common.entity;
+package lykrast.defiledlands.common.entity.monster;
 
 import javax.annotation.Nullable;
 
+import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

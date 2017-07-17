@@ -2,8 +2,8 @@ package lykrast.defiledlands.common.world.biome;
 
 import java.util.Random;
 
-import lykrast.defiledlands.common.entity.EntityShambler;
-import lykrast.defiledlands.common.entity.EntityScuttler;
+import lykrast.defiledlands.common.entity.monster.EntityScuttler;
+import lykrast.defiledlands.common.entity.monster.EntityShambler;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.world.feature.*;
 import net.minecraft.block.BlockBush;

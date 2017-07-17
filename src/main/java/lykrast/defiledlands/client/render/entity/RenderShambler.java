@@ -1,6 +1,6 @@
 package lykrast.defiledlands.client.render.entity;
 
-import lykrast.defiledlands.common.entity.EntityShambler;
+import lykrast.defiledlands.common.entity.monster.EntityShambler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelEnderman;

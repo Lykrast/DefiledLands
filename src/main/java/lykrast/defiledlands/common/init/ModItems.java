@@ -33,7 +33,7 @@ public class ModItems {
 		hephaestite = registerItem(new ItemHephaestite(), "hephaestite");
 		
 		//Plants
-		blastemFruit = registerItem(new Item(), "blastem_fruit");
+		blastemFruit = registerItem(new ItemBlastemFruit(), "blastem_fruit");
 		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");
 		
 		//Drops

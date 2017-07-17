@@ -25,7 +25,8 @@ public class ModBiomes {
 			forestTenebra = new BiomeForestTenebra(),
 			forestVilespine = new BiomeForestVilespine(),
 			hillsDefiled = new BiomeHillsDefiled(),
-			swampDefiled = new BiomeSwampDefiled();
+			swampDefiled = new BiomeSwampDefiled(),
+			icePlainsDefiled = new BiomeIcePlainsDefiled();
 	
     public static void registerBiomes()
     {
@@ -35,6 +36,7 @@ public class ModBiomes {
     	register(forestVilespine, BiomeManager.BiomeType.WARM, "forest_vilespine", Config.weightForestVilespine, SPOOKY, FOREST);
     	register(hillsDefiled, BiomeManager.BiomeType.COOL, "hills_defiled", Config.weightHillsDefiled, SPOOKY, MOUNTAIN, HILLS);
     	register(swampDefiled, BiomeManager.BiomeType.WARM, "swamp_defiled", Config.weightSwampDefiled, SPOOKY, WET, SWAMP);
+    	register(icePlainsDefiled, BiomeManager.BiomeType.ICY, "ice_plains_defiled", Config.weightIcePlainsDefiled, SPOOKY, COLD, SNOWY, WASTELAND);
     }
 	
     public static void register(Biome biome, BiomeManager.BiomeType type, String name, int weight, BiomeDictionary.Type... biomeDictTypes)

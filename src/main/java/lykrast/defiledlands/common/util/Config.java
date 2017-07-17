@@ -11,7 +11,7 @@ public class Config {
 	private static final String CATEGORY_WORLD = "World";
 	
 	public static boolean confinedSpread;
-	public static int weightDesertDefiled, weightPlainsDefiled, weightForestTenebra, weightForestVilespine, weightHillsDefiled, weightSwampDefiled;
+	public static int weightDesertDefiled, weightPlainsDefiled, weightForestTenebra, weightForestVilespine, weightHillsDefiled, weightSwampDefiled, weightIcePlainsDefiled;
 
 	public static void readConfig() {
 		Configuration cfg = CommonProxy.config;
@@ -48,6 +48,8 @@ public class Config {
         		"Weight of Defiled Hills in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
         weightSwampDefiled = cfg.getInt("weightSwampDefiled", CATEGORY_WORLD, 6, 0, 100, 
         		"Weight of Defiled Swamps in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
+        weightIcePlainsDefiled = cfg.getInt("weightIcePlainsDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        		"Weight of Defiled Ice Plains in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
 		
 	}
 

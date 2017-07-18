@@ -8,9 +8,16 @@ import net.minecraftforge.common.config.Configuration;
 
 public class Config {
 	private static final String CATEGORY_GENERAL = "General";
+	private static final String CATEGORY_MOBS = "Mobs";
 	private static final String CATEGORY_WORLD = "World";
 	
+	// General
 	public static boolean confinedSpread;
+	
+	// Mobs
+	public static boolean shamblerHostile, scuttlerSpawnInLight;
+	
+	// World
 	public static int weightDesertDefiled, weightPlainsDefiled, weightForestTenebra, weightForestVilespine, weightHillsDefiled, weightSwampDefiled, weightIcePlainsDefiled;
 
 	public static void readConfig() {
@@ -29,11 +36,18 @@ public class Config {
 	
 	private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
+        cfg.addCustomCategoryComment(CATEGORY_MOBS, "Mobs");
         cfg.addCustomCategoryComment(CATEGORY_WORLD, "World generation");
         
         // General
         confinedSpread = cfg.getBoolean("confinedSpread", CATEGORY_GENERAL, true, 
         		"If true, defiled blocks won't spread corruption when outside defiled biomes");
+        
+        // Mobs
+        shamblerHostile = cfg.getBoolean("shamblerHostile", CATEGORY_MOBS, true, 
+        		"If true, Shamblers will attack players on sight");
+        scuttlerSpawnInLight = cfg.getBoolean("scuttlerSpawnInLight", CATEGORY_MOBS, true, 
+        		"If true, Scuttlers will also spawn in lit places");
         
         // World
         weightDesertDefiled = cfg.getInt("weightDesertDefiled", CATEGORY_WORLD, 6, 0, 100, 

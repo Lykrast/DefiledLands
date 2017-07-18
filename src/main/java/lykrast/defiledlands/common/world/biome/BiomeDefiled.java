@@ -35,8 +35,9 @@ public abstract class BiomeDefiled extends Biome {
 		this.spawnableCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
+		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 1));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 2, 4));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 1, 3));
 	}
 
     public WorldGenAbstractTree getRandomTreeFeature(Random rand)

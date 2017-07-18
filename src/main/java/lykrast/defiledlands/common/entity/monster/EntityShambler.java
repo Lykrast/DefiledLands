@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.entity.monster;
 import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.entity.IEntityDefiled;
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -54,6 +55,8 @@ public class EntityShambler extends EntityMob implements IEntityDefiled {
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        if (Config.shamblerHostile) 
+    		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
     }
 
     protected void applyEntityAttributes()

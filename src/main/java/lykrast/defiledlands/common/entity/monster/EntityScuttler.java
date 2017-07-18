@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.entity.ai.EntityAIAttackMeleeStrafe;
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -12,6 +13,7 @@ import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
@@ -35,7 +37,7 @@ public class EntityScuttler extends EntitySpider implements IEntityDefiled {
 	@Override
 	protected void initEntityAI()
 	{
-		this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.5F));
 		this.tasks.addTask(4, new EntityScuttler.AISpiderAttack(this));
 		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 0.8D));
@@ -50,15 +52,37 @@ public class EntityScuttler extends EntitySpider implements IEntityDefiled {
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(64.0D);
+        //this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(64.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.42D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.38D);
     }
 
     public void fall(float distance, float damageMultiplier)
     {
     }
-
+    
+    @Override
+    public boolean getCanSpawnHere()
+    {
+    	if (this.world.getDifficulty() == EnumDifficulty.PEACEFUL) return false;
+    	return this.isValidLightLevel();
+    }
+    
+    @Override
+    protected boolean isValidLightLevel()
+    {
+    	if (!Config.scuttlerSpawnInLight) return super.isValidLightLevel();
+    	
+        BlockPos blockpos = new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ);
+        int i = this.world.getLightFromNeighbors(blockpos);
+        
+    	if (i >= 8)
+    	{
+    		return this.rand.nextInt(16) == 0;
+    	}
+    	return i <= this.rand.nextInt(8);
+    }
+    
     @Override
     @Nullable
     protected ResourceLocation getLootTable() {

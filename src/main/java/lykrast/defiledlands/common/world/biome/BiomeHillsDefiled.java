@@ -3,11 +3,13 @@ package lykrast.defiledlands.common.world.biome;
 import java.util.Random;
 
 import lykrast.defiledlands.common.init.ModBlocks;
+import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeHills;
+import net.minecraft.world.chunk.ChunkPrimer;
 
 public class BiomeHillsDefiled extends BiomeDefiled {
 	
@@ -24,5 +26,19 @@ public class BiomeHillsDefiled extends BiomeDefiled {
 	{
 		super(properties);
 	}
+
+    public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal)
+    {
+        this.topBlock = ModBlocks.grassDefiled.getDefaultState();
+        this.fillerBlock = ModBlocks.dirtDefiled.getDefaultState();
+        
+        if (noiseVal > 1.0D)
+        {
+            this.topBlock = STONE;
+            this.fillerBlock = STONE;
+        }
+
+        this.generateBiomeTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+    }
 
 }

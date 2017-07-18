@@ -16,10 +16,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockOreHephaestite extends BlockCorrupted {
+public class BlockHephaestiteOre extends BlockCorrupted {
     
-	public BlockOreHephaestite(float hardness, float resistance) {
+	public BlockHephaestiteOre(float hardness, float resistance) {
 		super(Material.ROCK, SoundType.STONE, hardness, resistance, "pickaxe", 0);
+		this.setLightLevel(0.4F);
 	}
 
     /**
@@ -57,21 +58,7 @@ public class BlockOreHephaestite extends BlockCorrupted {
      */
     public int quantityDroppedWithBonus(int fortune, Random random)
     {
-        if (fortune > 0)
-        {
-            int i = random.nextInt(fortune + 2) - 1;
-
-            if (i < 0)
-            {
-                i = 0;
-            }
-
-            return this.quantityDropped(random) * (i + 1);
-        }
-        else
-        {
-            return this.quantityDropped(random);
-        }
+    	return this.quantityDropped(random) + random.nextInt(fortune + 1);
     }
     
     @Override

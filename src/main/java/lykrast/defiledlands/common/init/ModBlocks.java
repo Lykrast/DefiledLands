@@ -38,7 +38,7 @@ public class ModBlocks {
 		tenebraPlanks = registerBlock(new BlockCorrupted(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_planks");
 		
 		//Ores
-		hephaestiteOre = registerBlock(new BlockOreHephaestite(3.0F, 15.0F), "hephaestite_ore");
+		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");
 		hephaestiteBlock = registerBlock(new BlockHephaestite(5.0F, 30.0F), "hephaestite_block");
 		
 		//Plants

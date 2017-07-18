@@ -23,10 +23,11 @@ public class ModItems {
 	public static Item hephaestite, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart,
-		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra;
+		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
+		swordScarlite;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
-	public static ToolMaterial materialTenebra;
+	public static ToolMaterial materialTenebra, materialScarlite;
 	
 	public static void init() {
 		//Ores
@@ -49,6 +50,9 @@ public class ModItems {
 		pickaxeTenebra = registerItem(new ItemPickaxeGeneric(materialTenebra), "tenebra_pickaxe");
 		shovelTenebra = registerItem(new ItemShovelGeneric(materialTenebra), "tenebra_shovel");
 		swordTenebra = registerItem(new ItemSwordGeneric(materialTenebra), "tenebra_sword");
+		
+		materialScarlite = EnumHelper.addToolMaterial("scarlite", 3, 1561, 6.0F, 2.0F, 14).setRepairItem(new ItemStack(ModItems.scarlite));
+		swordScarlite = registerItem(new ItemSwordScarlite(materialScarlite), "scarlite_reaver");
 	}
 	
 	@SideOnly(Side.CLIENT)

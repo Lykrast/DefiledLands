@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:scarlite"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.scarlite.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.scarlite.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "scarlite": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:scarlite"
+                    }
+                ]
+            }
+        }
+    }
+}

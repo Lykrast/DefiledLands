@@ -35,6 +35,8 @@ item.defiledlands.tenebra_pickaxe.name=Tenebra Pickaxe
 item.defiledlands.tenebra_shovel.name=Tenebra Shovel
 item.defiledlands.tenebra_sword.name=Tenebra Sword
 
+item.defiledlands.scarlite_reaver.name=Scarlite Reaver
+
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
@@ -49,6 +51,8 @@ advancements.defiledlands.blastem_fruit_blazing.title=By Fire Be Purged
 advancements.defiledlands.blastem_fruit_blazing.description=Craft some Blazing Blastem Fruits
 advancements.defiledlands.tenebra_tool.title=Ready for Action
 advancements.defiledlands.tenebra_tool.description=Make a tool out of Tenebra wood
+advancements.defiledlands.scarlite.title=The Scarlet Crusade
+advancements.defiledlands.scarlite.description=Mine some Scarlite deep underground
 
 advancements.defiledlands.discover_all_biomes.title=Unholy Pilgrimage
 advancements.defiledlands.discover_all_biomes.description=Discover every natural defiled biome

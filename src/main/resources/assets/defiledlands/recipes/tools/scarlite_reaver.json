@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "G  ",
+        "GHG",
+        " S "
+    ],
+    "key": {
+        "G": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "S": { "ore": "stickWood", "type": "forge:ore_dict" },
+        "H": { "item": "defiledlands:black_heart" }
+    },
+    "result": { "item": "defiledlands:scarlite_reaver" }
+}

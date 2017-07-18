@@ -1,0 +1,15 @@
+{
+    "pools": [
+        {
+			"name": "shambler",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "defiledlands:entities/shambler",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

@@ -33,6 +33,7 @@ item.defiledlands.tenebra_shovel.name=Tenebra Shovel
 item.defiledlands.tenebra_sword.name=Tenebra Sword
 
 entity.defiledlands.shambler.name=Shambler
+entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
 
 advancements.defiledlands.root.title=Defiled Lands

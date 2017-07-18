@@ -69,6 +69,18 @@ public class EntityShambler extends EntityMob implements IEntityDefiled {
         this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(1.0D);
     }
     
+    @Override
+    public boolean getCanSpawnHere()
+    {
+    	if (!isCorrectDepth()) return false;
+    	return super.getCanSpawnHere();
+    }
+    
+    protected boolean isCorrectDepth()
+    {
+    	return this.posY > 50.0D;
+    }
+    
     protected int getDebuffDuration()
     {
     	int i = 3;
@@ -140,6 +152,11 @@ public class EntityShambler extends EntityMob implements IEntityDefiled {
             return super.attackEntityFrom(source, amount);
         }
     }
+    
+    protected EnumParticleTypes getSmoke()
+    {
+    	return EnumParticleTypes.SMOKE_NORMAL;
+    }
 
     /**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
@@ -151,7 +168,7 @@ public class EntityShambler extends EntityMob implements IEntityDefiled {
         {
         	for (int i = 0; i < 2; ++i)
             {
-                this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
+                this.world.spawnParticle(getSmoke(), this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width, this.posY + this.rand.nextDouble() * (double)this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width, 0.0D, 0.0D, 0.0D);
             }
         }
 

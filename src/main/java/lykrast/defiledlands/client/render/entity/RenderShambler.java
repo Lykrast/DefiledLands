@@ -1,9 +1,9 @@
 package lykrast.defiledlands.client.render.entity;
 
+import lykrast.defiledlands.client.model.ModelShambler;
 import lykrast.defiledlands.common.entity.monster.EntityShambler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.model.ModelEnderman;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -15,23 +15,23 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderShambler extends RenderLiving<EntityShambler> {
 	
-	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID + ":textures/entity/shambler.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/shambler.png");
 	
     public static final Factory FACTORY = new Factory();
 	
 	public RenderShambler(RenderManager renderManagerIn)
     {
-        super(renderManagerIn, new ModelEnderman(0.0F), 0.5F);
+        super(renderManagerIn, new ModelShambler(0.0F), 0.5F);
     }
 
-    public ModelEnderman getMainModel()
+    public ModelShambler getMainModel()
     {
-        return (ModelEnderman)super.getMainModel();
+        return (ModelShambler)super.getMainModel();
     }
     
     public void doRender(EntityShambler entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
-        ModelEnderman modelenderman = this.getMainModel();
+    	ModelShambler modelenderman = this.getMainModel();
 
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }

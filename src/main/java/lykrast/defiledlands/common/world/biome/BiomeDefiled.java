@@ -4,6 +4,7 @@ import java.util.Random;
 
 import lykrast.defiledlands.common.entity.monster.EntityScuttler;
 import lykrast.defiledlands.common.entity.monster.EntityShambler;
+import lykrast.defiledlands.common.entity.monster.EntityShamblerTwisted;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.world.feature.*;
 import net.minecraft.block.BlockBush;
@@ -36,7 +37,8 @@ public abstract class BiomeDefiled extends Biome {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 1));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 2));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, 80, 1, 2));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 1, 3));
 	}
 

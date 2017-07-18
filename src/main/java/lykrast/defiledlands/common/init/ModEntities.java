@@ -21,6 +21,8 @@ public class ModEntities {
 		//Monsters
 		registerEntity(EntityShambler.class, "shambler", 0x171717, 0xebebeb);
         LootTableList.register(EntityShambler.LOOT);
+		registerEntity(EntityShamblerTwisted.class, "shambler_twisted", 0x171717, 0xf62e2e);
+        LootTableList.register(EntityShamblerTwisted.LOOT);
         
 		registerEntity(EntityScuttler.class, "scuttler", 0x211823, 0xce0bff);
         LootTableList.register(EntityScuttler.LOOT);
@@ -43,6 +45,7 @@ public class ModEntities {
 	@SideOnly(Side.CLIENT)
     public static void initModels() {
         RenderingRegistry.registerEntityRenderingHandler(EntityShambler.class, RenderShambler.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityShamblerTwisted.class, RenderShamblerTwisted.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);

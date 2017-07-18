@@ -1,27 +1,26 @@
 package lykrast.defiledlands.client.render.entity.layers;
 
-import lykrast.defiledlands.client.render.entity.RenderScuttler;
-import lykrast.defiledlands.common.entity.monster.EntityScuttler;
+import lykrast.defiledlands.client.render.entity.RenderShamblerTwisted;
+import lykrast.defiledlands.common.entity.monster.EntityShamblerTwisted;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.entity.RenderSpider;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class LayerScuttlerEyes<T extends EntityScuttler> implements LayerRenderer<T> {
-	private static final ResourceLocation SPIDER_EYES = new ResourceLocation(DefiledLands.MODID, "textures/entity/scuttler_eyes.png");
-    private final RenderScuttler spiderRenderer;
+public class LayerShamblerTwistedEyes implements LayerRenderer<EntityShamblerTwisted> {
+    private static final ResourceLocation RES_ENDERMAN_EYES = new ResourceLocation(DefiledLands.MODID, "textures/entity/shambler_twisted_eyes.png");
+    private final RenderShamblerTwisted endermanRenderer;
 
-    public LayerScuttlerEyes(RenderScuttler spiderRendererIn)
+    public LayerShamblerTwistedEyes(RenderShamblerTwisted endermanRendererIn)
     {
-        this.spiderRenderer = spiderRendererIn;
+        this.endermanRenderer = endermanRendererIn;
     }
-    
-    public void doRenderLayer(T entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
+
+    public void doRenderLayer(EntityShamblerTwisted entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale)
     {
-        this.spiderRenderer.bindTexture(SPIDER_EYES);
+        this.endermanRenderer.bindTexture(RES_ENDERMAN_EYES);
         GlStateManager.enableBlend();
         GlStateManager.disableAlpha();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
@@ -41,13 +40,13 @@ public class LayerScuttlerEyes<T extends EntityScuttler> implements LayerRendere
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         Minecraft.getMinecraft().entityRenderer.setupFogColor(true);
-        this.spiderRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
+        this.endermanRenderer.getMainModel().render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         Minecraft.getMinecraft().entityRenderer.setupFogColor(false);
         i = entitylivingbaseIn.getBrightnessForRender();
         j = i % 65536;
         k = i / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)j, (float)k);
-        this.spiderRenderer.setLightmap(entitylivingbaseIn);
+        this.endermanRenderer.setLightmap(entitylivingbaseIn);
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
     }

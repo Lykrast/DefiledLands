@@ -14,7 +14,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 public class RenderScuttler extends RenderLiving<EntityScuttler> {
 	
-	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID + ":textures/entity/scuttler.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/scuttler.png");
 	
     public static final Factory FACTORY = new Factory();
 

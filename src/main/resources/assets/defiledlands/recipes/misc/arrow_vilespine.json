@@ -1,0 +1,17 @@
+{
+	"type": "forge:ore_shaped",
+	"pattern": [
+		"V",
+		"S",
+		"F"
+	],
+	"key": {
+		"V": { "item": "defiledlands:vilespine" },
+		"S": { "type": "forge:ore_dict", "ore": "stickWood" },
+		"F": { "item": "minecraft:feather" }
+	},
+	"result": {
+		"item": "minecraft:arrow",
+		"count": 4
+	}
+}

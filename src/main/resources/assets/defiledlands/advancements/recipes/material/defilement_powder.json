@@ -1,0 +1,32 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:material/defilement_powder"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "defiledlands:scuronotte"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:material/defilement_powder"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

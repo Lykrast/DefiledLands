@@ -1,0 +1,35 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:storage/hephaestite_block"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "defiledlands:hephaestite",
+            "count": {
+              "min": 9
+            }
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:storage/hephaestite_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

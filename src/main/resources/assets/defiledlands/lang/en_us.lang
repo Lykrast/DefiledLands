@@ -16,8 +16,11 @@ tile.defiledlands.scuronotte.name=Scuronotte
 
 tile.defiledlands.hephaestite_ore.name=Hephaestite Ore
 tile.defiledlands.hephaestite_block.name=Block of Hephaestite
+tile.defiledlands.scarlite_ore.name=Scarlite Ore
+tile.defiledlands.scarlite_block.name=Block of Scarlite
 
 item.defiledlands.hephaestite.name=Hephaestite Shard
+item.defiledlands.scarlite.name=Scarlite
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit
 item.defiledlands.blastem_fruit_blazing.name=Blazing Blastem Fruit

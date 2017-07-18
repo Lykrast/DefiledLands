@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item hephaestite,
+	public static Item hephaestite, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra;
@@ -31,6 +31,7 @@ public class ModItems {
 	public static void init() {
 		//Ores
 		hephaestite = registerItem(new ItemHephaestite(), "hephaestite");
+		scarlite = registerItem(new Item(), "scarlite");
 		
 		//Plants
 		blastemFruit = registerItem(new ItemBlastemFruit(), "blastem_fruit");

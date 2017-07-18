@@ -19,6 +19,8 @@ public class CorruptionRecipes {
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
 		register(Blocks.COAL_ORE, ModBlocks.hephaestiteOre);
 		register(Blocks.COAL_BLOCK, ModBlocks.hephaestiteBlock);
+		register(Blocks.DIAMOND_ORE, ModBlocks.scarliteOre);
+		register(Blocks.DIAMOND_BLOCK, ModBlocks.scarliteBlock);
 	}
 
 	public static Block getCorrupted(Block input)

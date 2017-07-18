@@ -1,0 +1,7 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{ "type": "forge:ore_dict", "ore": "blockScarlite" }
+	],
+	"result": { "item": "defiledlands:scarlite", "count": 9 }
+}

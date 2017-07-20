@@ -41,6 +41,8 @@ entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
 
+entity.defiledlands.the_destroyer.name=The Destroyer
+
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
 advancements.defiledlands.defilement_powder.title=Spreading the Word

@@ -22,7 +22,7 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, 
 		tenebraLog, tenebraLeaves, tenebraPlanks, 
-		hephaestiteOre, hephaestiteBlock, scarliteOre, scarliteBlock, 
+		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
@@ -40,6 +40,8 @@ public class ModBlocks {
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");
 		hephaestiteBlock = registerBlock(new BlockHephaestite(5.0F, 30.0F), "hephaestite_block");
+		umbriumOre = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 3.0F, 15.0F, "pickaxe", 1), "umbrium_ore");
+		umbriumBlock = registerBlock(new BlockCorrupted(Material.IRON, SoundType.METAL, 5.0F, 30.0F, "pickaxe", 1), "umbrium_block");
 		scarliteOre = registerBlock(new BlockScarliteOre(3.0F, 15.0F), "scarlite_ore");
 		scarliteBlock = registerBlock(new BlockCorrupted(Material.IRON, SoundType.METAL, 5.0F, 30.0F, "pickaxe", 2), "scarlite_block");
 		

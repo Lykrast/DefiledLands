@@ -16,10 +16,13 @@ tile.defiledlands.scuronotte.name=Scuronotte
 
 tile.defiledlands.hephaestite_ore.name=Hephaestite Ore
 tile.defiledlands.hephaestite_block.name=Block of Hephaestite
+tile.defiledlands.umbrium_ore.name=Umbrium Ore
+tile.defiledlands.umbrium_block.name=Block of Umbrium
 tile.defiledlands.scarlite_ore.name=Scarlite Ore
 tile.defiledlands.scarlite_block.name=Block of Scarlite
 
 item.defiledlands.hephaestite.name=Hephaestite Shard
+item.defiledlands.umbrium_ingot.name=Umbrium Ingot
 item.defiledlands.scarlite.name=Scarlite
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit

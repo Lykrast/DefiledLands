@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
@@ -25,7 +26,9 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing.Axis;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
@@ -103,6 +106,38 @@ public class EntityDestroyer extends EntityMob {
     {
     	super.updateAITasks();
     	this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
+    }
+    
+    /**
+     * handles entity death timer, experience orb and particle creation
+     */
+    protected void onDeathUpdate()
+    {
+        ++this.deathTime;
+
+        if (this.deathTime >= 180 && this.deathTime <= 200)
+        {
+            float f = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            float f1 = (this.rand.nextFloat() - 0.5F) * 4.0F;
+            float f2 = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            this.world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D);
+        }
+
+        if (!this.world.isRemote)
+        {
+            if (this.deathTime == 1)
+            {
+                this.world.playBroadcastSound(1028, new BlockPos(this), 0);
+            }
+        }
+        
+        this.motionY = 0.01;
+        
+        if (this.deathTime >= 200 && !this.world.isRemote)
+        {
+        	super.onDeathUpdate();
+        	this.setDead();
+        }
     }
 
     /**

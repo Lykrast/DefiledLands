@@ -54,7 +54,7 @@ public class CorruptionHelper {
 	{
 		if (isCorruptable(state.getBlock()))
 		{
-			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state.getBlock()).getDefaultState());
+			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state.getBlock()));
 			return true;
 		}
 		else return false;

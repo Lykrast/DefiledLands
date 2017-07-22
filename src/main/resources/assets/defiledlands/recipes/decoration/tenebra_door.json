@@ -1,0 +1,12 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "PP",
+        "PP",
+		"PP"
+    ],
+    "key": {
+        "P": { "item": "defiledlands:tenebra_planks" }
+    },
+    "result": { "item": "defiledlands:tenebra_door", "count": 3 }
+}

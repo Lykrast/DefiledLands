@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.client.model.ModelLoader;
@@ -20,7 +21,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModItems {
 	
-	public static Item hephaestite, umbriumIngot, scarlite,
+	public static Item tenebraDoor,
+		hephaestite, umbriumIngot, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
@@ -30,6 +32,9 @@ public class ModItems {
 	public static ToolMaterial materialTenebra, materialScarlite;
 	
 	public static void init() {
+		//Decoration
+		tenebraDoor = registerItem(new ItemDoor(ModBlocks.tenebraDoor), "tenebra_door");
+		
 		//Ores
 		hephaestite = registerItem(new ItemHephaestite(), "hephaestite");
 		umbriumIngot = registerItem(new Item(), "umbrium_ingot");

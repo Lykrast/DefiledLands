@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -21,8 +22,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled,
-		stoneDefiledDecoration, 
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
+		stoneDefiledDecoration, tenebraDoor, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte;
 	private static final List<Block> blockList = new ArrayList<Block>();
@@ -41,6 +42,7 @@ public class ModBlocks {
 		
 		//Decoration
 		stoneDefiledDecoration = registerBlock(new BlockStoneDefiledDecoration(1.5F, 30.0F, 0), "stone_defiled_decoration");
+		tenebraDoor = registerBlock(new BlockDoorGeneric(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_door");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");
@@ -61,6 +63,7 @@ public class ModBlocks {
 	public static void initModels()
 	{
 		for (Block b : blockList) initModel(b);
+		ModelLoader.setCustomStateMapper(tenebraDoor, (new StateMap.Builder()).ignore(BlockDoorGeneric.POWERED).build());
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -91,8 +94,12 @@ public class ModBlocks {
 		{
 			item = new ItemBlock(block);
 		}
-		item.setRegistryName(block.getRegistryName());
-		ForgeRegistries.ITEMS.register(item);
+		
+		if (item != null)
+		{
+			item.setRegistryName(block.getRegistryName());
+			ForgeRegistries.ITEMS.register(item);
+		}
 
 		if (tab != null) block.setCreativeTab(tab);
 		

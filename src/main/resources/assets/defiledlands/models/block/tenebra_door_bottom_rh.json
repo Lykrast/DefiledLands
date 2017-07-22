@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "defiledlands:blocks/door_tenebra_lower",
+        "top": "defiledlands:blocks/door_tenebra_upper"
+    }
+}

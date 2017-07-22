@@ -11,7 +11,7 @@ public class BlockGeneric extends Block {
     }
 	
 	public BlockGeneric(Material material, SoundType soundType) {
-		this(Material.ROCK, SoundType.STONE, 1.0F, 5.0F);
+		this(material, soundType, 1.0F, 5.0F);
 	}
 	
 	public BlockGeneric(Material material, SoundType soundType, float hardness, float resistance) {

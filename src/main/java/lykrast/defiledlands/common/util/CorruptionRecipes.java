@@ -17,6 +17,8 @@ public class CorruptionRecipes {
 		register(Blocks.SANDSTONE, ModBlocks.sandstoneDefiled);
 		register(Blocks.DIRT, ModBlocks.dirtDefiled);
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
+		register(Blocks.SAPLING, ModBlocks.tenebraSapling);
+		
 		register(Blocks.COAL_ORE, ModBlocks.hephaestiteOre);
 		register(Blocks.COAL_BLOCK, ModBlocks.hephaestiteBlock);
 		register(Blocks.IRON_ORE, ModBlocks.umbriumOre);

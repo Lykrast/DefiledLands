@@ -81,6 +81,7 @@ public class WorldGenTenebra extends WorldGenAbstractTree {
             				if (rand.nextInt(2) == 0) x += rand.nextInt(3) - 1;
             				else z += rand.nextInt(3) - 1;
             			}
+            			if (!canGrowInto(worldIn.getBlockState(position.add(x,y,z)).getBlock())) break;
             			placeLogAt(worldIn, position.add(x,y,z));
             		}
             	}
@@ -120,7 +121,7 @@ public class WorldGenTenebra extends WorldGenAbstractTree {
      */
     protected void setDirtAt(World worldIn, BlockPos pos)
     {
-        if (worldIn.getBlockState(pos).getBlock() != ModBlocks.dirtDefiled)
+        if (worldIn.getBlockState(pos).getBlock() == ModBlocks.grassDefiled)
         {
             this.setBlockAndNotifyAdequately(worldIn, pos, ModBlocks.dirtDefiled.getDefaultState());
         }

@@ -1,0 +1,32 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:decoration/stone_defiled_bricks"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "defiledlands:stone_defiled"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:decoration/stone_defiled_bricks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

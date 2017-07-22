@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.util;
 
 import java.util.HashMap;
 
+import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -19,6 +20,9 @@ public class CorruptionRecipes {
 		register(Blocks.DIRT, ModBlocks.dirtDefiled);
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
 		register(Blocks.SAPLING, ModBlocks.tenebraSapling);
+		
+		register(Blocks.STONEBRICK, ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(
+				BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS));
 		
 		register(Blocks.COAL_ORE, ModBlocks.hephaestiteOre);
 		register(Blocks.COAL_BLOCK, ModBlocks.hephaestiteBlock);

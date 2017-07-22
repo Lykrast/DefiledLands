@@ -1,0 +1,11 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "SS",
+        "SS"
+    ],
+    "key": {
+        "S": { "item": "defiledlands:stone_defiled" }
+    },
+    "result": { "item": "defiledlands:stone_defiled_decoration", "data": 0, "count": 4 }
+}

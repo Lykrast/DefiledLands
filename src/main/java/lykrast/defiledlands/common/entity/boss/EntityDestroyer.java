@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.entity.boss;
 
 import javax.annotation.Nullable;
 
+import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.entity.ai.EntityAIAttackMeleeStrafe;
 import lykrast.defiledlands.common.entity.monster.EntityScuttler;
 import lykrast.defiledlands.core.DefiledLands;
@@ -9,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -19,23 +21,30 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.EnumFacing.Axis;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-public class EntityDestroyer extends EntityMob {
+public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/the_destroyer");
+    private static final DataParameter<Integer> INVULNERABILITY_TIME = EntityDataManager.<Integer>createKey(EntityDestroyer.class, DataSerializers.VARINT);
     private boolean isLeaping;
     private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(true);
 
@@ -70,6 +79,12 @@ public class EntityDestroyer extends EntityMob {
         this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(1.0D);
     }
 
+    protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(INVULNERABILITY_TIME, Integer.valueOf(0));
+    }
+
     public void fall(float distance, float damageMultiplier)
     {
     	if (isLeaping)
@@ -100,12 +115,78 @@ public class EntityDestroyer extends EntityMob {
     {
     	this.isJumping = false;
     	super.onLivingUpdate();
+
+        if (this.getInvulTime() > 0)
+        {
+            for (int i1 = 0; i1 < 3; ++i1)
+            {
+                this.world.spawnParticle(EnumParticleTypes.SPELL_MOB, this.posX + this.rand.nextGaussian(), this.posY + (double)(this.rand.nextFloat() * 3.3F), this.posZ + this.rand.nextGaussian(), 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
+            }
+        }
     }
     
     protected void updateAITasks()
     {
-    	super.updateAITasks();
-    	this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
+    	if (this.getInvulTime() > 0)
+    	{
+    		int j1 = this.getInvulTime() - 1;
+
+    		if (j1 <= 0)
+    		{
+    			this.world.newExplosion(this, this.posX, this.posY + (double)this.getEyeHeight(), this.posZ, 7.0F, false, this.world.getGameRules().getBoolean("mobGriefing"));
+    			this.world.playBroadcastSound(1023, new BlockPos(this), 0);
+    		}
+
+    		this.setInvulTime(j1);
+    	}
+    	else
+    	{
+    		super.updateAITasks();
+    		this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
+    	}
+    }
+
+    /**
+     * Initializes this Wither's explosion sequence and makes it invulnerable. Called immediately after spawning.
+     */
+    public void ignite()
+    {
+        this.setInvulTime(200);
+    }
+
+    /**
+     * Called only once on an entity when first time spawned, via egg, mob spawner, natural spawning etc, but not called
+     * when entity is reloaded from nbt. Mainly used for initializing attributes and inventory
+     */
+//    @Nullable
+//    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
+//    {
+//    	ignite();
+//    	return super.onInitialSpawn(difficulty, livingdata);
+//    }
+    
+    /**
+     * Called when the entity is attacked.
+     */
+    public boolean attackEntityFrom(DamageSource source, float amount)
+    {
+    	if (this.isEntityInvulnerable(source))
+        {
+            return false;
+        }
+        else if (source != DamageSource.DROWN && !(source.getTrueSource() instanceof EntityDestroyer))
+        {
+            if (this.getInvulTime() > 0 && source != DamageSource.OUT_OF_WORLD)
+            {
+                return false;
+            }
+
+            return super.attackEntityFrom(source, amount);
+        }
+        else
+        {
+        	return false;
+        }
     }
     
     /**
@@ -123,8 +204,16 @@ public class EntityDestroyer extends EntityMob {
             this.world.spawnParticle(EnumParticleTypes.EXPLOSION_HUGE, this.posX + (double)f, this.posY + 2.0D + (double)f1, this.posZ + (double)f2, 0.0D, 0.0D, 0.0D);
         }
 
+        boolean flag = this.world.getGameRules().getBoolean("doMobLoot");
+        int i = this.experienceValue;
+
         if (!this.world.isRemote)
         {
+            if (this.deathTime > 150 && this.deathTime % 5 == 0 && flag)
+            {
+                this.dropExperience(MathHelper.floor((float)i * 0.08F));
+            }
+            
             if (this.deathTime == 1)
             {
                 this.world.playBroadcastSound(1028, new BlockPos(this), 0);
@@ -133,10 +222,35 @@ public class EntityDestroyer extends EntityMob {
         
         this.motionY = 0.01;
         
-        if (this.deathTime >= 200 && !this.world.isRemote)
+        if (this.deathTime >= 200)
         {
-        	super.onDeathUpdate();
-        	this.setDead();
+        	if (!this.world.isRemote)
+        	{
+        		if (flag)
+        		{
+        			this.dropExperience(MathHelper.floor((float)i * 0.2F));
+        		}
+
+        		this.setDead();
+        	}
+
+            for (int k = 0; k < 20; ++k)
+            {
+                double d2 = this.rand.nextGaussian() * 0.02D;
+                double d0 = this.rand.nextGaussian() * 0.02D;
+                double d1 = this.rand.nextGaussian() * 0.02D;
+                this.world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + (double)(this.rand.nextFloat() * this.height), this.posZ + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, d2, d0, d1);
+            }
+        }
+    }
+
+    private void dropExperience(int p_184668_1_)
+    {
+        while (p_184668_1_ > 0)
+        {
+            int i = EntityXPOrb.getXPSplit(p_184668_1_);
+            p_184668_1_ -= i;
+            this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY, this.posZ, i));
         }
     }
 
@@ -169,11 +283,23 @@ public class EntityDestroyer extends EntityMob {
     }
 
     /**
+     * (abstract) Protected helper method to write subclass entity data to NBT.
+     */
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setInteger("Invul", this.getInvulTime());
+        compound.setBoolean("Leaping", isLeaping);
+    }
+
+    /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
      */
     public void readEntityFromNBT(NBTTagCompound compound)
     {
         super.readEntityFromNBT(compound);
+        this.setInvulTime(compound.getInteger("Invul"));
+        isLeaping = compound.getBoolean("Leaping");
 
         if (this.hasCustomName())
         {
@@ -202,6 +328,16 @@ public class EntityDestroyer extends EntityMob {
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEAD;
+    }
+
+    public int getInvulTime()
+    {
+        return ((Integer)this.dataManager.get(INVULNERABILITY_TIME)).intValue();
+    }
+
+    public void setInvulTime(int time)
+    {
+        this.dataManager.set(INVULNERABILITY_TIME, Integer.valueOf(time));
     }
     
     static class AIBigLeap extends EntityAILeapAtTarget

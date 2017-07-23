@@ -1,10 +1,7 @@
 package lykrast.defiledlands.client.render.entity;
 
 import lykrast.defiledlands.client.model.ModelDestroyer;
-import lykrast.defiledlands.client.render.entity.RenderScuttler.Factory;
-import lykrast.defiledlands.client.render.entity.layers.LayerScuttlerEyes;
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
-import lykrast.defiledlands.common.entity.monster.EntityScuttler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
@@ -41,9 +38,17 @@ public class RenderDestroyer extends RenderLiving<EntityDestroyer> {
      */
     protected void renderModel(EntityDestroyer entitylivingbaseIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor)
     {
-    	if (entitylivingbaseIn.deathTime > 0)
+    	if (entitylivingbaseIn.deathTime > 0 || entitylivingbaseIn.getInvulTime() > 0)
         {
-            float f = (float)entitylivingbaseIn.deathTime / 200.0F;
+    		float f;
+    		if (entitylivingbaseIn.deathTime > 0)
+    		{
+                f = (float)entitylivingbaseIn.deathTime / 200.0F;
+    		}
+    		else
+    		{
+    			f = (float)entitylivingbaseIn.getInvulTime() / 200.0F;
+    		}
             GlStateManager.depthFunc(515);
             GlStateManager.enableAlpha();
             GlStateManager.alphaFunc(516, f);
@@ -66,8 +71,19 @@ public class RenderDestroyer extends RenderLiving<EntityDestroyer> {
             this.mainModel.render(entitylivingbaseIn, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor);
             GlStateManager.enableTexture2D();
             GlStateManager.disableBlend();
-            GlStateManager.depthFunc(515);
         }
+        
+        GlStateManager.depthFunc(515);
+    }
+
+    protected void applyRotations(EntityDestroyer entityLiving, float p_77043_2_, float rotationYaw, float partialTicks)
+    {
+    	if (entityLiving.deathTime > 0)
+    	{
+    		double d = (double)entityLiving.deathTime / 200.0D;
+        	rotationYaw += (float)(Math.cos((double)entityLiving.ticksExisted * 3.25D) * Math.PI * d * 5.0D);
+    	}
+    	super.applyRotations(entityLiving, p_77043_2_, rotationYaw, partialTicks);
     }
 
     /**

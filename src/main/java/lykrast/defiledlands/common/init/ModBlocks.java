@@ -25,7 +25,8 @@ public class ModBlocks {
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
 		stoneDefiledDecoration, tenebraDoor, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
-		vilespine, creepingMoss, blastem, scuronotte;
+		vilespine, creepingMoss, blastem, scuronotte,
+		healingPad;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
 	public static void init() {
@@ -57,6 +58,9 @@ public class ModBlocks {
 		creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
 		blastem = registerBlock(new BlockBlastem(), "blastem");
 		scuronotte = registerBlock(new BlockScuronotte(), "scuronotte");
+		
+		//Useful stuff
+		healingPad = registerBlock(new BlockHealingPad(3.0F, 15.0F), "healing_pad");
 	}
 	
 	@SideOnly(Side.CLIENT)

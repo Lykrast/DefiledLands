@@ -9,6 +9,7 @@ public class ModRecipes {
 	
 	public static void init() {
 		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiled);
+		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiledDecoration);
 		OreDictionary.registerOre("dirtDefiled", ModBlocks.dirtDefiled);
 		OreDictionary.registerOre("sandstoneDefiled", ModBlocks.sandstoneDefiled);
 		OreDictionary.registerOre("treeWood", ModBlocks.tenebraLog);

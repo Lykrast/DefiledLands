@@ -25,6 +25,8 @@ tile.defiledlands.umbrium_block.name=Block of Umbrium
 tile.defiledlands.scarlite_ore.name=Scarlite Ore
 tile.defiledlands.scarlite_block.name=Block of Scarlite
 
+tile.defiledlands.healing_pad.name=Healing Pad
+
 item.defiledlands.tenebra_door.name=Tenebra Door
 
 item.defiledlands.hephaestite.name=Hephaestite Shard

@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "USU",
+        "TTT"
+    ],
+    "key": {
+        "S": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "T": { "ore": "stoneDefiled", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:healing_pad" }
+}

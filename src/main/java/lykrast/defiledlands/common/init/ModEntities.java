@@ -27,6 +27,11 @@ public class ModEntities {
         
 		registerEntity(EntityScuttler.class, "scuttler", 0x211823, 0xce0bff);
         LootTableList.register(EntityScuttler.LOOT);
+
+		registerEntity(EntityPoxCarrier.class, "pox_carrier", 0x4b4b4b, 0xc873a0);
+        LootTableList.register(EntityPoxCarrier.LOOT);
+		registerEntity(EntitySlimeDefiled.class, "slime_defiled", 0xbe6d91, 0xc873a0);
+        LootTableList.register(EntitySlimeDefiled.LOOT);
         
         //Bosses
 		registerEntity(EntityDestroyer.class, "the_destroyer", 0x643564, 0xf9f9f9);
@@ -54,6 +59,9 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler.FACTORY);
         
         RenderingRegistry.registerEntityRenderingHandler(EntityDestroyer.class, RenderDestroyer.FACTORY);
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPoxCarrier.class, RenderPoxCarrier.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlimeDefiled.class, RenderSlimeDefiled.FACTORY);
         
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);

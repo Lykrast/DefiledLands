@@ -24,7 +24,7 @@ public class ModItems {
 	public static Item tenebraDoor,
 		hephaestite, umbriumIngot, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
-		scuttlerEye, blackHeart,
+		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		swordScarlite;
 	private static final List<Item> itemList = new ArrayList<Item>();
@@ -48,6 +48,8 @@ public class ModItems {
 		//Drops
 		scuttlerEye = registerItem(new ItemScuttlerEye(), "scuttler_eye");
 		blackHeart = registerItem(new ItemBlackHeart(), "black_heart");
+		foulSlime = registerItem(new Item(), "foul_slime");
+		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
 		
 		//Tools
 		materialTenebra = EnumHelper.addToolMaterial("tenebra", 0, 89, 3.0F, 1.0F, 22).setRepairItem(new ItemStack(ModBlocks.tenebraPlanks));

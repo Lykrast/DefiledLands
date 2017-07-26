@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        { "item": "defiledlands:foul_slime" },
+        { "item": "minecraft:sugar" },
+        { "item": "minecraft:paper" }
+    ],
+    "result": { "item": "defiledlands:foul_candy", "count": 3 }
+}

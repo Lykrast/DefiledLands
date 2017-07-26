@@ -8,7 +8,10 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class LayerShamblerTwistedEyes implements LayerRenderer<EntityShamblerTwisted> {
     private static final ResourceLocation RES_ENDERMAN_EYES = new ResourceLocation(DefiledLands.MODID, "textures/entity/shambler_twisted_eyes.png");
     private final RenderShamblerTwisted endermanRenderer;

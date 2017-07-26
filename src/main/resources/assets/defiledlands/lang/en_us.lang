@@ -59,7 +59,7 @@ item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
-entity.defiledlands.pox_carrier.name=Pox Carrier
+entity.defiledlands.host.name=Host
 entity.defiledlands.slime_defiled.name=Defiled Slime
 
 entity.defiledlands.the_destroyer.name=The Destroyer

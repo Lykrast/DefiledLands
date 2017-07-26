@@ -38,7 +38,7 @@ public abstract class BiomeDefiled extends Biome {
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 2));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, 80, 1, 2));
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 1, 3));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityPoxCarrier.class, 100, 2, 3));
+		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHost.class, 100, 2, 3));
 	}
 
     /**

@@ -1,7 +1,7 @@
 package lykrast.defiledlands.client.render.entity;
 
 import lykrast.defiledlands.client.render.entity.RenderScuttler.Factory;
-import lykrast.defiledlands.common.entity.monster.EntityPoxCarrier;
+import lykrast.defiledlands.common.entity.monster.EntityHost;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
@@ -14,11 +14,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderPoxCarrier extends RenderLiving<EntityPoxCarrier> {
-	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/pox_carrier.png");
+public class RenderHost extends RenderLiving<EntityHost> {
+	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/host.png");
     public static final Factory FACTORY = new Factory();
 	
-	public RenderPoxCarrier(RenderManager renderManagerIn)
+	public RenderHost(RenderManager renderManagerIn)
 	{
 		super(renderManagerIn, new ModelZombie(), 0.5F);
         LayerBipedArmor layerbipedarmor = new LayerBipedArmor(this)
@@ -32,16 +32,16 @@ public class RenderPoxCarrier extends RenderLiving<EntityPoxCarrier> {
         this.addLayer(layerbipedarmor);
 	}
 	
-    protected ResourceLocation getEntityTexture(EntityPoxCarrier entity)
+    protected ResourceLocation getEntityTexture(EntityHost entity)
     {
         return TEXTURES;
     }
 
-    public static class Factory implements IRenderFactory<EntityPoxCarrier> {
+    public static class Factory implements IRenderFactory<EntityHost> {
 
         @Override
-        public Render<? super EntityPoxCarrier> createRenderFor(RenderManager manager) {
-            return new RenderPoxCarrier(manager);
+        public Render<? super EntityHost> createRenderFor(RenderManager manager) {
+            return new RenderHost(manager);
         }
 
     }

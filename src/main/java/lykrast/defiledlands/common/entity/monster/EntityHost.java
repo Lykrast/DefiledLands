@@ -22,12 +22,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-public class EntityPoxCarrier extends EntityMob implements IEntityDefiled {
-    public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/pox_carrier");
+public class EntityHost extends EntityMob implements IEntityDefiled {
+    public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/host");
     
 	protected int slimesRemaining, slimesQueued;
 
-    public EntityPoxCarrier(World worldIn)
+    public EntityHost(World worldIn)
     {
         super(worldIn);
         this.setSize(0.6F, 1.7F);

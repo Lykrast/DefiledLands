@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "TTT",
+        " S ",
+        " S "
+    ],
+    "key": {
+        "T": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "S": { "ore": "stickWood", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:umbrium_pickaxe" }
+}

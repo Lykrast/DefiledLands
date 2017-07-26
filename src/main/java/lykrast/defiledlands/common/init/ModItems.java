@@ -26,10 +26,11 @@ public class ModItems {
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
+		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
-	public static ToolMaterial materialTenebra, materialScarlite;
+	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite;
 	
 	public static void init() {
 		//Decoration
@@ -52,14 +53,21 @@ public class ModItems {
 		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
 		
 		//Tools
-		materialTenebra = EnumHelper.addToolMaterial("tenebra", 0, 89, 3.0F, 1.0F, 22).setRepairItem(new ItemStack(ModBlocks.tenebraPlanks));
+		materialTenebra = EnumHelper.addToolMaterial("tenebra", 0, 89, 3.0F, 1.0F, 18).setRepairItem(new ItemStack(ModBlocks.tenebraPlanks));
 		axeTenebra = registerItem(new ItemAxeGeneric(materialTenebra), "tenebra_axe");
 		hoeTenebra = registerItem(new ItemHoeGeneric(materialTenebra), "tenebra_hoe");
 		pickaxeTenebra = registerItem(new ItemPickaxeGeneric(materialTenebra), "tenebra_pickaxe");
 		shovelTenebra = registerItem(new ItemShovelGeneric(materialTenebra), "tenebra_shovel");
 		swordTenebra = registerItem(new ItemSwordGeneric(materialTenebra), "tenebra_sword");
 		
-		materialScarlite = EnumHelper.addToolMaterial("scarlite", 3, 1561, 6.0F, 2.0F, 14).setRepairItem(new ItemStack(ModItems.scarlite));
+		materialUmbrium = EnumHelper.addToolMaterial("umbrium", 2, 302, 5.0F, 2.0F, 20).setRepairItem(new ItemStack(umbriumIngot));
+		axeUmbrium = registerItem(new ItemAxeGeneric(materialUmbrium), "umbrium_axe");
+		hoeUmbrium = registerItem(new ItemHoeGeneric(materialUmbrium), "umbrium_hoe");
+		pickaxeUmbrium = registerItem(new ItemPickaxeGeneric(materialUmbrium), "umbrium_pickaxe");
+		shovelUmbrium = registerItem(new ItemShovelGeneric(materialUmbrium), "umbrium_shovel");
+		swordUmbrium = registerItem(new ItemSwordGeneric(materialUmbrium), "umbrium_sword");
+		
+		materialScarlite = EnumHelper.addToolMaterial("scarlite", 3, 1561, 6.0F, 2.0F, 14).setRepairItem(new ItemStack(scarlite));
 		swordScarlite = registerItem(new ItemSwordScarlite(materialScarlite), "scarlite_reaver");
 	}
 	

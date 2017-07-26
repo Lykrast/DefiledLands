@@ -48,6 +48,12 @@ item.defiledlands.tenebra_pickaxe.name=Tenebra Pickaxe
 item.defiledlands.tenebra_shovel.name=Tenebra Shovel
 item.defiledlands.tenebra_sword.name=Tenebra Sword
 
+item.defiledlands.umbrium_axe.name=Umbrium Axe
+item.defiledlands.umbrium_hoe.name=Umbrium Hoe
+item.defiledlands.umbrium_pickaxe.name=Umbrium Pickaxe
+item.defiledlands.umbrium_shovel.name=Umbrium Shovel
+item.defiledlands.umbrium_sword.name=Umbrium Sword
+
 item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 
 entity.defiledlands.shambler.name=Shambler

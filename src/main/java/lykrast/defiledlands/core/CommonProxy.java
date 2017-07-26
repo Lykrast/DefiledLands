@@ -2,6 +2,7 @@ package lykrast.defiledlands.core;
 
 import java.io.File;
 
+import lykrast.defiledlands.common.compat.ModCompat;
 import lykrast.defiledlands.common.init.ModBiomes;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModEntities;
@@ -27,18 +28,19 @@ public class CommonProxy {
 		ModItems.init();
 		ModRecipes.init();
 		ModEntities.init();
-		
 		ModBiomes.registerBiomes();
+		
+		ModCompat.preInitCompat();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		
+		ModCompat.initCompat();
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
-		
+		ModCompat.postInitCompat();
 	}
 
 }

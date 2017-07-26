@@ -48,6 +48,7 @@ public class EntityHost extends EntityMob implements IEntityDefiled {
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.27D);
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
         slimesRemaining = (int)getMaxHealth();
     }
 
@@ -112,8 +113,8 @@ public class EntityHost extends EntityMob implements IEntityDefiled {
     }
     
     protected void spawnSlimes()
-    {
-    	while (slimesQueued > 2)
+    {    	
+    	while (slimesQueued >= 2)
     	{
     		int i = 1;
     		if (slimesQueued > 8) i = 2;

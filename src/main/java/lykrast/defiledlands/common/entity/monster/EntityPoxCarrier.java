@@ -48,6 +48,7 @@ public class EntityPoxCarrier extends EntityMob implements IEntityDefiled {
     {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.27D);
+        slimesRemaining = (int)getMaxHealth();
     }
 
     /**
@@ -134,12 +135,6 @@ public class EntityPoxCarrier extends EntityMob implements IEntityDefiled {
     		if (i == 1) slimesQueued -= 2;
     		else slimesQueued -= i*4;
     	}
-    }
-
-    protected void entityInit()
-    {
-        super.entityInit();
-        slimesRemaining = 20;
     }
 
     /**

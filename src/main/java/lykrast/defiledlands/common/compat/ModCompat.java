@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Loader;
 import java.util.HashSet;
 import java.util.Map.Entry;
 
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
 
 public abstract class ModCompat {
@@ -28,9 +29,12 @@ public abstract class ModCompat {
 			{
 				try
 				{
-					ModCompat c = e.getValue().newInstance();
-					compatLoaded.add(c);
-					c.preInit();
+					if (Config.compatEnabled.get(e.getKey()))
+					{
+						ModCompat c = e.getValue().newInstance();
+						compatLoaded.add(c);
+						c.preInit();
+					}
 				}
 				catch(Exception ex)
 				{

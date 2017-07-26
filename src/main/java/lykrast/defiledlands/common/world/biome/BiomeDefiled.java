@@ -41,6 +41,14 @@ public abstract class BiomeDefiled extends Biome {
 		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityPoxCarrier.class, 100, 2, 3));
 	}
 
+    /**
+     * returns the chance a creature has to spawn.
+     */
+    public float getSpawningChance()
+    {
+        return 0.13F;
+    }
+
     public WorldGenAbstractTree getRandomTreeFeature(Random rand)
     {
         return (WorldGenAbstractTree)(rand.nextInt(5) > 0 ? tenebraGen : TREE_FEATURE);

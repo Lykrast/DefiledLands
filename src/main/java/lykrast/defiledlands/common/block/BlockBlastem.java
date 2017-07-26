@@ -23,6 +23,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -67,6 +68,14 @@ public class BlockBlastem extends BlockBush {
     			worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 1.0F, flag);
     		}
     	}
+    }
+
+    /**
+     * Return whether this block can drop from an explosion.
+     */
+    public boolean canDropFromExplosion(Explosion explosionIn)
+    {
+        return false;
     }
     
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)

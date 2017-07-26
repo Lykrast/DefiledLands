@@ -55,7 +55,7 @@ public class ModBlocks {
 		
 		//Plants
 		vilespine = registerBlock(new BlockVilespine(), "vilespine");
-		creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
+		//creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
 		blastem = registerBlock(new BlockBlastem(), "blastem");
 		scuronotte = registerBlock(new BlockScuronotte(), "scuronotte");
 		

@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "E  ",
+        "IIB",
+        "  I"
+    ],
+    "key": {
+        "I": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "B": { "ore": "blockUmbrium", "type": "forge:ore_dict" },
+        "E": { "item": "defiledlands:scuttler_eye" }
+    },
+    "result": { "item": "defiledlands:umbra_blaster" }
+}

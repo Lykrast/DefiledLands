@@ -55,6 +55,8 @@ item.defiledlands.umbrium_pickaxe.name=Umbrium Pickaxe
 item.defiledlands.umbrium_shovel.name=Umbrium Shovel
 item.defiledlands.umbrium_sword.name=Umbrium Sword
 
+item.defiledlands.umbra_blaster.name=Umbra Blaster
+
 item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 
 entity.defiledlands.shambler.name=Shambler
@@ -75,6 +77,8 @@ advancements.defiledlands.blastem_fruit_blazing.title=By Fire Be Purged
 advancements.defiledlands.blastem_fruit_blazing.description=Craft some Blazing Blastem Fruits
 advancements.defiledlands.umbrium.title=Deep Purple
 advancements.defiledlands.umbrium.description=Smelt Umbrium Ore into an ingot
+advancements.defiledlands.umbra_blaster.title=This is my Boomstick
+advancements.defiledlands.umbra_blaster.description=Craft an Umbra Blaster
 advancements.defiledlands.scarlite.title=The Scarlet Crusade
 advancements.defiledlands.scarlite.description=Mine some Scarlite deep underground
 

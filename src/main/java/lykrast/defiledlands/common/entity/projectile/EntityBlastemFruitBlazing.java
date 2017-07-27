@@ -8,21 +8,26 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityBlastemFruitBlazing extends EntityThrowable {
+public class EntityBlastemFruitBlazing extends EntityBlastemFruit {
 
 	public EntityBlastemFruitBlazing(World worldIn)
     {
         super(worldIn);
+        damage = 10.0F;
+        explosion = 1.5F;
     }
 
     public EntityBlastemFruitBlazing(World worldIn, EntityLivingBase throwerIn)
     {
         super(worldIn, throwerIn);
+        damage = 10.0F;
+        explosion = 1.5F;
     }
 
     public EntityBlastemFruitBlazing(World worldIn, double x, double y, double z)
     {
-        super(worldIn, x, y, z);
+        this(worldIn);
+        setPosition(x, y, z);
     }
     
     /**
@@ -32,13 +37,13 @@ public class EntityBlastemFruitBlazing extends EntityThrowable {
     {
         if (result.entityHit != null)
         {
-            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 10.0F);
+            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
             result.entityHit.setFire(8);
         }
 
         if (!this.world.isRemote)
         {
-            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, 1.5F, true, true);
+            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, true, true);
             this.setDead();
         }
     }

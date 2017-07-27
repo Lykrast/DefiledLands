@@ -12,10 +12,10 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemBlastemFruitBlazing extends Item {
+public class ItemBlastemFruitBlazing extends ItemBlastemFruit {
 	public ItemBlastemFruitBlazing()
 	{
-        this.maxStackSize = 16;
+        super();
 	}
 
     /**
@@ -36,7 +36,7 @@ public class ItemBlastemFruitBlazing extends Item {
         {
             EntityBlastemFruitBlazing projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
             projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
-            projectile.setFire(60);
+            projectile.setFire(100);
             worldIn.spawnEntity(projectile);
         }
 

@@ -9,9 +9,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemAxeGeneric extends ItemAxe {
 
-	// Strange but has to be done
-	public ItemAxeGeneric(ToolMaterial material) {
-		super(material, material.getDamageVsEntity(), material.getEfficiencyOnProperMaterial());
+	//Axes can't behave like normal tools... sigh
+	public ItemAxeGeneric(ToolMaterial material, float damage, float speed) {
+		super(material, damage, speed);
 	}
 
 }

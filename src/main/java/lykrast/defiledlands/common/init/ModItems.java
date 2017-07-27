@@ -54,15 +54,16 @@ public class ModItems {
 		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
 		
 		//Tools
+		//Because axes' stats aren't calculated like normal tools, we have to manually specify them
 		materialTenebra = EnumHelper.addToolMaterial("tenebra", 0, 89, 3.0F, 1.0F, 18).setRepairItem(new ItemStack(ModBlocks.tenebraPlanks));
-		axeTenebra = registerItem(new ItemAxeGeneric(materialTenebra), "tenebra_axe");
+		axeTenebra = registerItem(new ItemAxeGeneric(materialTenebra, 8.0F, -3.2F), "tenebra_axe");
 		hoeTenebra = registerItem(new ItemHoeGeneric(materialTenebra), "tenebra_hoe");
 		pickaxeTenebra = registerItem(new ItemPickaxeGeneric(materialTenebra), "tenebra_pickaxe");
 		shovelTenebra = registerItem(new ItemShovelGeneric(materialTenebra), "tenebra_shovel");
 		swordTenebra = registerItem(new ItemSwordGeneric(materialTenebra), "tenebra_sword");
 		
 		materialUmbrium = EnumHelper.addToolMaterial("umbrium", 2, 302, 5.0F, 2.0F, 20).setRepairItem(new ItemStack(umbriumIngot));
-		axeUmbrium = registerItem(new ItemAxeGeneric(materialUmbrium), "umbrium_axe");
+		axeUmbrium = registerItem(new ItemAxeGeneric(materialUmbrium, 8.0F, -3.1F), "umbrium_axe");
 		hoeUmbrium = registerItem(new ItemHoeGeneric(materialUmbrium), "umbrium_hoe");
 		pickaxeUmbrium = registerItem(new ItemPickaxeGeneric(materialUmbrium), "umbrium_pickaxe");
 		shovelUmbrium = registerItem(new ItemShovelGeneric(materialUmbrium), "umbrium_shovel");

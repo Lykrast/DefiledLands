@@ -1,0 +1,7 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{ "type": "forge:ore_dict", "ore": "ingotUmbrium" }
+	],
+	"result": { "item": "defiledlands:umbrium_nugget", "count": 9 }
+}

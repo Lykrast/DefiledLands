@@ -1,0 +1,13 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "umbrium_ingot",
+	"pattern": [
+		"III",
+		"III",
+		"III"
+	],
+	"key": {
+		"I": { "type": "forge:ore_dict", "ore": "nuggetUmbrium" }
+	},
+	"result": { "item": "defiledlands:umbrium_ingot" }
+}

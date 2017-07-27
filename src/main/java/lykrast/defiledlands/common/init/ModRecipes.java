@@ -26,6 +26,7 @@ public class ModRecipes {
 		
 		OreDictionary.registerOre("gemHephaestite", ModItems.hephaestite);
 		OreDictionary.registerOre("ingotUmbrium", ModItems.umbriumIngot);
+		OreDictionary.registerOre("nuggetUmbrium", ModItems.umbriumNugget);
 		OreDictionary.registerOre("gemScarlite", ModItems.scarlite);
 		
 		CorruptionRecipes.init();
@@ -33,6 +34,12 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.hephaestiteOre, new ItemStack(ModItems.hephaestite, 2), 0.1F);
 		GameRegistry.addSmelting(ModBlocks.umbriumOre, new ItemStack(ModItems.umbriumIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.scarliteOre, new ItemStack(ModItems.scarlite), 1);
+		
+		GameRegistry.addSmelting(ModItems.axeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.hoeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.pickaxeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.shovelUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.swordUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 	}
 
 }

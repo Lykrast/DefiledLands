@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModItems {
 	
 	public static Item tenebraDoor,
-		hephaestite, umbriumIngot, scarlite,
+		hephaestite, umbriumIngot, umbriumNugget, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
@@ -39,6 +39,7 @@ public class ModItems {
 		//Ores
 		hephaestite = registerItem(new ItemHephaestite(), "hephaestite");
 		umbriumIngot = registerItem(new Item(), "umbrium_ingot");
+		umbriumNugget = registerItem(new Item(), "umbrium_nugget");
 		scarlite = registerItem(new Item(), "scarlite");
 		
 		//Plants

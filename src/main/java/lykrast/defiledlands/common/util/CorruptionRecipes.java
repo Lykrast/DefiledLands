@@ -19,7 +19,6 @@ public class CorruptionRecipes {
 		register(Blocks.SANDSTONE, ModBlocks.sandstoneDefiled);
 		register(Blocks.DIRT, ModBlocks.dirtDefiled);
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
-		register(Blocks.SAPLING, ModBlocks.tenebraSapling);
 		
 		register(Blocks.STONEBRICK, ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(
 				BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS));

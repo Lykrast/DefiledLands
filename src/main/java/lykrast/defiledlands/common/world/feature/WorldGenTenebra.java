@@ -4,8 +4,11 @@ import java.util.Random;
 
 import lykrast.defiledlands.common.init.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -71,19 +74,27 @@ public class WorldGenTenebra extends WorldGenAbstractTree {
             	if ((soil == ModBlocks.grassDefiled || soil == ModBlocks.dirtDefiled) && position.getY() < worldIn.getHeight() - i - 1)
             	{
             		setDirtAt(worldIn,position.down());
+            		//Causes phantom blocks for some reason, so we use a more hacky method
+            		//BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos(position);
+            		BlockPos mutable = new BlockPos(position);
             		
-            		int x = 0, y = 0, z = 0;
-            		placeLogAt(worldIn, position.add(x,y,z));
-            		for (y=1; y<=i;y++)
+            		placeLogAt(worldIn, mutable);
+            		for (int j=1; j<=i;j++)
             		{
-            			if (rand.nextInt(2) == 0)
+            			mutable = mutable.up();
+            			if (rand.nextInt(3) == 0)
             			{
-            				if (rand.nextInt(2) == 0) x += rand.nextInt(3) - 1;
-            				else z += rand.nextInt(3) - 1;
+            				mutable = mutable.offset(EnumFacing.Plane.HORIZONTAL.random(rand));
             			}
-            			if (!canGrowInto(worldIn.getBlockState(position.add(x,y,z)).getBlock())) break;
-            			placeLogAt(worldIn, position.add(x,y,z));
+            			if (!canGrowInto(worldIn.getBlockState(mutable).getBlock())) break;
+            			placeLogAt(worldIn, mutable);
+            			
+            			for (EnumFacing e : EnumFacing.HORIZONTALS)
+            			{
+            				if (rand.nextInt(6) == 0) placeLeafAt(worldIn, mutable.offset(e));
+            			}
             		}
+            		if (rand.nextInt(6) == 0) placeLeafAt(worldIn, mutable.up());
             	}
             	else
             	{
@@ -102,6 +113,16 @@ public class WorldGenTenebra extends WorldGenAbstractTree {
     private void placeLogAt(World worldIn, BlockPos pos)
     {
         this.setBlockAndNotifyAdequately(worldIn, pos, ModBlocks.tenebraLog.getDefaultState());
+    }
+
+    private void placeLeafAt(World worldIn, BlockPos pos)
+    {
+        IBlockState state = worldIn.getBlockState(pos);
+
+        if (state.getBlock().isAir(state, worldIn, pos) || state.getBlock().isLeaves(state, worldIn, pos))
+        {
+            this.setBlockAndNotifyAdequately(worldIn, pos, ModBlocks.tenebraLeaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false)));
+        }
     }
 	
 	@Override

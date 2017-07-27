@@ -37,7 +37,7 @@ public class ModBlocks {
 		dirtDefiled = registerBlock(new BlockCorrupted(Material.GROUND, SoundType.GROUND, 0.5F, 2.5F, "shovel", 0), "dirt_defiled");
 		grassDefiled = registerBlock(new BlockGrassCorrupted(0.6F, 2.5F), "grass_defiled");
 		tenebraLog = registerBlock(new BlockLogTenebra(3.0F, 15.0F), "tenebra_log");
-		//tenebraLeaves = registerBlock(new BlockLeafTenebra(), "tenebra_leaves");
+		tenebraLeaves = registerBlock(new BlockLeafTenebra(), "tenebra_leaves");
 		tenebraSapling = registerBlock(new BlockSaplingTenebra(0.0F), "tenebra_sapling");
 		tenebraPlanks = registerBlock(new BlockCorrupted(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_planks");
 		

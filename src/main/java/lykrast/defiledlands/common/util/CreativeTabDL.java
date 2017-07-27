@@ -15,7 +15,7 @@ public class CreativeTabDL extends CreativeTabs {
 	@Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ModBlocks.stoneDefiled);
+        return new ItemStack(ModBlocks.grassDefiled);
     }
 
 }

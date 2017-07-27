@@ -1,0 +1,60 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:umbrium_sword"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.kill_all_mobs.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.kill_all_mobs.description"
+        },
+        "frame": "challenge"
+    },
+    "parent": "defiledlands:main/root",
+    "rewards": {
+        "experience": 100
+    },
+    "criteria": {
+        "shambler": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:shambler"
+                }
+            }
+        },
+        "shambler_twisted": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:shambler_twisted"
+                }
+            }
+        },
+        "scuttler": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:scuttler"
+                }
+            }
+        },
+        "host": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:host"
+                }
+            }
+        },
+        "slime_defiled": {
+            "trigger": "minecraft:player_killed_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:slime_defiled"
+                }
+            }
+        }
+    }
+}

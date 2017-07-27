@@ -73,10 +73,12 @@ advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods
 advancements.defiledlands.hephaestite.description=Mine some Hephaestite
 advancements.defiledlands.blastem_fruit_blazing.title=By Fire Be Purged
 advancements.defiledlands.blastem_fruit_blazing.description=Craft some Blazing Blastem Fruits
-advancements.defiledlands.tenebra_tool.title=Ready for Action
-advancements.defiledlands.tenebra_tool.description=Make a tool out of Tenebra wood
+advancements.defiledlands.umbrium.title=Deep Purple
+advancements.defiledlands.umbrium.description=Smelt Umbrium Ore into an ingot
 advancements.defiledlands.scarlite.title=The Scarlet Crusade
 advancements.defiledlands.scarlite.description=Mine some Scarlite deep underground
 
 advancements.defiledlands.discover_all_biomes.title=Unholy Pilgrimage
 advancements.defiledlands.discover_all_biomes.description=Discover every natural defiled biome
+advancements.defiledlands.kill_all_mobs.title=Cleanse the Land
+advancements.defiledlands.kill_all_mobs.description=Kill one of every monster from the defiled lands

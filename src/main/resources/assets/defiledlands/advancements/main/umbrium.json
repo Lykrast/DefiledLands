@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:umbrium_ingot"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.umbrium.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.umbrium.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "umbrium": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "defiledlands:umbrium_ingot"
+                    }
+                ]
+            }
+        }
+    }
+}

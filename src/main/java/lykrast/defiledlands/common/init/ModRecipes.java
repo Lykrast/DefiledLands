@@ -46,6 +46,10 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModItems.pickaxeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		GameRegistry.addSmelting(ModItems.shovelUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		GameRegistry.addSmelting(ModItems.swordUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		
+		//Decoration
+		GameRegistry.addSmelting(new ItemStack(ModBlocks.stoneDefiledDecoration, 1, BlockStoneDefiledDecoration.Variants.BRICKS.ordinal()), 
+				new ItemStack(ModBlocks.stoneDefiledDecoration, 1, BlockStoneDefiledDecoration.Variants.BRICKS_CRACKED.ordinal()), 0.1F);
 	}
 
 }

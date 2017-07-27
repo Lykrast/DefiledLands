@@ -45,16 +45,16 @@ public class CorruptionHelper {
 		return false;
 	}
 	
-	public static boolean isCorruptable(Block input)
+	public static boolean isCorruptable(IBlockState input)
 	{
 		return CorruptionRecipes.getCorrupted(input) != null;
 	}
 	
 	public static boolean corrupt(World worldIn, BlockPos blockpos, IBlockState state)
 	{
-		if (isCorruptable(state.getBlock()))
+		if (isCorruptable(state))
 		{
-			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state.getBlock()));
+			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state));
 			return true;
 		}
 		else return false;

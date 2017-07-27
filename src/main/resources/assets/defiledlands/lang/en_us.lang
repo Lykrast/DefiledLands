@@ -7,6 +7,7 @@ tile.defiledlands.dirt_defiled.name=Defiled Dirt
 tile.defiledlands.grass_defiled.name=Defiled Grass
 
 tile.defiledlands.stone_defiled_decoration.bricks.name=Defiled Stone Bricks
+tile.defiledlands.stone_defiled_decoration.bricks_cracked.name=Cracked Defiled Stone Bricks
 tile.defiledlands.tenebra_door.name=Tenebra Door
 
 tile.defiledlands.tenebra_log.name=Tenebra Wood

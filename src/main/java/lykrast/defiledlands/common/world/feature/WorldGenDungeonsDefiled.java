@@ -24,8 +24,8 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 public class WorldGenDungeonsDefiled extends WorldGenerator {
     private static final Logger LOGGER = LogManager.getLogger();
-    private static final IBlockState STONE = ModBlocks.stoneDefiled.getDefaultState(),
-    		STONE_BRICKS = ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS);
+    private static final IBlockState BRICKS = ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS),
+    		CRACKED = ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS_CRACKED);
     public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "chests/dungeon_defiled");
 
 	public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -92,13 +92,13 @@ public class WorldGenDungeonsDefiled extends WorldGenerator {
                         }
                         else if (worldIn.getBlockState(blockpos1).getMaterial().isSolid() && worldIn.getBlockState(blockpos1).getBlock() != Blocks.CHEST)
                         {
-                            if (i4 == -1 && rand.nextInt(4) != 0)
+                            if (rand.nextInt(4) == 0)
                             {
-                                worldIn.setBlockState(blockpos1, STONE, 2);
+                                worldIn.setBlockState(blockpos1, CRACKED, 2);
                             }
                             else
                             {
-                                worldIn.setBlockState(blockpos1, STONE_BRICKS, 2);
+                                worldIn.setBlockState(blockpos1, BRICKS, 2);
                             }
                         }
                     }

@@ -9,6 +9,11 @@
 				"textures": {
 					"all": "defiledlands:blocks/decoration/stone_bricks_defiled"
 				}
+			},
+			"bricks_cracked": {
+				"textures": {
+					"all": "defiledlands:blocks/decoration/stone_bricks_defiled_cracked"
+				}
 			}
 		}
 	}

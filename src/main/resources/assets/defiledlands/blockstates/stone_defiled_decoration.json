@@ -7,7 +7,7 @@
 		"variant": {
 			"bricks": {
 				"textures": {
-					"all": "defiledlands:blocks/stone_bricks_defiled"
+					"all": "defiledlands:blocks/decoration/stone_bricks_defiled"
 				}
 			}
 		}

@@ -57,6 +57,17 @@ public abstract class BiomeDefiled extends Biome {
 	@Override
 	public void decorate(World worldIn, Random rand, BlockPos pos)
 	{
+//        if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, worldIn, rand, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON))
+//        {
+            for (int j2 = 0; j2 < 80; ++j2)
+            {
+                int i3 = rand.nextInt(16) + 8;
+                int l3 = rand.nextInt(256);
+                int l1 = rand.nextInt(16) + 8;
+                (new WorldGenDungeonsDefiled()).generate(worldIn, rand, pos.add(i3, l3, l1));
+            }
+//        }
+        
 		super.decorate(worldIn, rand, pos);
 		
 		if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CACTUS))

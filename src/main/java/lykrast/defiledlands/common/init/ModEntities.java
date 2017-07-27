@@ -4,6 +4,7 @@ import lykrast.defiledlands.client.render.entity.*;
 import lykrast.defiledlands.common.entity.boss.*;
 import lykrast.defiledlands.common.entity.monster.*;
 import lykrast.defiledlands.common.entity.projectile.*;
+import lykrast.defiledlands.common.util.DungeonDefiledList;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -40,6 +41,14 @@ public class ModEntities {
         //Projectiles
         registerProjectile(EntityBlastemFruit.class, "blastem_fruit");
         registerProjectile(EntityBlastemFruitBlazing.class, "blastem_fruit_blazing");
+        
+        
+        //Dungeon List
+        DungeonDefiledList.addDungeonMob("scuttler", 200);
+        DungeonDefiledList.addDungeonMob("host", 100);
+        DungeonDefiledList.addDungeonMob("shambler_twisted", 100);
+        //Registered here because that seemed the most fitting
+        LootTableList.register(lykrast.defiledlands.common.world.feature.WorldGenDungeonsDefiled.LOOT);
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name, int colorBack, int colorFront)

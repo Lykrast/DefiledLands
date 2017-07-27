@@ -43,7 +43,7 @@ public class EntityBlastemFruitBlazing extends EntityBlastemFruit {
 
         if (!this.world.isRemote)
         {
-            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, true, true);
+            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, true, destructive);
             this.setDead();
         }
     }

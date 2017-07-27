@@ -5,6 +5,7 @@ import java.io.File;
 import lykrast.defiledlands.common.compat.ModCompat;
 import lykrast.defiledlands.common.init.ModBiomes;
 import lykrast.defiledlands.common.init.ModBlocks;
+import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModEntities;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.init.ModRecipes;
@@ -29,6 +30,7 @@ public class CommonProxy {
 		ModRecipes.init();
 		ModEntities.init();
 		ModBiomes.registerBiomes();
+		ModEnchantments.init();
 		
 		ModCompat.preInitCompat();
 	}

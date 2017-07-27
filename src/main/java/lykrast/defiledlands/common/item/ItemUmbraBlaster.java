@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.item;
 
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
+import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -77,10 +78,32 @@ public class ItemUmbraBlaster extends Item {
             if (!worldIn.isRemote)
             {
             	EntityBlastemFruit projectile;
-            	if (ammo.getItem() == ModItems.blastemFruitBlazing) projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
+            	if (ammo.getItem() == ModItems.blastemFruitBlazing || EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubBlazing, itemstack) > 0)
+            		projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
             	else projectile = new EntityBlastemFruit(worldIn, playerIn);
             	
-                projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            	float f = 1.0F;
+            	int i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubSharpshooter, itemstack);
+            	if (i > 0)
+            	{
+            		f += i * 0.5F;
+            	}
+            	
+                projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F * f, 1.0F / f);
+                
+                if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubSafeguard, itemstack) > 0)
+                {
+                	projectile.setDestructive(false);
+                }
+                
+                i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubDestructive, itemstack);
+                if (i > 0)
+                {
+                	float j = 1.0F + (i + 1) * 0.25F;
+                	projectile.setDamage(projectile.getDamage() * j);
+                	projectile.setExplosionStrength(projectile.getExplosionStrength() * j);
+                }
+                
                 worldIn.spawnEntity(projectile);
 
                 itemstack.damageItem(1, playerIn);

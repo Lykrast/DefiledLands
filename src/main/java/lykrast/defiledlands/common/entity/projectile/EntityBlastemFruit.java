@@ -11,12 +11,14 @@ import net.minecraft.world.World;
 
 public class EntityBlastemFruit extends EntityThrowable {
 	protected float damage, explosion;
+	protected boolean destructive;
 
 	public EntityBlastemFruit(World worldIn)
     {
         super(worldIn);
         damage = 7.0F;
         explosion = 1.0F;
+        destructive = true;
     }
 
     public EntityBlastemFruit(World worldIn, EntityLivingBase throwerIn)
@@ -24,6 +26,7 @@ public class EntityBlastemFruit extends EntityThrowable {
         super(worldIn, throwerIn);
         damage = 7.0F;
         explosion = 1.0F;
+        destructive = true;
     }
 
     public EntityBlastemFruit(World worldIn, double x, double y, double z)
@@ -44,7 +47,7 @@ public class EntityBlastemFruit extends EntityThrowable {
 
         if (!this.world.isRemote)
         {
-            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, false, true);
+            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, false, destructive);
             this.setDead();
         }
     }
@@ -57,6 +60,7 @@ public class EntityBlastemFruit extends EntityThrowable {
     	super.writeEntityToNBT(compound);
     	compound.setFloat("damage", damage);
     	compound.setFloat("explosion", explosion);
+    	compound.setBoolean("destructive", destructive);
     }
 
     /**
@@ -73,6 +77,10 @@ public class EntityBlastemFruit extends EntityThrowable {
         if (compound.hasKey("explosion", 99))
         {
             this.explosion = compound.getFloat("explosion");
+        }
+        if (compound.hasKey("destructive", 99))
+        {
+            this.destructive = compound.getBoolean("destructive");
         }
     }
 
@@ -94,6 +102,16 @@ public class EntityBlastemFruit extends EntityThrowable {
     public float getExplosionStrength()
     {
         return explosion;
+    }
+
+    public void setDestructive(boolean destructive)
+    {
+        this.destructive = destructive;
+    }
+
+    public boolean isDestructive()
+    {
+        return destructive;
     }
 
 }

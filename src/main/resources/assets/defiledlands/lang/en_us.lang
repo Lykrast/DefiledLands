@@ -59,6 +59,11 @@ item.defiledlands.umbra_blaster.name=Umbra Blaster
 
 item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 
+enchantment.ub_safeguard=Safeguard
+enchantment.ub_sharpshooter=Sharpshooter
+enchantment.ub_destructive=Destructive
+enchantment.ub_blazing=Blazing
+
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler

@@ -30,7 +30,12 @@
                 {
                     "type": "item",
                     "name": "defiledlands:umbra_blaster",
-                    "weight": 5
+                    "weight": 4
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:concussion_smasher",
+                    "weight": 2
                 },
                 {
                     "type": "item",

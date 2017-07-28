@@ -2,7 +2,7 @@
   "parent": "defiledlands:recipes/root",
   "rewards": {
     "recipes": [
-      "defiledlands:tools/umbra_blaster"
+      "defiledlands:tools/concussion_smasher"
     ]
   },
   "criteria": {
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "item": "defiledlands:umbrium_ingot"
+            "item": "defiledlands:scarlite"
           }
         ]
       }
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "defiledlands:tools/umbra_blaster"
+        "recipe": "defiledlands:tools/concussion_smasher"
       }
     }
   },

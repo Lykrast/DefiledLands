@@ -1,0 +1,35 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "defiledlands:items/concussion_smasher"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "defiledlands:item/concussion_smasher_pulling0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.33
+            },
+            "model": "defiledlands:item/concussion_smasher_pulling1"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.67
+            },
+            "model": "defiledlands:item/concussion_smasher_pulling2"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.99
+            },
+            "model": "defiledlands:item/concussion_smasher_pulling3"
+        }
+    ]
+}

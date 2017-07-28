@@ -5,9 +5,9 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
-public class EnchantmentUBSafeguard extends Enchantment {
+public class EnchantmentBlazing extends Enchantment {
 
-	public EnchantmentUBSafeguard(Rarity rarityIn)
+	public EnchantmentBlazing(Rarity rarityIn)
 	{
 		super(rarityIn, ModEnchantments.UMBRA_BLASTER, new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
 	}
@@ -17,7 +17,7 @@ public class EnchantmentUBSafeguard extends Enchantment {
      */
     public int getMinEnchantability(int enchantmentLevel)
     {
-        return 1;
+        return 20;
     }
 
     /**

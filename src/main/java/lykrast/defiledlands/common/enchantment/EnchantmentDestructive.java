@@ -5,11 +5,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
-public class EnchantmentUBBlazing extends Enchantment {
+public class EnchantmentDestructive extends Enchantment {
 
-	public EnchantmentUBBlazing(Rarity rarityIn)
+	public EnchantmentDestructive(Rarity rarityIn)
 	{
-		super(rarityIn, ModEnchantments.UMBRA_BLASTER, new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
+		super(rarityIn, ModEnchantments.DESTRUCTIVE, new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
 	}
 
     /**
@@ -17,7 +17,7 @@ public class EnchantmentUBBlazing extends Enchantment {
      */
     public int getMinEnchantability(int enchantmentLevel)
     {
-        return 20;
+        return 1 + (enchantmentLevel - 1) * 10;
     }
 
     /**
@@ -25,7 +25,7 @@ public class EnchantmentUBBlazing extends Enchantment {
      */
     public int getMaxEnchantability(int enchantmentLevel)
     {
-        return 50;
+        return this.getMinEnchantability(enchantmentLevel) + 15;
     }
 
     /**
@@ -33,7 +33,7 @@ public class EnchantmentUBBlazing extends Enchantment {
      */
     public int getMaxLevel()
     {
-        return 1;
+        return 5;
     }
 
 }

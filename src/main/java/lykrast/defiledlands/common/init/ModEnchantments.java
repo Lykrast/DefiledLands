@@ -1,6 +1,7 @@
 package lykrast.defiledlands.common.init;
 
 import lykrast.defiledlands.common.enchantment.*;
+import lykrast.defiledlands.common.item.IEnchantDestructive;
 import lykrast.defiledlands.common.item.ItemGun;
 import lykrast.defiledlands.common.item.ItemUmbraBlaster;
 import lykrast.defiledlands.core.DefiledLands;
@@ -11,19 +12,20 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModEnchantments {
 	public static final EnumEnchantmentType GUN = EnumHelper.addEnchantmentType("GUN", (item) -> item instanceof ItemGun),
-		UMBRA_BLASTER = EnumHelper.addEnchantmentType("UMBRA_BLASTER", (item) -> item instanceof ItemUmbraBlaster);
+			DESTRUCTIVE = EnumHelper.addEnchantmentType("DESTRUCTIVE", (item) -> item instanceof IEnchantDestructive),
+			UMBRA_BLASTER = EnumHelper.addEnchantmentType("UMBRA_BLASTER", (item) -> item instanceof ItemUmbraBlaster);
 	
 	public static Enchantment sharpshooter, economical,
-		ubSafeguard, ubDestructive, ubBlazing;
+	destructive, safeguard, blazing;
 	
 	public static void init()
 	{
 		sharpshooter = register(new EnchantmentSharpshooter(Enchantment.Rarity.COMMON), "sharpshooter");
 		economical = register(new EnchantmentEconomical(Enchantment.Rarity.UNCOMMON), "economical");
-		
-		ubSafeguard = register(new EnchantmentUBSafeguard(Enchantment.Rarity.COMMON), "ub_safeguard");
-		ubDestructive = register(new EnchantmentUBDestructive(Enchantment.Rarity.COMMON), "ub_destructive");
-		ubBlazing = register(new EnchantmentUBBlazing(Enchantment.Rarity.VERY_RARE), "ub_blazing");
+
+		destructive = register(new EnchantmentDestructive(Enchantment.Rarity.COMMON), "destructive");
+		safeguard = register(new EnchantmentSafeguard(Enchantment.Rarity.COMMON), "safeguard");
+		blazing = register(new EnchantmentBlazing(Enchantment.Rarity.VERY_RARE), "blazing");
 	}
 	
 	public static Enchantment register(Enchantment enchant, String name)

@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "UEE",
+        "USU",
+        "UUU"
+    ],
+    "key": {
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "S": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "E": { "item": "defiledlands:scuttler_eye" }
+    },
+    "result": { "item": "defiledlands:concussion_smasher" }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "defiledlands:item/concussion_smasher",
+    "textures": {
+        "layer0": "defiledlands:items/concussion_smasher_pulling2"
+    }
+}

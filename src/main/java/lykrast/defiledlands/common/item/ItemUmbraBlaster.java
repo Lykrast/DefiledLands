@@ -17,7 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemUmbraBlaster extends ItemGun {
+public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
 	
 	public ItemUmbraBlaster(int durability)
 	{
@@ -52,25 +52,21 @@ public class ItemUmbraBlaster extends ItemGun {
             if (!worldIn.isRemote)
             {
             	EntityBlastemFruit projectile;
-            	if (ammo.getItem() == ModItems.blastemFruitBlazing || EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubBlazing, itemstack) > 0)
+            	if (ammo.getItem() == ModItems.blastemFruitBlazing || EnchantmentHelper.getEnchantmentLevel(ModEnchantments.blazing, itemstack) > 0)
             		projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
             	else projectile = new EntityBlastemFruit(worldIn, playerIn);
             	
             	float f = getSharpshooterBonus(itemstack);
                 projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F * f, 1.0F / f);
                 
-                if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubSafeguard, itemstack) > 0)
+                if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.safeguard, itemstack) > 0)
                 {
                 	projectile.setDestructive(false);
                 }
                 
-                int i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubDestructive, itemstack);
-                if (i > 0)
-                {
-                	float j = 1.0F + (i + 1) * 0.25F;
-                	projectile.setDamage(projectile.getDamage() * j);
-                	projectile.setExplosionStrength(projectile.getExplosionStrength() * j);
-                }
+                float j = getDestructiveBonus(itemstack);
+                projectile.setDamage(projectile.getDamage() * j);
+                projectile.setExplosionStrength(projectile.getExplosionStrength() * j);
                 
                 worldIn.spawnEntity(projectile);
 

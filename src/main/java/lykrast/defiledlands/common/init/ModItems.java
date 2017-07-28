@@ -27,7 +27,7 @@ public class ModItems {
 		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
-		umbraBlaster,
+		umbraBlaster, concussionSmasher,
 		swordScarlite;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
@@ -70,10 +70,12 @@ public class ModItems {
 		shovelUmbrium = registerItem(new ItemShovelGeneric(materialUmbrium), "umbrium_shovel");
 		swordUmbrium = registerItem(new ItemSwordGeneric(materialUmbrium), "umbrium_sword");
 		
-		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");
-		
 		materialScarlite = EnumHelper.addToolMaterial("scarlite", 3, 1561, 6.0F, 2.0F, 14).setRepairItem(new ItemStack(scarlite));
 		swordScarlite = registerItem(new ItemSwordScarlite(materialScarlite), "scarlite_reaver");
+		
+		//Fun stuff
+		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");
+		concussionSmasher = registerItem(new ItemConcussionSmasher(178), "concussion_smasher");
 	}
 	
 	@SideOnly(Side.CLIENT)

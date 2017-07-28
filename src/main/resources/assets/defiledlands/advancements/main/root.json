@@ -9,7 +9,9 @@
         "description": {
             "translate": "advancements.defiledlands.root.description"
         },
-        "background": "defiledlands:textures/blocks/grass_defiled_top.png"
+        "background": "defiledlands:textures/blocks/grass_defiled_top.png",
+        "show_toast": false,
+        "announce_to_chat": false
     },
     "criteria": {
         "desert_defiled": {

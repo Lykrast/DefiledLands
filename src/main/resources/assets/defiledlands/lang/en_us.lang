@@ -60,8 +60,9 @@ item.defiledlands.umbra_blaster.name=Umbra Blaster
 
 item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 
+enchantment.sharpshooter=Sharpshooter
+enchantment.economical=Economical
 enchantment.ub_safeguard=Safeguard
-enchantment.ub_sharpshooter=Sharpshooter
 enchantment.ub_destructive=Destructive
 enchantment.ub_blazing=Blazing
 

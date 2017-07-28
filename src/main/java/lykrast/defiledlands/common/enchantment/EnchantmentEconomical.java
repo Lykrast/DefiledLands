@@ -5,11 +5,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
-public class EnchantmentUBSharpshooter extends Enchantment {
+public class EnchantmentEconomical extends Enchantment {
 
-	public EnchantmentUBSharpshooter(Rarity rarityIn)
+	public EnchantmentEconomical(Rarity rarityIn)
 	{
-		super(rarityIn, ModEnchantments.UMBRA_BLASTER, new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
+		super(rarityIn, ModEnchantments.GUN, new EntityEquipmentSlot[] {EntityEquipmentSlot.MAINHAND});
 	}
 
     /**
@@ -17,7 +17,7 @@ public class EnchantmentUBSharpshooter extends Enchantment {
      */
     public int getMinEnchantability(int enchantmentLevel)
     {
-        return 1 + (enchantmentLevel - 1) * 8;
+        return 5 + (enchantmentLevel - 1) * 8;
     }
 
     /**
@@ -25,7 +25,7 @@ public class EnchantmentUBSharpshooter extends Enchantment {
      */
     public int getMaxEnchantability(int enchantmentLevel)
     {
-        return this.getMinEnchantability(enchantmentLevel) + 30;
+        return this.getMinEnchantability(enchantmentLevel) + 50;
     }
 
     /**
@@ -33,7 +33,7 @@ public class EnchantmentUBSharpshooter extends Enchantment {
      */
     public int getMaxLevel()
     {
-        return 3;
+        return 4;
     }
 
 }

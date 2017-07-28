@@ -9,7 +9,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
@@ -18,41 +17,15 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemUmbraBlaster extends Item {
+public class ItemUmbraBlaster extends ItemGun {
 	
 	public ItemUmbraBlaster(int durability)
 	{
-        this.maxStackSize = 1;
-        this.setMaxDamage(durability);
+        super(durability);
 	}
 
-    private ItemStack findAmmo(EntityPlayer player)
-    {
-        if (this.isBlastemFruit(player.getHeldItem(EnumHand.OFF_HAND)))
-        {
-            return player.getHeldItem(EnumHand.OFF_HAND);
-        }
-        else if (this.isBlastemFruit(player.getHeldItem(EnumHand.MAIN_HAND)))
-        {
-            return player.getHeldItem(EnumHand.MAIN_HAND);
-        }
-        else
-        {
-            for (int i = 0; i < player.inventory.getSizeInventory(); ++i)
-            {
-                ItemStack itemstack = player.inventory.getStackInSlot(i);
-
-                if (this.isBlastemFruit(itemstack))
-                {
-                    return itemstack;
-                }
-            }
-
-            return ItemStack.EMPTY;
-        }
-    }
-
-    protected boolean isBlastemFruit(ItemStack stack)
+    @Override
+	protected boolean isAmmo(ItemStack stack)
     {
         return stack.getItem() instanceof ItemBlastemFruit;
     }
@@ -82,13 +55,7 @@ public class ItemUmbraBlaster extends Item {
             		projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
             	else projectile = new EntityBlastemFruit(worldIn, playerIn);
             	
-            	float f = 1.0F;
-            	int i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubSharpshooter, itemstack);
-            	if (i > 0)
-            	{
-            		f += i * 0.5F;
-            	}
-            	
+            	float f = getSharpshooterBonus(itemstack);
                 projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F * f, 1.0F / f);
                 
                 if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubSafeguard, itemstack) > 0)
@@ -96,7 +63,7 @@ public class ItemUmbraBlaster extends Item {
                 	projectile.setDestructive(false);
                 }
                 
-                i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubDestructive, itemstack);
+                int i = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.ubDestructive, itemstack);
                 if (i > 0)
                 {
                 	float j = 1.0F + (i + 1) * 0.25F;
@@ -111,12 +78,7 @@ public class ItemUmbraBlaster extends Item {
             
             if (!flag)
             {
-            	ammo.shrink(1);
-
-                if (ammo.isEmpty())
-                {
-                	playerIn.inventory.deleteStack(ammo);
-                }
+            	consumeAmmo(itemstack, ammo, playerIn, worldIn.rand);
             }
 
             playerIn.addStat(StatList.getObjectUseStats(this));
@@ -127,14 +89,6 @@ public class ItemUmbraBlaster extends Item {
         {
         	return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         }
-    }
-
-    /**
-     * Return the enchantability factor of the item, most of the time is based on material.
-     */
-    public int getItemEnchantability()
-    {
-        return 1;
     }
 
 }

@@ -6,6 +6,8 @@ import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.entity.ai.EntityAIAttackMeleeStrafe;
 import lykrast.defiledlands.common.entity.monster.EntityScuttler;
 import lykrast.defiledlands.core.DefiledLands;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -13,6 +15,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -22,7 +25,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -40,6 +42,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 public class EntityDestroyer extends EntityMob implements IEntityDefiled {
@@ -58,9 +61,10 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
 
     protected void initEntityAI()
     {
-        this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new AIBigLeap(this, 1.2F));
-        this.tasks.addTask(2, new EntityAIAttackMeleeStrafe(this, 1.0D, true, 1.0F));
+        this.tasks.addTask(0, new AIDoNothing());
+        this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(2, new AIBigLeap(this, 1.2F));
+        this.tasks.addTask(3, new EntityAIAttackMeleeStrafe(this, 1.0D, true, 1.0F));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -118,6 +122,8 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
 
         if (this.getInvulTime() > 0)
         {
+            this.motionY = 0.01;
+            
             for (int i1 = 0; i1 < 3; ++i1)
             {
                 this.world.spawnParticle(EnumParticleTypes.SPELL_MOB, this.posX + this.rand.nextGaussian(), this.posY + (double)(this.rand.nextFloat() * 3.3F), this.posZ + this.rand.nextGaussian(), 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
@@ -155,15 +161,20 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     }
 
     /**
-     * Called only once on an entity when first time spawned, via egg, mob spawner, natural spawning etc, but not called
-     * when entity is reloaded from nbt. Mainly used for initializing attributes and inventory
+     * Explosion resistance of a block relative to this entity
      */
-//    @Nullable
-//    public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
-//    {
-//    	ignite();
-//    	return super.onInitialSpawn(difficulty, livingdata);
-//    }
+    public float getExplosionResistance(Explosion explosionIn, World worldIn, BlockPos pos, IBlockState blockStateIn)
+    {
+        float f = super.getExplosionResistance(explosionIn, worldIn, pos, blockStateIn);
+        Block block = blockStateIn.getBlock();
+
+        if (net.minecraft.entity.boss.EntityWither.canDestroyBlock(block) && net.minecraftforge.event.ForgeEventFactory.onEntityDestroyBlock(this, pos, blockStateIn))
+        {
+            f = Math.min(2F, f);
+        }
+
+        return f;
+    }
     
     /**
      * Called when the entity is attacked.
@@ -406,6 +417,22 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
             this.leaper.motionZ *= enrage;
             this.leaper.motionY = (double)this.leapMotionY;
             this.leaper.isLeaping = true;
+        }
+    }
+
+    class AIDoNothing extends EntityAIBase
+    {
+        public AIDoNothing()
+        {
+            this.setMutexBits(7);
+        }
+
+        /**
+         * Returns whether the EntityAIBase should begin execution.
+         */
+        public boolean shouldExecute()
+        {
+            return getInvulTime() > 0;
         }
     }
     

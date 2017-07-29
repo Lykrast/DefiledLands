@@ -1,0 +1,9 @@
+{
+    "parent": "block/enchanting_table_base",
+    "textures": {
+        "particle": "defiledlands:blocks/conjuring_altar_top",
+        "bottom": "defiledlands:blocks/stone_defiled",
+        "top": "defiledlands:blocks/conjuring_altar_top_active",
+        "side": "defiledlands:blocks/conjuring_altar_side_active"
+    }
+}

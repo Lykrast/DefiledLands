@@ -1,0 +1,6 @@
+{
+    "variants": {
+		"active=false": { "model": "defiledlands:conjuring_altar" },
+        "active=true":  { "model": "defiledlands:conjuring_altar_active" }
+    }
+}

@@ -26,7 +26,7 @@ public class ModBlocks {
 		stoneDefiledDecoration, tenebraDoor, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte,
-		healingPad;
+		healingPad, conjuringAltar;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
 	public static void init() {
@@ -61,6 +61,7 @@ public class ModBlocks {
 		
 		//Useful stuff
 		healingPad = registerBlock(new BlockHealingPad(3.0F, 15.0F), "healing_pad");
+		conjuringAltar = registerBlock(new BlockConjuringAltar(3.0F, 15.0F), "conjuring_altar");
 	}
 	
 	@SideOnly(Side.CLIENT)

@@ -3,16 +3,19 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
 import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -27,8 +30,9 @@ public class ModItems {
 		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
+		swordScarlite, 
 		umbraBlaster, concussionSmasher,
-		swordScarlite;
+		callingStone;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite;
@@ -76,6 +80,17 @@ public class ModItems {
 		//Fun stuff
 		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");
 		concussionSmasher = registerItem(new ItemConcussionSmasher(178), "concussion_smasher");
+		
+		//Boss stuff
+		callingStone = registerItem(new ItemBossSummoner() {
+			protected Entity getBoss(World worldIn)
+		    {
+				EntityDestroyer boss = new EntityDestroyer(worldIn);
+				boss.ignite();
+				
+				return boss;
+		    }
+		}, "calling_stone");
 	}
 	
 	@SideOnly(Side.CLIENT)

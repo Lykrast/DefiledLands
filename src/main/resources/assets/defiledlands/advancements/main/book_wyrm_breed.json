@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:foul_candy"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.book_wyrm_breed.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.book_wyrm_breed.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "breed_book_wyrm": {
+			"trigger": "minecraft:bred_animals",
+			"conditions": {
+				"parent": {
+					"type": "defiledlands:book_wyrm"
+				}
+			}
+		}
+    }
+}

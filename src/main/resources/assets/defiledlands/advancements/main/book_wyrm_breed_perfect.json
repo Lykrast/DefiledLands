@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:book_wyrm_analyzer"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.book_wyrm_breed_perfect.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.book_wyrm_breed_perfect.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "defiledlands:main/book_wyrm_breed_max_level",
+    "rewards": {
+        "experience": 1000
+    },
+    "criteria": {
+        "breed_book_wyrm": {
+			"trigger": "minecraft:bred_animals",
+			"conditions": {
+				"child": {
+					"type": "defiledlands:book_wyrm",
+					"nbt": "{Digest:1,MaxLvl:30,Golden:true}"
+				}
+			}
+		}
+    }
+}

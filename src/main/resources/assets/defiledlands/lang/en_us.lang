@@ -88,8 +88,6 @@ ui.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
-advancements.defiledlands.defilement_powder.title=Spreading the Word
-advancements.defiledlands.defilement_powder.description=Make Defilement Powder from a Scuronotte
 advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods
 advancements.defiledlands.hephaestite.description=Mine some Hephaestite
 advancements.defiledlands.blastem_fruit_blazing.title=By Fire Be Purged
@@ -100,6 +98,13 @@ advancements.defiledlands.umbra_blaster.title=This is my Boomstick
 advancements.defiledlands.umbra_blaster.description=Craft an Umbra Blaster
 advancements.defiledlands.scarlite.title=The Scarlet Crusade
 advancements.defiledlands.scarlite.description=Mine some Scarlite deep underground
+
+advancements.defiledlands.book_wyrm_breed.title=The Smell of Love
+advancements.defiledlands.book_wyrm_breed.description=Breed two Book Wyrms using Foul Candy
+advancements.defiledlands.book_wyrm_breed_max_level.title=Genetic Engineering
+advancements.defiledlands.book_wyrm_breed_max_level.description=Breed Book Wyrms until you reach 30 enchanting level
+advancements.defiledlands.book_wyrm_breed_perfect.title=The Perfect Specimen
+advancements.defiledlands.book_wyrm_breed_perfect.description=Breed Book Wyrms until you obtain a perfect specimen
 
 advancements.defiledlands.discover_all_biomes.title=Unholy Pilgrimage
 advancements.defiledlands.discover_all_biomes.description=Discover every natural defiled biome

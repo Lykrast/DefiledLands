@@ -113,4 +113,12 @@ public class ItemConcussionSmasher extends Item implements IEnchantDestructive {
         return 1;
     }
 
+    /**
+     * Return whether this item is repairable in an anvil.
+     */
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+    	return repair.getItem() == ModItems.umbriumIngot;
+    }
+
 }

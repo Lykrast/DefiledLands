@@ -10,7 +10,7 @@
             "translate": "advancements.defiledlands.summon_destroyer.description"
         }
     },
-    "parent": "defiledlands:main/root",
+    "parent": "defiledlands:main/scarlite",
     "criteria": {
         "summoned": {
             "trigger": "minecraft:summoned_entity",

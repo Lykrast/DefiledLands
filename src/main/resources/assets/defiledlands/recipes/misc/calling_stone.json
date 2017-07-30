@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "TST",
+        "SHS",
+        "TST"
+    ],
+    "key": {
+        "S": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "T": { "ore": "stoneDefiled", "type": "forge:ore_dict" },
+        "H": { "item": "defiledlands:black_heart" }
+    },
+    "result": { "item": "defiledlands:calling_stone" }
+}

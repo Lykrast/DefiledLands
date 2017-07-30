@@ -11,7 +11,7 @@ public class ModRecipes {
 	public static void init() {
 		//Blocks
 		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiled);
-		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiledDecoration);
+		OreDictionary.registerOre("stoneDefiled", new ItemStack(ModBlocks.stoneDefiledDecoration, 1, OreDictionary.WILDCARD_VALUE));
 		OreDictionary.registerOre("dirtDefiled", ModBlocks.dirtDefiled);
 		OreDictionary.registerOre("sandDefiled", ModBlocks.sandDefiled);
 		OreDictionary.registerOre("sandstoneDefiled", ModBlocks.sandstoneDefiled);

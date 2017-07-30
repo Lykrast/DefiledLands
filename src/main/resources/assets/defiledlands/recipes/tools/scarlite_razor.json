@@ -1,14 +1,14 @@
 {
     "type": "forge:ore_shaped",
     "pattern": [
-        "G  ",
-        "GHG",
-        " U "
+        "U ",
+        "UH",
+        " G"
     ],
     "key": {
         "G": { "ore": "gemScarlite", "type": "forge:ore_dict" },
         "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
         "H": { "item": "defiledlands:black_heart" }
     },
-    "result": { "item": "defiledlands:scarlite_reaver" }
+    "result": { "item": "defiledlands:scarlite_razor" }
 }

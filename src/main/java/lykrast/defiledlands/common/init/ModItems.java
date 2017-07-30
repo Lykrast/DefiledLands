@@ -30,14 +30,14 @@ public class ModItems {
 		scuttlerEye, blackHeart, foulSlime, foulCandy,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
-		swordScarlite, 
+		swordScarlite, razorScarlite, 
 		umbraBlaster, concussionSmasher,
 		bookWyrmAnalyzer,
 		callingStone,
 		essenceDestroyer;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
-	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite;
+	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor;
 	
 	public static void init() {
 		//Decoration
@@ -78,6 +78,9 @@ public class ModItems {
 		
 		materialScarlite = EnumHelper.addToolMaterial("scarlite", 3, 1561, 6.0F, 2.0F, 14).setRepairItem(new ItemStack(scarlite));
 		swordScarlite = registerItem(new ItemSwordScarlite(materialScarlite), "scarlite_reaver");
+		
+		materialScarliteRazor = EnumHelper.addToolMaterial("scarlite_razor", 3, 31, 6.0F, -1.0F, 14).setRepairItem(new ItemStack(umbriumIngot));
+		razorScarlite = registerItem(new ItemRazorScarlite(materialScarliteRazor), "scarlite_razor");
 		
 		//Fun stuff
 		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");

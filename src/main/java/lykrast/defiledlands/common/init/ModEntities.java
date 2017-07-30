@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.init;
 import lykrast.defiledlands.client.render.entity.*;
 import lykrast.defiledlands.common.entity.boss.*;
 import lykrast.defiledlands.common.entity.monster.*;
+import lykrast.defiledlands.common.entity.passive.*;
 import lykrast.defiledlands.common.entity.projectile.*;
 import lykrast.defiledlands.common.util.DungeonDefiledList;
 import lykrast.defiledlands.core.DefiledLands;
@@ -33,6 +34,10 @@ public class ModEntities {
         LootTableList.register(EntityHost.LOOT);
 		registerEntity(EntitySlimeDefiled.class, "slime_defiled", 0xbe6d91, 0xc873a0);
         LootTableList.register(EntitySlimeDefiled.LOOT);
+        
+        //Animals
+		registerEntity(EntityBookWyrm.class, "book_wyrm", 0x00599b, 0xfef9e4);
+        LootTableList.register(EntityBookWyrm.LOOT);
         
         //Bosses
 		registerEntity(EntityDestroyer.class, "the_destroyer", 0x643564, 0xf9f9f9);
@@ -71,6 +76,8 @@ public class ModEntities {
 
         RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, RenderHost.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntitySlimeDefiled.class, RenderSlimeDefiled.FACTORY);
+        
+        RenderingRegistry.registerEntityRenderingHandler(EntityBookWyrm.class, RenderBookWyrm.FACTORY);
         
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);

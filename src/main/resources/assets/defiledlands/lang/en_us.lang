@@ -76,6 +76,8 @@ entity.defiledlands.scuttler.name=Scuttler
 entity.defiledlands.host.name=Host
 entity.defiledlands.slime_defiled.name=Defiled Slime
 
+entity.defiledlands.book_wyrm.name=Book Wyrm
+
 entity.defiledlands.the_destroyer.name=The Destroyer
 
 advancements.defiledlands.root.title=Defiled Lands

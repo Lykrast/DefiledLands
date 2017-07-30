@@ -33,7 +33,8 @@ public class ModItems {
 		swordScarlite, 
 		umbraBlaster, concussionSmasher,
 		bookWyrmAnalyzer,
-		callingStone;
+		callingStone,
+		essenceDestroyer;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite;
@@ -94,6 +95,7 @@ public class ModItems {
 				return boss;
 		    }
 		}, "calling_stone");
+		essenceDestroyer = registerItem(new Item(), "essence_destroyer");
 	}
 	
 	@SideOnly(Side.CLIENT)

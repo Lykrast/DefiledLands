@@ -34,6 +34,9 @@ public class ModRecipes {
 		OreDictionary.registerOre("nuggetUmbrium", ModItems.umbriumNugget);
 		OreDictionary.registerOre("gemScarlite", ModItems.scarlite);
 		
+		//Boss essence
+		OreDictionary.registerOre("essenceDestroyer", ModItems.essenceDestroyer);
+		
 		CorruptionRecipes.init();
 		
 		//Ores

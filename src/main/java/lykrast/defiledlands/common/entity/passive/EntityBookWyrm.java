@@ -228,6 +228,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
 			
 			child.setGolden(world.rand.nextInt(i) == 0);
 		}
+		else child.setGolden(world.rand.nextInt(100) == 0);
 		
 		//Digest time
 		int j1 = getDigestTime();

@@ -5,6 +5,7 @@ import java.util.Random;
 import lykrast.defiledlands.common.entity.monster.*;
 import lykrast.defiledlands.common.entity.passive.EntityBookWyrm;
 import lykrast.defiledlands.common.init.ModBlocks;
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.common.world.feature.*;
 import net.minecraft.block.BlockBush;
 import net.minecraft.util.math.BlockPos;
@@ -36,11 +37,18 @@ public abstract class BiomeDefiled extends Biome {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCaveCreatureList.clear();
-		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityBookWyrm.class, 4, 2, 4));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, 80, 1, 2));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, 80, 1, 2));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, 100, 1, 3));
-		this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHost.class, 100, 2, 3));
+		
+		if (Config.bookWyrmSpawn)
+			this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityBookWyrm.class, 4, 2, 4));
+		
+		if (Config.weightShambler > 0)
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, Config.weightShambler, 1, 2));
+		if (Config.weightTwistedShambler > 0)
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, Config.weightTwistedShambler, 1, 2));
+		if (Config.weightScuttler > 0)
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, Config.weightScuttler, 1, 3));
+		if (Config.weightHost > 0)
+			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHost.class, Config.weightHost, 2, 3));
 	}
 
     /**

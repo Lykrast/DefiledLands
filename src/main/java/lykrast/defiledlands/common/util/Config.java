@@ -21,9 +21,10 @@ public class Config {
 	
 	// Mobs
 	public static boolean scuttlerSpawnInLight;
+	public static int weightShambler, weightTwistedShambler, weightScuttler, weightHost;
 	
 	// Book Wyrms
-	public static boolean multiBook;
+	public static boolean bookWyrmSpawn, multiBook;
 	public static float conversionRate;
 	
 	// World
@@ -60,8 +61,18 @@ public class Config {
         // Mobs
         scuttlerSpawnInLight = cfg.getBoolean("scuttlerSpawnInLight", CATEGORY_MOBS, true, 
         		"If true, Scuttlers will also spawn in lit places");
+        weightShambler = cfg.getInt("weightShambler", CATEGORY_MOBS, 80, 0, 1000, 
+        		"Weight of Shamblers when spawning with greater weight meaning more common, 0 prevents spawning; this is only relevant in relation to other defiled mobs");
+        weightTwistedShambler = cfg.getInt("weightTwistedShambler", CATEGORY_MOBS, 80, 0, 1000, 
+        		"Weight of Twisted Shamblers when spawning with greater weight meaning more common, 0 prevents spawning; this is only relevant in relation to other defiled mobs");
+        weightScuttler = cfg.getInt("weightScuttler", CATEGORY_MOBS, 100, 0, 1000, 
+        		"Weight of Scuttlers when spawning with greater weight meaning more common, 0 prevents spawning; this is only relevant in relation to other defiled mobs");
+        weightHost = cfg.getInt("weightHost", CATEGORY_MOBS, 100, 0, 1000, 
+        		"Weight of Hosts when spawning with greater weight meaning more common, 0 prevents spawning; this is only relevant in relation to other defiled mobs");
         
         // Book Wyrms
+        bookWyrmSpawn = cfg.getBoolean("bookWyrmSpawn", CATEGORY_BOOK_WYRM, true, 
+        		"Can Book Wyrms naturally spawn");
         multiBook = cfg.getBoolean("multiBook", CATEGORY_BOOK_WYRM, false, 
         		"If true, Book Wyrms will spawn a book for each possible enchantment instead of a single random one, CAN CAUSE SELF SUSTAINING LOOPS");
         conversionRate = cfg.getFloat("conversionRate", CATEGORY_BOOK_WYRM, 1.0F, 0.0F, 10.0F, 

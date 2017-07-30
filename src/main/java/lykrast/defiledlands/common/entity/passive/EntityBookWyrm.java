@@ -202,6 +202,11 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         setGolden(world.rand.nextInt(100) == 0);
         setDigestTime(MathHelper.getInt(world.rand, 160, 240));
         setMaxLevel(MathHelper.getInt(world.rand, 3, 6));
+
+        if (this.rand.nextInt(5) == 0)
+        {
+            this.setGrowingAge(-24000);
+        }
         
         return livingdata;
     }

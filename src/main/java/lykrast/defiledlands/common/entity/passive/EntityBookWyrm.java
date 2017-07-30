@@ -1,5 +1,8 @@
 package lykrast.defiledlands.common.entity.passive;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.annotation.Nullable;
@@ -9,7 +12,11 @@ import com.google.common.collect.Sets;
 import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentData;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
@@ -27,12 +34,14 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
@@ -44,6 +53,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     private static final DataParameter<Boolean> GOLDEN = EntityDataManager.<Boolean>createKey(EntityBookWyrm.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> DIGEST_TIME = EntityDataManager.<Integer>createKey(EntityBookWyrm.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MAX_LEVEL = EntityDataManager.<Integer>createKey(EntityBookWyrm.class, DataSerializers.VARINT);
+    public int digested, digesting, digestTimer;
 	
 	public EntityBookWyrm(World worldIn)
 	{
@@ -83,6 +93,101 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     public boolean attackEntityAsMob(Entity entityIn)
     {
     	return entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), 5.0F);
+    }
+
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
+    {
+        super.onLivingUpdate();
+        
+        if (digesting > 0 && digestTimer > 0)
+        {
+        	digestTimer--;
+        	
+        	if (digestTimer <= 0)
+        	{
+        		digested++;
+        		digesting--;
+        		
+        		if (digesting > 0) digestTimer = getDigestTime();
+        	}
+        }
+    	
+    	if (digested >= getMaxLevel())
+    	{
+    		digested -= getMaxLevel();
+    		
+    		if (!this.world.isRemote)
+    		{
+    	        List<EnchantmentData> list = EnchantmentHelper.buildEnchantmentList(rand, new ItemStack(Items.BOOK), getMaxLevel(), isGolden());
+    			
+    	        if (Config.multiBook)
+    	        {
+                	for (EnchantmentData e : list)
+                	{
+                		ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                		ItemEnchantedBook.addEnchantment(book, e);
+            			entityDropItem(book, 0.5F);
+                	}
+    	        }
+    	        else
+    	        {
+    	        	ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+            		ItemEnchantedBook.addEnchantment(book, list.get(rand.nextInt(list.size())));
+        			entityDropItem(book, 0.5F);
+    	        }
+    		}
+    	}
+    }
+
+    public boolean processInteract(EntityPlayer player, EnumHand hand)
+    {
+        if (!super.processInteract(player, hand))
+        {
+            ItemStack itemstack = player.getHeldItem(hand);
+            
+            if (itemstack.getItem() == Items.ENCHANTED_BOOK && !isChild())
+            {
+            	Map<Enchantment, Integer> list = EnchantmentHelper.getEnchantments(itemstack);
+            	
+            	if (list.isEmpty()) return false;
+            	
+            	int i = 0;
+            	
+            	for (Entry<Enchantment, Integer> e : list.entrySet())
+            	{
+            		i += e.getKey().getMinEnchantability(e.getValue());
+            	}
+            	
+            	i = (int)(i * Config.conversionRate);
+            	
+            	if (i > 0)
+            	{
+            		digesting += i;
+            		if (digestTimer == 0) digestTimer = getDigestTime();
+                	
+                    if (!player.capabilities.isCreativeMode)
+                    {
+                        itemstack.shrink(1);
+                    }
+                    
+                	return true;
+            	}
+            	
+            	return false;
+            }
+            else
+            {
+            	return false;
+            }
+        }
+        else
+        {
+            return true;
+        }
     }
 
     /**
@@ -146,6 +251,9 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         compound.setBoolean("Golden", this.isGolden());
         compound.setInteger("Digest", this.getDigestTime());
         compound.setInteger("MaxLvl", this.getMaxLevel());
+        compound.setInteger("Digested", this.digested);
+        compound.setInteger("Digesting", this.digesting);
+        compound.setInteger("DigestTimer", this.digestTimer);
     }
 
     /**
@@ -157,6 +265,9 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         setGolden(compound.getBoolean("Golden"));
         setDigestTime(compound.getInteger("Digest"));
         setMaxLevel(compound.getInteger("MaxLvl"));
+        digested = compound.getInteger("Digested");
+        digesting = compound.getInteger("Digesting");
+        digestTimer = compound.getInteger("DigestTimer");
     }
 
     public boolean isGolden() {

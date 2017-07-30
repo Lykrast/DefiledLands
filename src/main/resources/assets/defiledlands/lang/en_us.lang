@@ -83,7 +83,7 @@ entity.defiledlands.book_wyrm.name=Book Wyrm
 entity.defiledlands.the_destroyer.name=The Destroyer
 
 ui.book_wyrm_analyze.digest_time=Digesting time : 
-ui.book_wyrm_analyze.max_level=Maximum enchanting level : 
+ui.book_wyrm_analyze.max_level=Enchanting level : 
 ui.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
 advancements.defiledlands.root.title=Defiled Lands

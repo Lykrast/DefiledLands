@@ -12,6 +12,7 @@ import net.minecraftforge.common.config.Configuration;
 public class Config {
 	private static final String CATEGORY_GENERAL = "General";
 	private static final String CATEGORY_MOBS = "Mobs";
+	private static final String CATEGORY_BOOK_WYRM = "Book Wyrms";
 	private static final String CATEGORY_WORLD = "World";
 	private static final String CATEGORY_COMPAT = "Compatibility";
 	
@@ -20,6 +21,10 @@ public class Config {
 	
 	// Mobs
 	public static boolean scuttlerSpawnInLight;
+	
+	// Book Wyrms
+	public static boolean multiBook;
+	public static float conversionRate;
 	
 	// World
 	public static int weightDesertDefiled, weightPlainsDefiled, weightForestTenebra, weightForestVilespine, weightHillsDefiled, weightSwampDefiled, weightIcePlainsDefiled;
@@ -44,6 +49,7 @@ public class Config {
 	private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
         cfg.addCustomCategoryComment(CATEGORY_MOBS, "Mobs");
+        cfg.addCustomCategoryComment(CATEGORY_BOOK_WYRM, "Book Wyrms");
         cfg.addCustomCategoryComment(CATEGORY_WORLD, "World generation");
         cfg.addCustomCategoryComment(CATEGORY_COMPAT, "Mod Compatibility");
         
@@ -54,6 +60,12 @@ public class Config {
         // Mobs
         scuttlerSpawnInLight = cfg.getBoolean("scuttlerSpawnInLight", CATEGORY_MOBS, true, 
         		"If true, Scuttlers will also spawn in lit places");
+        
+        // Book Wyrms
+        multiBook = cfg.getBoolean("multiBook", CATEGORY_BOOK_WYRM, false, 
+        		"If true, Book Wyrms will spawn a book for each possible enchantment instead of a single random one, CAN CAUSE SELF SUSTAINING LOOPS");
+        conversionRate = cfg.getFloat("conversionRate", CATEGORY_BOOK_WYRM, 1.0F, 0.0F, 10.0F, 
+        		"Multiplier applied to enchanted books's level fed to Book Wyrms, highly recommended to keep below 1");
         
         // World
         weightDesertDefiled = cfg.getInt("weightDesertDefiled", CATEGORY_WORLD, 6, 0, 100, 

@@ -1,0 +1,24 @@
+{
+    "display": {
+        "icon": {
+            "item": "defiledlands:calling_stone"
+        },
+        "title": {
+            "translate": "advancements.defiledlands.summon_destroyer.title"
+        },
+        "description": {
+            "translate": "advancements.defiledlands.summon_destroyer.description"
+        }
+    },
+    "parent": "defiledlands:main/root",
+    "criteria": {
+        "summoned": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+                "entity": {
+                    "type": "defiledlands:the_destroyer"
+                }
+            }
+        }
+    }
+}

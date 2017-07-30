@@ -36,7 +36,7 @@ public class ModEntities {
         LootTableList.register(EntitySlimeDefiled.LOOT);
         
         //Animals
-		registerEntity(EntityBookWyrm.class, "book_wyrm", 0x00599b, 0xfef9e4);
+		registerEntity(EntityBookWyrm.class, "book_wyrm", 0x412c41, 0xfef9e4);
         LootTableList.register(EntityBookWyrm.LOOT);
         
         //Bosses

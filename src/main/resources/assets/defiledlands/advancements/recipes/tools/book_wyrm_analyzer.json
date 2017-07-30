@@ -1,0 +1,30 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:tools/book_wyrm_analyzer"
+    ]
+  },
+  "criteria": {
+    "breed_book_wyrm": {
+		"trigger": "minecraft:bred_animals",
+		"conditions": {
+			"parent": {
+				"type": "defiledlands:book_wyrm"
+			}
+		}
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:tools/book_wyrm_analyzer"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "breed_book_wyrm",
+      "has_the_recipe"
+    ]
+  ]
+}

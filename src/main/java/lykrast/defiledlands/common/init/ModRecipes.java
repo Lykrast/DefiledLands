@@ -13,6 +13,7 @@ public class ModRecipes {
 		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiled);
 		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiledDecoration);
 		OreDictionary.registerOre("dirtDefiled", ModBlocks.dirtDefiled);
+		OreDictionary.registerOre("sandDefiled", ModBlocks.sandDefiled);
 		OreDictionary.registerOre("sandstoneDefiled", ModBlocks.sandstoneDefiled);
 		OreDictionary.registerOre("treeWood", ModBlocks.tenebraLog);
 		OreDictionary.registerOre("plankWood", ModBlocks.tenebraPlanks);

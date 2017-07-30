@@ -33,10 +33,8 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -129,13 +127,13 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
 		//Digest time
 		int j1 = getDigestTime();
 		int j2 = parent.getDigestTime();
-		int k = j1 + j2 + world.rand.nextInt(Math.max(j1, j2) + 1);
+		int k = j1 + j2 - world.rand.nextInt((int)(Math.max(j1, j2) + 1 * 0.75));
 		child.setDigestTime(k / 2);
 		
 		//Maximum level
 		j1 = getMaxLevel();
 		j2 = parent.getMaxLevel();
-		k = j1 + j2 - world.rand.nextInt((int)(Math.max(j1, j2) + 1 * 0.75));
+		k = j1 + j2 + world.rand.nextInt(Math.max(j1, j2) + 1);
 		child.setMaxLevel(k / 2);
 	}
 
@@ -160,18 +158,6 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         setDigestTime(compound.getInteger("Digest"));
         setMaxLevel(compound.getInteger("MaxLvl"));
     }
-
-    //Leaving that for the analyser
-//    public boolean processInteract(EntityPlayer player, EnumHand hand)
-//    {
-//    	if (!world.isRemote)
-//    	{
-//        	player.sendMessage(new TextComponentString("Golden : " + isGolden()));
-//        	player.sendMessage(new TextComponentString("Digest time : " + getDigestTime()));
-//        	player.sendMessage(new TextComponentString("Max level : " + getMaxLevel()));
-//    	}
-//    	return super.processInteract(player, hand);
-//    }
 
     public boolean isGolden() {
 		return ((Boolean)this.dataManager.get(GOLDEN)).booleanValue();

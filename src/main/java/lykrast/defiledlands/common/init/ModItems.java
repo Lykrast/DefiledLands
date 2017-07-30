@@ -32,6 +32,7 @@ public class ModItems {
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, 
 		umbraBlaster, concussionSmasher,
+		bookWyrmAnalyzer,
 		callingStone;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
@@ -80,6 +81,8 @@ public class ModItems {
 		//Fun stuff
 		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");
 		concussionSmasher = registerItem(new ItemConcussionSmasher(178), "concussion_smasher");
+		
+		bookWyrmAnalyzer = registerItem(new ItemBookWyrmAnalyzer(), "book_wyrm_analyzer");
 		
 		//Boss stuff
 		callingStone = registerItem(new ItemBossSummoner() {

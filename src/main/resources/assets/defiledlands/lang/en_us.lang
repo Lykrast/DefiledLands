@@ -64,6 +64,8 @@ item.defiledlands.scarlite_reaver.name=Scarlite Reaver
 item.defiledlands.umbra_blaster.name=Umbra Blaster
 item.defiledlands.concussion_smasher.name=Concussion Smasher
 
+item.defiledlands.book_wyrm_analyzer.name=Book Wyrm Analyzer
+
 enchantment.sharpshooter=Sharpshooter
 enchantment.economical=Economical
 enchantment.safeguard=Safeguard
@@ -79,6 +81,10 @@ entity.defiledlands.slime_defiled.name=Defiled Slime
 entity.defiledlands.book_wyrm.name=Book Wyrm
 
 entity.defiledlands.the_destroyer.name=The Destroyer
+
+ui.book_wyrm_analyze.digest_time=Digesting time : 
+ui.book_wyrm_analyze.max_level=Maximum enchanting level : 
+ui.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...

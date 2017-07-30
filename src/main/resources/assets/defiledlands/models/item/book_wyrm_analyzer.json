@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "defiledlands:items/book_wyrm_analyzer"
+    }
+}

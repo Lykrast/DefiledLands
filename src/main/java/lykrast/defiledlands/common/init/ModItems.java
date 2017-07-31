@@ -10,11 +10,14 @@ import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemDoor;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -27,7 +30,7 @@ public class ModItems {
 	public static Item tenebraDoor,
 		hephaestite, umbriumIngot, umbriumNugget, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
-		scuttlerEye, blackHeart, foulSlime, foulCandy,
+		scuttlerEye, blackHeart, foulSlime, foulCandy, bookWyrmRaw, bookWyrmCooked,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, razorScarlite, 
@@ -59,6 +62,8 @@ public class ModItems {
 		blackHeart = registerItem(new ItemBlackHeart(), "black_heart");
 		foulSlime = registerItem(new Item(), "foul_slime");
 		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
+		bookWyrmRaw = registerItem(new ItemFood(3, 1.8F, true).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.5F), "book_wyrm_raw");
+		bookWyrmCooked = registerItem(new ItemFood(8, 12.8F, true), "book_wyrm_cooked");
 		
 		//Tools
 		//Because axes' stats aren't calculated like normal tools, we have to manually specify them

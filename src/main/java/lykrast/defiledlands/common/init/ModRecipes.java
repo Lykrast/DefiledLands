@@ -44,6 +44,9 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.umbriumOre, new ItemStack(ModItems.umbriumIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.scarliteOre, new ItemStack(ModItems.scarlite), 1);
 		
+		//Food
+		GameRegistry.addSmelting(ModItems.bookWyrmRaw, new ItemStack(ModItems.bookWyrmCooked), 0.35F);
+		
 		//Tool recycling
 		GameRegistry.addSmelting(ModItems.axeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		GameRegistry.addSmelting(ModItems.hoeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);

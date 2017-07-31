@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:beef",
+                    "name": "defiledlands:book_wyrm_raw",
                     "weight": 1,
                     "functions": [
                         {

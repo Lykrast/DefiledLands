@@ -21,13 +21,17 @@ import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
+import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
@@ -51,6 +55,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
 public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
@@ -80,14 +85,16 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     protected void initEntityAI()
     {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.2D, false));
-        this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(4, new EntityAITempt(this, 1.2D, false, TEMPTATION_ITEMS));
-        this.tasks.addTask(5, new EntityAIFollowParent(this, 1.1D));
-        this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-        this.tasks.addTask(8, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.tasks.addTask(1, new AIPanic(1.2D));
+        this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.4F));
+        this.tasks.addTask(3, new EntityAIAttackMelee(this, 1.2D, false));
+        this.tasks.addTask(4, new EntityAIMate(this, 1.0D));
+        this.tasks.addTask(5, new EntityAITempt(this, 1.2D, false, TEMPTATION_ITEMS));
+        this.tasks.addTask(6, new EntityAIFollowParent(this, 1.1D));
+        this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D));
+        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.tasks.addTask(9, new EntityAILookIdle(this));
+        this.targetTasks.addTask(1, new AIHurtByTarget());
     }
     
     protected void applyEntityAttributes()
@@ -100,6 +107,17 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     public boolean attackEntityAsMob(Entity entityIn)
     {
     	return entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), 5.0F);
+    }
+    
+    protected void updateAITasks()
+    {
+    	if (world.getDifficulty() == EnumDifficulty.PEACEFUL)
+    	{
+        	if (this.getAttackTarget() != null) this.setAttackTarget(null);
+        	if (this.getRevengeTarget() != null) this.setRevengeTarget(null);
+    	}
+    	
+    	super.updateAITasks();
     }
 
     /**
@@ -363,6 +381,61 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     public boolean isBreedingItem(ItemStack stack)
     {
         return stack.getItem() == ModItems.foulCandy;
+    }
+
+    //-------------------------
+    //Borrowed from polar bears
+    //-------------------------
+    class AIHurtByTarget extends EntityAIHurtByTarget
+    {
+        public AIHurtByTarget()
+        {
+            super(EntityBookWyrm.this, true);
+        }
+
+        /**
+         * Execute a one shot task or start executing a continuous task
+         */
+        public void startExecuting()
+        {
+            super.startExecuting();
+
+            if (EntityBookWyrm.this.isChild())
+            {
+                this.alertOthers();
+                this.resetTask();
+            }
+        }
+
+        protected void setEntityAttackTarget(EntityCreature creatureIn, EntityLivingBase entityLivingBaseIn)
+        {
+            if (creatureIn instanceof EntityBookWyrm && !creatureIn.isChild())
+            {
+                super.setEntityAttackTarget(creatureIn, entityLivingBaseIn);
+            }
+        }
+
+        public boolean shouldExecute()
+        {
+        	if (this.taskOwner.world.getDifficulty() == EnumDifficulty.PEACEFUL) return false;
+        	else return super.shouldExecute();
+        }
+    }
+
+    class AIPanic extends EntityAIPanic
+    {
+        public AIPanic(double speed)
+        {
+            super(EntityBookWyrm.this, speed);
+        }
+
+        /**
+         * Returns whether the EntityAIBase should begin execution.
+         */
+        public boolean shouldExecute()
+        {
+            return !EntityBookWyrm.this.isChild() && !EntityBookWyrm.this.isBurning() ? false : super.shouldExecute();
+        }
     }
 
 }

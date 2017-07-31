@@ -46,7 +46,7 @@ public class ModItems {
 	public static Item tenebraDoor,
 		hephaestite, umbriumIngot, umbriumNugget, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
-		scuttlerEye, blackHeart, foulSlime, foulCandy, bookWyrmRaw, bookWyrmCooked,
+		scuttlerEye, blackHeart, foulSlime, foulCandy, bookWyrmRaw, bookWyrmCooked, bookWyrmScale, bookWyrmScaleGolden,
 		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, razorScarlite, 
@@ -80,6 +80,8 @@ public class ModItems {
 		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
 		bookWyrmRaw = registerItem(new ItemFood(3, 1.8F, true).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.5F), "book_wyrm_raw");
 		bookWyrmCooked = registerItem(new ItemFood(8, 12.8F, true), "book_wyrm_cooked");
+		bookWyrmScale = registerItem(new Item(), "book_wyrm_scale");
+		bookWyrmScaleGolden = registerItem(new Item(), "book_wyrm_scale_golden");
 		
 		//Tools
 		//Because axes' stats aren't calculated like normal tools, we have to manually specify them

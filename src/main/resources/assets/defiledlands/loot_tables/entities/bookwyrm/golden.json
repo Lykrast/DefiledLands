@@ -1,0 +1,42 @@
+{
+    "pools": [
+        {
+			"name": "scales",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "defiledlands:book_wyrm_scale_golden",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 0,
+                                "max": 2
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 0,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+			"name": "book_wyrm",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "defiledlands:entities/book_wyrm",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

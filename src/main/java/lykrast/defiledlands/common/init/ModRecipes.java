@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.init;
 
 import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.util.CorruptionRecipes;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -44,8 +45,9 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.umbriumOre, new ItemStack(ModItems.umbriumIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.scarliteOre, new ItemStack(ModItems.scarlite), 1);
 		
-		//Food
+		//Mob Drops
 		GameRegistry.addSmelting(ModItems.bookWyrmRaw, new ItemStack(ModItems.bookWyrmCooked), 0.35F);
+		GameRegistry.addSmelting(ModItems.bookWyrmScaleGolden, new ItemStack(Items.GOLD_NUGGET, 3), 0.7F);
 		
 		//Tool recycling
 		GameRegistry.addSmelting(ModItems.axeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);

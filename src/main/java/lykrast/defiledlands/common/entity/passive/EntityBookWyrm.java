@@ -54,7 +54,8 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
 public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
-    public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/book_wyrm");
+    public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/bookwyrm/normal");
+    public static final ResourceLocation LOOT_GOLDEN = new ResourceLocation(DefiledLands.MODID, "entities/bookwyrm/golden");
     private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.ENCHANTED_BOOK, ModItems.foulCandy);
     private static final DataParameter<Boolean> GOLDEN = EntityDataManager.<Boolean>createKey(EntityBookWyrm.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> DIGEST_TIME = EntityDataManager.<Integer>createKey(EntityBookWyrm.class, DataSerializers.VARINT);
@@ -351,7 +352,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
 	@Override
     @Nullable
     protected ResourceLocation getLootTable() {
-        return LOOT;
+        if (isGolden()) return LOOT_GOLDEN;
+        else return LOOT;
     }
 
     /**

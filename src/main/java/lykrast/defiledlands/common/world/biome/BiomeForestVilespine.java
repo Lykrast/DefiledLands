@@ -25,7 +25,7 @@ public class BiomeForestVilespine extends BiomeDefiled {
 		super(properties);
         this.decorator.treesPerChunk = 0;
         this.decorator.extraTreeChance = 0.05F;
-		this.vilespinePerChunk = 800;
+		this.vilespinePerChunk = 500;
 	}
 
 }

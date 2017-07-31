@@ -22,7 +22,8 @@ public abstract class BiomeDefiled extends Biome {
     public static WorldGenerator vilespineGen = new WorldGenVilespine(), 
     		blastemGen = new WorldGenBlastem(),
     		tenebraGen = new WorldGenTenebra(false),
-    		scuronotteGen = new WorldGenScuronotte();
+    		scuronotteGen = new WorldGenScuronotte(),
+    		corruptionPosGen = new WorldGenCorruptionPost();
 	protected int vilespinePerChunk, scuronottePerChunk;
 
 	public BiomeDefiled(BiomeProperties properties)
@@ -81,7 +82,7 @@ public abstract class BiomeDefiled extends Biome {
 		super.decorate(worldIn, rand, pos);
 
         if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.DESERT_WELL))
-        if (worldIn.getChunkFromBlockCoords(pos).getRandomWithSeed(119432789L).nextInt(100) == 0)
+        if (worldIn.getChunkFromBlockCoords(pos).getRandomWithSeed(119432789L).nextInt(50) == 0)
         {
             int i = rand.nextInt(16) + 8;
             int j = rand.nextInt(16) + 8;
@@ -122,6 +123,18 @@ public abstract class BiomeDefiled extends Biome {
                 int l11 = rand.nextInt(16) + 8;
                 BlockPos blockpos2 = worldIn.getHeight(pos.add(i8, 0, l11));
                 this.scuronotteGen.generate(worldIn, rand, blockpos2);
+			}
+		}
+		
+		for (int x=8;x<24;x++)
+		{
+			for (int z=8;z<24;z++)
+			{
+                BlockPos blockpos2 = worldIn.getHeight(pos.add(x,0,z));
+                if (worldIn.getBiome(blockpos2) instanceof BiomeDefiled)
+                {
+                	this.corruptionPosGen.generate(worldIn, rand, blockpos2);
+                }
 			}
 		}
 	}

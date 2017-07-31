@@ -30,8 +30,17 @@ public class ItemBookWyrmAnalyzer extends Item {
         	EntityBookWyrm target = (EntityBookWyrm)entity;
         	
         	String base = "ui.book_wyrm_analyze.";
-        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digest_time")) + target.getDigestTime()));
-        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "max_level")) + target.getMaxLevel()));
+        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "health"))
+        			+ (int)target.getHealth() + "/" + (int)target.getMaxHealth()));
+        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digest_time"))
+        			+ target.getDigestTime()));
+        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "max_level"))
+        			+ target.getMaxLevel()));
+        	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digested"))
+        			+ target.digested));
+        	if (target.digesting > 0)
+            	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digesting1"))
+            			+ target.digesting + I18n.translateToLocal(String.format("%s%s", base, "digesting2"))));
         	if (target.isGolden()) 
             	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "golden"))));
         	

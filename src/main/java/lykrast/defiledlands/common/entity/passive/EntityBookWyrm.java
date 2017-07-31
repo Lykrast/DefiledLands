@@ -33,6 +33,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
@@ -42,6 +43,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
@@ -112,6 +114,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         		digested++;
         		digesting--;
         		
+        		playDigestEffect();
+        		
         		if (digesting > 0) digestTimer = getDigestTime();
         	}
         }
@@ -119,6 +123,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     	if (digested >= getMaxLevel())
     	{
     		digested -= getMaxLevel();
+            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+            this.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
     		
     		if (!this.world.isRemote)
     		{
@@ -173,6 +179,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
                     {
                         itemstack.shrink(1);
                     }
+
+                    this.playSound(SoundEvents.ENTITY_PLAYER_BURP, 1.0F, this.rand.nextFloat() * 0.1F + 0.9F);
                     
                 	return true;
             	}
@@ -187,6 +195,18 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         else
         {
             return true;
+        }
+    }
+
+    protected void playDigestEffect()
+    {
+        EnumParticleTypes enumparticletypes = EnumParticleTypes.SMOKE_NORMAL;
+        for (int i = 0; i < 7; ++i)
+        {
+            double d0 = this.rand.nextGaussian() * 0.02D;
+            double d1 = this.rand.nextGaussian() * 0.02D;
+            double d2 = this.rand.nextGaussian() * 0.02D;
+            this.world.spawnParticle(enumparticletypes, this.posX + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + 0.5D + (double)(this.rand.nextFloat() * this.height), this.posZ + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, d0, d1, d2);
         }
     }
 

@@ -45,9 +45,15 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModBlocks.umbriumOre, new ItemStack(ModItems.umbriumIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.scarliteOre, new ItemStack(ModItems.scarlite), 1);
 		
-		//Mob Drops
+		//Food
 		GameRegistry.addSmelting(ModItems.bookWyrmRaw, new ItemStack(ModItems.bookWyrmCooked), 0.35F);
+		
+		//Golden Book Wyrm Scales
 		GameRegistry.addSmelting(ModItems.bookWyrmScaleGolden, new ItemStack(Items.GOLD_NUGGET, 3), 0.7F);
+		GameRegistry.addSmelting(ModItems.scaleGoldenHelmet, new ItemStack(Items.GOLD_NUGGET, 15), 0.7F);
+		GameRegistry.addSmelting(ModItems.scaleGoldenChestplate, new ItemStack(Items.GOLD_NUGGET, 24), 0.7F);
+		GameRegistry.addSmelting(ModItems.scaleGoldenLeggings, new ItemStack(Items.GOLD_NUGGET, 21), 0.7F);
+		GameRegistry.addSmelting(ModItems.scaleGoldenBoots, new ItemStack(Items.GOLD_NUGGET, 12), 0.7F);
 		
 		//Tool recycling
 		GameRegistry.addSmelting(ModItems.axeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
@@ -55,6 +61,11 @@ public class ModRecipes {
 		GameRegistry.addSmelting(ModItems.pickaxeUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		GameRegistry.addSmelting(ModItems.shovelUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		GameRegistry.addSmelting(ModItems.swordUmbrium, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		//Armor recycling
+		GameRegistry.addSmelting(ModItems.umbriumHelmet, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.umbriumChestplate, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.umbriumLeggings, new ItemStack(ModItems.umbriumNugget), 0.1F);
+		GameRegistry.addSmelting(ModItems.umbriumBoots, new ItemStack(ModItems.umbriumNugget), 0.1F);
 		
 		//Decoration
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.stoneDefiledDecoration, 1, BlockStoneDefiledDecoration.Variants.BRICKS.ordinal()), 

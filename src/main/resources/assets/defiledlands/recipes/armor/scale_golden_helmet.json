@@ -1,0 +1,11 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "SSS",
+        "S S"
+    ],
+    "key": {
+        "S": { "item": "defiledlands:book_wyrm_scale_golden" }
+    },
+    "result": { "item": "defiledlands:scale_golden_helmet" }
+}

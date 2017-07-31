@@ -1,0 +1,12 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "U U",
+        "UUU",
+		"UUU"
+    ],
+    "key": {
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:umbrium_chestplate" }
+}

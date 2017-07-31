@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
+import lykrast.defiledlands.common.item.ItemArmorGeneric;
 import lykrast.defiledlands.common.item.ItemAxeGeneric;
 import lykrast.defiledlands.common.item.ItemBlackHeart;
 import lykrast.defiledlands.common.item.ItemBlastemFruit;
@@ -28,8 +29,12 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -51,12 +56,16 @@ public class ModItems {
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, razorScarlite, 
 		umbraBlaster, concussionSmasher,
+		umbriumHelmet, umbriumChestplate, umbriumLeggings, umbriumBoots,
+		scaleHelmet, scaleChestplate, scaleLeggings, scaleBoots, 
+		scaleGoldenHelmet, scaleGoldenChestplate, scaleGoldenLeggings, scaleGoldenBoots,
 		bookWyrmAnalyzer,
 		callingStone,
 		essenceDestroyer;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor;
+	public static ArmorMaterial materialUmbriumA, materialScales, materialScalesGolden;
 	
 	public static void init() {
 		//Decoration
@@ -109,6 +118,29 @@ public class ModItems {
 		umbraBlaster = registerItem(new ItemUmbraBlaster(465), "umbra_blaster");
 		concussionSmasher = registerItem(new ItemConcussionSmasher(178), "concussion_smasher");
 		
+		//Armor
+		materialUmbriumA = EnumHelper.addArmorMaterial("umbrium", "umbrium", 16, new int[]{1, 4, 5, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+		materialUmbriumA.setRepairItem(new ItemStack(umbriumIngot));
+		umbriumHelmet = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.HEAD), "umbrium_helmet");
+		umbriumChestplate = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.CHEST), "umbrium_chestplate");
+		umbriumLeggings = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.LEGS), "umbrium_leggings");
+		umbriumBoots = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.FEET), "umbrium_boots");
+		
+		materialScales = EnumHelper.addArmorMaterial("bookWyrmScales", "book_wyrm_scale", 10, new int[]{1, 3, 4, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+		materialScales.setRepairItem(new ItemStack(bookWyrmScale));
+		scaleHelmet = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.HEAD), "scale_helmet");
+		scaleChestplate = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.CHEST), "scale_chestplate");
+		scaleLeggings = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.LEGS), "scale_leggings");
+		scaleBoots = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.FEET), "scale_boots");
+		
+		materialScalesGolden = EnumHelper.addArmorMaterial("bookWyrmScalesGolden", "book_wyrm_scale_golden", 10, new int[]{1, 3, 4, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1.0F);
+		materialScalesGolden.setRepairItem(new ItemStack(bookWyrmScaleGolden));
+		scaleGoldenHelmet = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.HEAD), "scale_golden_helmet");
+		scaleGoldenChestplate = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.CHEST), "scale_golden_chestplate");
+		scaleGoldenLeggings = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.LEGS), "scale_golden_leggings");
+		scaleGoldenBoots = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.FEET), "scale_golden_boots");
+		
+		//Non fighting tools
 		bookWyrmAnalyzer = registerItem(new ItemBookWyrmAnalyzer(), "book_wyrm_analyzer");
 		
 		//Boss stuff

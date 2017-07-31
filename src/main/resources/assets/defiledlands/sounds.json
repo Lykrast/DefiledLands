@@ -1,0 +1,23 @@
+{
+	"bookwyrm.idle": {
+		"category": "neutral",
+		"sounds": [
+			"defiledlands:bookwyrm/idle1",
+			"defiledlands:bookwyrm/idle2",
+			"defiledlands:bookwyrm/idle3",
+			"defiledlands:bookwyrm/idle4"
+		]
+	},
+	"bookwyrm.hurt": {
+		"category": "neutral",
+		"sounds": [
+			"defiledlands:bookwyrm/hurt"
+		]
+	},
+	"bookwyrm.death": {
+		"category": "neutral",
+		"sounds": [
+			"defiledlands:bookwyrm/death"
+		]
+	}
+}

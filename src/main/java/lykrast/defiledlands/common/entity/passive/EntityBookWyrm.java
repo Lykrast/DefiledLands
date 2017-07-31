@@ -13,7 +13,9 @@ import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.util.Config;
+import lykrast.defiledlands.common.util.SoundHandler;
 import lykrast.defiledlands.core.DefiledLands;
+import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -46,6 +48,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -301,9 +304,24 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         digestTimer = compound.getInteger("DigestTimer");
     }
 
-    protected SoundEvent getStepSound()
+    protected SoundEvent getAmbientSound()
     {
-        return SoundEvents.ENTITY_PIG_STEP;
+        return SoundHandler.bookWyrmIdle;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+    {
+        return SoundHandler.bookWyrmHurt;
+    }
+
+    protected SoundEvent getDeathSound()
+    {
+        return SoundHandler.bookWyrmDeath;
+    }
+
+    protected void playStepSound(BlockPos pos, Block blockIn)
+    {
+        this.playSound(SoundEvents.ENTITY_PIG_STEP, 0.15F, 1.0F);
     }
 
     public boolean isGolden() {

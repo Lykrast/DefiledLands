@@ -10,6 +10,7 @@ import lykrast.defiledlands.common.init.ModEntities;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.init.ModRecipes;
 import lykrast.defiledlands.common.util.Config;
+import lykrast.defiledlands.common.util.SoundHandler;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -31,6 +32,7 @@ public class CommonProxy {
 		ModEntities.init();
 		ModBiomes.registerBiomes();
 		ModEnchantments.init();
+		SoundHandler.init();
 		
 		ModCompat.preInitCompat();
 	}

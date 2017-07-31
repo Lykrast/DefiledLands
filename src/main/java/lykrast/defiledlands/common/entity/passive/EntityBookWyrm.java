@@ -45,6 +45,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -114,7 +115,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         		digested++;
         		digesting--;
         		
-        		playDigestEffect();
+        		playDigestEffect(false);
         		
         		if (digesting > 0) digestTimer = getDigestTime();
         	}
@@ -125,6 +126,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     		digested -= getMaxLevel();
             this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
             this.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+    		playDigestEffect(true);
     		
     		if (!this.world.isRemote)
     		{
@@ -198,9 +200,12 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         }
     }
 
-    protected void playDigestEffect()
+    protected void playDigestEffect(boolean success)
     {
         EnumParticleTypes enumparticletypes = EnumParticleTypes.SMOKE_NORMAL;
+        
+        if (success) enumparticletypes = EnumParticleTypes.VILLAGER_HAPPY;
+        
         for (int i = 0; i < 7; ++i)
         {
             double d0 = this.rand.nextGaussian() * 0.02D;
@@ -294,6 +299,11 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         digested = compound.getInteger("Digested");
         digesting = compound.getInteger("Digesting");
         digestTimer = compound.getInteger("DigestTimer");
+    }
+
+    protected SoundEvent getStepSound()
+    {
+        return SoundEvents.ENTITY_PIG_STEP;
     }
 
     public boolean isGolden() {

@@ -29,7 +29,7 @@ public class ItemBookWyrmAnalyzer extends Item {
         {
         	EntityBookWyrm target = (EntityBookWyrm)entity;
         	
-        	String base = "ui.book_wyrm_analyze.";
+        	String base = "ui.defiledlands.book_wyrm_analyze.";
         	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "health"))
         			+ (int)target.getHealth() + "/" + (int)target.getMaxHealth()));
         	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digest_time"))

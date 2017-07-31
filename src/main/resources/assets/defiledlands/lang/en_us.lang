@@ -86,13 +86,13 @@ entity.defiledlands.book_wyrm.name=Book Wyrm
 
 entity.defiledlands.the_destroyer.name=The Destroyer
 
-ui.book_wyrm_analyze.health=Health : 
-ui.book_wyrm_analyze.digest_time=Digesting time : 
-ui.book_wyrm_analyze.max_level=Enchanting level : 
-ui.book_wyrm_analyze.digested=Digested level(s) : 
-ui.book_wyrm_analyze.digesting1=Currently digesting 
-ui.book_wyrm_analyze.digesting2= level(s)
-ui.book_wyrm_analyze.golden=This specimen has a strange golden hide...
+ui.defiledlands.book_wyrm_analyze.health=Health : 
+ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 
+ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : 
+ui.defiledlands.book_wyrm_analyze.digested=Digested level(s) : 
+ui.defiledlands.book_wyrm_analyze.digesting1=Currently digesting 
+ui.defiledlands.book_wyrm_analyze.digesting2= level(s)
+ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...

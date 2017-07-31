@@ -1,9 +1,7 @@
 package lykrast.defiledlands.client.render.entity;
 
-import lykrast.defiledlands.client.render.entity.RenderShambler.Factory;
 import lykrast.defiledlands.client.render.entity.layers.LayerScuttlerEyes;
 import lykrast.defiledlands.common.entity.monster.EntityScuttler;
-import lykrast.defiledlands.common.entity.monster.EntityShambler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.model.ModelSpider;
 import net.minecraft.client.renderer.entity.Render;

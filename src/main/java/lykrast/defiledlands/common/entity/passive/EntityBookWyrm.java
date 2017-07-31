@@ -12,8 +12,8 @@ import com.google.common.collect.Sets;
 import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.init.ModSounds;
 import lykrast.defiledlands.common.util.Config;
-import lykrast.defiledlands.common.util.SoundHandler;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
@@ -306,17 +306,17 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
 
     protected SoundEvent getAmbientSound()
     {
-        return SoundHandler.bookWyrmIdle;
+        return ModSounds.bookWyrmIdle;
     }
 
     protected SoundEvent getHurtSound(DamageSource p_184601_1_)
     {
-        return SoundHandler.bookWyrmHurt;
+        return ModSounds.bookWyrmHurt;
     }
 
     protected SoundEvent getDeathSound()
     {
-        return SoundHandler.bookWyrmDeath;
+        return ModSounds.bookWyrmDeath;
     }
 
     protected void playStepSound(BlockPos pos, Block blockIn)

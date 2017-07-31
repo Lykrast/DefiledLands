@@ -1,6 +1,5 @@
 package lykrast.defiledlands.client.render.entity;
 
-import lykrast.defiledlands.client.render.entity.RenderScuttler.Factory;
 import lykrast.defiledlands.common.entity.monster.EntityHost;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.model.ModelZombie;

@@ -2,17 +2,24 @@ package lykrast.defiledlands.common.world.biome;
 
 import java.util.Random;
 
-import lykrast.defiledlands.common.entity.monster.*;
+import lykrast.defiledlands.common.entity.monster.EntityHost;
+import lykrast.defiledlands.common.entity.monster.EntityScuttler;
+import lykrast.defiledlands.common.entity.monster.EntityShambler;
+import lykrast.defiledlands.common.entity.monster.EntityShamblerTwisted;
 import lykrast.defiledlands.common.entity.passive.EntityBookWyrm;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.util.Config;
-import lykrast.defiledlands.common.world.feature.*;
-import net.minecraft.block.BlockBush;
+import lykrast.defiledlands.common.world.feature.WorldGenBlastem;
+import lykrast.defiledlands.common.world.feature.WorldGenConjuringAltar;
+import lykrast.defiledlands.common.world.feature.WorldGenCorruptionPost;
+import lykrast.defiledlands.common.world.feature.WorldGenDungeonsDefiled;
+import lykrast.defiledlands.common.world.feature.WorldGenScuronotte;
+import lykrast.defiledlands.common.world.feature.WorldGenTenebra;
+import lykrast.defiledlands.common.world.feature.WorldGenVilespine;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenBush;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

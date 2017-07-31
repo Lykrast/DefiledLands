@@ -2,7 +2,6 @@ package lykrast.defiledlands.common.enchantment;
 
 import lykrast.defiledlands.common.init.ModEnchantments;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentBlazing extends Enchantment {

@@ -3,7 +3,6 @@ package lykrast.defiledlands.common.item;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;

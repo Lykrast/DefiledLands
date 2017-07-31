@@ -3,12 +3,9 @@ package lykrast.defiledlands.common.world.biome;
 import java.util.Random;
 
 import lykrast.defiledlands.common.init.ModBlocks;
-import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.init.Biomes;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeHills;
 import net.minecraft.world.chunk.ChunkPrimer;
 
 public class BiomeHillsDefiled extends BiomeDefiled {

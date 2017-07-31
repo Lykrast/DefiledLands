@@ -3,7 +3,6 @@ package lykrast.defiledlands.common.util;
 import java.util.Random;
 
 import lykrast.defiledlands.common.world.biome.BiomeDefiled;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

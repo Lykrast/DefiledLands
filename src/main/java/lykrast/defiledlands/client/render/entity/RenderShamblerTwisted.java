@@ -1,18 +1,12 @@
 package lykrast.defiledlands.client.render.entity;
 
 import lykrast.defiledlands.client.model.ModelShambler;
-import lykrast.defiledlands.client.render.entity.layers.LayerScuttlerEyes;
 import lykrast.defiledlands.client.render.entity.layers.LayerShamblerTwistedEyes;
 import lykrast.defiledlands.common.entity.monster.EntityShamblerTwisted;
 import lykrast.defiledlands.core.DefiledLands;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerEndermanEyes;
-import net.minecraft.client.renderer.entity.layers.LayerHeldBlock;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;

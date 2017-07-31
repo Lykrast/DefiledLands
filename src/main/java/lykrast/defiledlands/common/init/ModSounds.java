@@ -1,18 +1,18 @@
-package lykrast.defiledlands.common.util;
+package lykrast.defiledlands.common.init;
 
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-public class SoundHandler {
+public class ModSounds {
 	public static SoundEvent bookWyrmIdle, bookWyrmHurt, bookWyrmDeath;
 	
 	public static void init()
 	{
-		bookWyrmIdle = registerSoundEvent("bookwyrm.idle");
-		bookWyrmHurt = registerSoundEvent("bookwyrm.hurt");
-		bookWyrmDeath = registerSoundEvent("bookwyrm.death");
+		bookWyrmIdle = registerSoundEvent("book_wyrm.idle");
+		bookWyrmHurt = registerSoundEvent("book_wyrm.hurt");
+		bookWyrmDeath = registerSoundEvent("book_wyrm.death");
 	}
 	
 	public static SoundEvent registerSoundEvent(String name)

@@ -1,8 +1,5 @@
 package lykrast.defiledlands.client.render.entity;
 
-import javax.annotation.Nonnull;
-
-import lykrast.defiledlands.client.render.entity.RenderScuttler.Factory;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.client.Minecraft;

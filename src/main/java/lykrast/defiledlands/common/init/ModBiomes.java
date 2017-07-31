@@ -1,21 +1,36 @@
 package lykrast.defiledlands.common.init;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
+import static net.minecraftforge.common.BiomeDictionary.Type.FOREST;
+import static net.minecraftforge.common.BiomeDictionary.Type.HILLS;
+import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
+import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
+import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
+import static net.minecraftforge.common.BiomeDictionary.Type.SANDY;
+import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
+import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
+import static net.minecraftforge.common.BiomeDictionary.Type.SWAMP;
+import static net.minecraftforge.common.BiomeDictionary.Type.WASTELAND;
+import static net.minecraftforge.common.BiomeDictionary.Type.WET;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import lykrast.defiledlands.common.util.Config;
-import lykrast.defiledlands.common.world.biome.*;
+import lykrast.defiledlands.common.world.biome.BiomeDesertDefiled;
+import lykrast.defiledlands.common.world.biome.BiomeForestTenebra;
+import lykrast.defiledlands.common.world.biome.BiomeForestVilespine;
+import lykrast.defiledlands.common.world.biome.BiomeHillsDefiled;
+import lykrast.defiledlands.common.world.biome.BiomeIcePlainsDefiled;
+import lykrast.defiledlands.common.world.biome.BiomePlainsDefiled;
+import lykrast.defiledlands.common.world.biome.BiomeSwampDefiled;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-
-import static net.minecraftforge.common.BiomeDictionary.Type.*;
 
 public class ModBiomes {
 	

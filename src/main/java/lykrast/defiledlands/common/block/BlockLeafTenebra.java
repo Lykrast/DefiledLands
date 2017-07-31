@@ -1,6 +1,5 @@
 package lykrast.defiledlands.common.block;
 
-import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -9,7 +8,6 @@ import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;

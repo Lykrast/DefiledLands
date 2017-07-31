@@ -1,8 +1,5 @@
 package lykrast.defiledlands.common.entity.monster;
 
-import javax.annotation.Nullable;
-
-import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;

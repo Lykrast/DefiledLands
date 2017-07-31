@@ -20,7 +20,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraft.world.storage.loot.LootTableList;
 
 public class WorldGenDungeonsDefiled extends WorldGenerator {
     private static final Logger LOGGER = LogManager.getLogger();

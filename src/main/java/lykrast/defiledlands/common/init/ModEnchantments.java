@@ -1,6 +1,10 @@
 package lykrast.defiledlands.common.init;
 
-import lykrast.defiledlands.common.enchantment.*;
+import lykrast.defiledlands.common.enchantment.EnchantmentBlazing;
+import lykrast.defiledlands.common.enchantment.EnchantmentDestructive;
+import lykrast.defiledlands.common.enchantment.EnchantmentEconomical;
+import lykrast.defiledlands.common.enchantment.EnchantmentSafeguard;
+import lykrast.defiledlands.common.enchantment.EnchantmentSharpshooter;
 import lykrast.defiledlands.common.item.IEnchantDestructive;
 import lykrast.defiledlands.common.item.ItemGun;
 import lykrast.defiledlands.common.item.ItemUmbraBlaster;

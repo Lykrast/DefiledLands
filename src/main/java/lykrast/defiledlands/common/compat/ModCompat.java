@@ -1,16 +1,14 @@
 package lykrast.defiledlands.common.compat;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Level;
 
-import net.minecraftforge.fml.common.Loader;
-
-import java.util.HashSet;
-import java.util.Map.Entry;
-
 import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
+import net.minecraftforge.fml.common.Loader;
 
 public abstract class ModCompat {
 	public static HashMap<String, Class<? extends ModCompat>> compat = new HashMap<String, Class<? extends ModCompat>>();

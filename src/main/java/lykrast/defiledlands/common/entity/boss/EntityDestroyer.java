@@ -24,6 +24,7 @@ import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -31,6 +32,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.BossInfo;
@@ -133,7 +135,8 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     		if (j1 <= 0)
     		{
     			this.world.newExplosion(this, this.posX, this.posY + (double)this.getEyeHeight(), this.posZ, 7.0F, false, this.world.getGameRules().getBoolean("mobGriefing"));
-    			this.world.playBroadcastSound(1023, new BlockPos(this), 0);
+    			//this.world.playBroadcastSound(1023, new BlockPos(this), 0);
+                this.playSound(SoundEvents.ENTITY_WITHER_SPAWN, 10.0F, 1.0F);
     		}
 
     		this.setInvulTime(j1);
@@ -220,7 +223,8 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
             
             if (this.deathTime == 1)
             {
-                this.world.playBroadcastSound(1028, new BlockPos(this), 0);
+                //this.world.playBroadcastSound(1028, new BlockPos(this), 0);
+                this.playSound(SoundEvents.ENTITY_ENDERDRAGON_DEATH, 10.0F, 1.0F);
             }
         }
         
@@ -332,6 +336,16 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEAD;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_)
+    {
+        return SoundEvents.ENTITY_WITHER_HURT;
+    }
+
+    protected SoundEvent getDeathSound()
+    {
+        return SoundEvents.ENTITY_WITHER_DEATH;
     }
 
     public int getInvulTime()

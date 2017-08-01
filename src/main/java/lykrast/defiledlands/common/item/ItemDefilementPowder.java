@@ -1,6 +1,12 @@
 package lykrast.defiledlands.common.item;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import lykrast.defiledlands.common.util.CorruptionHelper;
+import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -11,6 +17,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public class ItemDefilementPowder extends Item {
@@ -53,5 +61,12 @@ public class ItemDefilementPowder extends Item {
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0 + Math.random(), d1 + 1.2D, d2 + Math.random(), 0.0D, 0.0D, 0.0D);
         }
     }
+    
+	@Override
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
+			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
+		}
+	}
 
 }

@@ -1,9 +1,15 @@
 package lykrast.defiledlands.common.item;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
@@ -14,6 +20,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
@@ -94,5 +102,12 @@ public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
     {
     	return repair.getItem() == ModItems.umbriumIngot;
     }
+	
+	@Override
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
+			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
+		}
+	}
 
 }

@@ -1,7 +1,13 @@
 package lykrast.defiledlands.common.item;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import com.google.common.collect.Multimap;
 
+import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -15,6 +21,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public class ItemRazorScarlite extends ItemSwordGeneric {
@@ -87,5 +95,12 @@ public class ItemRazorScarlite extends ItemSwordGeneric {
 
         return multimap;
     }
+	
+	@Override
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
+			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
+		}
+	}
 
 }

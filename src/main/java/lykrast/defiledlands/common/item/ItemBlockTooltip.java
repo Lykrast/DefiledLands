@@ -13,19 +13,12 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
-public class ItemBlockFuel extends ItemBlock {
-	protected int burnTime;
+public class ItemBlockTooltip extends ItemBlock {
 
-	public ItemBlockFuel(Block block, int burnTime){
+	public ItemBlockTooltip(Block block)
+	{
 		super(block);
-		this.burnTime = burnTime;
 	}
-    
-    @Override
-    public int getItemBurnTime(ItemStack fuel)
-    {
-    	return burnTime;
-    }
     
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

@@ -1,8 +1,12 @@
 package lykrast.defiledlands.common.item;
 
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.IItemPropertyGetter;
@@ -13,6 +17,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -120,5 +126,12 @@ public class ItemConcussionSmasher extends Item implements IEnchantDestructive {
     {
     	return repair.getItem() == ModItems.umbriumIngot;
     }
+	
+	@Override
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
+		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
+			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
+		}
+	}
 
 }

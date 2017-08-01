@@ -1,5 +1,7 @@
+#Creative Tabs
 itemGroup.tabDefiledLands=Defiled Lands
 
+#Blocks
 tile.defiledlands.stone_defiled.name=Defiled Stone
 tile.defiledlands.sandstone_defiled.name=Defiled Sandstone
 tile.defiledlands.sand_defiled.name=Defiled Sand
@@ -20,7 +22,9 @@ tile.defiledlands.blastem.name=Blastem
 tile.defiledlands.scuronotte.name=Scuronotte
 
 tile.defiledlands.hephaestite_ore.name=Hephaestite Ore
+tile.defiledlands.hephaestite_ore.tooltip=Hot to the touch
 tile.defiledlands.hephaestite_block.name=Block of Hephaestite
+tile.defiledlands.hephaestite_block.tooltip=Burning to the touch
 tile.defiledlands.umbrium_ore.name=Umbrium Ore
 tile.defiledlands.umbrium_block.name=Block of Umbrium
 tile.defiledlands.scarlite_ore.name=Scarlite Ore
@@ -29,6 +33,7 @@ tile.defiledlands.scarlite_block.name=Block of Scarlite
 tile.defiledlands.healing_pad.name=Healing Pad
 tile.defiledlands.conjuring_altar.name=Conjuring Altar
 
+#Items
 item.defiledlands.tenebra_door.name=Tenebra Door
 
 item.defiledlands.hephaestite.name=Hephaestite Shard
@@ -37,8 +42,11 @@ item.defiledlands.umbrium_nugget.name=Umbrium Nugget
 item.defiledlands.scarlite.name=Scarlite
 
 item.defiledlands.blastem_fruit.name=Blastem Fruit
+item.defiledlands.blastem_fruit.tooltip=Can be thrown
 item.defiledlands.blastem_fruit_blazing.name=Blazing Blastem Fruit
+item.defiledlands.blastem_fruit_blazing.tooltip=Can be thrown
 item.defiledlands.defilement_powder.name=Defilement Powder
+item.defiledlands.defilement_powder.tooltip=Right click a block to defile it
 
 item.defiledlands.scuttler_eye.name=Scuttler Eye
 item.defiledlands.black_heart.name=Black Heart
@@ -50,6 +58,7 @@ item.defiledlands.book_wyrm_scale.name=Book Wyrm Scale
 item.defiledlands.book_wyrm_scale_golden.name=Golden Book Wyrm Scale
 
 item.defiledlands.calling_stone.name=Calling Stone
+item.defiledlands.calling_stone.tooltip=Right click an active Conjuring Altar\nto summon The Destroyer
 item.defiledlands.essence_destroyer.name=Ravaging Essence
 
 item.defiledlands.tenebra_axe.name=Tenebra Axe
@@ -65,10 +74,14 @@ item.defiledlands.umbrium_shovel.name=Umbrium Shovel
 item.defiledlands.umbrium_sword.name=Umbrium Sword
 
 item.defiledlands.scarlite_reaver.name=Scarlite Reaver
+item.defiledlands.scarlite_reaver.tooltip=Drains life from living creatures
 item.defiledlands.scarlite_razor.name=Scarlite Razor
+item.defiledlands.scarlite_razor.tooltip=Right click to convert life to hunger
 
 item.defiledlands.umbra_blaster.name=Umbra Blaster
+item.defiledlands.umbra_blaster.tooltip=Uses Blastem Fruits as ammo
 item.defiledlands.concussion_smasher.name=Concussion Smasher
+item.defiledlands.concussion_smasher.tooltip=Charge then release\nto cause a shockwave
 
 item.defiledlands.umbrium_helmet.name=Umbrium Helmet
 item.defiledlands.umbrium_chestplate.name=Umbrium Chestplate
@@ -85,13 +98,16 @@ item.defiledlands.scale_golden_leggings.name=Golden Book Wyrm Scale Leggings
 item.defiledlands.scale_golden_boots.name=Golden Book Wyrm Scale Boots
 
 item.defiledlands.book_wyrm_analyzer.name=Book Wyrm Analyzer
+item.defiledlands.book_wyrm_analyzer.tooltip=Right click a Book Wyrm\nto know its stats
 
+#Enchantments
 enchantment.sharpshooter=Sharpshooter
 enchantment.economical=Economical
 enchantment.safeguard=Safeguard
 enchantment.destructive=Destructive
 enchantment.blazing=Blazing
 
+#Mobs
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
@@ -102,6 +118,7 @@ entity.defiledlands.book_wyrm.name=Book Wyrm
 
 entity.defiledlands.the_destroyer.name=The Destroyer
 
+#UI
 ui.defiledlands.book_wyrm_analyze.health=Health : 
 ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 
 ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : 
@@ -110,6 +127,7 @@ ui.defiledlands.book_wyrm_analyze.digesting1=Currently digesting
 ui.defiledlands.book_wyrm_analyze.digesting2= level(s)
 ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
+#Advancements
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
 advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods

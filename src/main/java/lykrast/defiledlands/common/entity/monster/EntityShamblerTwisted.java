@@ -11,8 +11,10 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
 public class EntityShamblerTwisted extends EntityShambler {
@@ -51,6 +53,11 @@ public class EntityShamblerTwisted extends EntityShambler {
     protected EnumParticleTypes getSmoke()
     {
     	return EnumParticleTypes.SMOKE_LARGE;
+    }
+
+    protected SoundEvent getAmbientSound()
+    {
+        return SoundEvents.ENTITY_BLAZE_AMBIENT;
     }
 
 }

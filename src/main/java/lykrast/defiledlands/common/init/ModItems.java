@@ -120,24 +120,24 @@ public class ModItems {
 		//Armor
 		materialUmbriumA = EnumHelper.addArmorMaterial("umbrium", "umbrium", 16, new int[]{1, 4, 5, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 		materialUmbriumA.setRepairItem(new ItemStack(umbriumIngot));
-		umbriumHelmet = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.HEAD), "umbrium_helmet");
-		umbriumChestplate = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.CHEST), "umbrium_chestplate");
-		umbriumLeggings = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.LEGS), "umbrium_leggings");
-		umbriumBoots = registerItem(new ItemArmorGeneric(materialUmbriumA, EntityEquipmentSlot.FEET), "umbrium_boots");
+		umbriumHelmet = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.HEAD), "umbrium_helmet");
+		umbriumChestplate = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.CHEST), "umbrium_chestplate");
+		umbriumLeggings = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.LEGS), "umbrium_leggings");
+		umbriumBoots = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.FEET), "umbrium_boots");
 		
 		materialScales = EnumHelper.addArmorMaterial("bookWyrmScales", "book_wyrm_scale", 10, new int[]{1, 3, 4, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
 		materialScales.setRepairItem(new ItemStack(bookWyrmScale));
-		scaleHelmet = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.HEAD), "scale_helmet");
-		scaleChestplate = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.CHEST), "scale_chestplate");
-		scaleLeggings = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.LEGS), "scale_leggings");
-		scaleBoots = registerItem(new ItemArmorGeneric(materialScales, EntityEquipmentSlot.FEET), "scale_boots");
+		scaleHelmet = registerItem(new ItemArmorGeneric("book_wyrm_scale", materialScales, EntityEquipmentSlot.HEAD), "scale_helmet");
+		scaleChestplate = registerItem(new ItemArmorGeneric("book_wyrm_scale", materialScales, EntityEquipmentSlot.CHEST), "scale_chestplate");
+		scaleLeggings = registerItem(new ItemArmorGeneric("book_wyrm_scale", materialScales, EntityEquipmentSlot.LEGS), "scale_leggings");
+		scaleBoots = registerItem(new ItemArmorGeneric("book_wyrm_scale", materialScales, EntityEquipmentSlot.FEET), "scale_boots");
 		
 		materialScalesGolden = EnumHelper.addArmorMaterial("bookWyrmScalesGolden", "book_wyrm_scale_golden", 10, new int[]{1, 3, 4, 2}, 25, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 1.0F);
 		materialScalesGolden.setRepairItem(new ItemStack(bookWyrmScaleGolden));
-		scaleGoldenHelmet = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.HEAD), "scale_golden_helmet");
-		scaleGoldenChestplate = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.CHEST), "scale_golden_chestplate");
-		scaleGoldenLeggings = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.LEGS), "scale_golden_leggings");
-		scaleGoldenBoots = registerItem(new ItemArmorGeneric(materialScalesGolden, EntityEquipmentSlot.FEET), "scale_golden_boots");
+		scaleGoldenHelmet = registerItem(new ItemArmorGeneric("book_wyrm_scale_golden", materialScalesGolden, EntityEquipmentSlot.HEAD), "scale_golden_helmet");
+		scaleGoldenChestplate = registerItem(new ItemArmorGeneric("book_wyrm_scale_golden", materialScalesGolden, EntityEquipmentSlot.CHEST), "scale_golden_chestplate");
+		scaleGoldenLeggings = registerItem(new ItemArmorGeneric("book_wyrm_scale_golden", materialScalesGolden, EntityEquipmentSlot.LEGS), "scale_golden_leggings");
+		scaleGoldenBoots = registerItem(new ItemArmorGeneric("book_wyrm_scale_golden", materialScalesGolden, EntityEquipmentSlot.FEET), "scale_golden_boots");
 		
 		//Non fighting tools
 		bookWyrmAnalyzer = registerItem(new ItemBookWyrmAnalyzer(), "book_wyrm_analyzer");

@@ -12,10 +12,10 @@ public class ItemArmorGeneric extends ItemArmor {
 	private static final String PATH = DefiledLands.MODID + ":textures/armor/";
 	protected String texture;
 
-	public ItemArmorGeneric(ArmorMaterial materialIn, EntityEquipmentSlot equipmentSlotIn)
+	public ItemArmorGeneric(String name, ArmorMaterial materialIn, EntityEquipmentSlot equipmentSlotIn)
 	{
 		super(materialIn, 0, equipmentSlotIn);
-		texture = PATH + materialIn.getName();
+		texture = PATH + name;
 		if (equipmentSlotIn == EntityEquipmentSlot.LEGS) texture += "_2.png";
 		else texture += "_1.png";
 	}

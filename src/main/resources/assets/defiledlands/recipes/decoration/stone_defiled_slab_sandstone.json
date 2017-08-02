@@ -1,0 +1,10 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "SSS"
+    ],
+    "key": {
+        "S": { "item": "defiledlands:sandstone_defiled" }
+    },
+    "result": { "item": "defiledlands:stone_defiled_slab", "data": 1, "count": 6 }
+}

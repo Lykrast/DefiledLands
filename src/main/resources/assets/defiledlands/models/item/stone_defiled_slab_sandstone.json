@@ -1,0 +1,6 @@
+{
+	"parent": "defiledlands:block/half_slab_all",
+	"textures": { 
+		"all": "defiledlands:blocks/sandstone_defiled"
+	}
+}

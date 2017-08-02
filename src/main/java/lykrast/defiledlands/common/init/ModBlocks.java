@@ -7,8 +7,10 @@ import lykrast.defiledlands.common.block.BlockBlastem;
 import lykrast.defiledlands.common.block.BlockConjuringAltar;
 import lykrast.defiledlands.common.block.BlockCorrupted;
 import lykrast.defiledlands.common.block.BlockDoorGeneric;
+import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedStone;
 import lykrast.defiledlands.common.block.BlockFallingCorrupted;
 import lykrast.defiledlands.common.block.BlockGrassCorrupted;
+import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedStone;
 import lykrast.defiledlands.common.block.BlockHealingPad;
 import lykrast.defiledlands.common.block.BlockHephaestite;
 import lykrast.defiledlands.common.block.BlockHephaestiteOre;
@@ -18,9 +20,9 @@ import lykrast.defiledlands.common.block.BlockSaplingTenebra;
 import lykrast.defiledlands.common.block.BlockScarliteOre;
 import lykrast.defiledlands.common.block.BlockScuronotte;
 import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
-import lykrast.defiledlands.common.block.BlockVariant;
 import lykrast.defiledlands.common.block.BlockVilespine;
 import lykrast.defiledlands.common.block.ICustomItemBlock;
+import lykrast.defiledlands.common.block.ICustomModel;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.Block;
@@ -40,7 +42,8 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
-		stoneDefiledDecoration, tenebraDoor, 
+		stoneDefiledDecoration, tenebraDoor,
+		slabDoubleStone, slabHalfStone, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte,
 		healingPad, conjuringAltar;
@@ -61,6 +64,8 @@ public class ModBlocks {
 		//Decoration
 		stoneDefiledDecoration = registerBlock(new BlockStoneDefiledDecoration(1.5F, 30.0F, 0), "stone_defiled_decoration");
 		tenebraDoor = registerBlock(new BlockDoorGeneric(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_door");
+		slabDoubleStone = registerBlock(new BlockDoubleSlabCorruptedStone(), "stone_defiled_slab_double");
+		slabHalfStone = registerBlock(new BlockHalfSlabCorruptedStone(), "stone_defiled_slab");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");
@@ -90,7 +95,7 @@ public class ModBlocks {
 	
 	@SideOnly(Side.CLIENT)
     public static void initModel(Block b) {
-		if (b instanceof BlockVariant) ((BlockVariant) b).initModel();
+		if (b instanceof ICustomModel) ((ICustomModel) b).initModel();
 		else ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(b), 0, new ModelResourceLocation(b.getRegistryName(), "inventory"));
     }
 	

@@ -12,7 +12,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public abstract class BlockVariant extends BlockGeneric implements ICustomItemBlock {
+public abstract class BlockVariant extends BlockGeneric implements ICustomItemBlock, ICustomModel {
 	
 	protected boolean variantNames = false;
 
@@ -67,6 +67,7 @@ public abstract class BlockVariant extends BlockGeneric implements ICustomItemBl
 	@Override
 	public abstract IBlockState getStateFromMeta(int meta);
 
+	@Override
 	@SideOnly(Side.CLIENT)
 	public abstract void initModel();
 

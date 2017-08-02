@@ -1,0 +1,25 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all"
+	},
+	"variants": {
+		"variant": {
+			"stone": {
+				"textures": {
+					"all": "defiledlands:blocks/stone_defiled"
+				}
+			},
+			"sandstone": {
+				"textures": {
+					"all": "defiledlands:blocks/sandstone_defiled"
+				}
+			},
+			"bricks": {
+				"textures": {
+					"all": "defiledlands:blocks/decoration/stone_bricks_defiled"
+				}
+			}
+		}
+	}
+}

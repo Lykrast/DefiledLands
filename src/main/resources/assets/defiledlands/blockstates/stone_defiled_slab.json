@@ -1,0 +1,33 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "defiledlands:half_slab_all"
+	},
+	"variants": {
+		"half": {
+			"bottom": {
+				"model": "defiledlands:half_slab_all"
+			},
+			"top": {
+				"model": "defiledlands:upper_slab_all"
+			}
+		},
+		"variant": {
+			"stone": {
+				"textures": {
+					"all": "defiledlands:blocks/stone_defiled"
+				}
+			},
+			"sandstone": {
+				"textures": {
+					"all": "defiledlands:blocks/sandstone_defiled"
+				}
+			},
+			"bricks": {
+				"textures": {
+					"all": "defiledlands:blocks/decoration/stone_bricks_defiled"
+				}
+			}
+		}
+	}
+}

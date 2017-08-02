@@ -1,4 +1,4 @@
-# Defiled Lands
+# Defiled Lands [![Curseforge](http://cf.way2muchnoise.eu/defiled-lands.svg)](https://minecraft.curseforge.com/projects/defiled-lands) [![Curseforge](http://cf.way2muchnoise.eu/versions/defiled-lands.svg)](https://minecraft.curseforge.com/projects/defiled-lands)
 
 A WIP Minecraft Mod that adds Defiled Lands to the world, akin to Terraria's Corruption. Check it out on [Curseforge](https://minecraft.curseforge.com/projects/defiled-lands).
 

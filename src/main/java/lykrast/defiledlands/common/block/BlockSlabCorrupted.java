@@ -5,9 +5,7 @@ import java.util.Random;
 import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

@@ -1,0 +1,12 @@
+{
+    "type": "forge:ore_shaped",
+	"group": "stone_defiled",
+    "pattern": [
+        "SS",
+        "SS"
+    ],
+    "key": {
+        "S": { "item": "defiledlands:stone_defiled_stairs" }
+    },
+    "result": { "item": "defiledlands:stone_defiled", "count": 3 }
+}

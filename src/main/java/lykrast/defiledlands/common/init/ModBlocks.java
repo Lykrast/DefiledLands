@@ -21,6 +21,7 @@ import lykrast.defiledlands.common.block.BlockLogTenebra;
 import lykrast.defiledlands.common.block.BlockSaplingTenebra;
 import lykrast.defiledlands.common.block.BlockScarliteOre;
 import lykrast.defiledlands.common.block.BlockScuronotte;
+import lykrast.defiledlands.common.block.BlockStairsGeneric;
 import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.block.BlockVilespine;
 import lykrast.defiledlands.common.block.ICustomItemBlock;
@@ -45,7 +46,8 @@ public class ModBlocks {
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
 		stoneDefiledDecoration, tenebraDoor,
-		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra, 
+		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra,
+		stairsStoneDefiled, stairsSandstoneDefiled, stairsStoneDefiledBricks, stairsTenebra, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte,
 		healingPad, conjuringAltar;
@@ -70,6 +72,11 @@ public class ModBlocks {
 		slabHalfStone = registerBlock(new BlockHalfSlabCorruptedStone(), "stone_defiled_slab");
 		slabDoubleTenebra = registerBlock(new BlockDoubleSlabCorruptedWood(), "wood_defiled_slab_double");
 		slabHalfTenebra = registerBlock(new BlockHalfSlabCorruptedWood(), "wood_defiled_slab");
+		stairsStoneDefiled = registerBlock(new BlockStairsGeneric(stoneDefiled.getDefaultState()), "stone_defiled_stairs");
+		stairsSandstoneDefiled = registerBlock(new BlockStairsGeneric(sandstoneDefiled.getDefaultState()), "sandstone_defiled_stairs");
+		stairsStoneDefiledBricks = registerBlock(new BlockStairsGeneric(stoneDefiledDecoration.getDefaultState().withProperty(BlockStoneDefiledDecoration.VARIANT, 
+				BlockStoneDefiledDecoration.Variants.BRICKS)), "stone_defiled_bricks_stairs");
+		stairsTenebra = registerBlock(new BlockStairsGeneric(tenebraPlanks.getDefaultState()), "tenebra_stairs");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");

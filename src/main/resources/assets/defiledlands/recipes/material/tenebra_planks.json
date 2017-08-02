@@ -1,5 +1,6 @@
 {
-	"type": "minecraft:crafting_shapeless",
+	"type": "forge:ore_shapeless",
+	"group": "tenebra_planks",
     "ingredients": [
         { "item": "defiledlands:tenebra_log" }
     ],

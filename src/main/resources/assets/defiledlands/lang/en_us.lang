@@ -15,6 +15,10 @@ tile.defiledlands.stone_defiled_slab.stone.name=Defiled Stone Slab
 tile.defiledlands.stone_defiled_slab.sandstone.name=Defiled Sandstone Slab
 tile.defiledlands.stone_defiled_slab.bricks.name=Defiled Stone Bricks Slab
 tile.defiledlands.wood_defiled_slab.tenebra.name=Tenebra Wood Slab
+tile.defiledlands.stone_defiled_stairs.name=Defiled Stone Stairs
+tile.defiledlands.sandstone_defiled_stairs.name=Defiled Sandstone Stairs
+tile.defiledlands.stone_defiled_bricks_stairs.name=Defiled Stone Bricks Stairs
+tile.defiledlands.tenebra_stairs.name=Tenebra Wood Stairs
 
 tile.defiledlands.tenebra_log.name=Tenebra Wood
 tile.defiledlands.tenebra_leaves.name=Tenebra Leaves

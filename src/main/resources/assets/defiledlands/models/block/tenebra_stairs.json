@@ -1,0 +1,6 @@
+{
+    "parent": "defiledlands:block/stairs_all",
+    "textures": {
+        "all": "defiledlands:blocks/planks_tenebra"
+    }
+}

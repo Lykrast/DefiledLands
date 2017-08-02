@@ -1,0 +1,6 @@
+{
+    "parent": "defiledlands:block/outer_stairs_all",
+    "textures": {
+        "all": "defiledlands:blocks/decoration/stone_bricks_defiled"
+    }
+}

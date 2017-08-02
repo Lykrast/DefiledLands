@@ -17,16 +17,16 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public abstract class BlockSlabCorruptedStone extends BlockSlabCorrupted implements ICustomItemBlock {
+public abstract class BlockSlabCorruptedWood extends BlockSlabCorrupted implements ICustomItemBlock {
     public static final PropertyEnum<Variant> VARIANT = PropertyEnum.<Variant>create("variant", Variant.class);
 
-    public BlockSlabCorruptedStone()
+    public BlockSlabCorruptedWood()
     {
-        super(Material.ROCK);
-        this.setSoundType(SoundType.STONE);
+        super(Material.WOOD);
+        this.setSoundType(SoundType.WOOD);
         this.setHardness(2.0F);
         this.setResistance(10.0F);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("axe", 0);
         
         IBlockState iblockstate = this.blockState.getBaseState();
 
@@ -35,7 +35,7 @@ public abstract class BlockSlabCorruptedStone extends BlockSlabCorrupted impleme
             iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
         }
 
-        this.setDefaultState(iblockstate.withProperty(VARIANT, Variant.STONE));
+        this.setDefaultState(iblockstate.withProperty(VARIANT, Variant.TENEBRA));
     }
 
     /**
@@ -127,9 +127,7 @@ public abstract class BlockSlabCorruptedStone extends BlockSlabCorrupted impleme
     
     public static enum Variant implements IStringSerializable
     {
-    	STONE, 
-    	SANDSTONE,
-    	BRICKS;
+    	TENEBRA;
 		
 		@Override
 	    public String getName()

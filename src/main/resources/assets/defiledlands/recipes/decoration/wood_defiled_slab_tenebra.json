@@ -1,0 +1,10 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "SSS"
+    ],
+    "key": {
+        "S": { "item": "defiledlands:tenebra_planks" }
+    },
+    "result": { "item": "defiledlands:wood_defiled_slab", "data": 0, "count": 6 }
+}

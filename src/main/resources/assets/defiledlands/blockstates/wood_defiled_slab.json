@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "defiledlands:half_slab_all"
+	},
+	"variants": {
+		"half": {
+			"bottom": {
+				"model": "defiledlands:half_slab_all"
+			},
+			"top": {
+				"model": "defiledlands:upper_slab_all"
+			}
+		},
+		"variant": {
+			"tenebra": {
+				"textures": {
+					"all": "defiledlands:blocks/planks_tenebra"
+				}
+			}
+		}
+	}
+}

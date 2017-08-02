@@ -8,9 +8,11 @@ import lykrast.defiledlands.common.block.BlockConjuringAltar;
 import lykrast.defiledlands.common.block.BlockCorrupted;
 import lykrast.defiledlands.common.block.BlockDoorGeneric;
 import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedStone;
+import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedWood;
 import lykrast.defiledlands.common.block.BlockFallingCorrupted;
 import lykrast.defiledlands.common.block.BlockGrassCorrupted;
 import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedStone;
+import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedWood;
 import lykrast.defiledlands.common.block.BlockHealingPad;
 import lykrast.defiledlands.common.block.BlockHephaestite;
 import lykrast.defiledlands.common.block.BlockHephaestiteOre;
@@ -43,7 +45,7 @@ public class ModBlocks {
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
 		stoneDefiledDecoration, tenebraDoor,
-		slabDoubleStone, slabHalfStone, 
+		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, creepingMoss, blastem, scuronotte,
 		healingPad, conjuringAltar;
@@ -66,6 +68,8 @@ public class ModBlocks {
 		tenebraDoor = registerBlock(new BlockDoorGeneric(Material.WOOD, SoundType.WOOD, 3.0F, 22.5F, "axe", 0), "tenebra_door");
 		slabDoubleStone = registerBlock(new BlockDoubleSlabCorruptedStone(), "stone_defiled_slab_double");
 		slabHalfStone = registerBlock(new BlockHalfSlabCorruptedStone(), "stone_defiled_slab");
+		slabDoubleTenebra = registerBlock(new BlockDoubleSlabCorruptedWood(), "wood_defiled_slab_double");
+		slabHalfTenebra = registerBlock(new BlockHalfSlabCorruptedWood(), "wood_defiled_slab");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");

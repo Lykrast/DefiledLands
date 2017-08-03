@@ -42,7 +42,7 @@ public class ItemRazorScarlite extends ItemSwordGeneric {
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             if (entityplayer.attackEntityFrom(DamageSource.causePlayerDamage(entityplayer), 3))
             {
-                entityplayer.getFoodStats().addStats(4, 1.2F);
+                entityplayer.getFoodStats().addStats(4, 0.4F);
                 worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
                 
                 entityplayer.addStat(StatList.getObjectUseStats(this));

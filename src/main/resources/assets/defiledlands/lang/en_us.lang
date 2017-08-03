@@ -106,7 +106,7 @@ item.defiledlands.scale_golden_leggings.name=Golden Book Wyrm Scale Leggings
 item.defiledlands.scale_golden_boots.name=Golden Book Wyrm Scale Boots
 
 item.defiledlands.book_wyrm_analyzer.name=Book Wyrm Analyzer
-item.defiledlands.book_wyrm_analyzer.tooltip=Right click a Book Wyrm\nto know its stats
+item.defiledlands.book_wyrm_analyzer.tooltip=Right click a Book Wyrm\nto know various stats
 
 #Enchantments
 enchantment.sharpshooter=Sharpshooter
@@ -131,8 +131,12 @@ ui.defiledlands.book_wyrm_analyze.health=Health :
 ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 
 ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : 
 ui.defiledlands.book_wyrm_analyze.digested=Digested level(s) : 
-ui.defiledlands.book_wyrm_analyze.digesting1=Currently digesting 
-ui.defiledlands.book_wyrm_analyze.digesting2= level(s)
+ui.defiledlands.book_wyrm_analyze.digesting=Currently digesting : 
+ui.defiledlands.book_wyrm_analyze.levels= level(s)
+ui.defiledlands.book_wyrm_analyze.maturing=Time until maturation : 
+ui.defiledlands.book_wyrm_analyze.reproduce=Time until next possible reproduction : 
+ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
+ui.defiledlands.book_wyrm_analyze.ready=Ready to mate
 ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
 #Advancements

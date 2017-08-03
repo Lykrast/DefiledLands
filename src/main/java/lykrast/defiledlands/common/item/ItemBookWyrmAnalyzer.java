@@ -47,8 +47,21 @@ public class ItemBookWyrmAnalyzer extends Item {
         	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digested"))
         			+ target.digested));
         	if (target.digesting > 0)
-            	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digesting1"))
-            			+ target.digesting + I18n.translateToLocal(String.format("%s%s", base, "digesting2"))));
+            	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "digesting"))
+            			+ target.digesting + I18n.translateToLocal(String.format("%s%s", base, "levels"))));
+        	if (target.isChild())
+        	{
+        		int minutes = (int)Math.ceil((-target.getGrowingAge()) / 1200.0D);
+            	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "maturing"))
+            			+ minutes + I18n.translateToLocal(String.format("%s%s", base, "minutes"))));
+        	}
+        	else if (target.getGrowingAge() > 0)
+        	{
+        		int minutes = (int)Math.ceil(target.getGrowingAge() / 1200.0D);
+            	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "reproduce"))
+            			+ minutes + I18n.translateToLocal(String.format("%s%s", base, "minutes"))));
+        	}
+        	else player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "ready"))));
         	if (target.isGolden()) 
             	player.sendMessage(new TextComponentString(I18n.translateToLocal(String.format("%s%s", base, "golden"))));
         	

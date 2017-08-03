@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class ItemFoulCandy extends ItemFood {
 
 	public ItemFoulCandy(){
-		super(2, 0.4F, false);
+		super(2, 0.1F, false);
 	}
 
 	@Override

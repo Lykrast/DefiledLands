@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class ItemScuttlerEye extends ItemFood {
 
 	public ItemScuttlerEye(){
-		super(2, 3.2F, false);
+		super(2, 0.8F, false);
 		this.setAlwaysEdible();
 	}
 

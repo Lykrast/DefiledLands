@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class ItemBlackHeart extends ItemFood {
 
 	public ItemBlackHeart(){
-		super(4, 0.8F, false);
+		super(4, 0.1F, false);
 	}
 
 	@Override

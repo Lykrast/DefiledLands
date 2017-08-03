@@ -86,8 +86,8 @@ public class ModItems {
 		blackHeart = registerItem(new ItemBlackHeart(), "black_heart");
 		foulSlime = registerItem(new Item(), "foul_slime");
 		foulCandy = registerItem(new ItemFoulCandy(), "foul_candy");
-		bookWyrmRaw = registerItem(new ItemFood(3, 1.8F, true).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.5F), "book_wyrm_raw");
-		bookWyrmCooked = registerItem(new ItemFood(8, 12.8F, true), "book_wyrm_cooked");
+		bookWyrmRaw = registerItem(new ItemFood(3, 0.3F, true).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.5F), "book_wyrm_raw");
+		bookWyrmCooked = registerItem(new ItemFood(8, 0.8F, true), "book_wyrm_cooked");
 		bookWyrmScale = registerItem(new Item(), "book_wyrm_scale");
 		bookWyrmScaleGolden = registerItem(new Item(), "book_wyrm_scale_golden");
 		

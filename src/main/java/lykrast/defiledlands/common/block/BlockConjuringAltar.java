@@ -23,6 +23,7 @@ public class BlockConjuringAltar extends BlockCorrupted {
     
 	public BlockConjuringAltar(float hardness, float resistance) {
 		super(Material.ROCK, SoundType.STONE, hardness, resistance, "pickaxe", 0);
+		this.setLightLevel(0.5F);
 	}
 	
 	public boolean isActive(IBlockAccess worldIn, BlockPos pos)

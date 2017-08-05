@@ -133,6 +133,9 @@ entity.defiledlands.book_wyrm.name=Book Wyrm
 
 entity.defiledlands.the_destroyer.name=The Destroyer
 
+#Potion effects
+potion.effect.defiledlands.vulnerability=Vulnerability
+
 #UI
 ui.defiledlands.book_wyrm_analyze.health=Health : 
 ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 

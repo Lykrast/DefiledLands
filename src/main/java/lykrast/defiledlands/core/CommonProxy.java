@@ -8,6 +8,7 @@ import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModEntities;
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.init.ModPotions;
 import lykrast.defiledlands.common.init.ModRecipes;
 import lykrast.defiledlands.common.init.ModSounds;
 import lykrast.defiledlands.common.util.Config;
@@ -32,6 +33,7 @@ public class CommonProxy {
 		ModEntities.init();
 		ModBiomes.registerBiomes();
 		ModEnchantments.init();
+		ModPotions.init();
 		ModSounds.init();
 		
 		ModCompat.preInitCompat();

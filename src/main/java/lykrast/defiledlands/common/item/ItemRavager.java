@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
+import lykrast.defiledlands.common.entity.projectile.EntityRavagerProjectile;
 import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.util.LocUtils;
@@ -20,13 +21,16 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
+public class ItemRavager extends ItemGun {
 	
-	public ItemUmbraBlaster(int durability)
+	public ItemRavager(int durability)
 	{
         super(durability);
 	}
@@ -54,26 +58,12 @@ public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
             }
             
             worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-            playerIn.getCooldownTracker().setCooldown(this, 10);
             
             if (!worldIn.isRemote)
             {
-            	EntityBlastemFruit projectile;
-            	if (ammo.getItem() == ModItems.blastemFruitBlazing || EnchantmentHelper.getEnchantmentLevel(ModEnchantments.blazing, itemstack) > 0)
-            		projectile = new EntityBlastemFruitBlazing(worldIn, playerIn);
-            	else projectile = new EntityBlastemFruit(worldIn, playerIn);
-            	
-            	float f = getSharpshooterBonus(itemstack);
-                projectile.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F * f, 1.0F / f);
-                
-                if (EnchantmentHelper.getEnchantmentLevel(ModEnchantments.safeguard, itemstack) > 0)
-                {
-                	projectile.setDestructive(false);
-                }
-                
-                float j = getDestructiveBonus(itemstack);
-                projectile.setDamage(projectile.getDamage() * j);
-                projectile.setExplosionStrength(projectile.getExplosionStrength() * j);
+            	Vec3d vec3d = playerIn.getLook(1.0F);
+            	EntityRavagerProjectile projectile = new EntityRavagerProjectile(worldIn, playerIn, vec3d.x, vec3d.y, vec3d.z, getSharpshooterBonus(itemstack));
+            	projectile.posY = playerIn.posY + (double)playerIn.getEyeHeight();
                 
                 worldIn.spawnEntity(projectile);
 
@@ -100,7 +90,13 @@ public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
      */
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
     {
-    	return repair.getItem() == ModItems.umbriumIngot;
+    	return repair.getItem() == ModItems.ravagingIngot;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack stack)
+    {
+        return true;
     }
 
 }

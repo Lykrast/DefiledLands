@@ -143,6 +143,7 @@ public class ModItems {
 		axeRavaging = registerItem(new ItemAxeFoiled(materialRavaging, 8.0F, -3.0F), "ravaging_axe");
 		pickaxeRavaging = registerItem(new ItemPickaxeFoiled(materialRavaging), "ravaging_pickaxe");
 		shovelRavaging = registerItem(new ItemShovelFoiled(materialRavaging), "ravaging_shovel");
+		theRavager = registerItem(new ItemRavager(2107), "the_ravager");
 	}
 	
 	@SideOnly(Side.CLIENT)

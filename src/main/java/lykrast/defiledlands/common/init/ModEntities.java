@@ -5,6 +5,7 @@ import lykrast.defiledlands.client.render.entity.RenderBlastemFruitBlazing;
 import lykrast.defiledlands.client.render.entity.RenderBookWyrm;
 import lykrast.defiledlands.client.render.entity.RenderDestroyer;
 import lykrast.defiledlands.client.render.entity.RenderHost;
+import lykrast.defiledlands.client.render.entity.RenderRavagerProjectile;
 import lykrast.defiledlands.client.render.entity.RenderScuttler;
 import lykrast.defiledlands.client.render.entity.RenderShambler;
 import lykrast.defiledlands.client.render.entity.RenderShamblerTwisted;
@@ -18,6 +19,7 @@ import lykrast.defiledlands.common.entity.monster.EntitySlimeDefiled;
 import lykrast.defiledlands.common.entity.passive.EntityBookWyrm;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
+import lykrast.defiledlands.common.entity.projectile.EntityRavagerProjectile;
 import lykrast.defiledlands.common.util.DungeonDefiledList;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
@@ -59,6 +61,7 @@ public class ModEntities {
         //Projectiles
         registerProjectile(EntityBlastemFruit.class, "blastem_fruit");
         registerProjectile(EntityBlastemFruitBlazing.class, "blastem_fruit_blazing");
+        registerProjectile(EntityRavagerProjectile.class, "ravager_projectile");
         
         
         //Dungeon List
@@ -94,6 +97,7 @@ public class ModEntities {
         
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
         RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRavagerProjectile.class, RenderRavagerProjectile.FACTORY);
     }
 
 }

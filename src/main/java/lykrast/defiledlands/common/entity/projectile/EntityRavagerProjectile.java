@@ -16,18 +16,19 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
 
 	public EntityRavagerProjectile(World worldIn) {
 		super(worldIn);
-		damage = 5.0F;
+		damage = 12.0F;
 		speed = 1.0F;
 	}
 
 	public EntityRavagerProjectile(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ, float speed) {
 		super(worldIn, shooter, accelX, accelY, accelZ);
         double d0 = (double)MathHelper.sqrt(accelX * accelX + accelY * accelY + accelZ * accelZ);
-        this.accelerationX = accelX / d0 * 0.1D * (double)speed;
-        this.accelerationY = accelY / d0 * 0.1D * (double)speed;
-        this.accelerationZ = accelZ / d0 * 0.1D * (double)speed;
-        this.damage = 5.0F;
-		this.speed = speed;
+        this.accelerationX = accelX / d0 * 0.2D * (double)speed;
+        this.accelerationY = accelY / d0 * 0.2D * (double)speed;
+        this.accelerationZ = accelZ / d0 * 0.2D * (double)speed;
+        this.damage = 12.0F;
+        float f = 1.0F - (0.05F / speed);
+		this.speed = f;
 	}
 
 	public EntityRavagerProjectile(World worldIn, double x, double y, double z, double accelX, double accelY, double accelZ, float speed) {
@@ -35,8 +36,9 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
         this.accelerationX *= (double)speed;
         this.accelerationY *= (double)speed;
         this.accelerationZ *= (double)speed;
-		this.damage = 5.0F;
-		this.speed = speed;
+		this.damage = 12.0F;
+        float f = 1.0F - (0.05F / speed);
+		this.speed = f;
 	}
 	
 	/**
@@ -53,7 +55,6 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
             	if (flag)
             	{
             		this.applyEnchantments(this.shootingEntity, result.entityHit);
-            		result.entityHit.setFire(5);
             	}
             }
 

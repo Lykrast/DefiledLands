@@ -61,7 +61,7 @@ public class ModEntities {
         //Projectiles
         registerProjectile(EntityBlastemFruit.class, "blastem_fruit");
         registerProjectile(EntityBlastemFruitBlazing.class, "blastem_fruit_blazing");
-        registerProjectile(EntityRavagerProjectile.class, "ravager_projectile");
+        registerProjectile(EntityRavagerProjectile.class, "ravager_projectile", 3);
         
         
         //Dungeon List
@@ -79,7 +79,12 @@ public class ModEntities {
 	
 	public static void registerProjectile(Class<? extends Entity> entityClass, String name)
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(DefiledLands.MODID, name), entityClass, DefiledLands.MODID + "." + name, id++, DefiledLands.instance, 64, 10, true);
+		registerProjectile(entityClass, name, 10);
+	}
+	
+	public static void registerProjectile(Class<? extends Entity> entityClass, String name, int updateRate)
+	{
+		EntityRegistry.registerModEntity(new ResourceLocation(DefiledLands.MODID, name), entityClass, DefiledLands.MODID + "." + name, id++, DefiledLands.instance, 64, updateRate, true);
 	}
 	
 	@SideOnly(Side.CLIENT)

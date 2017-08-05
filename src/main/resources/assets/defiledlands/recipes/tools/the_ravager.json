@@ -1,0 +1,16 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "E  ",
+        "RUC",
+        "  L"
+    ],
+    "key": {
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
+        "C": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "E": { "item": "defiledlands:scuttler_eye" },
+        "L": { "item": "minecraft:leather" }
+    },
+    "result": { "item": "defiledlands:the_ravager" }
+}

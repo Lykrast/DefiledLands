@@ -37,6 +37,7 @@ public class ModRecipes {
 		
 		//Boss essence
 		OreDictionary.registerOre("essenceDestroyer", ModItems.essenceDestroyer);
+		OreDictionary.registerOre("ingotRavaging", ModItems.ravagingIngot);
 		
 		CorruptionRecipes.init();
 		

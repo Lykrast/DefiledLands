@@ -16,9 +16,11 @@ import lykrast.defiledlands.common.item.ItemDefilementPowder;
 import lykrast.defiledlands.common.item.ItemFoulCandy;
 import lykrast.defiledlands.common.item.ItemHephaestite;
 import lykrast.defiledlands.common.item.ItemHoeGeneric;
+import lykrast.defiledlands.common.item.ItemPickaxeFoiled;
 import lykrast.defiledlands.common.item.ItemPickaxeGeneric;
 import lykrast.defiledlands.common.item.ItemRazorScarlite;
 import lykrast.defiledlands.common.item.ItemScuttlerEye;
+import lykrast.defiledlands.common.item.ItemShovelFoiled;
 import lykrast.defiledlands.common.item.ItemShovelGeneric;
 import lykrast.defiledlands.common.item.ItemSwordGeneric;
 import lykrast.defiledlands.common.item.ItemSwordScarlite;
@@ -36,6 +38,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSimpleFoiled;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
@@ -60,10 +63,10 @@ public class ModItems {
 		scaleGoldenHelmet, scaleGoldenChestplate, scaleGoldenLeggings, scaleGoldenBoots,
 		bookWyrmAnalyzer,
 		callingStone,
-		essenceDestroyer;
+		essenceDestroyer, ravagingIngot, pickaxeRavaging, shovelRavaging;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
-	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor;
+	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
 	public static ArmorMaterial materialUmbriumA, materialScales, materialScalesGolden;
 	
 	public static void init() {
@@ -143,6 +146,7 @@ public class ModItems {
 		bookWyrmAnalyzer = registerItem(new ItemBookWyrmAnalyzer(), "book_wyrm_analyzer");
 		
 		//Boss stuff
+		//The Destroyer
 		callingStone = registerItem(new ItemBossSummoner() {
 			protected Entity getBoss(World worldIn)
 		    {
@@ -152,7 +156,12 @@ public class ModItems {
 				return boss;
 		    }
 		}, "calling_stone");
-		essenceDestroyer = registerItem(new Item(), "essence_destroyer");
+		essenceDestroyer = registerItem(new ItemSimpleFoiled(), "essence_destroyer");
+		ravagingIngot = registerItem(new ItemSimpleFoiled(), "ravaging_ingot");
+		
+		materialRavaging = EnumHelper.addToolMaterial("ravaging", 0, 2107, 60.0F, 3.0F, 1).setRepairItem(new ItemStack(ravagingIngot));
+		pickaxeRavaging = registerItem(new ItemPickaxeFoiled(materialRavaging), "ravaging_pickaxe");
+		shovelRavaging = registerItem(new ItemShovelFoiled(materialRavaging), "ravaging_shovel");
 	}
 	
 	@SideOnly(Side.CLIENT)

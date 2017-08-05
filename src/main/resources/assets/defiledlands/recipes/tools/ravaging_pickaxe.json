@@ -1,0 +1,15 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "URU",
+        " S ",
+        " C "
+    ],
+    "key": {
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
+        "C": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "S": { "ore": "stickWood", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:ravaging_pickaxe" }
+}

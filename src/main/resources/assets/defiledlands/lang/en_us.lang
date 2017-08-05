@@ -64,10 +64,6 @@ item.defiledlands.book_wyrm_cooked.name=Cooked Book Wyrm
 item.defiledlands.book_wyrm_scale.name=Book Wyrm Scale
 item.defiledlands.book_wyrm_scale_golden.name=Golden Book Wyrm Scale
 
-item.defiledlands.calling_stone.name=Calling Stone
-item.defiledlands.calling_stone.tooltip=Right click an active Conjuring Altar\nto summon The Destroyer
-item.defiledlands.essence_destroyer.name=Ravaging Essence
-
 item.defiledlands.tenebra_axe.name=Tenebra Axe
 item.defiledlands.tenebra_hoe.name=Tenebra Hoe
 item.defiledlands.tenebra_pickaxe.name=Tenebra Pickaxe
@@ -86,7 +82,7 @@ item.defiledlands.scarlite_razor.name=Scarlite Razor
 item.defiledlands.scarlite_razor.tooltip=Right click to convert life to hunger
 
 item.defiledlands.umbra_blaster.name=Umbra Blaster
-item.defiledlands.umbra_blaster.tooltip=Uses Blastem Fruits as ammo
+item.defiledlands.umbra_blaster.tooltip=Fires Blastem Fruits
 item.defiledlands.concussion_smasher.name=Concussion Smasher
 item.defiledlands.concussion_smasher.tooltip=Charge then release\nto cause a shockwave
 
@@ -106,6 +102,15 @@ item.defiledlands.scale_golden_boots.name=Golden Book Wyrm Scale Boots
 
 item.defiledlands.book_wyrm_analyzer.name=Book Wyrm Analyzer
 item.defiledlands.book_wyrm_analyzer.tooltip=Right click a Book Wyrm\nto know various stats
+
+item.defiledlands.calling_stone.name=Calling Stone
+item.defiledlands.calling_stone.tooltip=Right click an active Conjuring Altar\nto summon The Destroyer
+item.defiledlands.essence_destroyer.name=Ravaging Essence
+item.defiledlands.ravaging_ingot.name=Ravaging Ingot
+item.defiledlands.ravaging_pickaxe.name=Ravaging Pickaxe
+item.defiledlands.ravaging_pickaxe.tooltip=Mines extremely fast\nDestroys drops
+item.defiledlands.ravaging_shovel.name=Ravaging Shovel
+item.defiledlands.ravaging_shovel.tooltip=Digs extremely fast\nDestroys drops
 
 #Enchantments
 enchantment.sharpshooter=Sharpshooter

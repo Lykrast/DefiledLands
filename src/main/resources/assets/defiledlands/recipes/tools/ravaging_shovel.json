@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "R",
+        "S",
+        "C"
+    ],
+    "key": {
+        "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
+        "C": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "S": { "ore": "stickWood", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:ravaging_shovel" }
+}

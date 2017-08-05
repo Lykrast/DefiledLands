@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " E ",
+        "EUE",
+        " E "
+    ],
+    "key": {
+        "E": { "ore": "essenceDestroyer", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:ravaging_ingot" }
+}

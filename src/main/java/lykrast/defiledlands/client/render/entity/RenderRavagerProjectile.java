@@ -24,14 +24,14 @@ public class RenderRavagerProjectile extends RenderSnowball<EntityRavagerProject
 
 	@Override
 	public ItemStack getStackToRender(EntityRavagerProjectile entityIn) {
-		return new ItemStack(ModItems.blastemFruit);
+		return new ItemStack(ModItems.callingStone);
 	}
 
     public static class Factory implements IRenderFactory<EntityRavagerProjectile> {
 
         @Override
         public Render<? super EntityRavagerProjectile> createRenderFor(RenderManager manager) {
-            return new RenderRavagerProjectile(manager, ModItems.blastemFruit, Minecraft.getMinecraft().getRenderItem());
+            return new RenderRavagerProjectile(manager, ModItems.callingStone, Minecraft.getMinecraft().getRenderItem());
         }
 
     }

@@ -1,12 +1,11 @@
 package lykrast.defiledlands.common.entity.projectile;
 
-import net.minecraft.entity.EntityLiving;
+import lykrast.defiledlands.common.init.ModPotions;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntitySmallFireball;
-import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -55,6 +54,8 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
             	if (flag)
             	{
             		this.applyEnchantments(this.shootingEntity, result.entityHit);
+            		if (result.entityHit instanceof EntityLivingBase)
+            			((EntityLivingBase)result.entityHit).addPotionEffect(new PotionEffect(ModPotions.vulnerability, 200));
             	}
             }
 

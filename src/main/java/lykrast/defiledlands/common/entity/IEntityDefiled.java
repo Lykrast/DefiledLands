@@ -7,11 +7,6 @@ public interface IEntityDefiled {
 		return false;
 	}
 	
-	default boolean affectedByCreepingMoss()
-	{
-		return false;
-	}
-	
 	default boolean affectedByBlastem()
 	{
 		return false;

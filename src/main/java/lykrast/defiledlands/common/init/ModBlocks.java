@@ -49,7 +49,7 @@ public class ModBlocks {
 		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra,
 		stairsStoneDefiled, stairsSandstoneDefiled, stairsStoneDefiledBricks, stairsTenebra, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
-		vilespine, creepingMoss, blastem, scuronotte,
+		vilespine, blastem, scuronotte,
 		healingPad, conjuringAltar;
 	private static final List<Block> blockList = new ArrayList<Block>();
 	
@@ -88,7 +88,6 @@ public class ModBlocks {
 		
 		//Plants
 		vilespine = registerBlock(new BlockVilespine(), "vilespine");
-		//creepingMoss = registerBlock(new BlockCreepingMoss(), "creeping_moss");
 		blastem = registerBlock(new BlockBlastem(), "blastem");
 		scuronotte = registerBlock(new BlockScuronotte(), "scuronotte");
 		

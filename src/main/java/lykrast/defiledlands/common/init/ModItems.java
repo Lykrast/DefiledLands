@@ -4,27 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
-import lykrast.defiledlands.common.item.ItemArmorGeneric;
-import lykrast.defiledlands.common.item.ItemAxeGeneric;
-import lykrast.defiledlands.common.item.ItemBlackHeart;
-import lykrast.defiledlands.common.item.ItemBlastemFruit;
-import lykrast.defiledlands.common.item.ItemBlastemFruitBlazing;
-import lykrast.defiledlands.common.item.ItemBookWyrmAnalyzer;
-import lykrast.defiledlands.common.item.ItemBossSummoner;
-import lykrast.defiledlands.common.item.ItemConcussionSmasher;
-import lykrast.defiledlands.common.item.ItemDefilementPowder;
-import lykrast.defiledlands.common.item.ItemFoulCandy;
-import lykrast.defiledlands.common.item.ItemHephaestite;
-import lykrast.defiledlands.common.item.ItemHoeGeneric;
-import lykrast.defiledlands.common.item.ItemPickaxeFoiled;
-import lykrast.defiledlands.common.item.ItemPickaxeGeneric;
-import lykrast.defiledlands.common.item.ItemRazorScarlite;
-import lykrast.defiledlands.common.item.ItemScuttlerEye;
-import lykrast.defiledlands.common.item.ItemShovelFoiled;
-import lykrast.defiledlands.common.item.ItemShovelGeneric;
-import lykrast.defiledlands.common.item.ItemSwordGeneric;
-import lykrast.defiledlands.common.item.ItemSwordScarlite;
-import lykrast.defiledlands.common.item.ItemUmbraBlaster;
+import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -63,7 +43,7 @@ public class ModItems {
 		scaleGoldenHelmet, scaleGoldenChestplate, scaleGoldenLeggings, scaleGoldenBoots,
 		bookWyrmAnalyzer,
 		callingStone,
-		essenceDestroyer, ravagingIngot, pickaxeRavaging, shovelRavaging;
+		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
@@ -160,6 +140,7 @@ public class ModItems {
 		ravagingIngot = registerItem(new ItemSimpleFoiled(), "ravaging_ingot");
 		
 		materialRavaging = EnumHelper.addToolMaterial("ravaging", 0, 2107, 60.0F, 3.0F, 1).setRepairItem(new ItemStack(ravagingIngot));
+		axeRavaging = registerItem(new ItemAxeFoiled(materialRavaging, 8.0F, -3.0F), "ravaging_axe");
 		pickaxeRavaging = registerItem(new ItemPickaxeFoiled(materialRavaging), "ravaging_pickaxe");
 		shovelRavaging = registerItem(new ItemShovelFoiled(materialRavaging), "ravaging_shovel");
 	}

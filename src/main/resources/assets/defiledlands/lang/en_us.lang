@@ -107,10 +107,13 @@ item.defiledlands.calling_stone.name=Calling Stone
 item.defiledlands.calling_stone.tooltip=Right click an active Conjuring Altar\nto summon The Destroyer
 item.defiledlands.essence_destroyer.name=Ravaging Essence
 item.defiledlands.ravaging_ingot.name=Ravaging Ingot
+item.defiledlands.ravaging_axe.name=Ravaging Axe
+item.defiledlands.ravaging_axe.tooltip=Chops extremely fast\nDestroys drops
 item.defiledlands.ravaging_pickaxe.name=Ravaging Pickaxe
 item.defiledlands.ravaging_pickaxe.tooltip=Mines extremely fast\nDestroys drops
 item.defiledlands.ravaging_shovel.name=Ravaging Shovel
 item.defiledlands.ravaging_shovel.tooltip=Digs extremely fast\nDestroys drops
+item.defiledlands.the_ravager.name=The Ravager
 
 #Enchantments
 enchantment.sharpshooter=Sharpshooter

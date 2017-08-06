@@ -9,12 +9,13 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModPotions {
 	
-	public static Potion vulnerability, grounded;
+	public static Potion vulnerability, grounded, bleeding;
 	
 	public static void init()
 	{
 		vulnerability = register(new PotionGeneric(true, 0x6f7689, 0, -1), "vulnerability");
 		grounded = register(new PotionGeneric(true, 0x5f5e57, 1, 0), "grounded");
+		bleeding = register(new PotionGeneric(true, 0xff0000, 2, 40), "bleeding");
 	}
 	
 	public static Potion register(Potion p, String name)

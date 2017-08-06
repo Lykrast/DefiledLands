@@ -38,7 +38,7 @@ public class ItemRavager extends ItemGun {
     @Override
 	protected boolean isAmmo(ItemStack stack)
     {
-        return stack.getItem() == ModItems.pelletUmbrium;
+        return stack.getItem() instanceof ItemPellet;
     }
 
     /**
@@ -64,6 +64,11 @@ public class ItemRavager extends ItemGun {
             	Vec3d vec3d = playerIn.getLook(1.0F);
             	EntityRavagerProjectile projectile = new EntityRavagerProjectile(worldIn, playerIn, vec3d.x, vec3d.y, vec3d.z, getSharpshooterBonus(itemstack));
             	projectile.posY = playerIn.posY + (double)playerIn.getEyeHeight();
+            	
+            	if (ammo.getItem() instanceof ItemPellet)
+            	{
+            		((ItemPellet)ammo.getItem()).applyAttributes(projectile);
+            	}
                 
                 worldIn.spawnEntity(projectile);
 

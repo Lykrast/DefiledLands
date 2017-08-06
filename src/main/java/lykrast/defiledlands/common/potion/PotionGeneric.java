@@ -5,6 +5,7 @@ import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 
 public class PotionGeneric extends Potion {
@@ -35,6 +36,10 @@ public class PotionGeneric extends Potion {
 				entityLivingBaseIn.motionY -= 0.05D * (amplifier + 1);
 			}
 		}
+		else if (this == ModPotions.bleeding)
+		{
+            entityLivingBaseIn.attackEntityFrom(DamageSource.MAGIC, (float)(amplifier + 1));
+		}
     }
 	
 	@Override
@@ -42,8 +47,7 @@ public class PotionGeneric extends Potion {
     {
 		if (tickrate < 0) return false;
 		
-		int k = tickrate >> amplifier;
-		return k <= 0 || duration % k == 0;
+		return tickrate <= 0 || duration % tickrate == 0;
     }
 
 }

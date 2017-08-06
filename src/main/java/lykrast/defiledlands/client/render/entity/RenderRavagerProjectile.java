@@ -24,7 +24,7 @@ public class RenderRavagerProjectile extends RenderSnowball<EntityRavagerProject
 
 	@Override
 	public ItemStack getStackToRender(EntityRavagerProjectile entityIn) {
-		return new ItemStack(ModItems.pelletUmbrium);
+		return entityIn.getItem();
 	}
 
     public static class Factory implements IRenderFactory<EntityRavagerProjectile> {

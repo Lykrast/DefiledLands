@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " S ",
+        "SRS",
+		" S "
+    ],
+    "key": {
+        "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
+        "S": { "ore": "stoneDefiled", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:pellet_ravaging", "count": 8 }
+}

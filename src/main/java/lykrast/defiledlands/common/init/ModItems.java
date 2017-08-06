@@ -44,7 +44,7 @@ public class ModItems {
 		bookWyrmAnalyzer,
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
-		pelletUmbrium;
+		pelletUmbrium, pelletSpiked, pelletRavaging;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
@@ -144,8 +144,17 @@ public class ModItems {
 		axeRavaging = registerItem(new ItemAxeFoiled(materialRavaging, 8.0F, -3.0F), "ravaging_axe");
 		pickaxeRavaging = registerItem(new ItemPickaxeFoiled(materialRavaging), "ravaging_pickaxe");
 		shovelRavaging = registerItem(new ItemShovelFoiled(materialRavaging), "ravaging_shovel");
+		
 		theRavager = registerItem(new ItemRavager(2107), "the_ravager");
-		pelletUmbrium = registerItem(new Item(), "pellet_umbrium");
+		pelletUmbrium = registerItem(new ItemPellet(10), "pellet_umbrium");
+		pelletSpiked = registerItem(new ItemPellet(10), "pellet_spiked");
+		pelletRavaging = registerItem(new ItemPellet(20) {
+		    @SideOnly(Side.CLIENT)
+		    public boolean hasEffect(ItemStack stack)
+		    {
+		        return true;
+		    }
+		}, "pellet_ravaging");
 	}
 	
 	@SideOnly(Side.CLIENT)

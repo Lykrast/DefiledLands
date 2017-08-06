@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "V V",
+        " P ",
+		"V V"
+    ],
+    "key": {
+        "P": { "item": "defiledlands:pellet_umbrium" },
+        "V": { "item": "defiledlands:vilespine" }
+    },
+    "result": { "item": "defiledlands:pellet_spiked" }
+}

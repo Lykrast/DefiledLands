@@ -120,8 +120,12 @@ item.defiledlands.ravaging_pickaxe.tooltip=Mines extremely fast\nDestroys drops
 item.defiledlands.ravaging_shovel.name=Ravaging Shovel
 item.defiledlands.ravaging_shovel.tooltip=Digs extremely fast\nDestroys drops
 item.defiledlands.the_ravager.name=The Ravager
-item.defiledlands.the_ravager.tooltip=Fires Umbrium Pellets\nApplies Vulnerability
+item.defiledlands.the_ravager.tooltip=Fires Pellets
 item.defiledlands.pellet_umbrium.name=Umbrium Pellet
+item.defiledlands.pellet_spiked.name=Spiked Pellet
+item.defiledlands.pellet_spiked.tooltip=Applies a stacking Bleeding
+item.defiledlands.pellet_ravaging.name=Ravaging Pellet
+item.defiledlands.pellet_ravaging.tooltip=Applies Vulnerability
 
 #----------------------------
 #Enchantments
@@ -145,9 +149,12 @@ entity.defiledlands.book_wyrm.name=Book Wyrm
 
 entity.defiledlands.the_destroyer.name=The Destroyer
 
+#----------------------------
 #Potion effects
+#----------------------------
 potion.effect.defiledlands.vulnerability=Vulnerability
 potion.effect.defiledlands.grounded=Grounded
+potion.effect.defiledlands.bleeding=Bleeding
 
 #----------------------------
 #UI
@@ -163,6 +170,8 @@ ui.defiledlands.book_wyrm_analyze.reproduce=Time until next possible reproductio
 ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
 ui.defiledlands.book_wyrm_analyze.ready=Ready to mate
 ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
+
+ui.defiledlands.pellet.damage=Damage
 
 #----------------------------
 #Advancements

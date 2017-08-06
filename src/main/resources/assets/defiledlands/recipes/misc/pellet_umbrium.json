@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " S ",
+        "SUS",
+		" S "
+    ],
+    "key": {
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "S": { "ore": "stoneDefiled", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:pellet_umbrium", "count": 8 }
+}

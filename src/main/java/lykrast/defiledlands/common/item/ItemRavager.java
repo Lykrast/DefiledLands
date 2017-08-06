@@ -38,7 +38,7 @@ public class ItemRavager extends ItemGun {
     @Override
 	protected boolean isAmmo(ItemStack stack)
     {
-        return stack.getItem() instanceof ItemBlastemFruit;
+        return stack.getItem() == ModItems.pelletUmbrium;
     }
 
     /**
@@ -54,7 +54,7 @@ public class ItemRavager extends ItemGun {
         {
             if (ammo.isEmpty())
             {
-            	ammo = new ItemStack(ModItems.blastemFruit);
+            	ammo = new ItemStack(ModItems.pelletUmbrium);
             }
             
             worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));

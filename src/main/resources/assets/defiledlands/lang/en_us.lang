@@ -1,7 +1,11 @@
+#----------------------------
 #Creative Tabs
+#----------------------------
 itemGroup.tabDefiledLands=Defiled Lands
 
+#----------------------------
 #Blocks
+#----------------------------
 tile.defiledlands.stone_defiled.name=Defiled Stone
 tile.defiledlands.sandstone_defiled.name=Defiled Sandstone
 tile.defiledlands.sand_defiled.name=Defiled Sand
@@ -40,7 +44,9 @@ tile.defiledlands.scarlite_block.name=Block of Scarlite
 tile.defiledlands.healing_pad.name=Healing Pad
 tile.defiledlands.conjuring_altar.name=Conjuring Altar
 
+#----------------------------
 #Items
+#----------------------------
 item.defiledlands.tenebra_door.name=Tenebra Door
 
 item.defiledlands.hephaestite.name=Hephaestite Shard
@@ -114,15 +120,21 @@ item.defiledlands.ravaging_pickaxe.tooltip=Mines extremely fast\nDestroys drops
 item.defiledlands.ravaging_shovel.name=Ravaging Shovel
 item.defiledlands.ravaging_shovel.tooltip=Digs extremely fast\nDestroys drops
 item.defiledlands.the_ravager.name=The Ravager
+item.defiledlands.the_ravager.tooltip=Fires Umbrium Pellets\nApplies Vulnerability
+item.defiledlands.pellet_umbrium.name=Umbrium Pellet
 
+#----------------------------
 #Enchantments
+#----------------------------
 enchantment.sharpshooter=Sharpshooter
 enchantment.economical=Economical
 enchantment.safeguard=Safeguard
 enchantment.destructive=Destructive
 enchantment.blazing=Blazing
 
+#----------------------------
 #Mobs
+#----------------------------
 entity.defiledlands.shambler.name=Shambler
 entity.defiledlands.shambler_twisted.name=Twisted Shambler
 entity.defiledlands.scuttler.name=Scuttler
@@ -137,7 +149,9 @@ entity.defiledlands.the_destroyer.name=The Destroyer
 potion.effect.defiledlands.vulnerability=Vulnerability
 potion.effect.defiledlands.grounded=Grounded
 
+#----------------------------
 #UI
+#----------------------------
 ui.defiledlands.book_wyrm_analyze.health=Health : 
 ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 
 ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : 
@@ -150,7 +164,9 @@ ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
 ui.defiledlands.book_wyrm_analyze.ready=Ready to mate
 ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 
+#----------------------------
 #Advancements
+#----------------------------
 advancements.defiledlands.root.title=Defiled Lands
 advancements.defiledlands.root.description=A horrible chill runs down your spine...
 advancements.defiledlands.hephaestite.title=A Gift from the Fire Gods

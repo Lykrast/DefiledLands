@@ -43,7 +43,8 @@ public class ModItems {
 		scaleGoldenHelmet, scaleGoldenChestplate, scaleGoldenLeggings, scaleGoldenBoots,
 		bookWyrmAnalyzer,
 		callingStone,
-		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager;
+		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
+		pelletUmbrium;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
 	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
@@ -144,6 +145,7 @@ public class ModItems {
 		pickaxeRavaging = registerItem(new ItemPickaxeFoiled(materialRavaging), "ravaging_pickaxe");
 		shovelRavaging = registerItem(new ItemShovelFoiled(materialRavaging), "ravaging_shovel");
 		theRavager = registerItem(new ItemRavager(2107), "the_ravager");
+		pelletUmbrium = registerItem(new Item(), "pellet_umbrium");
 	}
 	
 	@SideOnly(Side.CLIENT)

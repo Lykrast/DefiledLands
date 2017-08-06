@@ -135,6 +135,7 @@ entity.defiledlands.the_destroyer.name=The Destroyer
 
 #Potion effects
 potion.effect.defiledlands.vulnerability=Vulnerability
+potion.effect.defiledlands.grounded=Grounded
 
 #UI
 ui.defiledlands.book_wyrm_analyze.health=Health : 

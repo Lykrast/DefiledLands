@@ -63,7 +63,7 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
         {
             if (result.entityHit != null)
             {
-            	boolean flag = result.entityHit.attackEntityFrom(DamageSource.causeIndirectMagicDamage(this, this.shootingEntity), getDamage());
+            	boolean flag = result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.shootingEntity), getDamage());
 
             	if (flag)
             	{

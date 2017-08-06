@@ -1,20 +1,23 @@
 package lykrast.defiledlands.common.potion;
 
+import lykrast.defiledlands.core.DefiledLands;
+import net.minecraft.client.Minecraft;
 import net.minecraft.potion.Potion;
+import net.minecraft.util.ResourceLocation;
 
 public class PotionGeneric extends Potion {
+	protected static final ResourceLocation TEXTURE = new ResourceLocation(DefiledLands.MODID, "textures/gui/potion_effects.png");
 
-	public PotionGeneric(boolean isBadEffectIn, int liquidColorIn) {
+	public PotionGeneric(boolean isBadEffectIn, int liquidColorIn, int icon) {
 		super(isBadEffectIn, liquidColorIn);
+		setIconIndex(icon % 8, icon / 8);
 	}
 
-    /**
-     * Sets the index for the icon displayed in the player's inventory when the status is active.
-     */
-    public Potion setIconIndex(int p_76399_1_, int p_76399_2_)
-    {
-        super.setIconIndex(p_76399_1_, p_76399_2_);
-        return this;
-    }
+	@Override
+	public int getStatusIconIndex()
+	{
+		Minecraft.getMinecraft().getTextureManager().bindTexture(TEXTURE);
+		return super.getStatusIconIndex();
+	}
 
 }

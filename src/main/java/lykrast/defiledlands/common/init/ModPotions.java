@@ -13,7 +13,7 @@ public class ModPotions {
 	
 	public static void init()
 	{
-		vulnerability = register(new PotionGeneric(true, Color.DARK_GRAY.getRGB()).setIconIndex(6, 1), "vulnerability");
+		vulnerability = register(new PotionGeneric(true, 0x6f7689, 0), "vulnerability");
 	}
 	
 	public static Potion register(Potion p, String name)

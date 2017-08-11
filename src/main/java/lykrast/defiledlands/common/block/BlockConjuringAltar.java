@@ -69,13 +69,7 @@ public class BlockConjuringAltar extends BlockCorrupted {
     {
         return AABB;
     }
-
-    @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
-    {
-        return BlockRenderLayer.CUTOUT_MIPPED;
-    }
-
+    
     public boolean isFullCube(IBlockState state)
     {
         return false;

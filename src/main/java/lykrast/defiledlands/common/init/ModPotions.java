@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.init;
 import java.awt.Color;
 
 import lykrast.defiledlands.common.potion.PotionGeneric;
+import lykrast.defiledlands.common.util.LocUtils;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -20,7 +21,7 @@ public class ModPotions {
 	
 	public static Potion register(Potion p, String name)
 	{
-		p.setPotionName("potion.effect." + DefiledLands.MODID + "." + name);
+		p.setPotionName("potion.effect." + LocUtils.prefix(name));
 		p.setRegistryName(DefiledLands.MODID, name);
 		ForgeRegistries.POTIONS.register(p);
 		return p;

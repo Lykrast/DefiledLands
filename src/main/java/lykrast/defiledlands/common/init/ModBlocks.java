@@ -26,7 +26,9 @@ import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.block.BlockVilespine;
 import lykrast.defiledlands.common.block.ICustomItemBlock;
 import lykrast.defiledlands.common.block.ICustomModel;
+import lykrast.defiledlands.common.tileentity.TileConjuringAltar;
 import lykrast.defiledlands.common.util.CreativeTabDL;
+import lykrast.defiledlands.common.util.LocUtils;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -38,6 +40,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -94,6 +97,7 @@ public class ModBlocks {
 		//Useful stuff
 		healingPad = registerBlock(new BlockHealingPad(3.0F, 15.0F), "healing_pad");
 		conjuringAltar = registerBlock(new BlockConjuringAltar(3.0F, 15.0F), "conjuring_altar");
+		GameRegistry.registerTileEntity(TileConjuringAltar.class, LocUtils.prefix("conjuring_altar"));
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -117,7 +121,7 @@ public class ModBlocks {
 	public static Block registerBlock(Block block, String name, CreativeTabs tab)
 	{
 		block.setRegistryName(name);
-		block.setUnlocalizedName(DefiledLands.MODID + "." + name);
+		block.setUnlocalizedName(LocUtils.prefix(name));
 
 		ForgeRegistries.BLOCKS.register(block);
 		

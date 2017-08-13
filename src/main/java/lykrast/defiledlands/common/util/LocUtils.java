@@ -4,9 +4,10 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
+import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.util.text.translation.I18n;
 
-//From Mantle
+//Most of the stuff is from Mantle
 //https://github.com/SlimeKnights/Mantle/blob/1.12/src/main/java/slimeknights/mantle/util/LocUtils.java
 public class LocUtils {
 
@@ -42,6 +43,11 @@ public class LocUtils {
 		}
 
 		return line;
+	}
+	
+	public static String prefix(String s)
+	{
+		return DefiledLands.MODID + "." + s;
 	}
 
 }

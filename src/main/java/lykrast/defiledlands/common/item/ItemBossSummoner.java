@@ -45,7 +45,7 @@ public abstract class ItemBossSummoner extends Item {
         		if (!worldIn.isRemote)
         		{
         			Entity boss = getBoss(worldIn);
-        			boss.setLocationAndAngles(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, player.getRotatedYaw(Rotation.CLOCKWISE_180), 0.0F);
+        			boss.setPosition(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
 
                     for (EntityPlayerMP entityplayermp : worldIn.getEntitiesWithinAABB(EntityPlayerMP.class, boss.getEntityBoundingBox().grow(50.0D)))
                     {

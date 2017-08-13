@@ -6,6 +6,7 @@ import java.util.List;
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
 import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
+import lykrast.defiledlands.common.util.LocUtils;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -176,7 +177,7 @@ public class ModItems {
 	public static Item registerItem(Item item, String name, CreativeTabs tab)
 	{
         item.setRegistryName(name);
-		item.setUnlocalizedName(DefiledLands.MODID + "." + name);
+		item.setUnlocalizedName(LocUtils.prefix(name));
         
 		ForgeRegistries.ITEMS.register(item);
         

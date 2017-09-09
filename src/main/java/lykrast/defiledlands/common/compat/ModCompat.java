@@ -17,6 +17,7 @@ public abstract class ModCompat {
 	static
 	{
 		compat.put("chisel", CompatChisel.class);
+		compat.put("projecte", CompatProjectE.class);
 	}
 	
 	public static void preInitCompat()

@@ -35,7 +35,6 @@ public class ModItems {
 		hephaestite, umbriumIngot, umbriumNugget, scarlite,
 		blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart, foulSlime, foulCandy, bookWyrmRaw, bookWyrmCooked, bookWyrmScale, bookWyrmScaleGolden,
-		axeTenebra, hoeTenebra, pickaxeTenebra, shovelTenebra, swordTenebra,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, razorScarlite, 
 		umbraBlaster, concussionSmasher,
@@ -48,7 +47,7 @@ public class ModItems {
 		pelletUmbrium, pelletSpiked, pelletRavaging;
 	private static final List<Item> itemList = new ArrayList<Item>();
 	
-	public static ToolMaterial materialTenebra, materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
+	public static ToolMaterial materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
 	public static ArmorMaterial materialUmbriumA, materialScales, materialScalesGolden;
 	
 	public static void init() {
@@ -77,14 +76,7 @@ public class ModItems {
 		bookWyrmScaleGolden = registerItem(new Item(), "book_wyrm_scale_golden");
 		
 		//Tools
-		//Because axes' stats aren't calculated like normal tools, we have to manually specify them
-		materialTenebra = EnumHelper.addToolMaterial("tenebra", 0, 89, 3.0F, 1.0F, 18).setRepairItem(new ItemStack(ModBlocks.tenebraPlanks));
-		axeTenebra = registerItem(new ItemAxeGeneric(materialTenebra, 8.0F, -3.2F), "tenebra_axe");
-		hoeTenebra = registerItem(new ItemHoeGeneric(materialTenebra), "tenebra_hoe");
-		pickaxeTenebra = registerItem(new ItemPickaxeGeneric(materialTenebra), "tenebra_pickaxe");
-		shovelTenebra = registerItem(new ItemShovelGeneric(materialTenebra), "tenebra_shovel");
-		swordTenebra = registerItem(new ItemSwordGeneric(materialTenebra), "tenebra_sword");
-		
+		//Because axes' stats aren't calculated like normal tools, we have to manually specify them		
 		materialUmbrium = EnumHelper.addToolMaterial("umbrium", 2, 302, 5.0F, 2.0F, 20).setRepairItem(new ItemStack(umbriumIngot));
 		axeUmbrium = registerItem(new ItemAxeGeneric(materialUmbrium, 8.0F, -3.1F), "umbrium_axe");
 		hoeUmbrium = registerItem(new ItemHoeGeneric(materialUmbrium), "umbrium_hoe");

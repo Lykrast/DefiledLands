@@ -69,6 +69,9 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 	
+	// Libs and shit
+	compile files('libs/')
+	
 	// JEI
 	// compile against the JEI API
 	deobfCompile "mezz.jei:jei_${jei_mc_version}:${jei_version}:api"

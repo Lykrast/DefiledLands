@@ -1,13 +1,14 @@
 {
     "type": "forge:ore_shaped",
     "pattern": [
+        "UUU",
         "UGU",
-        "UGU",
-        "UGU"
+        "URU"
     ],
     "key": {
         "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
-        "G": { "ore": "paneGlass", "type": "forge:ore_dict" }
+        "G": { "ore": "blockGlass", "type": "forge:ore_dict" },
+        "R": { "ore": "dustRedstone", "type": "forge:ore_dict" }
     },
     "result": { "item": "defiledlands:book_wyrm_analyzer" }
 }

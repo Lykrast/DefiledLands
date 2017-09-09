@@ -11,6 +11,7 @@ import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedStone;
 import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedWood;
 import lykrast.defiledlands.common.block.BlockFallingCorrupted;
 import lykrast.defiledlands.common.block.BlockGrassCorrupted;
+import lykrast.defiledlands.common.block.BlockGravelCorrupted;
 import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedStone;
 import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedWood;
 import lykrast.defiledlands.common.block.BlockHealingPad;
@@ -46,7 +47,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ModBlocks {
 	
-	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled,
+	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, gravelDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
 		stoneDefiledDecoration, tenebraDoor,
 		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra,
@@ -63,6 +64,8 @@ public class ModBlocks {
 		sandstoneDefiled = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 0.8F, 4.0F, "pickaxe", 0), "sandstone_defiled");
 		dirtDefiled = registerBlock(new BlockCorrupted(Material.GROUND, SoundType.GROUND, 0.5F, 2.5F, "shovel", 0), "dirt_defiled");
 		grassDefiled = registerBlock(new BlockGrassCorrupted(0.6F, 2.5F), "grass_defiled");
+		gravelDefiled = registerBlock(new BlockGravelCorrupted(Material.SAND, SoundType.GROUND, 0.6F, 2.5F), "gravel_defiled");
+		
 		tenebraLog = registerBlock(new BlockLogTenebra(3.0F, 15.0F), "tenebra_log");
 		tenebraLeaves = registerBlock(new BlockLeafTenebra(), "tenebra_leaves");
 		tenebraSapling = registerBlock(new BlockSaplingTenebra(0.0F), "tenebra_sapling");

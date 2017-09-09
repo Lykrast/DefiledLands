@@ -11,6 +11,7 @@ tile.defiledlands.sandstone_defiled.name=Defiled Sandstone
 tile.defiledlands.sand_defiled.name=Defiled Sand
 tile.defiledlands.dirt_defiled.name=Defiled Dirt
 tile.defiledlands.grass_defiled.name=Defiled Grass
+tile.defiledlands.gravel_defiled.name=Defiled Gravel
 
 tile.defiledlands.stone_defiled_decoration.bricks.name=Defiled Stone Bricks
 tile.defiledlands.stone_defiled_decoration.bricks_cracked.name=Cracked Defiled Stone Bricks

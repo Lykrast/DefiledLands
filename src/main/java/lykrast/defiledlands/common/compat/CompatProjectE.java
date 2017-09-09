@@ -25,6 +25,7 @@ public class CompatProjectE extends ModCompat {
 		emc.registerCustomEMC("dirtDefiled", 1);
 		emc.registerCustomEMC(new ItemStack(ModBlocks.grassDefiled), 2);
 		emc.registerCustomEMC("sandDefiled", 1);
+		emc.registerCustomEMC("gravelDefiled", 4);
 		
 		// Plants
 		emc.registerCustomEMC(new ItemStack(ModBlocks.vilespine), 32);
@@ -62,5 +63,11 @@ public class CompatProjectE extends ModCompat {
 		
 		transmute.registerWorldTransmutation(ModBlocks.grassDefiled.getDefaultState().withProperty(BlockGrassCorrupted.SNOWY, Boolean.valueOf(false)), sand, stone);
 		transmute.registerWorldTransmutation(ModBlocks.grassDefiled.getDefaultState().withProperty(BlockGrassCorrupted.SNOWY, Boolean.valueOf(true)), sand, stone);
+		
+
+		IBlockState sandstone = ModBlocks.sandstoneDefiled.getDefaultState(),
+				gravel = ModBlocks.gravelDefiled.getDefaultState();
+		transmute.registerWorldTransmutation(sandstone, gravel, null);
+		transmute.registerWorldTransmutation(gravel, sandstone, null);
 	}
 }

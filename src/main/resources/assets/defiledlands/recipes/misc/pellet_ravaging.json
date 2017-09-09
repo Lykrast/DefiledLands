@@ -1,5 +1,6 @@
 {
     "type": "forge:ore_shaped",
+	"group": "pellet_ravaging",
     "pattern": [
         " S ",
         "SRS",

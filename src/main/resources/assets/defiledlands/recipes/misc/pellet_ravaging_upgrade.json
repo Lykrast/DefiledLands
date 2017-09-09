@@ -1,0 +1,10 @@
+{
+	"type": "forge:ore_shapeless",
+	"group": "pellet_ravaging",
+	"ingredients": [
+		{ "type": "forge:ore_dict", "ore": "essenceDestroyer" },
+		{ "item": "defiledlands:pellet_umbrium" },
+		{ "item": "defiledlands:pellet_umbrium" }
+	],
+    "result": { "item": "defiledlands:pellet_ravaging", "count": 2 }
+}

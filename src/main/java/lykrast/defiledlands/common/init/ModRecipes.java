@@ -16,7 +16,7 @@ public class ModRecipes {
 		OreDictionary.registerOre("dirtDefiled", ModBlocks.dirtDefiled);
 		OreDictionary.registerOre("sandDefiled", ModBlocks.sandDefiled);
 		OreDictionary.registerOre("sandstoneDefiled", ModBlocks.sandstoneDefiled);
-		OreDictionary.registerOre("treeWood", ModBlocks.tenebraLog);
+		OreDictionary.registerOre("logWood", ModBlocks.tenebraLog);
 		OreDictionary.registerOre("plankWood", ModBlocks.tenebraPlanks);
 		OreDictionary.registerOre("treeLeaves", ModBlocks.tenebraLeaves);
 		OreDictionary.registerOre("treeSapling", ModBlocks.tenebraSapling);

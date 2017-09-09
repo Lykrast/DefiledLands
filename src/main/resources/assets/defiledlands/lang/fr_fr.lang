@@ -1,0 +1,201 @@
+#----------------------------
+#Creative Tabs
+#----------------------------
+itemGroup.tabDefiledLands=Terres profanes
+
+#----------------------------
+#Blocks
+#----------------------------
+tile.defiledlands.stone_defiled.name=Roche profane
+tile.defiledlands.sandstone_defiled.name=Grès profane
+tile.defiledlands.sand_defiled.name=Sable profane
+tile.defiledlands.dirt_defiled.name=Terre progane
+tile.defiledlands.grass_defiled.name=Herbe profane
+tile.defiledlands.gravel_defiled.name=Gravier profane
+
+tile.defiledlands.stone_defiled_decoration.bricks.name=Pierre profane taillée
+tile.defiledlands.stone_defiled_decoration.bricks_cracked.name=Pierre profane taillée craquelée
+tile.defiledlands.tenebra_door.name=Porte en bois de ténèbra
+tile.defiledlands.stone_defiled_slab.stone.name=Dalle en pierre profane
+tile.defiledlands.stone_defiled_slab.sandstone.name=Dalle en grès profane
+tile.defiledlands.stone_defiled_slab.bricks.name=Dalle en pierre profane taillée
+tile.defiledlands.wood_defiled_slab.tenebra.name=Dalle en bois de ténèbra
+tile.defiledlands.stone_defiled_stairs.name=Escaliers en pierre profane
+tile.defiledlands.sandstone_defiled_stairs.name=Escaliers en grès profane
+tile.defiledlands.stone_defiled_bricks_stairs.name=Escaliers en pierre profane taillée
+tile.defiledlands.tenebra_stairs.name=Escaliers en bois de ténèbra
+
+tile.defiledlands.tenebra_log.name=Bois de ténèbra
+tile.defiledlands.tenebra_leaves.name=Feuilles de ténèbra
+tile.defiledlands.tenebra_sapling.name=Pousse de ténèbra
+tile.defiledlands.tenebra_planks.name=Planches de ténèbra
+tile.defiledlands.vilespine.name=Vilépine
+tile.defiledlands.blastem.name=Détonatige
+tile.defiledlands.scuronotte.name=Scuronotte
+
+tile.defiledlands.hephaestite_ore.name=Minerai d'héphaestite
+tile.defiledlands.hephaestite_ore.tooltip=Chaud au toucher
+tile.defiledlands.hephaestite_block.name=Bloc d'héphaestite
+tile.defiledlands.hephaestite_block.tooltip=Brûlant au toucher
+tile.defiledlands.umbrium_ore.name=Minerai d'umbrium
+tile.defiledlands.umbrium_block.name=Bloc d'umbrium
+tile.defiledlands.scarlite_ore.name=Minerai de scarlite
+tile.defiledlands.scarlite_block.name=Bloc de scarlite
+
+tile.defiledlands.healing_pad.name=Dalle de soins
+tile.defiledlands.conjuring_altar.name=Autel de conjuration
+
+#----------------------------
+#Items
+#----------------------------
+item.defiledlands.tenebra_door.name=Porte en bois de ténèbra
+
+item.defiledlands.hephaestite.name=Éclat d'héphaestite
+item.defiledlands.umbrium_ingot.name=Lingot d'umbrium
+item.defiledlands.umbrium_nugget.name=Pépite d'umbrium
+item.defiledlands.scarlite.name=Scarlite
+
+item.defiledlands.blastem_fruit.name=Fruit de détonatige
+item.defiledlands.blastem_fruit.tooltip=Peut être lancé
+item.defiledlands.blastem_fruit_blazing.name=Fruit de détonatige flamboyant
+item.defiledlands.blastem_fruit_blazing.tooltip=Peut être lancé
+item.defiledlands.defilement_powder.name=Poudre de profanation
+item.defiledlands.defilement_powder.tooltip=Clic droit sur un bloc pour le profaner
+
+item.defiledlands.scuttler_eye.name=Oeil de silloneuse
+item.defiledlands.black_heart.name=Coeur noir
+item.defiledlands.foul_slime.name=Limon fétide
+item.defiledlands.foul_candy.name=Bonbon fétide
+item.defiledlands.book_wyrm_raw.name=Wyrm bibliophage cru
+item.defiledlands.book_wyrm_cooked.name=Wyrm bibliophage cuit
+item.defiledlands.book_wyrm_scale.name=Écaille de wyrm bibliophage
+item.defiledlands.book_wyrm_scale_golden.name=Écaille de wyrm bibliophage doré
+
+item.defiledlands.umbrium_axe.name=Hache en umbrium
+item.defiledlands.umbrium_hoe.name=Houe en umbrium
+item.defiledlands.umbrium_pickaxe.name=Pioche en umbrium
+item.defiledlands.umbrium_shovel.name=Pelle en umbrium
+item.defiledlands.umbrium_sword.name=Épée en umbrium
+
+item.defiledlands.scarlite_reaver.name=Saccageur en scarlite
+item.defiledlands.scarlite_reaver.tooltip=Draine la vie des créatures
+item.defiledlands.scarlite_razor.name=Rasoir en scarlite
+item.defiledlands.scarlite_razor.tooltip=Clic droit pour convertir de la vie en faim
+
+item.defiledlands.umbra_blaster.name=Blaster Umbra
+item.defiledlands.umbra_blaster.tooltip=Tire des fruits de détonatige
+item.defiledlands.concussion_smasher.name=Fracasseur à implosion
+item.defiledlands.concussion_smasher.tooltip=Charger puis relâcher pour\nprovoquer une onde de choc
+
+item.defiledlands.umbrium_helmet.name=Casque en umbrium
+item.defiledlands.umbrium_chestplate.name=Plastron en umbrium
+item.defiledlands.umbrium_leggings.name=Jambières en umbrium
+item.defiledlands.umbrium_boots.name=Bottes en umbrium
+
+item.defiledlands.scale_helmet.name=Casque en écaille de wyrm bibliophage
+item.defiledlands.scale_chestplate.name=Plastron en écaille de wyrm bibliophage
+item.defiledlands.scale_leggings.name=Jambières en écaille de wyrm bibliophage
+item.defiledlands.scale_boots.name=Bottes en écaille de wyrm bibliophage
+item.defiledlands.scale_golden_helmet.name=Casque en écaille de wyrm bibliophage doré
+item.defiledlands.scale_golden_chestplate.name=Plastron en écaille de wyrm bibliophage doré
+item.defiledlands.scale_golden_leggings.name=Jambières en écaille de wyrm bibliophage doré
+item.defiledlands.scale_golden_boots.name=Bottes en écaille de wyrm bibliophage doré
+
+item.defiledlands.book_wyrm_analyzer.name=Analyseur de wyrm bibliophage
+item.defiledlands.book_wyrm_analyzer.tooltip=Clic droit sur un wyrm bibliophage\npour en connaître divers caractéristiques
+
+item.defiledlands.calling_stone.name=Pierre d'appel
+item.defiledlands.calling_stone.tooltip=Clic droit sur un Autel de conjuration actif\npour invoquer Le Destructeur
+item.defiledlands.essence_destroyer.name=Essence de dévastation
+item.defiledlands.ravaging_ingot.name=Lingot dévastateur
+item.defiledlands.ravaging_axe.name=Hache dévastatrice
+item.defiledlands.ravaging_axe.tooltip=Coupe extrêmement vite\nDétruit les objets
+item.defiledlands.ravaging_pickaxe.name=Pioche dévastatrice
+item.defiledlands.ravaging_pickaxe.tooltip=Mine extrêmement vite\nDétruit les objets
+item.defiledlands.ravaging_shovel.name=Pelle dévastatrice
+item.defiledlands.ravaging_shovel.tooltip=Creuse extrêmement vite\nDétruit les objets
+item.defiledlands.the_ravager.name=Le Dévastateur
+item.defiledlands.the_ravager.tooltip=Tire des cartouches
+item.defiledlands.pellet_umbrium.name=Cartouche d'umbrium
+item.defiledlands.pellet_spiked.name=Cartouche à pointes
+item.defiledlands.pellet_spiked.tooltip=Applique un saignement qui s'accumule
+item.defiledlands.pellet_ravaging.name=Cartouche dévastatrice
+item.defiledlands.pellet_ravaging.tooltip=Applique une vulnérabilité
+
+#----------------------------
+#Enchantments
+#----------------------------
+enchantment.sharpshooter=Tireur d'élite
+enchantment.economical=Économique
+enchantment.safeguard=Sécurité
+enchantment.destructive=Destructeur
+enchantment.blazing=Flamboyant
+
+#----------------------------
+#Mobs
+#----------------------------
+entity.defiledlands.shambler.name=Galvaudeur
+entity.defiledlands.shambler_twisted.name=Galvaudeur démentiel
+entity.defiledlands.scuttler.name=Silloneuse
+entity.defiledlands.host.name=Hôte
+entity.defiledlands.slime_defiled.name=Limon profane
+
+entity.defiledlands.book_wyrm.name=Wyrm bibliophage
+
+entity.defiledlands.the_destroyer.name=Le Destructeur
+
+#----------------------------
+#Potion effects
+#----------------------------
+potion.effect.defiledlands.vulnerability=Vulnérabilité
+potion.effect.defiledlands.grounded=Atterri
+potion.effect.defiledlands.bleeding=Saignement
+
+#----------------------------
+#UI
+#----------------------------
+ui.defiledlands.book_wyrm_analyze.health=Vie : 
+ui.defiledlands.book_wyrm_analyze.digest_time=Temps de digestion : 
+ui.defiledlands.book_wyrm_analyze.max_level=Niveau d'enchantement : 
+ui.defiledlands.book_wyrm_analyze.digested=Niveau(x) digérés : 
+ui.defiledlands.book_wyrm_analyze.digesting=En train de digérer : 
+ui.defiledlands.book_wyrm_analyze.levels= niveau(x)
+ui.defiledlands.book_wyrm_analyze.maturing=Temps avant maturation : 
+ui.defiledlands.book_wyrm_analyze.reproduce=Temps avant prochaine reproduction possible : 
+ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
+ui.defiledlands.book_wyrm_analyze.ready=Prêt à s'accoupler
+ui.defiledlands.book_wyrm_analyze.golden=Ce spécimen a une étrange couleur dorée...
+
+ui.defiledlands.pellet.damage=dégâts
+
+#----------------------------
+#Advancements
+#----------------------------
+advancements.defiledlands.root.title=Terres profanes
+advancements.defiledlands.root.description=Un horrible frisson vous parcourt le long du dos...
+advancements.defiledlands.hephaestite.title=Un cadeau des dieux du feu
+advancements.defiledlands.hephaestite.description=Minez de l'héphaestite.
+advancements.defiledlands.blastem_fruit_blazing.title=Par le feu soyez purifiez
+advancements.defiledlands.blastem_fruit_blazing.description=Fabriquez des fruits de détonatige flamboyants.
+advancements.defiledlands.umbrium.title=Nos rêveries mauves
+advancements.defiledlands.umbrium.description=Faîtes fondre de l'umbrium en lingot.
+advancements.defiledlands.umbra_blaster.title=Ça c'est un fusil
+advancements.defiledlands.umbra_blaster.description=Fabriquez le Blaster Umbra.
+advancements.defiledlands.scarlite.title=La croisade écarlate
+advancements.defiledlands.scarlite.description=Minez de la scarlite sous terre.
+advancements.defiledlands.summon_destroyer.title=La fin est proche
+advancements.defiledlands.summon_destroyer.description=Utilisez une pierre d'appel sur un autel de conjuration actif.
+advancements.defiledlands.ravaging_tool.title=Porteur de destruction
+advancements.defiledlands.ravaging_tool.description=Fabriquez un outil à l'aide d'essence dévastatrice.
+
+advancements.defiledlands.book_wyrm_breed.title=L'odeur de l'amour
+advancements.defiledlands.book_wyrm_breed.description=Faîtes se reproduire deux wyrms bibliophages à l'aide de bonbons fétides.
+advancements.defiledlands.book_wyrm_breed_max_level.title=Génie génétique
+advancements.defiledlands.book_wyrm_breed_max_level.description=Croisez des wyrms bibliophages jusqu'à obtenir un niveau d'enchantement de 30.
+advancements.defiledlands.book_wyrm_breed_perfect.title=Le spécimen parfait
+advancements.defiledlands.book_wyrm_breed_perfect.description=Croisez des wyrms bibliophages jusqu'à obtenir un spécimen parfait.
+
+advancements.defiledlands.discover_all_biomes.title=Pèlerinage impie
+advancements.defiledlands.discover_all_biomes.description=Découvrez tous les biomes profanes naturels.
+advancements.defiledlands.kill_all_mobs.title=Purifier la terre
+advancements.defiledlands.kill_all_mobs.description=Tuez un de chaque monstre des terres profanes.

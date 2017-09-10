@@ -79,7 +79,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         super.entityInit();
         this.dataManager.register(GOLDEN, Boolean.valueOf(false));
         this.dataManager.register(DIGEST_TIME, Integer.valueOf(200));
-        this.dataManager.register(MAX_LEVEL, Integer.valueOf(1));
+        this.dataManager.register(MAX_LEVEL, Integer.valueOf(3));
     }
 
     protected void initEntityAI()

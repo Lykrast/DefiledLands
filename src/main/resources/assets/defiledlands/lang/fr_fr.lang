@@ -24,6 +24,8 @@ tile.defiledlands.stone_defiled_stairs.name=Escaliers en pierre profane
 tile.defiledlands.sandstone_defiled_stairs.name=Escaliers en grès profane
 tile.defiledlands.stone_defiled_bricks_stairs.name=Escaliers en pierre profane taillée
 tile.defiledlands.tenebra_stairs.name=Escaliers en bois de ténèbra
+tile.defiledlands.ravaging_decoration.stone.name=Pierre dévastatrice
+tile.defiledlands.ravaging_decoration.bricks.name=Briques dévastatrices
 
 tile.defiledlands.tenebra_log.name=Bois de ténèbra
 tile.defiledlands.tenebra_leaves.name=Feuilles de ténèbra

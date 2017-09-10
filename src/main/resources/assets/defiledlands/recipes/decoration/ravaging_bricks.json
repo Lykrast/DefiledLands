@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+	"group": "stone_defiled_bricks",
+    "pattern": [
+        "BBB",
+        "BEB",
+		"BBB"
+    ],
+    "key": {
+        "E": { "ore": "essenceDestroyer", "type": "forge:ore_dict" },
+        "B": { "item": "minecraft:brick_block" }
+    },
+    "result": { "item": "defiledlands:ravaging_decoration", "data": 1, "count": 8 }
+}

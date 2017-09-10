@@ -24,6 +24,8 @@ tile.defiledlands.stone_defiled_stairs.name=Defiled Stone Stairs
 tile.defiledlands.sandstone_defiled_stairs.name=Defiled Sandstone Stairs
 tile.defiledlands.stone_defiled_bricks_stairs.name=Defiled Stone Bricks Stairs
 tile.defiledlands.tenebra_stairs.name=Tenebra Wood Stairs
+tile.defiledlands.ravaging_decoration.stone.name=Ravaging Stone
+tile.defiledlands.ravaging_decoration.bricks.name=Ravaging Bricks
 
 tile.defiledlands.tenebra_log.name=Tenebra Wood
 tile.defiledlands.tenebra_leaves.name=Tenebra Leaves

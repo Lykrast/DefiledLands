@@ -19,6 +19,7 @@ import lykrast.defiledlands.common.block.BlockHephaestite;
 import lykrast.defiledlands.common.block.BlockHephaestiteOre;
 import lykrast.defiledlands.common.block.BlockLeafTenebra;
 import lykrast.defiledlands.common.block.BlockLogTenebra;
+import lykrast.defiledlands.common.block.BlockRavagingDecoration;
 import lykrast.defiledlands.common.block.BlockSaplingTenebra;
 import lykrast.defiledlands.common.block.BlockScarliteOre;
 import lykrast.defiledlands.common.block.BlockScuronotte;
@@ -49,7 +50,7 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, gravelDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
-		stoneDefiledDecoration, tenebraDoor,
+		stoneDefiledDecoration, tenebraDoor, ravagingDecoration,
 		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra,
 		stairsStoneDefiled, stairsSandstoneDefiled, stairsStoneDefiledBricks, stairsTenebra, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
@@ -83,6 +84,7 @@ public class ModBlocks {
 		stairsStoneDefiledBricks = registerBlock(new BlockStairsGeneric(stoneDefiledDecoration.getDefaultState().withProperty(BlockStoneDefiledDecoration.VARIANT, 
 				BlockStoneDefiledDecoration.Variants.BRICKS)), "stone_defiled_bricks_stairs");
 		stairsTenebra = registerBlock(new BlockStairsGeneric(tenebraPlanks.getDefaultState()), "tenebra_stairs");
+		ravagingDecoration = registerBlock(new BlockRavagingDecoration(2.0F, 60.0F, 0), "ravaging_decoration");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");

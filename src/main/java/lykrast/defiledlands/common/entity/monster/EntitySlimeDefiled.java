@@ -54,6 +54,11 @@ public class EntitySlimeDefiled extends EntitySlime implements IEntityDefiled {
     public void fall(float distance, float damageMultiplier)
     {
     }
+    
+    public int getMaxFallHeight()
+    {
+        return Integer.MAX_VALUE;
+    }
 
     @Nullable
     protected ResourceLocation getLootTable()

@@ -97,6 +97,11 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     	}
     }
     
+    public int getMaxFallHeight()
+    {
+        return Integer.MAX_VALUE;
+    }
+    
     public boolean attackEntityAsMob(Entity entityIn)
     {
     	if (super.attackEntityAsMob(entityIn))

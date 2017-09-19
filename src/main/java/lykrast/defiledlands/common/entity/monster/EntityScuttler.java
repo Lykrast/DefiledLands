@@ -58,6 +58,11 @@ public class EntityScuttler extends EntitySpider implements IEntityDefiled {
     {
     }
     
+    public int getMaxFallHeight()
+    {
+        return Integer.MAX_VALUE;
+    }
+    
     @Override
     public boolean getCanSpawnHere()
     {

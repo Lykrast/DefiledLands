@@ -51,7 +51,7 @@ public class EntityScuttler extends EntitySpider implements IEntityDefiled {
         super.applyEntityAttributes();
         //this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(64.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(16.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.38D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.34D);
     }
 
     public void fall(float distance, float damageMultiplier)
@@ -90,7 +90,7 @@ public class EntityScuttler extends EntitySpider implements IEntityDefiled {
 	{
 		public AISpiderAttack(EntitySpider spider)
 		{
-			super(spider, 1.0D, true, 0.8F);
+			super(spider, 1.0D, true, 0.6F);
 		}
 
 		protected double getAttackReachSqr(EntityLivingBase attackTarget)

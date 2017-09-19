@@ -53,14 +53,6 @@ public class EntityHost extends EntityMob implements IEntityDefiled {
     }
 
     /**
-     * The maximum height from where the entity is alowed to jump (used in pathfinder)
-     */
-    public int getMaxFallHeight()
-    {
-        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
-    }
-
-    /**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */

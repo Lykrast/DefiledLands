@@ -95,7 +95,7 @@ public class ModItems {
 		concussionSmasher = registerItem(new ItemConcussionSmasher(178), "concussion_smasher");
 		
 		//Armor
-		materialUmbriumA = EnumHelper.addArmorMaterial("umbrium", "umbrium", 16, new int[]{1, 4, 5, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
+		materialUmbriumA = EnumHelper.addArmorMaterial("umbrium", "umbrium", 18, new int[]{1, 4, 5, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 		materialUmbriumA.setRepairItem(new ItemStack(umbriumIngot));
 		umbriumHelmet = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.HEAD), "umbrium_helmet");
 		umbriumChestplate = registerItem(new ItemArmorGeneric("umbrium", materialUmbriumA, EntityEquipmentSlot.CHEST), "umbrium_chestplate");

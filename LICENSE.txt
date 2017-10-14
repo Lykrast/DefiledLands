@@ -2,6 +2,10 @@ MIT License
 
 Copyright (c) 2017 Lykrast
 
+The following license only applies to the code. You may not reuse assets
+from this mod, such as names, textures or models, without explicit permission
+from the author (Lykrast).
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

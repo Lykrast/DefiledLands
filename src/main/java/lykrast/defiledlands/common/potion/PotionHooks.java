@@ -15,7 +15,7 @@ public class PotionHooks {
 		if (e.getEntityLiving().isPotionActive(ModPotions.vulnerability))
 		{
 			PotionEffect effect = e.getEntityLiving().getActivePotionEffect(ModPotions.vulnerability);
-			float mult = 1 + (0.2F * effect.getAmplifier());
+			float mult = 1 + (0.2F * (effect.getAmplifier()+1));
 			
 			e.setAmount(e.getAmount() * mult);
 		}

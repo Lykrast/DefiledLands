@@ -79,19 +79,19 @@ public class Config {
         		"Multiplier applied to enchanted books's level fed to Book Wyrms, highly recommended to keep below 1");
         
         // World
-        weightDesertDefiled = cfg.getInt("weightDesertDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        weightDesertDefiled = cfg.getInt("weightDesertDefiled", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Defiled Deserts in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightPlainsDefiled = cfg.getInt("weightPlainsDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        weightPlainsDefiled = cfg.getInt("weightPlainsDefiled", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Defiled Plains in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightForestTenebra = cfg.getInt("weightForestTenebra", CATEGORY_WORLD, 6, 0, 100, 
+        weightForestTenebra = cfg.getInt("weightForestTenebra", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Tenebra Forests in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightForestVilespine = cfg.getInt("weightForestVilespine", CATEGORY_WORLD, 6, 0, 100, 
+        weightForestVilespine = cfg.getInt("weightForestVilespine", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Vilespine Forests in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightHillsDefiled = cfg.getInt("weightHillsDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        weightHillsDefiled = cfg.getInt("weightHillsDefiled", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Defiled Hills in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightSwampDefiled = cfg.getInt("weightSwampDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        weightSwampDefiled = cfg.getInt("weightSwampDefiled", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Defiled Swamps in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
-        weightIcePlainsDefiled = cfg.getInt("weightIcePlainsDefiled", CATEGORY_WORLD, 6, 0, 100, 
+        weightIcePlainsDefiled = cfg.getInt("weightIcePlainsDefiled", CATEGORY_WORLD, 3, 0, 100, 
         		"Weight of Defiled Ice Plains in generation with greater weight meaning more common, 10 is most vanilla biomes, 0 prevents generation");
         
         // Compat

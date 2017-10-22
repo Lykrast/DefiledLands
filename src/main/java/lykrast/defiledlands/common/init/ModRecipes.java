@@ -73,6 +73,7 @@ public class ModRecipes {
 		//Decoration
 		GameRegistry.addSmelting(new ItemStack(ModBlocks.stoneDefiledDecoration, 1, BlockStoneDefiledDecoration.Variants.BRICKS.ordinal()), 
 				new ItemStack(ModBlocks.stoneDefiledDecoration, 1, BlockStoneDefiledDecoration.Variants.BRICKS_CRACKED.ordinal()), 0.1F);
+		GameRegistry.addSmelting(ModBlocks.sandDefiled, new ItemStack(ModBlocks.glassObscure), 0.1F);
 	}
 
 }

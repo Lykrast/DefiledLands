@@ -26,6 +26,7 @@ public class CorruptionRecipes {
 		register(Blocks.DIRT, ModBlocks.dirtDefiled);
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
 		register(Blocks.GRAVEL, ModBlocks.gravelDefiled);
+		register(Blocks.GLASS, ModBlocks.glassObscure);
 		
 		register(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.DEFAULT), 
 				ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(

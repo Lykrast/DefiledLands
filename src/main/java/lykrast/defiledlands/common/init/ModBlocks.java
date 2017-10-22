@@ -3,31 +3,7 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import lykrast.defiledlands.common.block.BlockBlastem;
-import lykrast.defiledlands.common.block.BlockConjuringAltar;
-import lykrast.defiledlands.common.block.BlockCorrupted;
-import lykrast.defiledlands.common.block.BlockDoorGeneric;
-import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedStone;
-import lykrast.defiledlands.common.block.BlockDoubleSlabCorruptedWood;
-import lykrast.defiledlands.common.block.BlockFallingCorrupted;
-import lykrast.defiledlands.common.block.BlockGrassCorrupted;
-import lykrast.defiledlands.common.block.BlockGravelCorrupted;
-import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedStone;
-import lykrast.defiledlands.common.block.BlockHalfSlabCorruptedWood;
-import lykrast.defiledlands.common.block.BlockHealingPad;
-import lykrast.defiledlands.common.block.BlockHephaestite;
-import lykrast.defiledlands.common.block.BlockHephaestiteOre;
-import lykrast.defiledlands.common.block.BlockLeafTenebra;
-import lykrast.defiledlands.common.block.BlockLogTenebra;
-import lykrast.defiledlands.common.block.BlockRavagingDecoration;
-import lykrast.defiledlands.common.block.BlockSaplingTenebra;
-import lykrast.defiledlands.common.block.BlockScarliteOre;
-import lykrast.defiledlands.common.block.BlockScuronotte;
-import lykrast.defiledlands.common.block.BlockStairsGeneric;
-import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
-import lykrast.defiledlands.common.block.BlockVilespine;
-import lykrast.defiledlands.common.block.ICustomItemBlock;
-import lykrast.defiledlands.common.block.ICustomModel;
+import lykrast.defiledlands.common.block.*;
 import lykrast.defiledlands.common.tileentity.TileConjuringAltar;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.common.util.LocUtils;
@@ -50,7 +26,7 @@ public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, gravelDefiled,
 		tenebraLog, tenebraLeaves, tenebraSapling, tenebraPlanks, 
-		stoneDefiledDecoration, tenebraDoor, ravagingDecoration,
+		stoneDefiledDecoration, tenebraDoor, ravagingDecoration, glassObscure,
 		slabDoubleStone, slabHalfStone, slabDoubleTenebra, slabHalfTenebra,
 		stairsStoneDefiled, stairsSandstoneDefiled, stairsStoneDefiledBricks, stairsTenebra, 
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
@@ -85,6 +61,7 @@ public class ModBlocks {
 				BlockStoneDefiledDecoration.Variants.BRICKS)), "stone_defiled_bricks_stairs");
 		stairsTenebra = registerBlock(new BlockStairsGeneric(tenebraPlanks.getDefaultState()), "tenebra_stairs");
 		ravagingDecoration = registerBlock(new BlockRavagingDecoration(2.0F, 60.0F, 0), "ravaging_decoration");
+		glassObscure = registerBlock(new BlockGlassObscure(0.3F, 1.5F), "glass_obscure");
 		
 		//Ores
 		hephaestiteOre = registerBlock(new BlockHephaestiteOre(3.0F, 15.0F), "hephaestite_ore");

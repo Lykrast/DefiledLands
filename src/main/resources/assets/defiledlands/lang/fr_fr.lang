@@ -6,7 +6,7 @@ itemGroup.tabDefiledLands=Terres profanes
 #----------------------------
 #Blocks
 #----------------------------
-tile.defiledlands.stone_defiled.name=Roche profane
+tile.defiledlands.stone_defiled.name=Pierre profane
 tile.defiledlands.sandstone_defiled.name=Grès profane
 tile.defiledlands.sand_defiled.name=Sable profane
 tile.defiledlands.dirt_defiled.name=Terre progane
@@ -15,6 +15,8 @@ tile.defiledlands.gravel_defiled.name=Gravier profane
 
 tile.defiledlands.stone_defiled_decoration.bricks.name=Pierre profane taillée
 tile.defiledlands.stone_defiled_decoration.bricks_cracked.name=Pierre profane taillée craquelée
+tile.defiledlands.stone_defiled_decoration.bricks_mossy.name=Pierre profane taillée moussue
+tile.defiledlands.stone_defiled_decoration.mossy.name=Pierre profane moussue
 tile.defiledlands.tenebra_door.name=Porte en bois de ténèbra
 tile.defiledlands.stone_defiled_slab.stone.name=Dalle en pierre profane
 tile.defiledlands.stone_defiled_slab.sandstone.name=Dalle en grès profane
@@ -26,6 +28,8 @@ tile.defiledlands.stone_defiled_bricks_stairs.name=Escaliers en pierre profane t
 tile.defiledlands.tenebra_stairs.name=Escaliers en bois de ténèbra
 tile.defiledlands.ravaging_decoration.stone.name=Pierre dévastatrice
 tile.defiledlands.ravaging_decoration.bricks.name=Briques dévastatrices
+tile.defiledlands.glass_obscure.name=Verre obscur
+tile.defiledlands.glass_obscure.tooltip=Bloque la lumière
 
 tile.defiledlands.tenebra_log.name=Bois de ténèbra
 tile.defiledlands.tenebra_leaves.name=Feuilles de ténèbra

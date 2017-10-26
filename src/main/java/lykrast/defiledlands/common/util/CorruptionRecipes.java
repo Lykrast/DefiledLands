@@ -34,6 +34,11 @@ public class CorruptionRecipes {
 		register(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.CRACKED), 
 				ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(
 				BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS_CRACKED));
+		register(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.MOSSY), 
+				ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(
+				BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.BRICKS_MOSSY));
+		register(Blocks.MOSSY_COBBLESTONE, ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(
+				BlockStoneDefiledDecoration.VARIANT, BlockStoneDefiledDecoration.Variants.MOSSY));
 		
 		register(Blocks.COAL_ORE, ModBlocks.hephaestiteOre);
 		register(Blocks.COAL_BLOCK, ModBlocks.hephaestiteBlock);

@@ -1,0 +1,8 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{ "item": "defiledlands:stone_defiled_decoration", "data": 0 },
+		{ "item": "minecraft:vine" }
+	],
+	"result": { "item": "defiledlands:stone_defiled_decoration", "data": 2 }
+}

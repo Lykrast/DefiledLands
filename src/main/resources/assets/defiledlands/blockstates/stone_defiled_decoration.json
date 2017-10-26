@@ -14,6 +14,16 @@
 				"textures": {
 					"all": "defiledlands:blocks/decoration/stone_bricks_defiled_cracked"
 				}
+			},
+			"bricks_mossy": {
+				"textures": {
+					"all": "defiledlands:blocks/decoration/stone_bricks_defiled_mossy"
+				}
+			},
+			"mossy": {
+				"textures": {
+					"all": "defiledlands:blocks/decoration/stone_defiled_mossy"
+				}
 			}
 		}
 	}

@@ -61,7 +61,9 @@ public class BlockStoneDefiledDecoration extends BlockVariantCorrupted {
 	public enum Variants implements IStringSerializable {
 		
 		BRICKS,
-		BRICKS_CRACKED;
+		BRICKS_CRACKED,
+		BRICKS_MOSSY,
+		MOSSY;
 		
 		@Override
 	    public String getName()

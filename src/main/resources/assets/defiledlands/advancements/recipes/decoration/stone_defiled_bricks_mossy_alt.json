@@ -1,0 +1,33 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:decoration/stone_defiled_bricks_mossy_alt"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "defiledlands:stone_defiled_decoration",
+			"data": 3
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:decoration/stone_defiled_bricks_mossy_alt"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

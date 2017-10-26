@@ -1,6 +1,7 @@
 package lykrast.defiledlands.common.util;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.init.ModBlocks;
@@ -12,8 +13,7 @@ import net.minecraft.init.Blocks;
 
 public class CorruptionRecipes {
 
-	private static HashMap<IBlockState, IBlockState> corruptionMap = new HashMap<IBlockState, IBlockState>();
-//	private static HashMap<IBlockState, IBlockState> reverseMap = new HashMap<IBlockState, IBlockState>();
+	private static Map<IBlockState, IBlockState> corruptionMap = new HashMap<IBlockState, IBlockState>();
 
 	public static void init() {
 		register(Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.STONE), ModBlocks.stoneDefiled);
@@ -53,15 +53,9 @@ public class CorruptionRecipes {
 		return corruptionMap.get(input);
 	}
 
-//	public static IBlockState getReverse(IBlockState input)
-//	{
-//		return reverseMap.get(input);
-//	}
-
 	public static void register(IBlockState input, IBlockState output)
 	{		
 		corruptionMap.put(input, output);
-		//reverseMap.put(output, input);
 	}
 
 	public static void register(Block input, Block output)
@@ -90,7 +84,11 @@ public class CorruptionRecipes {
 	public static void unregister(IBlockState input, IBlockState output)
 	{		
 		corruptionMap.remove(input, output);
-//		reverseMap.remove(output, input);
+	}
+	
+	public static Map<IBlockState, IBlockState> getMap()
+	{
+		return corruptionMap;
 	}
 
 }

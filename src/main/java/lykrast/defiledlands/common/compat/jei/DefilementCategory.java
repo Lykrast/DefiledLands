@@ -7,8 +7,6 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeCategory;
-import mezz.jei.api.recipe.IRecipeWrapper;
-import mezz.jei.config.Constants;
 import net.minecraft.util.text.translation.I18n;
 
 public class DefilementCategory implements IRecipeCategory<DefilementWrapper> {

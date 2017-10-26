@@ -1,16 +1,7 @@
 package lykrast.defiledlands.common.item;
 
-import java.util.List;
-
-import javax.annotation.Nullable;
-
-import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
-import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import lykrast.defiledlands.common.entity.projectile.EntityRavagerProjectile;
-import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModItems;
-import lykrast.defiledlands.common.util.LocUtils;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
@@ -22,8 +13,6 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;

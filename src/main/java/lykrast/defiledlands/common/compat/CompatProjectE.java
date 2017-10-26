@@ -1,7 +1,6 @@
 package lykrast.defiledlands.common.compat;
 
 import lykrast.defiledlands.common.block.BlockGrassCorrupted;
-import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import moze_intel.projecte.api.ProjectEAPI;
@@ -9,7 +8,6 @@ import moze_intel.projecte.api.proxy.IEMCProxy;
 import moze_intel.projecte.api.proxy.ITransmutationProxy;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.event.FMLInterModComms;
 
 public class CompatProjectE extends ModCompat {
 	// https://github.com/sinkillerj/ProjectE/tree/master/src/main/java/moze_intel/projecte/api

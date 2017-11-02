@@ -16,6 +16,7 @@ public class CompatImmersiveEngineering extends ModCompat {
 	public void postInit()
 	{
 		// Garden Cloche
+		// Mostly copied from the vanilla registering
 		// Uses same numbers as Sugar Cane and Mushrooms
 		IngredientStack vilespineSoil = new IngredientStack(ImmutableList.of(
 				new ItemStack(ModBlocks.dirtDefiled), 

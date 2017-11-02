@@ -83,12 +83,7 @@ public class ItemConcussionSmasher extends Item implements IEnchantDestructive {
     public static float getExplosionStrength(int charge)
     {
         float f = (float)charge / USE_TIME;
-        f = (f * f + f * 2.0F) / 3.0F;
-
-        if (f > 1.0F)
-        {
-            f = 1.0F;
-        }
+        if (f > 1.0F) f = 1.0F;
 
         return f;
     }

@@ -2,15 +2,30 @@ package lykrast.defiledlands.common.compat;
 
 import com.google.common.collect.ImmutableList;
 
+import blusunrize.immersiveengineering.api.IEApi;
+import blusunrize.immersiveengineering.api.crafting.FermenterRecipe;
 import blusunrize.immersiveengineering.api.crafting.IngredientStack;
 import blusunrize.immersiveengineering.api.tool.BelljarHandler;
 import lykrast.defiledlands.common.block.BlockVilespine;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 
 public class CompatImmersiveEngineering extends ModCompat {
 	// https://github.com/BluSunrize/ImmersiveEngineering/tree/master/src/main/java/blusunrize/immersiveengineering/api
+	
+	@Override
+	public void init()
+	{
+		// Fermenter
+		Fluid ethanol = FluidRegistry.getFluid("ethanol");
+		ItemStack saltpeter = IEApi.getPreferredOreStack("dustSaltpeter");
+		if (ethanol != null && saltpeter != null)
+			FermenterRecipe.addRecipe(new FluidStack(ethanol,80), saltpeter, ModItems.blastemFruit, 6400);
+	}
 	
 	@Override
 	public void postInit()

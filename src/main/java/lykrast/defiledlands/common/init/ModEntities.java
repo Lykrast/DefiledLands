@@ -65,9 +65,9 @@ public class ModEntities {
         
         
         //Dungeon List
-        DungeonDefiledList.addDungeonMob("scuttler", 200);
-        DungeonDefiledList.addDungeonMob("host", 100);
-        DungeonDefiledList.addDungeonMob("shambler_twisted", 100);
+        DungeonDefiledList.addDungeonMob("scuttler", 160);
+        DungeonDefiledList.addDungeonMob("host", 120);
+        DungeonDefiledList.addDungeonMob("shambler_twisted", 20);
         //Registered here because that seemed the most fitting
         LootTableList.register(lykrast.defiledlands.common.world.feature.WorldGenDungeonsDefiled.LOOT);
 	}

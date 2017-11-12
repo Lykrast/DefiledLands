@@ -1,5 +1,11 @@
 # 1.12.2
 
+## 1.2.0
+
+* ADDED : Support for Immersive Engineering's Garden Cloche (Vilespine, Blastem and Scuronotte)
+* CHANGED : Shamblers now deal slightly less damage and no longer apply Weakness
+* CHANGED : Twisted Shambler dungeons are now much more rare, Host dungeons are now more common
+
 ## 1.1.0
 
 * ADDED: JEI support for defilement

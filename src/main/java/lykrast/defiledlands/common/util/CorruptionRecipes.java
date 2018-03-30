@@ -6,10 +6,12 @@ import java.util.Map;
 import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.init.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStainedGlass;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockStoneBrick;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 
 public class CorruptionRecipes {
 
@@ -27,7 +29,9 @@ public class CorruptionRecipes {
 		register(Blocks.GRASS, ModBlocks.grassDefiled);
 		register(Blocks.GRAVEL, ModBlocks.gravelDefiled);
 		register(Blocks.GLASS, ModBlocks.glassObscure);
-		register(Blocks.STAINED_GLASS, ModBlocks.glassObscure);
+		
+		for (EnumDyeColor color : EnumDyeColor.values())
+			register(Blocks.STAINED_GLASS.getDefaultState().withProperty(BlockStainedGlass.COLOR, color), ModBlocks.glassObscure);
 		
 		register(Blocks.STONEBRICK.getDefaultState().withProperty(BlockStoneBrick.VARIANT, BlockStoneBrick.EnumType.DEFAULT), 
 				ModBlocks.stoneDefiledDecoration.getDefaultState().withProperty(

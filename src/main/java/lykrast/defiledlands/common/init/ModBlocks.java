@@ -11,16 +11,19 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@Mod.EventBusSubscriber
 public class ModBlocks {
 	
 	public static Block stoneDefiled, sandDefiled, sandstoneDefiled, dirtDefiled, grassDefiled, gravelDefiled,
@@ -31,9 +34,9 @@ public class ModBlocks {
 		hephaestiteOre, hephaestiteBlock, umbriumOre, umbriumBlock, scarliteOre, scarliteBlock, 
 		vilespine, blastem, scuronotte,
 		healingPad, conjuringAltar;
-	private static final List<Block> blockList = new ArrayList<Block>();
+	private static List<Block> blockList = new ArrayList<Block>();
 	
-	public static void init() {
+	static {
 		//Blocks
 		stoneDefiled = registerBlock(new BlockCorrupted(Material.ROCK, SoundType.STONE, 1.5F, 30.0F, "pickaxe", 0), "stone_defiled");
 		sandDefiled = registerBlock(new BlockFallingCorrupted(Material.SAND, SoundType.SAND, 0.5F, 2.5F, "shovel", 0), "sand_defiled");
@@ -81,11 +84,17 @@ public class ModBlocks {
 		GameRegistry.registerTileEntity(TileConjuringAltar.class, LocUtils.prefix("conjuring_altar"));
 	}
 	
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event)
+	{
+		for (Block b : blockList) event.getRegistry().register(b);
+	}
+	
+	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
-	public static void initModels()
+	public static void registerModels(ModelRegistryEvent evt)
 	{
 		for (Block b : blockList) initModel(b);
-		ModelLoader.setCustomStateMapper(tenebraDoor, (new StateMap.Builder()).ignore(BlockDoorGeneric.POWERED).build());
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -103,9 +112,6 @@ public class ModBlocks {
 	{
 		block.setRegistryName(name);
 		block.setUnlocalizedName(LocUtils.prefix(name));
-
-		ForgeRegistries.BLOCKS.register(block);
-		
 		
 		ItemBlock item;
 		if (block instanceof ICustomItemBlock)
@@ -120,7 +126,7 @@ public class ModBlocks {
 		if (item != null)
 		{
 			item.setRegistryName(block.getRegistryName());
-			ForgeRegistries.ITEMS.register(item);
+			ModItems.itemBlockList.add(item);
 		}
 
 		if (tab != null) block.setCreativeTab(tab);

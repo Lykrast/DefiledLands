@@ -3,14 +3,7 @@ package lykrast.defiledlands.core;
 import java.io.File;
 
 import lykrast.defiledlands.common.compat.ModCompat;
-import lykrast.defiledlands.common.init.ModBiomes;
-import lykrast.defiledlands.common.init.ModBlocks;
-import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.init.ModEntities;
-import lykrast.defiledlands.common.init.ModItems;
-import lykrast.defiledlands.common.init.ModPotions;
-import lykrast.defiledlands.common.init.ModRecipes;
-import lykrast.defiledlands.common.init.ModSounds;
 import lykrast.defiledlands.common.util.Config;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -27,14 +20,7 @@ public class CommonProxy {
         config = new Configuration(new File(directory.getPath(), "defiled_lands.cfg"));
         Config.readConfig();
         
-		ModBlocks.init();
-		ModItems.init();
-		ModRecipes.init();
 		ModEntities.init();
-		ModBiomes.registerBiomes();
-		ModEnchantments.init();
-		ModPotions.init();
-		ModSounds.init();
 		
 		ModCompat.preInitCompat();
 	}

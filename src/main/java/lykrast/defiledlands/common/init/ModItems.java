@@ -7,6 +7,7 @@ import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
 import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.common.util.LocUtils;
+import lykrast.defiledlands.common.init.ModRecipes;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -22,12 +23,16 @@ import net.minecraft.item.ItemSimpleFoiled;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@Mod.EventBusSubscriber
 public class ModItems {
 	
 	public static Item tenebraDoor,
@@ -44,12 +49,13 @@ public class ModItems {
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
 		pelletUmbrium, pelletSpiked, pelletRavaging;
-	private static final List<Item> itemList = new ArrayList<Item>();
+	private static List<Item> itemList = new ArrayList<>();
+	static List<Item> itemBlockList = new ArrayList<>();
 	
 	public static ToolMaterial materialUmbrium, materialScarlite, materialScarliteRazor, materialRavaging;
 	public static ArmorMaterial materialUmbriumA, materialScales, materialScalesGolden;
 	
-	public static void init() {
+	static {
 		//Decoration
 		tenebraDoor = registerItem(new ItemDoor(ModBlocks.tenebraDoor), "tenebra_door");
 		
@@ -149,9 +155,20 @@ public class ModItems {
 		}, "pellet_ravaging");
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public static void initModels()
+	@SubscribeEvent
+	public static void registerItems(RegistryEvent.Register<Item> event)
 	{
+		//Just making sure item blocks get registered before items
+		for (Item i : itemBlockList) event.getRegistry().register(i);
+		for (Item i : itemList) event.getRegistry().register(i);
+		ModRecipes.initOreDict();
+	}
+	
+	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
+	public static void registerModels(ModelRegistryEvent evt)
+	{
+		for (Item i : itemBlockList) initModel(i);
 		for (Item i : itemList) initModel(i);
 	}
 
@@ -169,8 +186,6 @@ public class ModItems {
 	{
         item.setRegistryName(name);
 		item.setUnlocalizedName(LocUtils.prefix(name));
-        
-		ForgeRegistries.ITEMS.register(item);
         
         if (tab != null) item.setCreativeTab(tab);
         

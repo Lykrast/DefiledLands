@@ -1,5 +1,8 @@
 package lykrast.defiledlands.common.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lykrast.defiledlands.client.render.entity.RenderBlastemFruit;
 import lykrast.defiledlands.client.render.entity.RenderBlastemFruitBlazing;
 import lykrast.defiledlands.client.render.entity.RenderBookWyrm;
@@ -25,14 +28,20 @@ import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@Mod.EventBusSubscriber
 public class ModEntities {
 	
 	private static int id = 1;
+	private static List<EntityEntry> entityList = new ArrayList<>();
 	
 	public static void init()
 	{
@@ -71,10 +80,22 @@ public class ModEntities {
         //Registered here because that seemed the most fitting
         LootTableList.register(lykrast.defiledlands.common.world.feature.WorldGenDungeonsDefiled.LOOT);
 	}
+
+	@SubscribeEvent
+	public static void registerEntities(RegistryEvent.Register<EntityEntry> event)
+	{
+		for (EntityEntry e : entityList) event.getRegistry().register(e);
+	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name, int colorBack, int colorFront)
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(DefiledLands.MODID, name), entityClass, DefiledLands.MODID + "." + name, id++, DefiledLands.instance, 64, 3, true, colorBack, colorFront);
+		EntityEntryBuilder<Entity> builder = EntityEntryBuilder.create()
+				.entity(entityClass)
+				.name(DefiledLands.MODID + "." + name)
+				.id(new ResourceLocation(DefiledLands.MODID, name), id++)
+				.tracker(64, 3, true)
+				.egg(colorBack, colorFront);
+		entityList.add(builder.build());
 	}
 	
 	public static void registerProjectile(Class<? extends Entity> entityClass, String name)
@@ -84,7 +105,12 @@ public class ModEntities {
 	
 	public static void registerProjectile(Class<? extends Entity> entityClass, String name, int updateRate)
 	{
-		EntityRegistry.registerModEntity(new ResourceLocation(DefiledLands.MODID, name), entityClass, DefiledLands.MODID + "." + name, id++, DefiledLands.instance, 64, updateRate, true);
+		EntityEntryBuilder<Entity> builder = EntityEntryBuilder.create()
+				.entity(entityClass)
+				.name(DefiledLands.MODID + "." + name)
+				.id(new ResourceLocation(DefiledLands.MODID, name), id++)
+				.tracker(64, updateRate, true);
+		entityList.add(builder.build());
 	}
 	
 	@SideOnly(Side.CLIENT)

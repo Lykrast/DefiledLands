@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class DefiledLands {
 	
 	public static final String MODID = "defiledlands";
-    public static final String VERSION = "1.2.0";
+    public static final String VERSION = "1.3.0";
     
     @Instance(MODID)
     public static DefiledLands instance;

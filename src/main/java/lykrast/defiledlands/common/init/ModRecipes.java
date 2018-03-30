@@ -4,12 +4,17 @@ import lykrast.defiledlands.common.block.BlockStoneDefiledDecoration;
 import lykrast.defiledlands.common.util.CorruptionRecipes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
+@Mod.EventBusSubscriber
 public class ModRecipes {
 	
-	public static void init() {
+	public static void initOreDict() {
 		//Blocks
 		OreDictionary.registerOre("stoneDefiled", ModBlocks.stoneDefiled);
 		OreDictionary.registerOre("stoneDefiled", new ItemStack(ModBlocks.stoneDefiledDecoration, 1, OreDictionary.WILDCARD_VALUE));
@@ -40,7 +45,10 @@ public class ModRecipes {
 		//Boss essence
 		OreDictionary.registerOre("essenceDestroyer", ModItems.essenceDestroyer);
 		OreDictionary.registerOre("ingotRavaging", ModItems.ravagingIngot);
-		
+	}
+
+	@SubscribeEvent
+	public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {	
 		CorruptionRecipes.init();
 		
 		//Ores

@@ -1,0 +1,185 @@
+itemGroup.tabDefiledLands=spuɐꞀ pǝꞁᴉɟǝᗡ
+
+tile.defiledlands.stone_defiled.name=ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.sandstone_defiled.name=ǝuoʇspuɐS pǝꞁᴉɟǝᗡ
+tile.defiledlands.sand_defiled.name=puɐS pǝꞁᴉɟǝᗡ
+tile.defiledlands.dirt_defiled.name=ʇɹᴉᗡ pǝꞁᴉɟǝᗡ
+tile.defiledlands.grass_defiled.name=ssɐɹ⅁ pǝꞁᴉɟǝᗡ
+tile.defiledlands.gravel_defiled.name=ꞁǝʌɐɹ⅁ pǝꞁᴉɟǝᗡ
+
+tile.defiledlands.stone_defiled_decoration.bricks.name=sʞɔᴉɹᗺ ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.stone_defiled_decoration.bricks_cracked.name=sʞɔᴉɹᗺ ǝuoʇS pǝꞁᴉɟǝᗡ pǝʞɔɐɹƆ
+tile.defiledlands.stone_defiled_decoration.bricks_mossy.name=sʞɔᴉɹᗺ ǝuoʇS pǝꞁᴉɟǝᗡ ʎssoW
+tile.defiledlands.stone_defiled_decoration.mossy.name=ǝuoʇS pǝꞁᴉɟǝᗡ ʎssoW
+tile.defiledlands.tenebra_door.name=ɹooᗡ ɐɹqǝuǝ⟘
+tile.defiledlands.stone_defiled_slab.stone.name=qɐꞁS ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.stone_defiled_slab.sandstone.name=qɐꞁS ǝuoʇspuɐS pǝꞁᴉɟǝᗡ
+tile.defiledlands.stone_defiled_slab.bricks.name=qɐꞁS sʞɔᴉɹᗺ ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.wood_defiled_slab.tenebra.name=qɐꞁS pooM ɐɹqǝuǝ⟘
+tile.defiledlands.stone_defiled_stairs.name=sɹᴉɐʇS ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.sandstone_defiled_stairs.name=sɹᴉɐʇS ǝuoʇspuɐS pǝꞁᴉɟǝᗡ
+tile.defiledlands.stone_defiled_bricks_stairs.name=sɹᴉɐʇS sʞɔᴉɹᗺ ǝuoʇS pǝꞁᴉɟǝᗡ
+tile.defiledlands.tenebra_stairs.name=sɹᴉɐʇS pooM ɐɹqǝuǝ⟘
+tile.defiledlands.ravaging_decoration.stone.name=ǝuoʇS ᵷuᴉᵷɐʌɐᴚ
+tile.defiledlands.ravaging_decoration.bricks.name=sʞɔᴉɹᗺ ᵷuᴉᵷɐʌɐᴚ
+tile.defiledlands.glass_obscure.name=ssɐꞁ⅁ ǝɹnɔsqO
+tile.defiledlands.glass_obscure.tooltip=ʇɥᵷᴉꞁ sʞɔoꞁᗺ
+
+tile.defiledlands.tenebra_log.name=pooM ɐɹqǝuǝ⟘
+tile.defiledlands.tenebra_leaves.name=sǝʌɐǝꞀ ɐɹqǝuǝ⟘
+tile.defiledlands.tenebra_sapling.name=ᵷuᴉꞁdɐS ɐɹqǝuǝ⟘
+tile.defiledlands.tenebra_planks.name=sʞuɐꞁԀ pooM ɐɹqǝuǝ⟘
+tile.defiledlands.vilespine.name=ǝuᴉdsǝꞁᴉᴧ
+tile.defiledlands.blastem.name=ɯǝʇsɐꞁᗺ
+tile.defiledlands.scuronotte.name=ǝʇʇouoɹnɔS
+
+tile.defiledlands.hephaestite_ore.name=ǝɹO ǝʇᴉʇsǝɐɥdǝH
+tile.defiledlands.hephaestite_ore.tooltip=ɥɔnoʇ ǝɥʇ oʇ ʇoH
+tile.defiledlands.hephaestite_block.name=ǝʇᴉʇsǝɐɥdǝH ɟo ʞɔoꞁᗺ
+tile.defiledlands.hephaestite_block.tooltip=ɥɔnoʇ ǝɥʇ oʇ ᵷuᴉuɹnᗺ
+tile.defiledlands.umbrium_ore.name=ǝɹO ɯnᴉɹqɯ∩
+tile.defiledlands.umbrium_block.name=ɯnᴉɹqɯ∩ ɟo ʞɔoꞁᗺ
+tile.defiledlands.scarlite_ore.name=ǝɹO ǝʇᴉꞁɹɐɔS
+tile.defiledlands.scarlite_block.name=ǝʇᴉꞁɹɐɔS ɟo ʞɔoꞁᗺ
+
+tile.defiledlands.healing_pad.name=pɐԀ ᵷuᴉꞁɐǝH
+tile.defiledlands.conjuring_altar.name=ɹɐʇꞁⱯ ᵷuᴉɹnɾuoƆ
+
+item.defiledlands.tenebra_door.name=ɹooᗡ ɐɹqǝuǝ⟘
+
+item.defiledlands.hephaestite.name=pɹɐɥS ǝʇᴉʇsǝɐɥdǝH
+item.defiledlands.umbrium_ingot.name=ʇoᵷuI ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_nugget.name=ʇǝᵷᵷnN ɯnᴉɹqɯ∩
+item.defiledlands.scarlite.name=ǝʇᴉꞁɹɐɔS
+
+item.defiledlands.blastem_fruit.name=ʇᴉnɹℲ ɯǝʇsɐꞁᗺ
+item.defiledlands.blastem_fruit.tooltip=uʍoɹɥʇ ǝq uɐƆ
+item.defiledlands.blastem_fruit_blazing.name=ʇᴉnɹℲ ɯǝʇsɐꞁᗺ ᵷuᴉzɐꞁᗺ
+item.defiledlands.blastem_fruit_blazing.tooltip=uʍoɹɥʇ ǝq uɐƆ
+item.defiledlands.defilement_powder.name=ɹǝpʍoԀ ʇuǝɯǝꞁᴉɟǝᗡ
+item.defiledlands.defilement_powder.tooltip=ʇᴉ ǝꞁᴉɟǝp oʇ ʞɔoꞁq ɐ ʞɔᴉꞁɔ ʇɥᵷᴉᴚ
+
+item.defiledlands.scuttler_eye.name=ǝʎƎ ɹǝꞁʇʇnɔS
+item.defiledlands.black_heart.name=ʇɹɐǝH ʞɔɐꞁᗺ
+item.defiledlands.foul_slime.name=ǝɯᴉꞁS ꞁnoℲ
+item.defiledlands.foul_candy.name=ʎpuɐƆ ꞁnoℲ
+item.defiledlands.book_wyrm_raw.name=ɯɹʎM ʞooᗺ ʍɐᴚ
+item.defiledlands.book_wyrm_cooked.name=ɯɹʎM ʞooᗺ pǝʞooƆ
+item.defiledlands.book_wyrm_scale.name=ǝꞁɐɔS ɯɹʎM ʞooᗺ
+item.defiledlands.book_wyrm_scale_golden.name=ǝꞁɐɔS ɯɹʎM ʞooᗺ uǝpꞁo⅁
+
+item.defiledlands.umbrium_axe.name=ǝxⱯ ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_hoe.name=ǝoH ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_pickaxe.name=ǝxɐʞɔᴉԀ ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_shovel.name=ꞁǝʌoɥS ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_sword.name=pɹoʍS ɯnᴉɹqɯ∩
+
+item.defiledlands.scarlite_reaver.name=ɹǝʌɐǝᴚ ǝʇᴉꞁɹɐɔS
+item.defiledlands.scarlite_reaver.tooltip=sǝɹnʇɐǝɹɔ ᵷuᴉʌᴉꞁ ɯoɹɟ ǝɟᴉꞁ suᴉɐɹᗡ
+item.defiledlands.scarlite_razor.name=ɹozɐᴚ ǝʇᴉꞁɹɐɔS
+item.defiledlands.scarlite_razor.tooltip=ɹǝᵷunɥ oʇ ǝɟᴉꞁ ʇɹǝʌuoɔ oʇ ʞɔᴉꞁɔ ʇɥᵷᴉᴚ
+
+item.defiledlands.umbra_blaster.name=ɹǝʇsɐꞁᗺ ɐɹqɯ∩
+item.defiledlands.umbra_blaster.tooltip=sʇᴉnɹℲ ɯǝʇsɐꞁᗺ sǝɹᴉℲ
+item.defiledlands.concussion_smasher.name=ɹǝɥsɐɯS uoᴉssnɔuoƆ
+item.defiledlands.concussion_smasher.tooltip=ǝʌɐʍʞɔoɥs ɐ ǝsnɐɔ oʇ\nǝsɐǝꞁǝɹ uǝɥʇ ǝᵷɹɐɥƆ
+
+item.defiledlands.umbrium_helmet.name=ʇǝɯꞁǝH ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_chestplate.name=ǝʇɐꞁdʇsǝɥƆ ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_leggings.name=sᵷuᴉᵷᵷǝꞀ ɯnᴉɹqɯ∩
+item.defiledlands.umbrium_boots.name=sʇooᗺ ɯnᴉɹqɯ∩
+
+item.defiledlands.scale_helmet.name=ʇǝɯꞁǝH ǝꞁɐɔS ɯɹʎM ʞooᗺ
+item.defiledlands.scale_chestplate.name=ǝʇɐꞁdʇsǝɥƆ ǝꞁɐɔS ɯɹʎM ʞooᗺ
+item.defiledlands.scale_leggings.name=sᵷuᴉᵷᵷǝꞀ ǝꞁɐɔS ɯɹʎM ʞooᗺ
+item.defiledlands.scale_boots.name=sʇooᗺ ǝꞁɐɔS ɯɹʎM ʞooᗺ
+item.defiledlands.scale_golden_helmet.name=ʇǝɯꞁǝH ǝꞁɐɔS ɯɹʎM ʞooᗺ uǝpꞁo⅁
+item.defiledlands.scale_golden_chestplate.name=ǝʇɐꞁdʇsǝɥƆ ǝꞁɐɔS ɯɹʎM ʞooᗺ uǝpꞁo⅁
+item.defiledlands.scale_golden_leggings.name=sᵷuᴉᵷᵷǝꞀ ǝꞁɐɔS ɯɹʎM ʞooᗺ uǝpꞁo⅁
+item.defiledlands.scale_golden_boots.name=sʇooᗺ ǝꞁɐɔS ɯɹʎM ʞooᗺ uǝpꞁo⅁
+
+item.defiledlands.book_wyrm_analyzer.name=ɹǝzʎꞁɐuⱯ ɯɹʎM ʞooᗺ
+item.defiledlands.book_wyrm_analyzer.tooltip=sʇɐʇs snoᴉɹɐʌ ʍouʞ oʇ\nɯɹʎM ʞooᗺ ɐ ʞɔᴉꞁɔ ʇɥᵷᴉᴚ
+
+item.defiledlands.calling_stone.name=ǝuoʇS ᵷuᴉꞁꞁɐƆ
+item.defiledlands.calling_stone.tooltip=ɹǝʎoɹʇsǝᗡ ǝɥ⟘ uoɯɯns oʇ\nɹɐʇꞁⱯ ᵷuᴉɹnɾuoƆ ǝʌᴉʇɔɐ uɐ ʞɔᴉꞁɔ ʇɥᵷᴉᴚ
+item.defiledlands.essence_destroyer.name=ǝɔuǝssƎ ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.ravaging_ingot.name=ʇoᵷuI ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.ravaging_axe.name=ǝxⱯ ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.ravaging_axe.tooltip=sdoɹp sʎoɹʇsǝᗡ\nʇsɐɟ ʎꞁǝɯǝɹʇxǝ sdoɥƆ
+item.defiledlands.ravaging_pickaxe.name=ǝxɐʞɔᴉԀ ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.ravaging_pickaxe.tooltip=sdoɹp sʎoɹʇsǝᗡ\nʇsɐɟ ʎꞁǝɯǝɹʇxǝ sǝuᴉW
+item.defiledlands.ravaging_shovel.name=ꞁǝʌoɥS ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.ravaging_shovel.tooltip=sdoɹp sʎoɹʇsǝᗡ\nʇsɐɟ ʎꞁǝɯǝɹʇxǝ sᵷᴉᗡ
+item.defiledlands.the_ravager.name=ɹǝᵷɐʌɐᴚ ǝɥ⟘
+item.defiledlands.the_ravager.tooltip=sʇǝꞁꞁǝԀ sǝɹᴉℲ
+item.defiledlands.pellet_umbrium.name=ʇǝꞁꞁǝԀ ɯnᴉɹqɯ∩
+item.defiledlands.pellet_spiked.name=ʇǝꞁꞁǝԀ pǝʞᴉdS
+item.defiledlands.pellet_spiked.tooltip=ᵷuᴉpǝǝꞁᗺ ᵷuᴉʞɔɐʇs ɐ sǝᴉꞁddⱯ
+item.defiledlands.pellet_ravaging.name=ʇǝꞁꞁǝԀ ᵷuᴉᵷɐʌɐᴚ
+item.defiledlands.pellet_ravaging.tooltip=ʎʇᴉꞁᴉqɐɹǝuꞁnᴧ sǝᴉꞁddⱯ
+
+enchantment.sharpshooter=ɹǝʇooɥsdɹɐɥS
+enchantment.economical=ꞁɐɔᴉɯouoɔƎ
+enchantment.safeguard=pɹɐnᵷǝɟɐS
+enchantment.destructive=ǝʌᴉʇɔnɹʇsǝᗡ
+enchantment.blazing=ᵷuᴉzɐꞁᗺ
+
+entity.defiledlands.shambler.name=ɹǝꞁqɯɐɥS
+entity.defiledlands.shambler_twisted.name=ɹǝꞁqɯɐɥS pǝʇsᴉʍ⟘
+entity.defiledlands.scuttler.name=ɹǝꞁʇʇnɔS
+entity.defiledlands.host.name=ʇsoH
+entity.defiledlands.slime_defiled.name=ǝɯᴉꞁS pǝꞁᴉɟǝᗡ
+
+entity.defiledlands.book_wyrm.name=ɯɹʎM ʞooᗺ
+
+entity.defiledlands.the_destroyer.name=ɹǝʎoɹʇsǝᗡ ǝɥ⟘
+
+potion.effect.defiledlands.vulnerability=ʎʇᴉꞁᴉqɐɹǝuꞁnᴧ
+potion.effect.defiledlands.grounded=pǝpunoɹ⅁
+potion.effect.defiledlands.bleeding=ᵷuᴉpǝǝꞁᗺ
+
+ui.defiledlands.book_wyrm_analyze.health= : ɥʇꞁɐǝH
+ui.defiledlands.book_wyrm_analyze.digest_time= : ǝɯᴉʇ ᵷuᴉʇsǝᵷᴉᗡ
+ui.defiledlands.book_wyrm_analyze.max_level= : ꞁǝʌǝꞁ ᵷuᴉʇuɐɥɔuƎ
+ui.defiledlands.book_wyrm_analyze.digested= : (s)ꞁǝʌǝꞁ pǝʇsǝᵷᴉᗡ
+ui.defiledlands.book_wyrm_analyze.digesting= : ᵷuᴉʇsǝᵷᴉp ʎꞁʇuǝɹɹnƆ
+ui.defiledlands.book_wyrm_analyze.levels=(s)ꞁǝʌǝꞁ 
+ui.defiledlands.book_wyrm_analyze.maturing= : uoᴉʇɐɹnʇɐɯ ꞁᴉʇun ǝɯᴉ⟘
+ui.defiledlands.book_wyrm_analyze.reproduce= : uoᴉʇɔnpoɹdǝɹ ǝꞁqᴉssod ʇxǝu ꞁᴉʇun ǝɯᴉ⟘
+ui.defiledlands.book_wyrm_analyze.minutes=(s)ǝʇnuᴉɯ 
+ui.defiledlands.book_wyrm_analyze.ready=ǝʇɐɯ oʇ ʎpɐǝᴚ
+ui.defiledlands.book_wyrm_analyze.golden=˙˙˙ǝpᴉɥ uǝpꞁoᵷ ǝᵷuɐɹʇs ɐ sɐɥ uǝɯᴉɔǝds sᴉɥ⟘
+
+ui.defiledlands.pellet.damage=ǝᵷɐɯɐᗡ
+
+ui.defiledlands.jei.defilement=ʇuǝɯǝꞁᴉɟǝᗡ
+
+advancements.defiledlands.root.title=spuɐꞀ pǝꞁᴉɟǝᗡ
+advancements.defiledlands.root.description=˙˙˙ǝuᴉds ɹnoʎ uʍop sunɹ ꞁꞁᴉɥɔ ǝꞁqᴉɹɹoɥ Ɐ
+advancements.defiledlands.hephaestite.title=spo⅁ ǝɹᴉℲ ǝɥʇ ɯoɹɟ ʇɟᴉ⅁ Ɐ
+advancements.defiledlands.hephaestite.description=ǝʇᴉʇsǝɐɥdǝH ǝɯos ǝuᴉW
+advancements.defiledlands.blastem_fruit_blazing.title=pǝᵷɹnԀ ǝᗺ ǝɹᴉℲ ʎᗺ
+advancements.defiledlands.blastem_fruit_blazing.description=sʇᴉnɹℲ ɯǝʇsɐꞁᗺ ᵷuᴉzɐꞁᗺ ǝɯos ʇɟɐɹƆ
+advancements.defiledlands.umbrium.title=ǝꞁdɹnԀ dǝǝᗡ
+advancements.defiledlands.umbrium.description=ʇoᵷuᴉ uɐ oʇuᴉ ǝɹO ɯnᴉɹqɯ∩ ʇꞁǝɯS
+advancements.defiledlands.umbra_blaster.title=ʞɔᴉʇsɯooᗺ ʎɯ sᴉ sᴉɥ⟘
+advancements.defiledlands.umbra_blaster.description=ɹǝʇsɐꞁᗺ ɐɹqɯ∩ uɐ ʇɟɐɹƆ
+advancements.defiledlands.scarlite.title=ǝpɐsnɹƆ ʇǝꞁɹɐɔS ǝɥ⟘
+advancements.defiledlands.scarlite.description=punoɹᵷɹǝpun dǝǝp ǝʇᴉꞁɹɐɔS ǝɯos ǝuᴉW
+advancements.defiledlands.summon_destroyer.title=ɥᵷᴉN sᴉ puƎ ǝɥ⟘
+advancements.defiledlands.summon_destroyer.description=ɹɐʇꞁⱯ ᵷuᴉɹnɾuoƆ ǝʌᴉʇɔɐ uɐ uo ǝuoʇS ᵷuᴉꞁꞁɐƆ ɐ ǝs∩
+advancements.defiledlands.ravaging_tool.title=uoᴉʇɔnɹʇsǝᗡ ɟo ɹǝpꞁǝᴉM
+advancements.defiledlands.ravaging_tool.description=ǝɔuǝssƎ ᵷuᴉᵷɐʌɐᴚ ɟo ʇno ꞁooʇ ɐ ǝʞɐW
+
+advancements.defiledlands.book_wyrm_breed.title=ǝʌoꞀ ɟo ꞁꞁǝɯS ǝɥ⟘
+advancements.defiledlands.book_wyrm_breed.description=ʎpuɐƆ ꞁnoℲ ᵷuᴉsn sɯɹʎM ʞooᗺ oʍʇ pǝǝɹᗺ
+advancements.defiledlands.book_wyrm_breed_max_level.title=ᵷuᴉɹǝǝuᴉᵷuƎ ɔᴉʇǝuǝ⅁
+advancements.defiledlands.book_wyrm_breed_max_level.description=ꞁǝʌǝꞁ ᵷuᴉʇuɐɥɔuǝ 0Ɛ ɥɔɐǝɹ noʎ ꞁᴉʇun sɯɹʎM ʞooᗺ pǝǝɹᗺ
+advancements.defiledlands.book_wyrm_breed_perfect.title=uǝɯᴉɔǝdS ʇɔǝɟɹǝԀ ǝɥ⟘
+advancements.defiledlands.book_wyrm_breed_perfect.description=uǝɯᴉɔǝds ʇɔǝɟɹǝd ɐ uᴉɐʇqo noʎ ꞁᴉʇun sɯɹʎM ʞooᗺ pǝǝɹᗺ
+
+advancements.defiledlands.discover_all_biomes.title=ǝᵷɐɯᴉɹᵷꞁᴉԀ ʎꞁoɥu∩
+advancements.defiledlands.discover_all_biomes.description=ǝɯoᴉq pǝꞁᴉɟǝp ꞁɐɹnʇɐu ʎɹǝʌǝ ɹǝʌoɔsᴉᗡ
+advancements.defiledlands.kill_all_mobs.title=puɐꞀ ǝɥʇ ǝsuɐǝꞁƆ
+advancements.defiledlands.kill_all_mobs.description=spuɐꞁ pǝꞁᴉɟǝp ǝɥʇ ɯoɹɟ ɹǝʇsuoɯ ʎɹǝʌǝ ɟo ǝuo ꞁꞁᴉʞ

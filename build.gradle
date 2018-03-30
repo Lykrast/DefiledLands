@@ -84,7 +84,7 @@ dependencies {
 	runtime "mezz.jei:jei_${jei_mc_version}:${jei_version}"
 	
 	// Immersive Engineering
-	deobfCompile "blusunrize:ImmersiveEngineering:0.12-+"
+	compileOnly "blusunrize:ImmersiveEngineering:0.12-+"
 }
 
 processResources {

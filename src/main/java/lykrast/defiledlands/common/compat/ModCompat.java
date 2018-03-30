@@ -11,14 +11,15 @@ import lykrast.defiledlands.core.DefiledLands;
 import net.minecraftforge.fml.common.Loader;
 
 public abstract class ModCompat {
-	public static HashMap<String, Class<? extends ModCompat>> compat = new HashMap<String, Class<? extends ModCompat>>();
-	public static Set<ModCompat> compatLoaded = new HashSet<ModCompat>();
+	public static HashMap<String, Class<? extends ModCompat>> compat = new HashMap<>();
+	public static Set<ModCompat> compatLoaded = new HashSet<>();
 	
 	static
 	{
 		compat.put("chisel", CompatChisel.class);
 		compat.put("projecte", CompatProjectE.class);
 		compat.put("immersiveengineering", CompatImmersiveEngineering.class);
+		compat.put("baubles", CompatBaubles.class);
 	}
 	
 	public static void preInitCompat()

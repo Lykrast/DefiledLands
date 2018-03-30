@@ -129,6 +129,15 @@ item.defiledlands.pellet_ravaging.name=Ravaging Pellet
 item.defiledlands.pellet_ravaging.tooltip=Applies Vulnerability
 
 #----------------------------
+#Items
+#----------------------------
+
+item.defiledlands.scarlite_ring.name=Scarlite Ring
+item.defiledlands.scarlite_ring.tooltip=Slowly restores health
+item.defiledlands.phytoprostasia_amulet.name=Phytoprostasia Amulet
+item.defiledlands.phytoprostasia_amulet.tooltip=Protects from Vilespine and mature Blastem
+
+#----------------------------
 #Enchantments
 #----------------------------
 enchantment.sharpshooter=Sharpshooter

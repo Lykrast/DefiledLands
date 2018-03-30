@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "GU ",
+        "UHU",
+        " U "
+    ],
+    "key": {
+        "G": { "ore": "gemScarlite", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "H": { "item": "defiledlands:black_heart" }
+    },
+    "result": { "item": "defiledlands:scarlite_ring" }
+}

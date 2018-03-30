@@ -1,0 +1,15 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "SSS",
+        "U U",
+        "VEV"
+    ],
+    "key": {
+        "S": { "ore": "string", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" },
+        "E": { "item": "defiledlands:scuttler_eye" },
+		"V": { "item": "defiledlands:vilespine" }
+    },
+    "result": { "item": "defiledlands:phytoprostasia_amulet" }
+}

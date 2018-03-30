@@ -1,0 +1,32 @@
+{
+  "parent": "defiledlands:recipes/root",
+  "rewards": {
+    "recipes": [
+      "defiledlands:baubles/scarlite_ring"
+    ]
+  },
+  "criteria": {
+    "has_material": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "defiledlands:scarlite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "defiledlands:baubles/scarlite_ring"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_material",
+      "has_the_recipe"
+    ]
+  ]
+}

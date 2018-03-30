@@ -2,9 +2,9 @@ package lykrast.defiledlands.common.block;
 
 import java.util.Random;
 
-import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
+import lykrast.defiledlands.common.util.PlantUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
@@ -50,14 +50,10 @@ public class BlockBlastem extends BlockBush {
      */
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
-    	if (entityIn instanceof IEntityDefiled)
-    	{
-    		if (!((IEntityDefiled) entityIn).affectedByBlastem()) return;
-    	}
     	
     	int age = ((Integer)state.getValue(AGE)).intValue();
     	
-    	if (age == 15)
+    	if (age == 15 && PlantUtils.vulnerableToBlastem(entityIn))
     	{
     		worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
     		

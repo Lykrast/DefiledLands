@@ -50,6 +50,11 @@ repositories {
         name "Base/IE"
         url "http://maven.blamejared.com"
     }
+	// Baubles
+	maven {
+        name = "thiakil"
+        url = "http://maven.thiakil.com"
+    }
 }
 
 dependencies {
@@ -85,6 +90,9 @@ dependencies {
 	
 	// Immersive Engineering
 	compileOnly "blusunrize:ImmersiveEngineering:0.12-+"
+	
+	// Baubles
+	deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
 }
 
 processResources {

@@ -130,7 +130,6 @@ public class WorldGenTenebra extends WorldGenAbstractTree {
      */
     protected boolean canGrowInto(Block blockType)
     {
-        Material material = blockType.getDefaultState().getMaterial();
         return super.canGrowInto(blockType) || blockType == ModBlocks.dirtDefiled || blockType == ModBlocks.grassDefiled || blockType == ModBlocks.tenebraLog;
     }
 	

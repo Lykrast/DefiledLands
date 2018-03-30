@@ -22,7 +22,7 @@ public class RenderScuttler extends RenderLiving<EntityScuttler> {
     public RenderScuttler(RenderManager renderManagerIn)
     {
         super(renderManagerIn, new ModelSpider(), 1.0F);
-        this.addLayer(new LayerScuttlerEyes(this));
+        this.addLayer(new LayerScuttlerEyes<EntityScuttler>(this));
     }
 
     protected float getDeathMaxRotation(EntityScuttler entityLivingBaseIn)

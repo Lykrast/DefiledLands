@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockRavagingDecoration extends BlockVariantCorrupted {
-	public static final PropertyEnum VARIANT = PropertyEnum.create("variant", Variants.class);
+	public static final PropertyEnum<Variants> VARIANT = PropertyEnum.create("variant", Variants.class);
 
 	public BlockRavagingDecoration(float hardness, float resistance, int harvestLevel) {
 		super(Material.ROCK, SoundType.STONE, hardness, resistance, "pickaxe", harvestLevel, true);
@@ -26,13 +26,13 @@ public class BlockRavagingDecoration extends BlockVariantCorrupted {
 	}
 
 	@Override
-	public Enum[] getVariants() {
+	public Variants[] getVariants() {
 		return Variants.values();
 	}
 
 	@Override
 	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-		for (Enum v : getVariants()) 
+		for (Variants v : getVariants()) 
 			list.add(new ItemStack(this, 1, getMetaFromState(blockState.getBaseState().withProperty(VARIANT, v))));
 	}
 
@@ -54,7 +54,7 @@ public class BlockRavagingDecoration extends BlockVariantCorrupted {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void initModel() {
-		for (Enum v : getVariants()) 
+		for (Variants v : getVariants()) 
 			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), getMetaFromState(blockState.getBaseState().withProperty(VARIANT, v)), 
 					new ModelResourceLocation(getRegistryName() + "_" + v, "inventory"));
 	}

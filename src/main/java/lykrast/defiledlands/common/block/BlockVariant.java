@@ -53,6 +53,7 @@ public abstract class BlockVariant extends BlockGeneric implements ICustomItemBl
 	}
 	
 	// Those methods needs to be redefined using your variant properties, check BlockAnimiteOre for an example
+	@SuppressWarnings("rawtypes")
 	public abstract Enum[] getVariants();
 	
 	@Override

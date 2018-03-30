@@ -30,8 +30,6 @@ public class RenderShambler extends RenderLiving<EntityShambler> {
     
     public void doRender(EntityShambler entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
-    	ModelShambler modelenderman = this.getMainModel();
-
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 	

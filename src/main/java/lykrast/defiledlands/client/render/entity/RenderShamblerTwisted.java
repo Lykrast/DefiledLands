@@ -32,8 +32,6 @@ public class RenderShamblerTwisted extends RenderLiving<EntityShamblerTwisted> {
     
     public void doRender(EntityShamblerTwisted entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
-    	ModelShambler modelenderman = this.getMainModel();
-
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 	

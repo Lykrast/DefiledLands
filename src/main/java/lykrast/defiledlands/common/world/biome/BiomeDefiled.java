@@ -107,7 +107,7 @@ public abstract class BiomeDefiled extends Biome {
 				if (l16 > 0)
 				{
 					int j19 = rand.nextInt(l16);
-					this.vilespineGen.generate(worldIn, rand, pos.add(l9, j19, k13));
+					vilespineGen.generate(worldIn, rand, pos.add(l9, j19, k13));
 				}
 			}
 		
@@ -129,7 +129,7 @@ public abstract class BiomeDefiled extends Biome {
 				int i8 = rand.nextInt(16) + 8;
                 int l11 = rand.nextInt(16) + 8;
                 BlockPos blockpos2 = worldIn.getHeight(pos.add(i8, 0, l11));
-                this.scuronotteGen.generate(worldIn, rand, blockpos2);
+                scuronotteGen.generate(worldIn, rand, blockpos2);
 			}
 		}
 		
@@ -140,7 +140,7 @@ public abstract class BiomeDefiled extends Biome {
                 BlockPos blockpos2 = worldIn.getHeight(pos.add(x,0,z));
                 if (worldIn.getBiome(blockpos2) instanceof BiomeDefiled)
                 {
-                	this.corruptionPosGen.generate(worldIn, rand, blockpos2);
+                	corruptionPosGen.generate(worldIn, rand, blockpos2);
                 }
 			}
 		}

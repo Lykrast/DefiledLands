@@ -138,6 +138,15 @@ enchantment.destructive=Destructive
 enchantment.blazing=Blazing
 
 #----------------------------
+#Enchantment Descriptions
+#----------------------------
+enchantment.defiledlands.destructive.desc=Increases explosion size and direct impact damage
+enchantment.defiledlands.safeguard.desc=Prevents explosions from destroying blocks
+enchantment.defiledlands.sharpshooter.desc=Increases projectile speed and range, and reduces inaccuracy
+enchantment.defiledlands.economical.desc=Gives a chance for your weapon to not consume ammo when used
+enchantment.defiledlands.blazing.desc=Converts fired blastem fruit into blazing variants
+
+#----------------------------
 #Mobs
 #----------------------------
 entity.defiledlands.shambler.name=Shambler

@@ -45,6 +45,11 @@ repositories {
 		name = "ModMaven"
 		url = "modmaven.k-4u.nl"
 	}
+	// Immersive Engineering
+	maven {
+        name "Base/IE"
+        url "http://maven.blamejared.com"
+    }
 }
 
 dependencies {
@@ -77,6 +82,9 @@ dependencies {
 	deobfCompile "mezz.jei:jei_${jei_mc_version}:${jei_version}:api"
 	// at runtime, use the full JEI jar
 	runtime "mezz.jei:jei_${jei_mc_version}:${jei_version}"
+	
+	// Immersive Engineering
+	deobfCompile "blusunrize:ImmersiveEngineering:0.12-+"
 }
 
 processResources {

@@ -9,6 +9,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Sets;
 
+import io.netty.buffer.ByteBuf;
 import lykrast.defiledlands.common.entity.IEntityDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
@@ -57,8 +58,9 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 
-public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
+public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEntityAdditionalSpawnData {
     public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/bookwyrm/normal");
     public static final ResourceLocation LOOT_GOLDEN = new ResourceLocation(DefiledLands.MODID, "entities/bookwyrm/golden");
     private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(Items.ENCHANTED_BOOK, ModItems.foulCandy);
@@ -132,6 +134,18 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         {
         	digestTimer--;
         	
+        	if (world.isRemote)
+        	{
+            	double d0 = this.rand.nextGaussian() * 0.02D;
+            	double d1 = this.rand.nextGaussian() * 0.02D;
+            	double d2 = this.rand.nextGaussian() * 0.02D;
+            	world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, 
+            			posX + (double)(rand.nextFloat() * width * 2.0F) - (double)width, 
+            			posY + 0.25D + (double)(rand.nextFloat() * height), 
+            			posZ + (double)(rand.nextFloat() * width * 2.0F) - (double)width, 
+            			d0, d1, d2);
+        	}
+        	
         	if (digestTimer <= 0)
         	{
         		digested++;
@@ -146,11 +160,11 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
     	if (digested >= getMaxLevel())
     	{
     		digested -= getMaxLevel();
-            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-            this.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
+            playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+            playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
     		playDigestEffect(true);
     		
-    		if (!this.world.isRemote)
+    		if (!world.isRemote)
     		{
     	        List<EnchantmentData> list = EnchantmentHelper.buildEnchantmentList(rand, new ItemStack(Items.BOOK), getMaxLevel(), isGolden());
     			
@@ -224,6 +238,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
 
     protected void playDigestEffect(boolean success)
     {
+    	if (!world.isRemote) return;
+    	
         EnumParticleTypes enumparticletypes = EnumParticleTypes.SMOKE_NORMAL;
         
         if (success) enumparticletypes = EnumParticleTypes.VILLAGER_HAPPY;
@@ -322,6 +338,20 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled {
         digesting = compound.getInteger("Digesting");
         digestTimer = compound.getInteger("DigestTimer");
     }
+
+	@Override
+	public void writeSpawnData(ByteBuf buffer) {
+		buffer.writeInt(digested);
+		buffer.writeInt(digesting);
+		buffer.writeInt(digestTimer);
+	}
+
+	@Override
+	public void readSpawnData(ByteBuf additionalData) {
+		digested = additionalData.readInt();
+		digesting = additionalData.readInt();
+		digestTimer = additionalData.readInt();
+	}
 
     protected SoundEvent getAmbientSound()
     {

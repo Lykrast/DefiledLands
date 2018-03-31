@@ -128,6 +128,13 @@ item.defiledlands.pellet_spiked.tooltip=Applique un saignement qui s'accumule
 item.defiledlands.pellet_ravaging.name=Cartouche dévastatrice
 item.defiledlands.pellet_ravaging.tooltip=Applique une vulnérabilité
 
+#Baubles
+
+item.defiledlands.scarlite_ring.name=Anneau en scarlite
+item.defiledlands.scarlite_ring.tooltip=Redonne lentement de la vie
+item.defiledlands.phytoprostasia_amulet.name=Amulette de phytoprostasie
+item.defiledlands.phytoprostasia_amulet.tooltip=Protège de la vilépine et des détonatiges matures
+
 #----------------------------
 #Enchantments
 #----------------------------
@@ -136,6 +143,15 @@ enchantment.economical=Économique
 enchantment.safeguard=Sécurité
 enchantment.destructive=Destructeur
 enchantment.blazing=Flamboyant
+
+#----------------------------
+#Enchantment Descriptions
+#----------------------------
+enchantment.defiledlands.destructive.desc=Augmente la taille des explosions et les dégâts d'impact
+enchantment.defiledlands.safeguard.desc=Empêche les explosions de détruire les blocs
+enchantment.defiledlands.sharpshooter.desc=Augmente la vitesse des projectiles, leur portée et leur précision
+enchantment.defiledlands.economical.desc=Donne une chance de ne pas consommer de munition
+enchantment.defiledlands.blazing.desc=Transforme les fruits de détonatiges en flamboyants
 
 #----------------------------
 #Mobs

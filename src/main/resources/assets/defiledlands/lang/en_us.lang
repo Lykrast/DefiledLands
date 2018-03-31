@@ -128,9 +128,7 @@ item.defiledlands.pellet_spiked.tooltip=Applies a stacking Bleeding
 item.defiledlands.pellet_ravaging.name=Ravaging Pellet
 item.defiledlands.pellet_ravaging.tooltip=Applies Vulnerability
 
-#----------------------------
-#Items
-#----------------------------
+#Baubles
 
 item.defiledlands.scarlite_ring.name=Scarlite Ring
 item.defiledlands.scarlite_ring.tooltip=Slowly restores health

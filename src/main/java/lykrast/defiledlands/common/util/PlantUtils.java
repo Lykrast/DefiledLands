@@ -6,9 +6,12 @@ import lykrast.defiledlands.common.compat.CompatBaubles;
 import lykrast.defiledlands.common.entity.IEntityDefiled;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.fml.common.Loader;
 
 public class PlantUtils {
 	private PlantUtils() {}
+	
+	private static final boolean BAUBLES = Loader.isModLoaded("baubles") && CompatBaubles.isLoaded();
 	
 	/**
 	 * Is the given entity vulnerable to a mature Blastem ?
@@ -21,7 +24,7 @@ public class PlantUtils {
 			if (!((IEntityDefiled) ent).affectedByBlastem()) return false;
 		}
 		
-		if (CompatBaubles.isLoaded() && ent instanceof EntityPlayer)
+		if (BAUBLES && ent instanceof EntityPlayer)
 		{
 			if (isWearingPhytoprostasia((EntityPlayer)ent)) return false;
 		}
@@ -39,7 +42,7 @@ public class PlantUtils {
 			if (!((IEntityDefiled) ent).affectedByVilespine()) return false;
 		}
 		
-		if (CompatBaubles.isLoaded() && ent instanceof EntityPlayer)
+		if (BAUBLES && ent instanceof EntityPlayer)
 		{
 			if (isWearingPhytoprostasia((EntityPlayer)ent)) return false;
 		}

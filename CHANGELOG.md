@@ -1,5 +1,20 @@
 # 1.12.2
 
+## 1.3.0
+
+* ADDED : Baubles compatibility, the following items are added when Baubles is loaded:
+  * Scarlite Ring : slowly restores health over time
+  * Phytoprostasia Amulet : protects from Vilespine and mature Blastem (thanks 666lumberjack for the idea and bms_ for the name)
+* ADDED : ore dictionary entries for Pam's Harvestcraft compatibility on Book Wyrm meat and Scuronotte
+* ADDED : Stained Glass can now be defiled into Obscure Glass (thanks orcdash)
+* ADDED : Wawla echantment descriptions (thanks Sunconure11)
+* ADDED : partial en_UD localization (thanks The-Fireplace)
+* CHANGED : Book Wyrms now emits particles when digesting enchantments
+* CHANGED : New textures for Blastem Fruits, Blazing Blastem Fruits and Foul Candy
+* CHANGED : Foul Candy now uses Defilement Powder instead of Paper
+* FIXED : Chisel compatibility now longer uses a deprecated method (thanks	Zsashas for the report)
+* FIXED : Book Wyrm effect when digesting now persists on save reload
+
 ## 1.2.0
 
 * ADDED : Support for Immersive Engineering's Garden Cloche (Vilespine, Blastem and Scuronotte)

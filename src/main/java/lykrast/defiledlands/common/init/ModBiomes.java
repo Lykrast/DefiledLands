@@ -14,9 +14,6 @@ import static net.minecraftforge.common.BiomeDictionary.Type.SWAMP;
 import static net.minecraftforge.common.BiomeDictionary.Type.WASTELAND;
 import static net.minecraftforge.common.BiomeDictionary.Type.WET;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.common.world.biome.BiomeDesertDefiled;
 import lykrast.defiledlands.common.world.biome.BiomeForestTenebra;
@@ -37,7 +34,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class ModBiomes {
 	
-	public static List<Biome> biomeList = new ArrayList<Biome>();
 	public static Biome desertDefiled = new BiomeDesertDefiled(), 
 			plainsDefiled = new BiomePlainsDefiled(),
 			forestTenebra = new BiomeForestTenebra(),
@@ -66,7 +62,6 @@ public class ModBiomes {
             BiomeDictionary.addTypes(biome, biomeDictType);
         }
 		BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(biome, weight));
-		biomeList.add(biome);
 	}
 
 }

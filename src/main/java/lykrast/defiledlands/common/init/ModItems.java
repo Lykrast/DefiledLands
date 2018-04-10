@@ -170,6 +170,10 @@ public class ModItems {
 	{
 		for (Item i : itemBlockList) initModel(i);
 		for (Item i : itemList) initModel(i);
+		
+		//We no longer use them afterwards
+		itemBlockList = null;
+		itemList = null;
 	}
 
 	@SideOnly(Side.CLIENT)

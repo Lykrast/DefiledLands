@@ -28,6 +28,8 @@ public class ModPotions {
 	public static void registerPotions(RegistryEvent.Register<Potion> event)
 	{
 		for (Potion p : potionList) event.getRegistry().register(p);
+		//We no longer use it afterwards
+		potionList = null;
 	}
 	
 	public static Potion register(Potion p, String name)

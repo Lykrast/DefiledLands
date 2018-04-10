@@ -98,6 +98,9 @@ public class ModBlocks {
 		for (Block b : blockList) initModel(b);
 
 		ModelLoader.setCustomStateMapper(tenebraDoor, (new StateMap.Builder()).ignore(BlockDoorGeneric.POWERED).build());
+		
+		//We no longer use it afterwards
+		blockList = null;
 	}
 	
 	@SideOnly(Side.CLIENT)

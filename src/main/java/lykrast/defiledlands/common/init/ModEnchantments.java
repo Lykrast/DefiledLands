@@ -43,6 +43,8 @@ public class ModEnchantments {
 	public static void registerEnchantments(RegistryEvent.Register<Enchantment> event)
 	{
 		for (Enchantment e : enchantmentList) event.getRegistry().register(e);
+		//We no longer use it afterwards
+		enchantmentList = null;
 	}
 	
 	public static Enchantment register(Enchantment enchant, String name)

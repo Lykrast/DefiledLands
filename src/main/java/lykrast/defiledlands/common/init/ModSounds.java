@@ -27,6 +27,8 @@ public class ModSounds {
 	public static void registerSoundEvents(RegistryEvent.Register<SoundEvent> event)
 	{
 		for (SoundEvent s : soundList) event.getRegistry().register(s);
+		//We no longer use it afterwards
+		soundList = null;
 	}
 	
 	public static SoundEvent registerSoundEvent(String name)

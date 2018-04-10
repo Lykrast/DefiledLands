@@ -85,6 +85,8 @@ public class ModEntities {
 	public static void registerEntities(RegistryEvent.Register<EntityEntry> event)
 	{
 		for (EntityEntry e : entityList) event.getRegistry().register(e);
+		//We no longer use it afterwards
+		entityList = null;
 	}
 	
 	public static void registerEntity(Class<? extends Entity> entityClass, String name, int colorBack, int colorFront)

@@ -4,11 +4,9 @@ import lykrast.defiledlands.client.model.ModelDestroyer;
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -17,8 +15,6 @@ public class RenderDestroyer extends RenderLiving<EntityDestroyer> {
 	
 	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_destroyer.png"),
 			TEXTURES_EXPLOSION = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_destroyer_explosion.png");
-	
-    public static final Factory FACTORY = new Factory();
 
     public RenderDestroyer(RenderManager renderManagerIn)
     {
@@ -94,15 +90,6 @@ public class RenderDestroyer extends RenderLiving<EntityDestroyer> {
     protected void preRenderCallback(EntityDestroyer entitylivingbaseIn, float partialTickTime)
     {
         GlStateManager.scale(1.2F, 1.2F, 1.2F);
-    }
-
-    public static class Factory implements IRenderFactory<EntityDestroyer> {
-
-        @Override
-        public Render<? super EntityDestroyer> createRenderFor(RenderManager manager) {
-            return new RenderDestroyer(manager);
-        }
-
     }
 
 }

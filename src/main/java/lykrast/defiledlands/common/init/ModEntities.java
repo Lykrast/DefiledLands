@@ -25,6 +25,7 @@ import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
 import lykrast.defiledlands.common.entity.projectile.EntityRavagerProjectile;
 import lykrast.defiledlands.common.util.DungeonDefiledList;
 import lykrast.defiledlands.core.DefiledLands;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -117,20 +118,20 @@ public class ModEntities {
 	
 	@SideOnly(Side.CLIENT)
     public static void initModels() {
-        RenderingRegistry.registerEntityRenderingHandler(EntityShambler.class, RenderShambler.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntityShamblerTwisted.class, RenderShamblerTwisted.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityShambler.class, RenderShambler::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityShamblerTwisted.class, RenderShamblerTwisted::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler::new);
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityDestroyer.class, RenderDestroyer.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityDestroyer.class, RenderDestroyer::new);
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, RenderHost.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlimeDefiled.class, RenderSlimeDefiled.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, RenderHost::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlimeDefiled.class, RenderSlimeDefiled::new);
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityBookWyrm.class, RenderBookWyrm.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityBookWyrm.class, RenderBookWyrm::new);
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, RenderBlastemFruit.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, RenderBlastemFruitBlazing.FACTORY);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRavagerProjectile.class, RenderRavagerProjectile.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruit.class, m -> new RenderBlastemFruit(m, ModItems.blastemFruit, Minecraft.getMinecraft().getRenderItem()));
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlastemFruitBlazing.class, m -> new RenderBlastemFruitBlazing(m, ModItems.blastemFruitBlazing, Minecraft.getMinecraft().getRenderItem()));
+        RenderingRegistry.registerEntityRenderingHandler(EntityRavagerProjectile.class, m -> new RenderRavagerProjectile(m, ModItems.pelletUmbrium, Minecraft.getMinecraft().getRenderItem()));
     }
 
 }

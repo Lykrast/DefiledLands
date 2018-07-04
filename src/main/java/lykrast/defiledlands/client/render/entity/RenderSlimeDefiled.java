@@ -5,19 +5,15 @@ import lykrast.defiledlands.common.entity.monster.EntitySlimeDefiled;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.model.ModelSlime;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderSlimeDefiled extends RenderLiving<EntitySlimeDefiled> {
 	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/slime_defiled.png");
-	
-    public static final Factory FACTORY = new Factory();
 
     public RenderSlimeDefiled(RenderManager renderManagerIn)
     {
@@ -49,15 +45,6 @@ public class RenderSlimeDefiled extends RenderLiving<EntitySlimeDefiled> {
     protected ResourceLocation getEntityTexture(EntitySlimeDefiled entity)
     {
         return TEXTURES;
-    }
-
-    public static class Factory implements IRenderFactory<EntitySlimeDefiled> {
-
-        @Override
-        public Render<? super EntitySlimeDefiled> createRenderFor(RenderManager manager) {
-            return new RenderSlimeDefiled(manager);
-        }
-
     }
 
 }

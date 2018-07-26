@@ -71,7 +71,7 @@ public class ItemRavager extends ItemGun {
 
             playerIn.addStat(StatList.getObjectUseStats(this));
             
-            return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+            return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
         }
         else
         {

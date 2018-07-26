@@ -79,7 +79,7 @@ public class ItemUmbraBlaster extends ItemGun implements IEnchantDestructive {
 
             playerIn.addStat(StatList.getObjectUseStats(this));
             
-            return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+            return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
         }
         else
         {

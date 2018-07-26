@@ -7,7 +7,7 @@ import mezz.jei.api.gui.IGuiItemStackGroup;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.IRecipeCategory;
-import net.minecraft.util.text.translation.I18n;
+import net.minecraft.client.resources.I18n;
 
 public class DefilementCategory implements IRecipeCategory<DefilementWrapper> {
 	private final IDrawable background;
@@ -17,7 +17,7 @@ public class DefilementCategory implements IRecipeCategory<DefilementWrapper> {
 	public DefilementCategory(IGuiHelper guiHelper)
 	{
 		background = guiHelper.createDrawable(DefiledLandsJEI.GUI, 0, 0, 76, 18);
-		localizedName = I18n.translateToLocal("ui.defiledlands.jei.defilement");
+		localizedName = I18n.format("ui.defiledlands.jei.defilement");
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
 import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -17,7 +18,6 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public class ItemBlastemFruit extends Item {
@@ -51,12 +51,10 @@ public class ItemBlastemFruit extends Item {
         playerIn.addStat(StatList.getObjectUseStats(this));
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
     }
-    
+	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
-			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
-		}
+		tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + I18n.format(super.getUnlocalizedName(stack) + ".tooltip")));
 	}
 
 }

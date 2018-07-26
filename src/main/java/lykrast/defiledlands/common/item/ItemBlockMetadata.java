@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockMetadata extends ItemBlock {
 	
+	@SuppressWarnings("rawtypes")
 	private Enum[] variants;
 	private boolean differentNames = false;
 

@@ -176,15 +176,13 @@ potion.effect.defiledlands.bleeding=Bleeding
 #----------------------------
 #UI
 #----------------------------
-ui.defiledlands.book_wyrm_analyze.health=Health : 
-ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : 
-ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : 
-ui.defiledlands.book_wyrm_analyze.digested=Digested level(s) : 
-ui.defiledlands.book_wyrm_analyze.digesting=Currently digesting : 
-ui.defiledlands.book_wyrm_analyze.levels= level(s)
-ui.defiledlands.book_wyrm_analyze.maturing=Time until maturation : 
-ui.defiledlands.book_wyrm_analyze.reproduce=Time until next possible reproduction : 
-ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
+ui.defiledlands.book_wyrm_analyze.health=Health : %s/%s
+ui.defiledlands.book_wyrm_analyze.digest_time=Digesting time : %s
+ui.defiledlands.book_wyrm_analyze.max_level=Enchanting level : %s
+ui.defiledlands.book_wyrm_analyze.digested=Digested level(s) : %s
+ui.defiledlands.book_wyrm_analyze.digesting=Currently digesting : %s level(s)
+ui.defiledlands.book_wyrm_analyze.maturing=Time until maturation : %s minute(s)
+ui.defiledlands.book_wyrm_analyze.reproduce=Time until next possible reproduction : %s minute(s)
 ui.defiledlands.book_wyrm_analyze.ready=Ready to mate
 ui.defiledlands.book_wyrm_analyze.golden=This specimen has a strange golden hide...
 

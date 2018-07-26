@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import lykrast.defiledlands.common.block.BlockConjuringAltar;
 import lykrast.defiledlands.common.util.LocUtils;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -18,7 +19,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -72,9 +72,7 @@ public abstract class ItemBossSummoner extends Item {
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
-			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
-		}
+		tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + I18n.format(super.getUnlocalizedName(stack) + ".tooltip")));
 	}
 
 }

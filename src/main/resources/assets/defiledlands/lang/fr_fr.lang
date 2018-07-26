@@ -176,15 +176,13 @@ potion.effect.defiledlands.bleeding=Saignement
 #----------------------------
 #UI
 #----------------------------
-ui.defiledlands.book_wyrm_analyze.health=Vie : 
-ui.defiledlands.book_wyrm_analyze.digest_time=Temps de digestion : 
-ui.defiledlands.book_wyrm_analyze.max_level=Niveau d'enchantement : 
-ui.defiledlands.book_wyrm_analyze.digested=Niveau(x) digérés : 
-ui.defiledlands.book_wyrm_analyze.digesting=En train de digérer : 
-ui.defiledlands.book_wyrm_analyze.levels= niveau(x)
-ui.defiledlands.book_wyrm_analyze.maturing=Temps avant maturation : 
-ui.defiledlands.book_wyrm_analyze.reproduce=Temps avant prochaine reproduction possible : 
-ui.defiledlands.book_wyrm_analyze.minutes= minute(s)
+ui.defiledlands.book_wyrm_analyze.health=Vie : %s/%s
+ui.defiledlands.book_wyrm_analyze.digest_time=Temps de digestion : %s
+ui.defiledlands.book_wyrm_analyze.max_level=Niveau d'enchantement : %s
+ui.defiledlands.book_wyrm_analyze.digested=Niveau(x) digérés : %s
+ui.defiledlands.book_wyrm_analyze.digesting=En train de digérer : %s niveau(x)
+ui.defiledlands.book_wyrm_analyze.maturing=Temps avant maturation : %s minute(s)
+ui.defiledlands.book_wyrm_analyze.reproduce=Temps avant prochaine reproduction possible : %s minute(s)=
 ui.defiledlands.book_wyrm_analyze.ready=Prêt à s'accoupler
 ui.defiledlands.book_wyrm_analyze.golden=Ce spécimen a une étrange couleur dorée...
 

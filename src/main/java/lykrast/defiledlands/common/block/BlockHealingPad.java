@@ -79,7 +79,8 @@ public class BlockHealingPad extends BlockCorrupted {
         return false;
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("deprecation")
+	@SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
     {
         if (side != EnumFacing.UP && side != EnumFacing.DOWN && !super.shouldSideBeRendered(blockState, blockAccess, pos, side))

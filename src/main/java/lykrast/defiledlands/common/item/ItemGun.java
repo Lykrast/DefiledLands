@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 
 import lykrast.defiledlands.common.init.ModEnchantments;
 import lykrast.defiledlands.common.util.LocUtils;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,7 +15,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public abstract class ItemGun extends Item {
@@ -80,9 +80,7 @@ public abstract class ItemGun extends Item {
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if(I18n.canTranslate(this.getUnlocalizedName(stack) + ".tooltip")) {
-			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + LocUtils.translateRecursive(super.getUnlocalizedName(stack) + ".tooltip")));
-		}
+		tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + I18n.format(super.getUnlocalizedName(stack) + ".tooltip")));
 	}
 
 }

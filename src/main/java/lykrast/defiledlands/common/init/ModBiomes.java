@@ -15,6 +15,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.WASTELAND;
 import static net.minecraftforge.common.BiomeDictionary.Type.WET;
 
 import lykrast.defiledlands.common.util.Config;
+import lykrast.defiledlands.common.world.biome.BiomeDefiled;
 import lykrast.defiledlands.common.world.biome.BiomeDesertDefiled;
 import lykrast.defiledlands.common.world.biome.BiomeForestTenebra;
 import lykrast.defiledlands.common.world.biome.BiomeForestVilespine;
@@ -34,7 +35,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class ModBiomes {
 	
-	public static Biome desertDefiled = new BiomeDesertDefiled(), 
+	public static BiomeDefiled desertDefiled = new BiomeDesertDefiled(), 
 			plainsDefiled = new BiomePlainsDefiled(),
 			forestTenebra = new BiomeForestTenebra(),
 			forestVilespine = new BiomeForestVilespine(),
@@ -63,5 +64,15 @@ public class ModBiomes {
         }
 		BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(biome, weight));
 	}
+    
+    public static void cleanSpawnLists() {
+    	desertDefiled.cleanSpawnLists();
+    	plainsDefiled.cleanSpawnLists();
+    	forestTenebra.cleanSpawnLists();
+    	forestVilespine.cleanSpawnLists();
+    	hillsDefiled.cleanSpawnLists();
+    	swampDefiled.cleanSpawnLists();
+    	icePlainsDefiled.cleanSpawnLists();
+    }
 
 }

@@ -40,23 +40,27 @@ public abstract class BiomeDefiled extends Biome {
         this.fillerBlock = ModBlocks.dirtDefiled.getDefaultState();
 		this.vilespinePerChunk = 50;
 		this.scuronottePerChunk = 2;
-		
-		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCaveCreatureList.clear();
+	}
+	
+	public void cleanSpawnLists() {
+		System.out.println("Cleared " + spawnableCreatureList.size() + " creatures");
+		System.out.println("Cleared " + spawnableMonsterList.size() + " monsters");
+		spawnableCreatureList.clear();
+		spawnableMonsterList.clear();
+		spawnableWaterCreatureList.clear();
+		spawnableCaveCreatureList.clear();
 		
 		if (Config.bookWyrmSpawn)
-			this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityBookWyrm.class, 4, 2, 4));
+			spawnableCreatureList.add(new Biome.SpawnListEntry(EntityBookWyrm.class, 16, 2, 4));
 		
 		if (Config.weightShambler > 0)
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, Config.weightShambler, 1, 2));
+			spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShambler.class, Config.weightShambler, 1, 2));
 		if (Config.weightTwistedShambler > 0)
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, Config.weightTwistedShambler, 1, 2));
+			spawnableMonsterList.add(new Biome.SpawnListEntry(EntityShamblerTwisted.class, Config.weightTwistedShambler, 1, 2));
 		if (Config.weightScuttler > 0)
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, Config.weightScuttler, 1, 3));
+			spawnableMonsterList.add(new Biome.SpawnListEntry(EntityScuttler.class, Config.weightScuttler, 1, 3));
 		if (Config.weightHost > 0)
-			this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHost.class, Config.weightHost, 2, 3));
+			spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHost.class, Config.weightHost, 2, 3));
 	}
 
     /**

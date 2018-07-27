@@ -37,7 +37,7 @@ public class ModItems {
 	
 	public static Item tenebraDoor,
 		hephaestite, umbriumIngot, umbriumNugget, scarlite,
-		blastemFruit, blastemFruitBlazing, defilementPowder,
+		blastemSeed, blastemFruit, blastemFruitBlazing, defilementPowder,
 		scuttlerEye, blackHeart, foulSlime, foulCandy, bookWyrmRaw, bookWyrmCooked, bookWyrmScale, bookWyrmScaleGolden,
 		axeUmbrium, hoeUmbrium, pickaxeUmbrium, shovelUmbrium, swordUmbrium,
 		swordScarlite, razorScarlite, 
@@ -66,6 +66,7 @@ public class ModItems {
 		scarlite = registerItem(new Item(), "scarlite");
 		
 		//Plants
+		blastemSeed = registerItem(new ItemBlastemSeed(), "blastem_seed");
 		blastemFruit = registerItem(new ItemBlastemFruit(), "blastem_fruit");
 		blastemFruitBlazing = registerItem(new ItemBlastemFruitBlazing(), "blastem_fruit_blazing");
 		defilementPowder = registerItem(new ItemDefilementPowder(), "defilement_powder");

@@ -9,7 +9,7 @@ itemGroup.tabDefiledLands=Terres profanes
 tile.defiledlands.stone_defiled.name=Pierre profane
 tile.defiledlands.sandstone_defiled.name=Grès profane
 tile.defiledlands.sand_defiled.name=Sable profane
-tile.defiledlands.dirt_defiled.name=Terre progane
+tile.defiledlands.dirt_defiled.name=Terre profane
 tile.defiledlands.grass_defiled.name=Herbe profane
 tile.defiledlands.gravel_defiled.name=Gravier profane
 
@@ -61,6 +61,8 @@ item.defiledlands.umbrium_ingot.name=Lingot d'umbrium
 item.defiledlands.umbrium_nugget.name=Pépite d'umbrium
 item.defiledlands.scarlite.name=Scarlite
 
+item.defiledlands.blastem_seed.name=Graine de détonatige
+item.defiledlands.blastem_seed.tooltip=Plantez sur de la terre profane
 item.defiledlands.blastem_fruit.name=Fruit de détonatige
 item.defiledlands.blastem_fruit.tooltip=Peut être lancé
 item.defiledlands.blastem_fruit_blazing.name=Fruit de détonatige flamboyant

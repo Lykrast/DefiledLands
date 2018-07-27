@@ -61,6 +61,8 @@ item.defiledlands.umbrium_ingot.name=Umbrium Ingot
 item.defiledlands.umbrium_nugget.name=Umbrium Nugget
 item.defiledlands.scarlite.name=Scarlite
 
+item.defiledlands.blastem_seed.name=Blastem Seed
+item.defiledlands.blastem_seed.tooltip=Plant on Defiled Dirt
 item.defiledlands.blastem_fruit.name=Blastem Fruit
 item.defiledlands.blastem_fruit.tooltip=Can be thrown
 item.defiledlands.blastem_fruit_blazing.name=Blazing Blastem Fruit

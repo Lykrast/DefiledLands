@@ -1,7 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "particle": "defiledlands:blocks/blastem",
-        "cross": "defiledlands:blocks/blastem"
-    }
-}

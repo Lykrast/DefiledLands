@@ -7,6 +7,7 @@ import lykrast.defiledlands.common.init.ModItems;
 import lykrast.defiledlands.common.util.PlantUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -22,11 +23,12 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockBlastem extends BlockBush {
+public class BlockBlastem extends BlockBush implements IGrowable {
 	
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 	
@@ -36,7 +38,7 @@ public class BlockBlastem extends BlockBush {
 		this.setHardness(0.1F);
         this.setResistance(0.5F);
         this.setSoundType(SoundType.PLANT);
-        setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
+        setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0));
         setTickRandomly(true);
 	}
 
@@ -51,11 +53,11 @@ public class BlockBlastem extends BlockBush {
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
     	
-    	int age = ((Integer)state.getValue(AGE)).intValue();
+    	int age = state.getValue(AGE);
     	
     	if (age == 15 && PlantUtils.vulnerableToBlastem(entityIn))
     	{
-    		worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
+    		worldIn.setBlockState(pos, state.withProperty(AGE, 0), 2);
     		
     		if (!worldIn.isRemote)
     		{
@@ -75,13 +77,13 @@ public class BlockBlastem extends BlockBush {
     
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-    	int j = ((Integer)state.getValue(AGE)).intValue();
+    	int j = state.getValue(AGE);
 
     	if (j < 15)
     	{
     		if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, true))
     		{
-    			worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(j + 1)), 2);
+    			worldIn.setBlockState(pos, state.withProperty(AGE, j + 1), 2);
     			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
     		}
     	}
@@ -93,7 +95,7 @@ public class BlockBlastem extends BlockBush {
     public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
     {
         super.getDrops(drops, world, pos, state, fortune);
-        int age = ((Integer)state.getValue(AGE)).intValue();
+        int age = state.getValue(AGE);
         
         if (age == 15)
         {
@@ -103,7 +105,7 @@ public class BlockBlastem extends BlockBush {
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-    	int age = ((Integer)state.getValue(AGE)).intValue();
+    	int age = state.getValue(AGE);
     	
     	if (age < 15)
     	{
@@ -111,7 +113,7 @@ public class BlockBlastem extends BlockBush {
     	}
     	else
     	{
-    		worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(0)), 2);
+    		worldIn.setBlockState(pos, state.withProperty(AGE, 10), 2);
     		
     		if (!worldIn.isRemote)
     		{
@@ -168,7 +170,7 @@ public class BlockBlastem extends BlockBush {
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(AGE, Integer.valueOf(meta));
+        return this.getDefaultState().withProperty(AGE, meta);
     }
 
     /**
@@ -176,12 +178,28 @@ public class BlockBlastem extends BlockBush {
      */
     public int getMetaFromState(IBlockState state)
     {
-        return ((Integer)state.getValue(AGE)).intValue();
+        return state.getValue(AGE);
     }
 
     protected BlockStateContainer createBlockState()
     {
         return new BlockStateContainer(this, new IProperty[] {AGE});
     }
+
+	@Override
+	public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+		return state.getValue(AGE) < 15;
+	}
+
+	@Override
+	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+		return true;
+	}
+
+	@Override
+	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+		int age = Math.min(15, state.getValue(AGE) + MathHelper.getInt(rand, 2, 5));
+		worldIn.setBlockState(pos, state.withProperty(AGE, age), 2);
+	}
 
 }

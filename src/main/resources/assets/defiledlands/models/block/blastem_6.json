@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "particle": "defiledlands:blocks/blastem/6",
+        "cross": "defiledlands:blocks/blastem/6"
+    }
+}

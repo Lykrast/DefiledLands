@@ -7,6 +7,7 @@ import lykrast.defiledlands.common.block.*;
 import lykrast.defiledlands.common.tileentity.TileConjuringAltar;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.common.util.LocUtils;
+import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -15,6 +16,7 @@ import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -82,7 +84,7 @@ public class ModBlocks {
 		//Useful stuff
 		healingPad = registerBlock(new BlockHealingPad(3.0F, 15.0F), "healing_pad");
 		conjuringAltar = registerBlock(new BlockConjuringAltar(3.0F, 15.0F), "conjuring_altar");
-		GameRegistry.registerTileEntity(TileConjuringAltar.class, LocUtils.prefix("conjuring_altar"));
+		GameRegistry.registerTileEntity(TileConjuringAltar.class, new ResourceLocation(DefiledLands.MODID, "conjuring_altar"));
 	}
 	
 	@SubscribeEvent

@@ -72,6 +72,7 @@ public abstract class BiomeDefiled extends Biome {
         return (WorldGenAbstractTree)(rand.nextInt(5) > 0 ? tenebraGen : TREE_FEATURE);
     }
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public void decorate(World worldIn, Random rand, BlockPos pos)
 	{
@@ -149,38 +150,22 @@ public abstract class BiomeDefiled extends Biome {
 	@SideOnly(Side.CLIENT)
     @Override
     public int getGrassColorAtPos(BlockPos blockPos) {
-        return RGBToInt(68, 47, 68);
+        return 0x442f44;
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public int getFoliageColorAtPos(BlockPos blockPos) {
-        return RGBToInt(107, 91, 104);
+        return 0x6b5b68;
     }
 
     @Override
     public int getSkyColorByTemp(float temp) {
-        return RGBToInt(34, 0, 51);
+        return 0x220033;
     }
 
     @Override
-    public int getWaterColorMultiplier()
-    {
-        return RGBToInt(107, 91, 104);
+    public int getWaterColorMultiplier() {
+        return 0x6b5b68;
     }
-
-    
-    /**
-     * Convert r, g and b colors to an integer representation.
-     * <br>
-     * From Cyclops Core.
-     * @param r red
-     * @param g green
-     * @param b blue
-     * @return integer representation of the color.
-     */
-    private static int RGBToInt(int r, int g, int b) {
-        return (int)r << 16 | (int)g << 8 | (int)b;
-    }
-
 }

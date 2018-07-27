@@ -17,7 +17,7 @@ public class RenderMourner extends RenderLiving<EntityMourner> {
 			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner.png"),
 			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner_rage1.png"),
 			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner_rage2.png")};
-	private static final ResourceLocation TEXTURES_EXPLOSION = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_destroyer_explosion.png");
+	private static final ResourceLocation TEXTURES_EXPLOSION = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner_explosion.png");
 
     public RenderMourner(RenderManager renderManagerIn)
     {

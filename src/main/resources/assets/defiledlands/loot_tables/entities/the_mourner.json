@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+		"name": "the_mourner",
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "defiledlands:essence_destroyer",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": 8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+		"name": "the_mourner",
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "defiledlands:defilement_powder",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": {
+                            "min": 4,
+                            "max": 16
+                        }
+                    },
+                    {
+                        "function": "looting_enchant",
+                        "count": {
+                            "min": 0,
+                            "max": 4
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+  ]
+}

@@ -3,26 +3,11 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import lykrast.defiledlands.client.render.entity.RenderBlastemFruit;
-import lykrast.defiledlands.client.render.entity.RenderBlastemFruitBlazing;
-import lykrast.defiledlands.client.render.entity.RenderBookWyrm;
-import lykrast.defiledlands.client.render.entity.RenderDestroyer;
-import lykrast.defiledlands.client.render.entity.RenderHost;
-import lykrast.defiledlands.client.render.entity.RenderRavagerProjectile;
-import lykrast.defiledlands.client.render.entity.RenderScuttler;
-import lykrast.defiledlands.client.render.entity.RenderShambler;
-import lykrast.defiledlands.client.render.entity.RenderShamblerTwisted;
-import lykrast.defiledlands.client.render.entity.RenderSlimeDefiled;
-import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
-import lykrast.defiledlands.common.entity.monster.EntityHost;
-import lykrast.defiledlands.common.entity.monster.EntityScuttler;
-import lykrast.defiledlands.common.entity.monster.EntityShambler;
-import lykrast.defiledlands.common.entity.monster.EntityShamblerTwisted;
-import lykrast.defiledlands.common.entity.monster.EntitySlimeDefiled;
+import lykrast.defiledlands.client.render.entity.*;
+import lykrast.defiledlands.common.entity.boss.*;
+import lykrast.defiledlands.common.entity.monster.*;
 import lykrast.defiledlands.common.entity.passive.EntityBookWyrm;
-import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruit;
-import lykrast.defiledlands.common.entity.projectile.EntityBlastemFruitBlazing;
-import lykrast.defiledlands.common.entity.projectile.EntityRavagerProjectile;
+import lykrast.defiledlands.common.entity.projectile.*;
 import lykrast.defiledlands.common.util.DungeonDefiledList;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.Minecraft;
@@ -67,6 +52,8 @@ public class ModEntities {
         //Bosses
 		registerEntity(EntityDestroyer.class, "the_destroyer", 0xa9a9a9, 0xf9f9f9);
         LootTableList.register(EntityDestroyer.LOOT);
+		registerEntity(EntityMourner.class, "the_mourner", 0x262626, 0xf9f9f9);
+        LootTableList.register(EntityMourner.LOOT);
         
         //Projectiles
         registerProjectile(EntityBlastemFruit.class, "blastem_fruit");
@@ -123,6 +110,7 @@ public class ModEntities {
         RenderingRegistry.registerEntityRenderingHandler(EntityScuttler.class, RenderScuttler::new);
         
         RenderingRegistry.registerEntityRenderingHandler(EntityDestroyer.class, RenderDestroyer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityMourner.class, RenderMourner::new);
 
         RenderingRegistry.registerEntityRenderingHandler(EntityHost.class, RenderHost::new);
         RenderingRegistry.registerEntityRenderingHandler(EntitySlimeDefiled.class, RenderSlimeDefiled::new);

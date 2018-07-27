@@ -34,10 +34,12 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumFacing.Axis;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -528,9 +530,10 @@ public class EntityMourner extends EntityMob implements IEntityDefiled {
         {
             EntityLivingBase entitylivingbase = mourner.getAttackTarget();
 
-            if (mourner.getEntityBoundingBox().intersects(entitylivingbase.getEntityBoundingBox()))
+            if (mourner.getEntityBoundingBox().grow(0.5).intersects(entitylivingbase.getEntityBoundingBox()))
             {
                 mourner.attackEntityAsMob(entitylivingbase);
+                mourner.swingArm(EnumHand.MAIN_HAND);
                 mourner.setIsCharging(false);
             }
             else

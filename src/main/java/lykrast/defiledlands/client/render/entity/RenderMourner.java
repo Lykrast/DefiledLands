@@ -13,8 +13,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderMourner extends RenderLiving<EntityMourner> {
 	
-	private static final ResourceLocation TEXTURES = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner.png"),
-			TEXTURES_EXPLOSION = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_destroyer_explosion.png");
+	private static final ResourceLocation[] TEXTURES = {
+			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner.png"),
+			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner_rage1.png"),
+			new ResourceLocation(DefiledLands.MODID, "textures/entity/the_mourner_rage2.png")};
+	private static final ResourceLocation TEXTURES_EXPLOSION = new ResourceLocation(DefiledLands.MODID, "textures/entity/the_destroyer_explosion.png");
 
     public RenderMourner(RenderManager renderManagerIn)
     {
@@ -23,7 +26,7 @@ public class RenderMourner extends RenderLiving<EntityMourner> {
 	
     protected ResourceLocation getEntityTexture(EntityMourner entity)
     {
-        return TEXTURES;
+        return TEXTURES[entity.getRageFactor()-1];
     }
 
     protected float getDeathMaxRotation(EntityMourner entityLivingBaseIn)
@@ -80,6 +83,11 @@ public class RenderMourner extends RenderLiving<EntityMourner> {
     	{
     		double d = (double)entityLiving.deathTime / 200.0D;
         	rotationYaw += (float)(Math.cos((double)entityLiving.ticksExisted * 3.25D) * Math.PI * d * 5.0D);
+    	}
+    	else
+    	{
+    		int r = entityLiving.getRageFactor();
+    		if (r > 1) rotationYaw += (float)(Math.cos((double)entityLiving.ticksExisted * 3.25D) * Math.PI * (r-1));
     	}
     	super.applyRotations(entityLiving, p_77043_2_, rotationYaw, partialTicks);
     }

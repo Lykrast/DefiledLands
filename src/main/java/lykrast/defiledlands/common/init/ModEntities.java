@@ -65,7 +65,7 @@ public class ModEntities {
         LootTableList.register(EntityBookWyrm.LOOT);
         
         //Bosses
-		registerEntity(EntityDestroyer.class, "the_destroyer", 0x643564, 0xf9f9f9);
+		registerEntity(EntityDestroyer.class, "the_destroyer", 0xa9a9a9, 0xf9f9f9);
         LootTableList.register(EntityDestroyer.LOOT);
         
         //Projectiles

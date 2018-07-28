@@ -43,6 +43,6 @@ public class CompatImmersiveEngineering extends ModCompat {
 		IngredientStack blastemSoil = new IngredientStack(ImmutableList.of(
 				new ItemStack(ModBlocks.dirtDefiled), 
 				new ItemStack(ModBlocks.grassDefiled)));
-		BelljarHandler.cropHandler.register(new ItemStack(ModBlocks.blastem), new ItemStack[]{new ItemStack(ModItems.blastemFruit)}, blastemSoil, ModBlocks.blastem.getDefaultState());
+		BelljarHandler.cropHandler.register(new ItemStack(ModItems.blastemSeed), new ItemStack[]{new ItemStack(ModItems.blastemFruit)}, blastemSoil, ModBlocks.blastem.getDefaultState());
 	}
 }

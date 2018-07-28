@@ -50,6 +50,7 @@ public class ModItems {
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
 		idolSorrow,
+		essenceMourner,
 		pelletUmbrium, pelletSpiked, pelletRavaging;
 	private static List<Item> itemList = new ArrayList<>();
 	static List<Item> itemBlockList = new ArrayList<>();
@@ -167,6 +168,7 @@ public class ModItems {
 				return boss;
 		    }
 		}, "idol_sorrow");
+		essenceMourner = registerItem(new ItemSimpleFoiled(), "essence_mourner");
 	}
 	
 	@SubscribeEvent

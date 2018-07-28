@@ -45,6 +45,7 @@ public class ModRecipes {
 		//Boss essence
 		OreDictionary.registerOre("essenceDestroyer", ModItems.essenceDestroyer);
 		OreDictionary.registerOre("ingotRavaging", ModItems.ravagingIngot);
+		OreDictionary.registerOre("essenceMourner", ModItems.essenceMourner);
 		
 		//Pam's Harvestcraft
 		OreDictionary.registerOre("listAllmeatraw", ModItems.bookWyrmRaw);

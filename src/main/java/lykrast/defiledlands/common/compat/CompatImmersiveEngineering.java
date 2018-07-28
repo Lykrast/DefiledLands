@@ -32,7 +32,7 @@ public class CompatImmersiveEngineering extends ModCompat {
 		
 		CrusherRecipe.removeRecipesForInput(new ItemStack(ModBlocks.hephaestiteOre));
 		ItemStack sulfur = IEApi.getPreferredOreStack("dustSulfur");
-		CrusherRecipe.addRecipe(new ItemStack(ModItems.hephaestite, 4), "oreHephaestite", 1600)
+		CrusherRecipe.addRecipe(new ItemStack(ModItems.hephaestite, 4), "oreHephaestite", 6000)
 			.addToSecondaryOutput(sulfur, 0.5F);
 		
 		// Fermenter

@@ -1,5 +1,23 @@
 # 1.12.2
 
+## 1.4.0 (WIP)
+
+* ADDED : The Mourner, a new boss to fight
+* ADDED : Idol of Sorrow, used to summon The Mourner
+* ADDED : Remorseful Essence, dropped from The Mourner
+* ADDED : Blastem can now be bonemealed
+* ADDED : Blastem Seed, replaces the Blastem item
+* ADDED : Support for Immersive Engineering's Crusher, Squeezer and Arc Furnace recycling
+* CHANGED : New textures:
+  * All Pellets
+  * Calling Stone
+  * Blastem (growth stages are now visible)
+  * The Destroyer
+* CHANGED : Blastem now regrows faster if harvested with a right click
+* CHANGED : Rebalanced Defiled Dugeons loot table, equipment should appear more consistently and is now always enchanted
+* FIXED : Modded mobs and animals should no longer naturally spawn in defiled biomes
+* FIXED : Optimized defiled biome generation, should be roughly twice as fast as before
+
 ## 1.3.0
 
 * ADDED : Baubles compatibility, the following items are added when Baubles is loaded:

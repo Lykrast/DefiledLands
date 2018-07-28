@@ -10,62 +10,182 @@
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_axe",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_pickaxe",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_shovel",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_sword",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_helmet",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_chestplate",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_leggings",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbrium_boots",
-                    "weight": 5
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:umbra_blaster",
-                    "weight": 4
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:concussion_smasher",
-                    "weight": 2
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:scarlite_razor",
-                    "weight": 2
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "defiledlands:scarlite_reaver",
-                    "weight": 1
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "treasure": true,
+                            "levels": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "item",
@@ -74,127 +194,6 @@
                     "functions": [
                         {
                             "function": "enchant_randomly"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-			"name": "materials",
-            "rolls": {
-                "min": 1,
-                "max": 4
-            },
-            "entries": [
-                {
-                    "type": "item",
-                    "name": "defiledlands:umbrium_ingot",
-                    "weight": 10,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 4
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:scarlite",
-                    "weight": 5,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 3
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:foul_candy",
-                    "weight": 20,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 4,
-                                "max": 32
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:blastem_fruit",
-                    "weight": 15,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 4
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:hephaestite",
-                    "weight": 15,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 8
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:vilespine",
-                    "weight": 10,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 2,
-                                "max": 4
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:tenebra_sapling",
-                    "weight": 10,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 2,
-                                "max": 4
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "defiledlands:defilement_powder",
-                    "weight": 10,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 2,
-                                "max": 4
-                            }
                         }
                     ]
                 }
@@ -312,6 +311,127 @@
                             "count": {
                                 "min": 1,
                                 "max": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+			"name": "materials",
+            "rolls": {
+                "min": 1,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "defiledlands:umbrium_ingot",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:scarlite",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:foul_candy",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 16
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:blastem_seed",
+                    "weight": 15,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:hephaestite",
+                    "weight": 15,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 8
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:vilespine",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:tenebra_sapling",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "defiledlands:scuronotte",
+                    "weight": 10,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
                             }
                         }
                     ]

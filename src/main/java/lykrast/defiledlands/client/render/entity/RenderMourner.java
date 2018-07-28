@@ -1,6 +1,6 @@
 package lykrast.defiledlands.client.render.entity;
 
-import lykrast.defiledlands.client.model.ModelDestroyer;
+import lykrast.defiledlands.client.model.ModelMourner;
 import lykrast.defiledlands.common.entity.boss.EntityMourner;
 import lykrast.defiledlands.core.DefiledLands;
 import net.minecraft.client.renderer.GlStateManager;
@@ -21,7 +21,7 @@ public class RenderMourner extends RenderLiving<EntityMourner> {
 
     public RenderMourner(RenderManager renderManagerIn)
     {
-        super(renderManagerIn, new ModelDestroyer(0.0F), 0.5F);
+        super(renderManagerIn, new ModelMourner(0.0F), 0.5F);
     }
 	
     protected ResourceLocation getEntityTexture(EntityMourner entity)

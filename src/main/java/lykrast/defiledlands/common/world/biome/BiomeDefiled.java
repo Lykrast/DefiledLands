@@ -43,8 +43,6 @@ public abstract class BiomeDefiled extends Biome {
 	}
 	
 	public void cleanSpawnLists() {
-		System.out.println("Cleared " + spawnableCreatureList.size() + " creatures");
-		System.out.println("Cleared " + spawnableMonsterList.size() + " monsters");
 		spawnableCreatureList.clear();
 		spawnableMonsterList.clear();
 		spawnableWaterCreatureList.clear();

@@ -49,14 +49,12 @@ public class CorruptionHelper {
 		return CorruptionRecipes.getCorrupted(input) != null;
 	}
 	
-	public static boolean corrupt(World worldIn, BlockPos blockpos, IBlockState state)
-	{
-		if (isCorruptable(state))
-		{
-			worldIn.setBlockState(blockpos, CorruptionRecipes.getCorrupted(state));
-			return true;
-		}
-		else return false;
+	public static boolean corrupt(World worldIn, BlockPos blockpos, IBlockState state) {
+		IBlockState corrupted = CorruptionRecipes.getCorrupted(state);
+		if (corrupted == null) return false;
+		
+		worldIn.setBlockState(blockpos, corrupted);
+		return true;
 	}
 
 }

@@ -31,7 +31,8 @@ public abstract class BiomeDefiled extends Biome {
     		tenebraGen = new WorldGenTenebra(false),
     		scuronotteGen = new WorldGenScuronotte(),
     		corruptionPosGen = new WorldGenCorruptionPost(),
-    		dungeonsGen = new WorldGenDungeonsDefiled();
+    		dungeonsGen = new WorldGenDungeonsDefiled(),
+    		altarGen = new WorldGenConjuringAltar();
 	protected int vilespinePerChunk, scuronottePerChunk;
 
 	public BiomeDefiled(BiomeProperties properties)
@@ -98,7 +99,7 @@ public abstract class BiomeDefiled extends Biome {
             int i = rand.nextInt(16) + 8;
             int j = rand.nextInt(16) + 8;
             BlockPos blockpos = worldIn.getHeight(pos.add(i, 0, j)).up();
-            (new WorldGenConjuringAltar()).generate(worldIn, rand, blockpos);
+            altarGen.generate(worldIn, rand, blockpos);
         }
 		
 		if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, pos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.CACTUS))

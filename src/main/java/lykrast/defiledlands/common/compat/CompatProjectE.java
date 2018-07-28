@@ -44,6 +44,7 @@ public class CompatProjectE extends ModCompat {
 		emc.registerCustomEMC(new ItemStack(ModItems.bookWyrmScale), 64);
 		emc.registerCustomEMC(new ItemStack(ModItems.bookWyrmScaleGolden), 1024);
 		emc.registerCustomEMC("essenceDestroyer", 16384);
+		emc.registerCustomEMC("essenceMourner", 32768);
 	}
 	
 	@Override

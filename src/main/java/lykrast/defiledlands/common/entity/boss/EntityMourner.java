@@ -21,6 +21,7 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,15 +35,15 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumFacing.Axis;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.BlockPos.MutableBlockPos;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.Explosion;
@@ -113,13 +114,28 @@ public class EntityMourner extends EntityMob implements IEntityDefiled {
     {
     	super.onLivingUpdate();
 
-        if (this.getInvulTime() > 0)
+        if (getInvulTime() > 0)
         {
-            this.motionY = 0.01;
-            
-            for (int i1 = 0; i1 < 3; ++i1)
+            motionY = 0.01;
+
+            if (world.isRemote)
             {
-                this.world.spawnParticle(EnumParticleTypes.SPELL_MOB, this.posX + this.rand.nextGaussian(), this.posY + (double)(this.rand.nextFloat() * 3.3F), this.posZ + this.rand.nextGaussian(), 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
+	            for (int i1 = 0; i1 < 3; ++i1)
+	            {
+	                world.spawnParticle(EnumParticleTypes.SPELL_MOB, posX + rand.nextGaussian(), posY + (double)(rand.nextFloat() * 3.3F), posZ + rand.nextGaussian(), 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
+	            }
+            }
+            else
+            {
+            	int i = getInvulTime();
+            	if ((i > 60 && i % 40 == 0) || (i <= 60 && i % 10 == 0))
+            	{
+            		int y = (int)posY + rand.nextInt(11);
+            		MutableBlockPos pos = new MutableBlockPos((int)posX + rand.nextInt(15) - 7, y, (int)posZ + rand.nextInt(15) - 7);
+            		while (pos.getY() > 0 && y - pos.getY() < 16 && world.isAirBlock(pos)) pos.setY(pos.getY() - 1);
+            		
+                    world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY() + 1, pos.getZ(), true));
+            	}
             }
         }
 

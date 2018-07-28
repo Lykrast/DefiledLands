@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " R ",
+        "USU",
+        " U "
+    ],
+    "key": {
+        "S": { "ore": "blockScarlite", "type": "forge:ore_dict" },
+        "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:idol_sorrow" }
+}

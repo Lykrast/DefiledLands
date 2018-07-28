@@ -130,6 +130,9 @@ item.defiledlands.pellet_spiked.tooltip=Applies a stacking Bleeding
 item.defiledlands.pellet_ravaging.name=Ravaging Pellet
 item.defiledlands.pellet_ravaging.tooltip=Applies Vulnerability
 
+item.defiledlands.idol_sorrow.name=Idol of Sorrow
+item.defiledlands.idol_sorrow.tooltip=Right click an active Conjuring Altar\nto summon The Mourner
+
 #Baubles
 
 item.defiledlands.scarlite_ring.name=Scarlite Ring
@@ -208,10 +211,12 @@ advancements.defiledlands.umbra_blaster.title=This is my Boomstick
 advancements.defiledlands.umbra_blaster.description=Craft an Umbra Blaster
 advancements.defiledlands.scarlite.title=The Scarlet Crusade
 advancements.defiledlands.scarlite.description=Mine some Scarlite deep underground
-advancements.defiledlands.summon_destroyer.title=The End is Nigh
+advancements.defiledlands.summon_destroyer.title=One Laid Waste on the World
 advancements.defiledlands.summon_destroyer.description=Use a Calling Stone on an active Conjuring Altar
 advancements.defiledlands.ravaging_tool.title=Wielder of Destruction
 advancements.defiledlands.ravaging_tool.description=Make a tool out of Ravaging Essence
+advancements.defiledlands.summon_mourner.title=The Other Wept in Silence
+advancements.defiledlands.summon_mourner.description=Use an Idol of Sorrow on an active Conjuring Altar
 
 advancements.defiledlands.book_wyrm_breed.title=The Smell of Love
 advancements.defiledlands.book_wyrm_breed.description=Breed two Book Wyrms using Foul Candy

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
+import lykrast.defiledlands.common.entity.boss.EntityMourner;
 import lykrast.defiledlands.common.item.*;
 import lykrast.defiledlands.common.util.CreativeTabDL;
 import lykrast.defiledlands.common.util.LocUtils;
@@ -48,6 +49,7 @@ public class ModItems {
 		bookWyrmAnalyzer,
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
+		idolSorrow,
 		pelletUmbrium, pelletSpiked, pelletRavaging;
 	private static List<Item> itemList = new ArrayList<>();
 	static List<Item> itemBlockList = new ArrayList<>();
@@ -154,6 +156,17 @@ public class ModItems {
 		        return true;
 		    }
 		}, "pellet_ravaging");
+		
+		//The Mourner
+		idolSorrow = registerItem(new ItemBossSummoner() {
+			protected Entity getBoss(World worldIn)
+		    {
+				EntityMourner boss = new EntityMourner(worldIn);
+				boss.ignite();
+				
+				return boss;
+		    }
+		}, "idol_sorrow");
 	}
 	
 	@SubscribeEvent

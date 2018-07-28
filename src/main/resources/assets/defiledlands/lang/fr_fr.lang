@@ -130,6 +130,9 @@ item.defiledlands.pellet_spiked.tooltip=Applique un saignement qui s'accumule
 item.defiledlands.pellet_ravaging.name=Cartouche dévastatrice
 item.defiledlands.pellet_ravaging.tooltip=Applique une vulnérabilité
 
+item.defiledlands.idol_sorrow.name=Idôle de chagrin
+item.defiledlands.idol_sorrow.tooltip=Clic droit sur un Autel de conjuration actif\npour invoquer La Lamenteuse
+
 #Baubles
 
 item.defiledlands.scarlite_ring.name=Anneau en scarlite
@@ -208,10 +211,12 @@ advancements.defiledlands.umbra_blaster.title=Ça c'est un fusil
 advancements.defiledlands.umbra_blaster.description=Fabriquez le Blaster Umbra.
 advancements.defiledlands.scarlite.title=La croisade écarlate
 advancements.defiledlands.scarlite.description=Minez de la scarlite sous terre.
-advancements.defiledlands.summon_destroyer.title=La fin est proche
+advancements.defiledlands.summon_destroyer.title=L'une dévastait le monde
 advancements.defiledlands.summon_destroyer.description=Utilisez une pierre d'appel sur un autel de conjuration actif.
 advancements.defiledlands.ravaging_tool.title=Porteur de destruction
 advancements.defiledlands.ravaging_tool.description=Fabriquez un outil à l'aide d'essence dévastatrice.
+advancements.defiledlands.summon_mourner.title=L'autre pleurait en silence
+advancements.defiledlands.summon_mourner.description=Utilisez une idôle de chagrin sur un autel de conjuration actif.
 
 advancements.defiledlands.book_wyrm_breed.title=L'odeur de l'amour
 advancements.defiledlands.book_wyrm_breed.description=Faîtes se reproduire deux wyrms bibliophages à l'aide de bonbons fétides.

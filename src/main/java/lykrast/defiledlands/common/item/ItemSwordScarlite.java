@@ -25,7 +25,7 @@ public class ItemSwordScarlite extends ItemSwordGeneric {
     {
     	if (target instanceof EntityLiving && attacker instanceof EntityLivingBase)
     	{
-    		((EntityLivingBase)attacker).addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 3, 18));;
+    		((EntityLivingBase)attacker).addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 3, 18));
     	}
         return super.hitEntity(stack, target, attacker);
     }

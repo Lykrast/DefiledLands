@@ -20,7 +20,9 @@ public class ItemPickaxeGeneric extends ItemPickaxe {
 	
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + I18n.format(super.getUnlocalizedName(stack) + ".tooltip")));
+		String k = getUnlocalizedName(stack) + ".tooltip";
+		if (I18n.hasKey(k))
+			tooltip.addAll(LocUtils.getTooltips(TextFormatting.GRAY.toString() + I18n.format(k)));
 	}
 
 }

@@ -30,7 +30,8 @@ public abstract class BiomeDefiled extends Biome {
     		blastemGen = new WorldGenBlastem(),
     		tenebraGen = new WorldGenTenebra(false),
     		scuronotteGen = new WorldGenScuronotte(),
-    		corruptionPosGen = new WorldGenCorruptionPost();
+    		corruptionPosGen = new WorldGenCorruptionPost(),
+    		dungeonsGen = new WorldGenDungeonsDefiled();
 	protected int vilespinePerChunk, scuronottePerChunk;
 
 	public BiomeDefiled(BiomeProperties properties)
@@ -80,13 +81,13 @@ public abstract class BiomeDefiled extends Biome {
 	{
 //        if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, worldIn, rand, x, z, false, net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON))
 //        {
-            for (int j2 = 0; j2 < 80; ++j2)
-            {
-                int i3 = rand.nextInt(16) + 8;
-                int l3 = rand.nextInt(256);
-                int l1 = rand.nextInt(16) + 8;
-                (new WorldGenDungeonsDefiled()).generate(worldIn, rand, pos.add(i3, l3, l1));
-            }
+        for (int i = 0; i < 80; ++i)
+        {
+            int x = rand.nextInt(16) + 8;
+            int z = rand.nextInt(16) + 8;
+            int y = rand.nextInt(256);
+            dungeonsGen.generate(worldIn, rand, pos.add(x, y, z));
+        }
 //        }
         
 		super.decorate(worldIn, rand, pos);

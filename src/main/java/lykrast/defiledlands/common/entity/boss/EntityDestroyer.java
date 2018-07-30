@@ -43,7 +43,7 @@ import net.minecraft.world.World;
 public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     public static final ResourceLocation LOOT = new ResourceLocation(DefiledLands.MODID, "entities/the_destroyer");
     private static final DataParameter<Integer> INVULNERABILITY_TIME = EntityDataManager.<Integer>createKey(EntityDestroyer.class, DataSerializers.VARINT);
-    private boolean isLeaping;
+    protected static final DataParameter<Boolean> LEAPING = EntityDataManager.<Boolean>createKey(EntityDestroyer.class, DataSerializers.BOOLEAN);
     private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(true);
 
 	public EntityDestroyer(World worldIn) {
@@ -51,7 +51,6 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
         this.setSize(0.7F, 2.4F);
         this.stepHeight = 1.0F;
         this.experienceValue = 50;
-        this.isLeaping = false;
 	}
 
     protected void initEntityAI()
@@ -81,14 +80,23 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     protected void entityInit()
     {
         super.entityInit();
-        this.dataManager.register(INVULNERABILITY_TIME, Integer.valueOf(0));
+        dataManager.register(INVULNERABILITY_TIME, Integer.valueOf(0));
+        dataManager.register(LEAPING, false);
+    }
+    
+    public boolean isLeaping() {
+    	return dataManager.get(LEAPING);
+    }
+    
+    public void setLeaping(boolean val) {
+    	dataManager.set(LEAPING, val);
     }
 
     public void fall(float distance, float damageMultiplier)
     {
-    	if (isLeaping)
+    	if (isLeaping())
     	{
-    		isLeaping = false;
+    		setLeaping(false);
     		if (!world.isRemote)
     		{
     			boolean flag = world.getGameRules().getBoolean("mobGriefing");
@@ -129,6 +137,8 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
                 this.world.spawnParticle(EnumParticleTypes.SPELL_MOB, this.posX + this.rand.nextGaussian(), this.posY + (double)(this.rand.nextFloat() * 3.3F), this.posZ + this.rand.nextGaussian(), 0.699999988079071D, 0.699999988079071D, 0.8999999761581421D);
             }
         }
+        
+        if (isLeaping() && isInWater()) setLeaping(false);
     }
     
     protected void updateAITasks()
@@ -302,7 +312,6 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     {
         super.writeEntityToNBT(compound);
         compound.setInteger("Invul", this.getInvulTime());
-        compound.setBoolean("Leaping", isLeaping);
     }
 
     /**
@@ -312,7 +321,6 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
     {
         super.readEntityFromNBT(compound);
         this.setInvulTime(compound.getInteger("Invul"));
-        isLeaping = compound.getBoolean("Leaping");
 
         if (this.hasCustomName())
         {
@@ -375,60 +383,46 @@ public class EntityDestroyer extends EntityMob implements IEntityDefiled {
         public AIBigLeap(EntityDestroyer leapingEntity, float leapMotionYIn)
         {
             super(leapingEntity, leapMotionYIn);
-            this.leaper = leapingEntity;
-            this.leapMotionY = leapMotionYIn;
+            leaper = leapingEntity;
+            leapMotionY = leapMotionYIn;
         }
     	
         @Override
         public boolean shouldExecute()
         {
-            this.leapTarget = this.leaper.getAttackTarget();
+            leapTarget = leaper.getAttackTarget();
 
-            if (this.leapTarget == null)
-            {
-                return false;
-            }
+            if (leapTarget == null || !leaper.onGround || leaper.isInWater()) return false;
             else
             {
                 double d0 = this.leaper.getDistanceSqToEntity(this.leapTarget);
 
-                if (d0 >= 9.0D && d0 <= 1024.0D)
-                {
-                    if (!this.leaper.onGround)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        return this.leaper.getRNG().nextInt(5) == 0;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+                if (d0 >= 16.0D && d0 <= 1024.0D && leaper.getRNG().nextInt(7) == 0) return true;
+                else return false;
             }
         }
 
         @Override
         public void startExecuting()
         {
-            double d0 = this.leapTarget.posX - this.leaper.posX;
-            double d1 = this.leapTarget.posZ - this.leaper.posZ;
+            double d0 = leapTarget.posX - leaper.posX;
+            double d1 = leapTarget.posZ - leaper.posZ;
             float f = MathHelper.sqrt(d0 * d0 + d1 * d1);
             
-            float enrage = (1.0F - this.leaper.getHealth() / this.leaper.getMaxHealth()) * 1.0F + 1.0F;
+            float enrage = (1.0F - leaper.getHealth() / leaper.getMaxHealth()) * 1.0F + 1.0F;
 
             if ((double)f >= 1.0E-4D)
             {
-                this.leaper.motionX += d0 / (double)f * 1.5D * 0.800000011920929D + this.leaper.motionX * 0.4D;
-                this.leaper.motionZ += d1 / (double)f * 1.5D * 0.800000011920929D + this.leaper.motionZ * 0.4D;
+                leaper.motionX += d0 / (double)f * 1.5D * 0.800000011920929D + this.leaper.motionX * 0.4D;
+                leaper.motionZ += d1 / (double)f * 1.5D * 0.800000011920929D + this.leaper.motionZ * 0.4D;
             }
 
-            this.leaper.motionX *= enrage;
-            this.leaper.motionZ *= enrage;
-            this.leaper.motionY = (double)this.leapMotionY;
-            this.leaper.isLeaping = true;
+            leaper.motionX *= enrage;
+            leaper.motionZ *= enrage;
+            leaper.motionY = (double)leapMotionY;
+            leaper.setLeaping(true);
+            
+            leaper.getLookHelper().setLookPositionWithEntity(leapTarget, 10.0F, 10.0F);
         }
     }
 

@@ -1,5 +1,7 @@
 package lykrast.defiledlands.common.compat;
 
+import lykrast.defiledlands.common.block.BlockBaseFluid;
+import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
@@ -22,11 +24,12 @@ public class CompatTinkersConstruct extends ModCompat {
 	
 	@Override
 	public void preInit() {
+		ModBlocks.registerBlock(new BlockBaseFluid(MOLTEN_UMBRIUM, net.minecraft.block.material.Material.LAVA), "molten_umbrium", null);
+		
 		TinkerRegistry.addMaterialStats(UMBRIUM, 
 				new HeadMaterialStats(246, 5.0F, 4.0F, HarvestLevels.DIAMOND),
                 new HandleMaterialStats(1.0F, 72),
                 new ExtraMaterialStats(60));
-		
 		TinkerRegistry.integrate(UMBRIUM, MOLTEN_UMBRIUM, "Umbrium").toolforge().preInit();
 	}
 	

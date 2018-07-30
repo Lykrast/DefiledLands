@@ -109,6 +109,8 @@ public class ModBlocks {
     public static void initModel(Block b) {
 		if (b instanceof ICustomModel) ((ICustomModel) b).initModel();
 		else ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(b), 0, new ModelResourceLocation(b.getRegistryName(), "inventory"));
+		
+		if (b instanceof ICustomStateMapper) ((ICustomStateMapper) b).setCustomStateMapper();
     }
 	
 	public static Block registerBlock(Block block, String name)

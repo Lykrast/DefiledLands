@@ -185,7 +185,11 @@ potion.effect.defiledlands.bleeding=Bleeding
 #----------------------------
 material.umbrium.name=Umbrium
 
+modifier.defiled.name=Defiled
+modifier.defiled.desc=§5Edgy and full of purple.§r\nDeal bonus damage to enemies not from the Defiled Lands.
+
 fluid.umbrium=Molten Umbrium
+tile.defiledlands.molten_umbrium.name=Molten Umbrium
 
 #----------------------------
 #UI

@@ -20,10 +20,10 @@ public abstract class ModCompat {
 		compat.put("projecte", CompatProjectE.class);
 		compat.put("immersiveengineering", CompatImmersiveEngineering.class);
 		compat.put("baubles", CompatBaubles.class);
+		compat.put("tconstruct", CompatTinkersConstruct.class);
 	}
 	
-	public static void preInitCompat()
-	{
+	public static void preInitCompat() {
 		for(Entry<String, Class<? extends ModCompat>> e : compat.entrySet())
 		{
 			if(Loader.isModLoaded(e.getKey()))
@@ -46,8 +46,7 @@ public abstract class ModCompat {
 		
 	}
 	
-	public static void initCompat()
-	{
+	public static void initCompat() {
 		for(ModCompat compat : compatLoaded)
 		{
 			try
@@ -61,8 +60,7 @@ public abstract class ModCompat {
 		}
 	}
 	
-	public static void postInitCompat()
-	{
+	public static void postInitCompat() {
 		for(ModCompat compat : compatLoaded)
 		{
 			try

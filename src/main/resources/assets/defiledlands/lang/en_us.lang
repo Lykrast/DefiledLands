@@ -181,6 +181,13 @@ potion.effect.defiledlands.grounded=Grounded
 potion.effect.defiledlands.bleeding=Bleeding
 
 #----------------------------
+#Tinker's Construct
+#----------------------------
+material.umbrium.name=Umbrium
+
+fluid.umbrium=Molten Umbrium
+
+#----------------------------
 #UI
 #----------------------------
 ui.defiledlands.book_wyrm_analyze.health=Health : %s/%s

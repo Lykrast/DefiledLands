@@ -1,6 +1,7 @@
 package lykrast.defiledlands.common.compat;
 
 import lykrast.defiledlands.common.block.BlockBaseFluid;
+import lykrast.defiledlands.common.compat.ticon.TraitDefiled;
 import lykrast.defiledlands.common.init.ModBlocks;
 import lykrast.defiledlands.common.init.ModItems;
 import net.minecraft.nbt.NBTTagCompound;
@@ -38,6 +39,7 @@ public class CompatTinkersConstruct extends ModCompat {
 		UMBRIUM.setCastable(true);
 		UMBRIUM.addCommonItems("Umbrium");
 		UMBRIUM.setRepresentativeItem(ModItems.umbriumIngot);
+		UMBRIUM.addTrait(new TraitDefiled());
 	}
 	
 	public static Fluid registerFluid(Fluid fluid) {

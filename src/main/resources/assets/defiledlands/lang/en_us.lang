@@ -187,6 +187,7 @@ material.umbrium.name=Umbrium
 
 modifier.defiled.name=Defiled
 modifier.defiled.desc=§5Edgy and full of purple.§r\nDeal bonus damage to enemies not from the Defiled Lands.
+modifier.defiled.extra=Vs Non-Defiled: +%s
 
 fluid.umbrium=Molten Umbrium
 tile.defiledlands.molten_umbrium.name=Molten Umbrium

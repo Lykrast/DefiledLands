@@ -1,12 +1,17 @@
 package lykrast.defiledlands.common.entity.projectile;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.event.world.ExplosionEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class EntityBlastemFruit extends EntityThrowable {
 	protected float damage, explosion;
@@ -46,9 +51,30 @@ public class EntityBlastemFruit extends EntityThrowable {
 
         if (!this.world.isRemote)
         {
-            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, false, destructive);
+        	explosion(false);
             this.setDead();
         }
+    }
+    
+    protected void explosion(boolean isFlaming) {
+    	Explosion explosion = new ExplosionBlastem(world, this, posX, posY, posZ, this.explosion, isFlaming, destructive);
+    	if (!ForgeEventFactory.onExplosionStart(world, explosion)) {
+    	    Object listener = new Object() {
+    	        @SubscribeEvent
+    	        public void onDetonate(ExplosionEvent.Detonate event) {
+    	            if (event.getExplosion() == explosion) {
+    	                event.getAffectedEntities().removeIf(ent -> ent instanceof EntityItem);
+    	            }
+    	        }
+    	    };
+    	    try {
+    	        MinecraftForge.EVENT_BUS.register(listener);
+    	        explosion.doExplosionA();
+    	    } finally {
+    	        MinecraftForge.EVENT_BUS.unregister(listener);
+    	    }
+    	    explosion.doExplosionB(true);
+    	}
     }
 
     /**
@@ -112,5 +138,19 @@ public class EntityBlastemFruit extends EntityThrowable {
     {
         return destructive;
     }
+    
+    public static class ExplosionBlastem extends Explosion {
+    	private EntityBlastemFruit projectile;
 
+		public ExplosionBlastem(World worldIn, EntityBlastemFruit entityIn, double x, double y, double z, float size, boolean flaming, boolean damagesTerrain) {
+			super(worldIn, entityIn, x, y, z, size, flaming, damagesTerrain);
+			projectile = entityIn;
+		}
+		
+		@Override
+	    public EntityLivingBase getExplosivePlacedBy() {
+			return projectile.getThrower();
+	    }
+    	
+    }
 }

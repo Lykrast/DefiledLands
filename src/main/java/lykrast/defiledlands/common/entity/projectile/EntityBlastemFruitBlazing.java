@@ -1,6 +1,5 @@
 package lykrast.defiledlands.common.entity.projectile;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.RayTraceResult;
@@ -41,7 +40,7 @@ public class EntityBlastemFruitBlazing extends EntityBlastemFruit {
 
         if (!this.world.isRemote)
         {
-            this.world.newExplosion((Entity)null, this.posX, this.posY, this.posZ, explosion, true, destructive);
+            explosion(true);
             this.setDead();
         }
     }

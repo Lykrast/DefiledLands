@@ -79,7 +79,7 @@ public class EntityBlastemFruit extends EntityThrowable {
     	    } finally {
     	        MinecraftForge.EVENT_BUS.unregister(listener);
     	    }
-    	    explosion.doExplosionB(true);
+    	    explosion.doExplosionB(false);
     	}
 
     	//WorldServer stuff

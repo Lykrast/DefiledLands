@@ -1,23 +1,20 @@
 package lykrast.defiledlands.common.entity.projectile;
 
-import lykrast.defiledlands.common.init.ModItems;
-import lykrast.defiledlands.common.init.ModPotions;
+import lykrast.defiledlands.common.item.IPellet;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntityPotion;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class EntityRavagerProjectile extends EntitySmallFireball {
-	private static final DataParameter<ItemStack> ITEM = EntityDataManager.<ItemStack>createKey(EntityPotion.class, DataSerializers.ITEM_STACK);
+	private static final DataParameter<ItemStack> ITEM = EntityDataManager.<ItemStack>createKey(EntityRavagerProjectile.class, DataSerializers.ITEM_STACK);
 	private float damage, speed;
 
 	public EntityRavagerProjectile(World worldIn) {
@@ -69,19 +66,9 @@ public class EntityRavagerProjectile extends EntitySmallFireball {
             		this.applyEnchantments(this.shootingEntity, result.entityHit);
             		if (result.entityHit instanceof EntityLivingBase)
             		{
-            			EntityLivingBase living = (EntityLivingBase)result.entityHit;
-            			if (getItem().getItem() == ModItems.pelletSpiked)
-            			{
-            				int i = 0;
-            				if (living.isPotionActive(ModPotions.bleeding))
-            				{
-            					i = living.getActivePotionEffect(ModPotions.bleeding).getAmplifier() + 1;
-            					i = Math.min(i, 255);
-            				}
-            				living.addPotionEffect(new PotionEffect(ModPotions.bleeding, 200, i));
-            			}
-            			else if (getItem().getItem() == ModItems.pelletRavaging)
-            				living.addPotionEffect(new PotionEffect(ModPotions.vulnerability, 200));
+            			ItemStack stack = getItem();
+            			if (stack.getItem() instanceof IPellet)
+            				((IPellet)stack.getItem()).onHit((EntityLivingBase)result.entityHit, shootingEntity, stack);
             		}
             	}
             }

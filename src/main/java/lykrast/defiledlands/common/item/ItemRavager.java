@@ -54,9 +54,9 @@ public class ItemRavager extends ItemGun {
             	EntityRavagerProjectile projectile = new EntityRavagerProjectile(worldIn, playerIn, vec3d.x, vec3d.y, vec3d.z, getSharpshooterBonus(itemstack));
             	projectile.posY = playerIn.posY + (double)playerIn.getEyeHeight();
             	
-            	if (ammo.getItem() instanceof ItemPellet)
+            	if (ammo.getItem() instanceof IPellet)
             	{
-            		((ItemPellet)ammo.getItem()).applyAttributes(projectile);
+            		((IPellet)ammo.getItem()).applyAttributes(projectile, ammo);
             	}
                 
                 worldIn.spawnEntity(projectile);

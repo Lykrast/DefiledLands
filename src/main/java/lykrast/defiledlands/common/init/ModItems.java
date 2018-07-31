@@ -149,14 +149,8 @@ public class ModItems {
 		
 		theRavager = registerItem(new ItemRavager(2107), "the_ravager");
 		pelletUmbrium = registerItem(new ItemPellet(10), "pellet_umbrium");
-		pelletSpiked = registerItem(new ItemPellet(10), "pellet_spiked");
-		pelletRavaging = registerItem(new ItemPellet(20) {
-		    @SideOnly(Side.CLIENT)
-		    public boolean hasEffect(ItemStack stack)
-		    {
-		        return true;
-		    }
-		}, "pellet_ravaging");
+		pelletSpiked = registerItem(new ItemPellet.Spiked(10), "pellet_spiked");
+		pelletRavaging = registerItem(new ItemPellet.Ravaging(20), "pellet_ravaging");
 		
 		//The Mourner
 		idolSorrow = registerItem(new ItemBossSummoner() {

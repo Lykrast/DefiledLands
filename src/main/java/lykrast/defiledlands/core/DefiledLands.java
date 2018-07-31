@@ -10,7 +10,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = DefiledLands.MODID, name = DefiledLands.NAME, version = DefiledLands.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
+@Mod(modid = DefiledLands.MODID, name = DefiledLands.NAME, version = DefiledLands.VERSION, acceptedMinecraftVersions = "[1.12,1.13)",
+	dependencies = "after:tconstruct")
 public class DefiledLands {
 	
 	public static final String MODID = "defiledlands";

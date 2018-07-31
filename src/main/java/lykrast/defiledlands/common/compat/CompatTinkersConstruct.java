@@ -10,6 +10,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.BowMaterialStats;
 import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
@@ -30,7 +31,8 @@ public class CompatTinkersConstruct extends ModCompat {
 		TinkerRegistry.addMaterialStats(UMBRIUM, 
 				new HeadMaterialStats(246, 5.0F, 4.0F, HarvestLevels.DIAMOND),
                 new HandleMaterialStats(1.0F, 72),
-                new ExtraMaterialStats(60));
+                new ExtraMaterialStats(60),
+                new BowMaterialStats(0.5F, 1.5F, 7.0F));
 		TinkerRegistry.integrate(UMBRIUM, MOLTEN_UMBRIUM, "Umbrium").toolforge().preInit();
 	}
 	

@@ -57,6 +57,8 @@ public class EntityBlastemFruit extends EntityThrowable {
     }
     
     protected void explosion(boolean isFlaming) {
+    	//Prevents dropped items from being destroyed
+    	//Thanks Paul Fulham
     	Explosion explosion = new ExplosionBlastem(world, this, posX, posY, posZ, this.explosion, isFlaming, destructive);
     	if (!ForgeEventFactory.onExplosionStart(world, explosion)) {
     	    Object listener = new Object() {

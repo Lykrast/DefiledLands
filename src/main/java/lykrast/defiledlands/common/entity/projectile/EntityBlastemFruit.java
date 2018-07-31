@@ -2,10 +2,14 @@ package lykrast.defiledlands.common.entity.projectile;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -77,6 +81,17 @@ public class EntityBlastemFruit extends EntityThrowable {
     	    }
     	    explosion.doExplosionB(true);
     	}
+
+    	//WorldServer stuff
+        if (!destructive) explosion.clearAffectedBlockPositions();
+
+        for (EntityPlayer entityplayer : world.playerEntities)
+        {
+            if (entityplayer.getDistanceSq(posX, posY, posZ) < 4096.0D)
+            {
+                ((EntityPlayerMP)entityplayer).connection.sendPacket(new SPacketExplosion(posX, posY, posZ, this.explosion, explosion.getAffectedBlockPositions(), (Vec3d)explosion.getPlayerKnockbackMap().get(entityplayer)));
+            }
+        }
     }
 
     /**
@@ -153,6 +168,11 @@ public class EntityBlastemFruit extends EntityThrowable {
 	    public EntityLivingBase getExplosivePlacedBy() {
 			return projectile.getThrower();
 	    }
+		
+		@Override
+		public void doExplosionB(boolean spawnParticles) {
+			super.doExplosionB(spawnParticles);
+		}
     	
     }
 }

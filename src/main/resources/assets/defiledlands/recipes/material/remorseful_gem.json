@@ -1,0 +1,13 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        " E ",
+        "ESE",
+        " E "
+    ],
+    "key": {
+        "E": { "ore": "essenceMourner", "type": "forge:ore_dict" },
+        "S": { "ore": "gemScarlite", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:remorseful_gem" }
+}

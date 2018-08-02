@@ -133,6 +133,11 @@ item.defiledlands.pellet_ravaging.tooltip=Applies Vulnerability
 item.defiledlands.idol_sorrow.name=Idol of Sorrow
 item.defiledlands.idol_sorrow.tooltip=Right click an active Conjuring Altar\nto summon The Mourner
 item.defiledlands.essence_mourner.name=Remorseful Essence
+item.defiledlands.remorseful_gem.name=Remorseful Gem
+item.defiledlands.tears_flame.name=Tears of Penance
+item.defiledlands.tears_flame.tooltip=Fires fireballs
+item.defiledlands.tears_shulker.name=Tears of Retribution
+item.defiledlands.tears_shulker.tooltip=Fires Shulker projectiles at nearby mobs
 
 #Baubles
 
@@ -186,7 +191,7 @@ potion.effect.defiledlands.bleeding=Bleeding
 material.umbrium.name=Umbrium
 
 modifier.defiled.name=Defiled
-modifier.defiled.desc=§5Edgy and full of purple.§r\nDeal bonus damage to enemies not from the Defiled Lands.
+modifier.defiled.desc=5Edgy and full of purple.r\nDeal bonus damage to enemies not from the Defiled Lands.
 modifier.defiled.extra=Vs Non-Defiled: +%s
 
 fluid.umbrium=Molten Umbrium

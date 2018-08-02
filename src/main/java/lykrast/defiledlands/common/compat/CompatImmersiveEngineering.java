@@ -52,6 +52,8 @@ public class CompatImmersiveEngineering extends ModCompat {
 		ArcFurnaceRecipe.allowItemForRecycling(ModItems.theRavager);
 		ArcFurnaceRecipe.allowItemForRecycling(ModItems.pelletUmbrium);
 		ArcFurnaceRecipe.allowItemForRecycling(ModItems.pelletSpiked);
+		ArcFurnaceRecipe.allowItemForRecycling(ModItems.tearsFlame);
+		ArcFurnaceRecipe.allowItemForRecycling(ModItems.tearsShulker);
 	}
 	
 	@Override

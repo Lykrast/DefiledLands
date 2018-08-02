@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "MRM",
+        " U ",
+        " U "
+    ],
+    "key": {
+        "M": { "ore": "blockHephaestite", "type": "forge:ore_dict" },
+        "R": { "ore": "gemRemorseful", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:tears_flame" }
+}

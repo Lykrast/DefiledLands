@@ -133,6 +133,11 @@ item.defiledlands.pellet_ravaging.tooltip=Applique une vulnérabilité
 item.defiledlands.idol_sorrow.name=Idôle de chagrin
 item.defiledlands.idol_sorrow.tooltip=Clic droit sur un Autel de conjuration actif\npour invoquer La Lamenteuse
 item.defiledlands.essence_mourner.name=Essence de remords
+item.defiledlands.remorseful_gem.name=Gemme de remords
+item.defiledlands.tears_flame.name=Larmes de pénitence
+item.defiledlands.tears_flame.tooltip=Tire des boules de feu
+item.defiledlands.tears_shulker.name=Larmes de châtiment
+item.defiledlands.tears_shulker.tooltip=Tires des projectiles de Shulker\nsur les monstres proches
 
 #Baubles
 
@@ -179,6 +184,18 @@ entity.defiledlands.the_mourner.name=La Lamenteuse
 potion.effect.defiledlands.vulnerability=Vulnérabilité
 potion.effect.defiledlands.grounded=Atterri
 potion.effect.defiledlands.bleeding=Saignement
+
+#----------------------------
+#Tinker's Construct
+#----------------------------
+material.umbrium.name=Umbrium
+
+modifier.defiled.name=Profane
+modifier.defiled.desc=§5Dark et plein de violet.§r\nFait des dommages supplémentaires aux créatures ne venant pas des Terres profanes.
+modifier.defiled.extra=Vs Non-Profane: +%s
+
+fluid.umbrium=Umbrium fondu
+tile.defiledlands.molten_umbrium.name=Umbrium fondu
 
 #----------------------------
 #UI

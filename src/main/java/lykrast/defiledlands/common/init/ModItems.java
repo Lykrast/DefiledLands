@@ -49,9 +49,9 @@ public class ModItems {
 		bookWyrmAnalyzer,
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
+		pelletUmbrium, pelletSpiked, pelletRavaging,
 		idolSorrow,
-		essenceMourner,
-		pelletUmbrium, pelletSpiked, pelletRavaging;
+		essenceMourner, remorsefulGem, tearsFlame, tearsShulker;
 	private static List<Item> itemList = new ArrayList<>();
 	static List<Item> itemBlockList = new ArrayList<>();
 	
@@ -163,6 +163,9 @@ public class ModItems {
 		    }
 		}, "idol_sorrow");
 		essenceMourner = registerItem(new ItemSimpleFoiled(), "essence_mourner");
+		remorsefulGem = registerItem(new ItemSimpleFoiled(), "remorseful_gem");
+		tearsFlame = registerItem(new ItemTears.Flame(2107), "tears_flame");
+		tearsShulker = registerItem(new ItemTears.Shulker(2107), "tears_shulker");
 	}
 	
 	@SubscribeEvent

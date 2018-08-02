@@ -1,0 +1,14 @@
+{
+    "type": "forge:ore_shaped",
+    "pattern": [
+        "MRM",
+        " U ",
+        " U "
+    ],
+    "key": {
+        "M": { "item": "minecraft:shulker_shell" },
+        "R": { "ore": "gemRemorseful", "type": "forge:ore_dict" },
+        "U": { "ore": "ingotUmbrium", "type": "forge:ore_dict" }
+    },
+    "result": { "item": "defiledlands:tears_shulker" }
+}

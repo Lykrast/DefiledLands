@@ -10,7 +10,7 @@
         "R": { "ore": "ingotRavaging", "type": "forge:ore_dict" },
         "C": { "ore": "gemScarlite", "type": "forge:ore_dict" },
         "E": { "item": "defiledlands:scuttler_eye" },
-        "L": { "item": "minecraft:leather" }
+        "L": { "ore": "leather", "type": "forge:ore_dict" }
     },
     "result": { "item": "defiledlands:the_ravager" }
 }

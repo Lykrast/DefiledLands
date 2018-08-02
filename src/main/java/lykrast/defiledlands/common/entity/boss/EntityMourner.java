@@ -631,12 +631,13 @@ public class EntityMourner extends EntityMob implements IEntityDefiled {
                     mourner.world.playEvent((EntityPlayer)null, 1018, new BlockPos((int)mourner.posX, (int)mourner.posY, (int)mourner.posZ), 0);
 
                     EntitySmallFireball entitysmallfireball = new EntitySmallFireball(mourner.world, mourner, d1 + mourner.getRNG().nextGaussian() * (double)f, d2, d3 + mourner.getRNG().nextGaussian() * (double)f);
-                    entitysmallfireball.posY = mourner.posY + (double)(mourner.height / 2.0F) + 0.5D;
+                    entitysmallfireball.posY = mourner.posY + (mourner.height / 2.0) + 0.5D;
                     mourner.world.spawnEntity(entitysmallfireball);
                     break;
             	case ATTACK_SHULKER:
             		Axis axis = Axis.values()[mourner.rand.nextInt(3)];
                     EntityShulkerBullet entityshulkerbullet = new EntityShulkerBullet(mourner.world, mourner, entitylivingbase, axis);
+	                entityshulkerbullet.posY += (mourner.height / 2.0) + 0.5D;
                     mourner.world.spawnEntity(entityshulkerbullet);
                     mourner.playSound(SoundEvents.ENTITY_SHULKER_SHOOT, 2.0F, (mourner.rand.nextFloat() - mourner.rand.nextFloat()) * 0.2F + 1.0F);
             		break;
@@ -648,9 +649,9 @@ public class EntityMourner extends EntityMob implements IEntityDefiled {
                     mourner.world.playEvent((EntityPlayer)null, 1016, new BlockPos(mourner), 0);
                     EntityLargeFireball entitylargefireball = new EntityLargeFireball(mourner.world, mourner, d2, d3, d4);
                     entitylargefireball.explosionPower = mourner.getRageFactor();
-                    entitylargefireball.posX = mourner.posX + vec3d.x * 4.0D;
-                    entitylargefireball.posY = mourner.posY + (double)(mourner.height / 2.0F) + 0.5D;
-                    entitylargefireball.posZ = mourner.posZ + vec3d.z * 4.0D;
+                    entitylargefireball.posX = mourner.posX;
+                    entitylargefireball.posY = mourner.posY + mourner.height + 0.5D;
+                    entitylargefireball.posZ = mourner.posZ;
                     mourner.world.spawnEntity(entitylargefireball);
                     --attackStep;
                     attackTime = 10;

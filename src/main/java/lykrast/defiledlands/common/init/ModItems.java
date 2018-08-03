@@ -3,6 +3,7 @@ package lykrast.defiledlands.common.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import baubles.api.BaubleType;
 import lykrast.defiledlands.common.entity.boss.EntityDestroyer;
 import lykrast.defiledlands.common.entity.boss.EntityMourner;
 import lykrast.defiledlands.common.item.*;
@@ -12,6 +13,7 @@ import lykrast.defiledlands.common.init.ModRecipes;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -47,6 +49,7 @@ public class ModItems {
 		scaleHelmet, scaleChestplate, scaleLeggings, scaleBoots, 
 		scaleGoldenHelmet, scaleGoldenChestplate, scaleGoldenLeggings, scaleGoldenBoots,
 		bookWyrmAnalyzer,
+		scarliteRing, phytoprostasiaAmulet,
 		callingStone,
 		essenceDestroyer, ravagingIngot, axeRavaging, pickaxeRavaging, shovelRavaging, theRavager,
 		pelletUmbrium, pelletSpiked, pelletRavaging,
@@ -127,6 +130,16 @@ public class ModItems {
 		
 		//Non fighting tools
 		bookWyrmAnalyzer = registerItem(new ItemBookWyrmAnalyzer(), "book_wyrm_analyzer");
+
+		scarliteRing = ModItems.registerItem(new ItemBauble(BaubleType.RING) {
+			@Override
+			public void onWornTick(ItemStack itemstack, EntityLivingBase player) {
+				if (player.ticksExisted % 200 == 0) {
+					player.heal(1);
+				}
+			}
+		}, "scarlite_ring");
+		phytoprostasiaAmulet = ModItems.registerItem(new ItemBauble(BaubleType.AMULET), "phytoprostasia_amulet");
 		
 		//Boss stuff
 		//The Destroyer

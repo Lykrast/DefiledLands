@@ -1,13 +1,14 @@
 # 1.12.2
 
-## 1.4.0 (WIP)
+## 1.4.0
 
+* CHANGED : Baubles is no longer optional
 * ADDED : The Mourner, a new boss to fight, summon her with an Idol of Sorrow to collect Remorseful Essence, some Umbrium and Scarlite
 * ADDED : Tears of Penance and Tears of Retribution, ranged weapons crafted with Remorseful Essence
 * ADDED : Umbrium as a Tinker's Construct material (includes Smeltery support)
 * ADDED : Support for Immersive Engineering's Crusher, Squeezer and Arc Furnace recycling
 * ADDED : Blastem can now be bonemealed
-* ADDED : Blastem Seed, replaces the Blastem item
+* ADDED : Blastem Seed, replaces the Blastem block item
 * CHANGED : New textures:
   * All Pellets
   * Calling Stone

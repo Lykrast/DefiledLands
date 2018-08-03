@@ -1,5 +1,9 @@
 # 1.12.2
 
+## 1.4.1
+
+* FIXED : Server crash on startup
+
 ## 1.4.0
 
 * CHANGED : Baubles is no longer optional

@@ -6,6 +6,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockDoorGeneric extends BlockDoor implements ICustomItemBlock, ICustomStateMapper {
 
@@ -27,6 +29,7 @@ public class BlockDoorGeneric extends BlockDoor implements ICustomItemBlock, ICu
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void setCustomStateMapper() {
 		ModelLoader.setCustomStateMapper(this, (new StateMap.Builder()).ignore(BlockDoorGeneric.POWERED).build());
 	}

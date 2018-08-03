@@ -5,6 +5,8 @@ import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBaseFluid extends BlockFluidClassic implements ICustomStateMapper {
 
@@ -13,6 +15,7 @@ public class BlockBaseFluid extends BlockFluidClassic implements ICustomStateMap
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void setCustomStateMapper() {
 		ModelLoader.setCustomStateMapper(this, new StateMap.Builder().ignore(LEVEL).build());
 	}

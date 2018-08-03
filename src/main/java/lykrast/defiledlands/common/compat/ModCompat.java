@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.logging.Level;
 
 import lykrast.defiledlands.common.util.Config;
 import lykrast.defiledlands.core.DefiledLands;
@@ -39,7 +38,7 @@ public abstract class ModCompat {
 				}
 				catch(Exception ex)
 				{
-					DefiledLands.logger.log(Level.WARNING, "Compat module for " + e.getKey() + " could not be pre-initialized");
+					DefiledLands.logger.warn("Compat module for " + e.getKey() + " could not be pre-initialized", ex);
 				}
 			}
 		}
@@ -48,30 +47,12 @@ public abstract class ModCompat {
 	
 	public static void initCompat() {
 		for(ModCompat compat : compatLoaded)
-		{
-			try
-			{
-				compat.init();
-			}
-			catch(Exception ex)
-			{
-				DefiledLands.logger.log(Level.WARNING, "Compat module for " + compat + " could not be initialized");
-			}
-		}
+			compat.init();
 	}
 	
 	public static void postInitCompat() {
 		for(ModCompat compat : compatLoaded)
-		{
-			try
-			{
-				compat.postInit();
-			}
-			catch(Exception ex)
-			{
-				DefiledLands.logger.log(Level.WARNING, "Compat module for " + compat + " could not be post-initialized");
-			}
-		}		
+			compat.postInit();
 	}
 	
 	public void preInit() {}

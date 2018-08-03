@@ -2,7 +2,6 @@ package lykrast.defiledlands.common.util;
 
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.logging.Level;
 
 import lykrast.defiledlands.common.compat.ModCompat;
 import lykrast.defiledlands.core.CommonProxy;
@@ -39,7 +38,7 @@ public class Config {
 			cfg.load();
 			initGeneralConfig(cfg);
 		} catch (Exception e) {
-			DefiledLands.logger.log(Level.WARNING, "Problem loading config file!", e);
+			DefiledLands.logger.warn("Problem loading config file!", e);
 		} finally {
 			if (cfg.hasChanged()) {
 				cfg.save();

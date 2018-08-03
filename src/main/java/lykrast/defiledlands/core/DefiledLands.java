@@ -1,6 +1,6 @@
 package lykrast.defiledlands.core;
 
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,6 +28,7 @@ public class DefiledLands {
     
     @EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
+    	logger = e.getModLog();
 		proxy.preInit(e);
 	}
 

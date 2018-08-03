@@ -1,5 +1,6 @@
 package lykrast.defiledlands.core;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraftforge.fml.common.Mod;
@@ -21,14 +22,13 @@ public class DefiledLands {
     @Instance(MODID)
     public static DefiledLands instance;
     
-    public static Logger logger;
+    public static final Logger LOGGER = LogManager.getLogger(MODID);
     
     @SidedProxy(clientSide = "lykrast.defiledlands.core.ClientProxy", serverSide = "lykrast.defiledlands.core.CommonProxy")
 	public static CommonProxy proxy;
     
     @EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-    	logger = e.getModLog();
 		proxy.preInit(e);
 	}
 

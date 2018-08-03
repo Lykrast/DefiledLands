@@ -38,7 +38,7 @@ public abstract class ModCompat {
 				}
 				catch(Exception ex)
 				{
-					DefiledLands.logger.warn("Compat module for " + e.getKey() + " could not be pre-initialized", ex);
+					DefiledLands.LOGGER.warn("Compat module for " + e.getKey() + " could not be pre-initialized", ex);
 				}
 			}
 		}

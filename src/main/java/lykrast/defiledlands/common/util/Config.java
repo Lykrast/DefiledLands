@@ -38,7 +38,7 @@ public class Config {
 			cfg.load();
 			initGeneralConfig(cfg);
 		} catch (Exception e) {
-			DefiledLands.logger.warn("Problem loading config file!", e);
+			DefiledLands.LOGGER.warn("Problem loading config file!", e);
 		} finally {
 			if (cfg.hasChanged()) {
 				cfg.save();

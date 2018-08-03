@@ -2,20 +2,25 @@
 
 ## 1.4.0 (WIP)
 
-* ADDED : The Mourner, a new boss to fight
-* ADDED : Idol of Sorrow, used to summon The Mourner
-* ADDED : Remorseful Essence, dropped from The Mourner
+* ADDED : The Mourner, a new boss to fight, summon her with an Idol of Sorrow to collect Remorseful Essence, some Umbrium and Scarlite
+* ADDED : Tears of Penance and Tears of Retribution, ranged weapons crafted with Remorseful Essence
+* ADDED : Umbrium as a Tinker's Construct material (includes Smeltery support)
+* ADDED : Support for Immersive Engineering's Crusher, Squeezer and Arc Furnace recycling
 * ADDED : Blastem can now be bonemealed
 * ADDED : Blastem Seed, replaces the Blastem item
-* ADDED : Support for Immersive Engineering's Crusher, Squeezer and Arc Furnace recycling
 * CHANGED : New textures:
   * All Pellets
   * Calling Stone
   * Blastem (growth stages are now visible)
   * The Destroyer
-* CHANGED : Blastem now regrows faster if harvested with a right click
+* CHANGED : The Destroyer now also drops Umbrium Ingots
+* CHANGED : The Destroyer now has a special pose while explosive leaping
 * CHANGED : Rebalanced Defiled Dugeons loot table, equipment should appear more consistently and is now always enchanted
+* CHANGED : Blastem now regrows faster if harvested with a right click
+* CHANGED : Blastem Fruit explosions no longer destroy dropped items
+* CHANGED : The Ravager can now be crafted with oredicted leather
 * FIXED : Modded mobs and animals should no longer naturally spawn in defiled biomes
+* FIXED : Blastem Fruit explosions now correctly attribute their damage to the thrower
 * FIXED : Optimized defiled biome generation, should be roughly twice as fast as before
 
 ## 1.3.0

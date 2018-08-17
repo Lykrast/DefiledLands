@@ -168,20 +168,23 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
     		{
     	        List<EnchantmentData> list = EnchantmentHelper.buildEnchantmentList(rand, new ItemStack(Items.BOOK), getMaxLevel(), isGolden());
     			
-    	        if (Config.multiBook)
+    	        if (!list.isEmpty())
     	        {
-                	for (EnchantmentData e : list)
-                	{
-                		ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-                		ItemEnchantedBook.addEnchantment(book, e);
+        	        if (Config.multiBook)
+        	        {
+                    	for (EnchantmentData e : list)
+                    	{
+                    		ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                    		ItemEnchantedBook.addEnchantment(book, e);
+                			entityDropItem(book, 0.5F);
+                    	}
+        	        }
+        	        else
+        	        {
+        	        	ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                		ItemEnchantedBook.addEnchantment(book, list.get(rand.nextInt(list.size())));
             			entityDropItem(book, 0.5F);
-                	}
-    	        }
-    	        else
-    	        {
-    	        	ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-            		ItemEnchantedBook.addEnchantment(book, list.get(rand.nextInt(list.size())));
-        			entityDropItem(book, 0.5F);
+        	        }
     	        }
     		}
     	}

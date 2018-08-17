@@ -59,6 +59,11 @@ repositories {
         name = "thiakil"
         url = "http://maven.thiakil.com"
     }
+	// JustEnoughResources
+	//maven {
+    //    name = "bintray-way2muchnoise"
+    //    url  "https://dl.bintray.com/way2muchnoise/dev/"
+    //}
 }
 
 dependencies {
@@ -101,6 +106,9 @@ dependencies {
 	// Tinker's Construct
 	compileOnly "slimeknights.mantle:Mantle:1.12-1.3.+"
     compileOnly "slimeknights:TConstruct:1.12-2.7.+"
+	
+	// JustEnoughResources
+    //compileOnly "jeresources:JustEnoughResources-1.12.2:0.8.+"
 }
 
 processResources {

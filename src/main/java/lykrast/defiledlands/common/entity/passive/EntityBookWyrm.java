@@ -263,8 +263,8 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         
         setGolden(world.rand.nextInt(100) == 0);
-        setDigestTime(MathHelper.getInt(world.rand, 160, 240));
-        setMaxLevel(MathHelper.getInt(world.rand, 3, 6));
+        setDigestTime(MathHelper.getInt(rand, 160, 240));
+        setMaxLevel(MathHelper.getInt(rand, 3, 6));
 
         if (this.rand.nextInt(5) == 0)
         {
@@ -294,21 +294,21 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
 			int i = 25;
 			if (flag1 && flag2) i = 10;
 			
-			child.setGolden(world.rand.nextInt(i) == 0);
+			child.setGolden(rand.nextInt(i) == 0);
 		}
-		else child.setGolden(world.rand.nextInt(100) == 0);
+		else child.setGolden(rand.nextInt(100) == 0);
 		
 		//Digest time
 		int j1 = getDigestTime();
 		int j2 = parent.getDigestTime();
-		int k = j1 + j2 - world.rand.nextInt((int)(Math.max(j1, j2) + 1 * 0.75));
+		int k = j1 + j2 - rand.nextInt((int)(Math.max(j1, j2) + 1 * 0.75));
 		child.setDigestTime(k / 2);
 		
 		//Maximum level
 		j1 = getMaxLevel();
 		j2 = parent.getMaxLevel();
-		k = j1 + j2 + world.rand.nextInt(Math.max(j1, j2) + 1);
-		child.setMaxLevel(k / 2);
+		k = j1 + j2 + rand.nextInt(Math.max(j1, j2) + 1);
+		child.setMaxLevel(Math.min(k / 2, 30));
 	}
 
     /**
@@ -374,27 +374,27 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
     }
 
     public boolean isGolden() {
-		return ((Boolean)this.dataManager.get(GOLDEN)).booleanValue();
+		return dataManager.get(GOLDEN);
 	}
 
 	public void setGolden(boolean golden) {
-		this.dataManager.set(GOLDEN, Boolean.valueOf(golden));
+		dataManager.set(GOLDEN, golden);
 	}
 
 	public int getDigestTime() {
-		return ((Integer)this.dataManager.get(DIGEST_TIME)).intValue();
+		return dataManager.get(DIGEST_TIME);
 	}
 
 	public void setDigestTime(int digest) {
-        this.dataManager.set(DIGEST_TIME, Integer.valueOf(Math.max(digest, 1)));
+        dataManager.set(DIGEST_TIME, Math.max(digest, 1));
 	}
 
 	public int getMaxLevel() {
-		return ((Integer)this.dataManager.get(MAX_LEVEL)).intValue();
+		return dataManager.get(MAX_LEVEL);
 	}
 
 	public void setMaxLevel(int maxLevel) {
-        this.dataManager.set(MAX_LEVEL, Integer.valueOf(MathHelper.clamp(maxLevel, 1, 30)));
+        dataManager.set(MAX_LEVEL, Math.max(maxLevel, 1));
 	}
 
 	@Override

@@ -1,5 +1,10 @@
 # 1.12.2
 
+## 1.4.2
+
+* CHANGED : Book Wyrm idle sound is now much quieter
+* FIXED : Upper limit for Book Wyrm enchanting level is now only enforced for breeding (that means you can cheat in Book Wyrms with 60 enchanting level if you want, not that it'd be useful)
+
 ## 1.4.1
 
 * FIXED : Server crash on startup

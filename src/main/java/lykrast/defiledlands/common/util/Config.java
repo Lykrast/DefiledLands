@@ -23,7 +23,7 @@ public class Config {
 	public static int weightShambler, weightTwistedShambler, weightScuttler, weightHost;
 	
 	// Book Wyrms
-	public static boolean bookWyrmSpawn, multiBook;
+	public static boolean bookWyrmSpawn;
 	public static float conversionRate;
 	
 	// World
@@ -72,9 +72,7 @@ public class Config {
         // Book Wyrms
         bookWyrmSpawn = cfg.getBoolean("bookWyrmSpawn", CATEGORY_BOOK_WYRM, true, 
         		"Can Book Wyrms naturally spawn");
-        multiBook = cfg.getBoolean("multiBook", CATEGORY_BOOK_WYRM, false, 
-        		"If true, Book Wyrms will spawn a book for each possible enchantment instead of a single random one, CAN CAUSE SELF SUSTAINING LOOPS");
-        conversionRate = cfg.getFloat("conversionRate", CATEGORY_BOOK_WYRM, 1.0F, 0.0F, 10.0F, 
+        conversionRate = cfg.getFloat("conversionRate", CATEGORY_BOOK_WYRM, 1.0F, 0.01F, 10.0F, 
         		"Multiplier applied to enchanted books's level fed to Book Wyrms, highly recommended to keep below 1");
         
         // World

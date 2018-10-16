@@ -1,5 +1,7 @@
 package lykrast.defiledlands.common.entity.passive;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -159,6 +161,7 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
     	
     	if (digested >= getMaxLevel())
     	{
+    		//Spawn the books
     		digested -= getMaxLevel();
             playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
             playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1.0F, 1.0F);
@@ -170,21 +173,24 @@ public class EntityBookWyrm extends EntityAnimal implements IEntityDefiled, IEnt
     			
     	        if (!list.isEmpty())
     	        {
-        	        if (Config.multiBook)
-        	        {
-                    	for (EnchantmentData e : list)
-                    	{
-                    		ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-                    		ItemEnchantedBook.addEnchantment(book, e);
-                			entityDropItem(book, 0.5F);
-                    	}
-        	        }
-        	        else
-        	        {
-        	        	ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-                		ItemEnchantedBook.addEnchantment(book, list.get(rand.nextInt(list.size())));
-            			entityDropItem(book, 0.5F);
-        	        }
+    	        	//Sort by descending digested value
+    	        	Collections.sort(list, Comparator.comparingInt((e) -> -e.enchantment.getMinEnchantability(e.enchantmentLevel)));
+    	        	//Make sure that whatever books it gives back, it'll never exceed the enchantment level
+    	        	//To prevent endless loops
+    	        	int remaining = (int)(getMaxLevel() / Config.conversionRate);
+					for (EnchantmentData e : list)
+					{
+						int value = (int) (e.enchantment.getMinEnchantability(e.enchantmentLevel) * Config.conversionRate);
+						if (remaining >= value)
+						{
+							remaining -= value;
+							ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+							ItemEnchantedBook.addEnchantment(book, e);
+							entityDropItem(book, 0.5F);
+							
+							if (remaining <= 0) break;
+						}
+					}
     	        }
     		}
     	}

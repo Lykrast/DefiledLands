@@ -40,15 +40,16 @@ public class ItemBauble extends Item implements IBauble {
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		if(!world.isRemote) { 
 			IBaublesItemHandler baubles = BaublesApi.getBaublesHandler(player);
-			for(int i = 0; i < baubles.getSlots(); i++) 
-				if((baubles.getStackInSlot(i) == null || baubles.getStackInSlot(i).isEmpty()) && baubles.isItemValidForSlot(i, player.getHeldItem(hand), player)) {
-					baubles.setStackInSlot(i, player.getHeldItem(hand).copy());
-					if(!player.capabilities.isCreativeMode){
-						player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-					}
-					onEquipped(player.getHeldItem(hand), player);
+			for(int i = 0; i < baubles.getSlots(); i++) {
+				ItemStack stack = player.getHeldItem(hand);
+				if((baubles.getStackInSlot(i) == null || baubles.getStackInSlot(i).isEmpty()) && baubles.isItemValidForSlot(i, stack, player)) {
+					ItemStack equipped = stack.copy();
+					baubles.setStackInSlot(i, equipped);
+					if(!player.capabilities.isCreativeMode) stack.shrink(1);
+					onEquipped(equipped, player);
 					break;
 				}
+			}
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
 	}

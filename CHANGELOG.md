@@ -1,5 +1,10 @@
 # 1.12.2
 
+## 1.4.3
+
+* FIXED : Duplication issue with baubles
+* FIXED : Tenebra Door dropping an Oak Door when broken
+
 ## 1.4.2
 
 * CHANGED : Book Wyrm idle sound is now much quieter
